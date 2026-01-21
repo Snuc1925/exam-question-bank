@@ -16,22 +16,8 @@ const app = {
 
     // Setup marked.js for markdown rendering
     setupMarked: function() {
-        if (typeof marked !== 'undefined') {
-            marked.setOptions({
-                highlight: function(code, lang) {
-                    if (typeof hljs !== 'undefined' && lang && hljs.getLanguage(lang)) {
-                        try {
-                            return hljs.highlight(code, { language: lang }).value;
-                        } catch (err) {
-                            console.error('Highlight error:', err);
-                        }
-                    }
-                    return code;
-                },
-                breaks: true,
-                gfm: true
-            });
-        }
+        // Using simple markdown renderer (lib/simple-markdown.js)
+        // No setup needed
     },
 
     // Load available courses
@@ -160,17 +146,11 @@ const app = {
             document.getElementById('markdown-title').textContent = filename;
             const contentDiv = document.getElementById('markdown-content');
             
-            if (typeof marked !== 'undefined') {
-                contentDiv.innerHTML = marked.parse(content);
-                
-                // Highlight code blocks
-                if (typeof hljs !== 'undefined') {
-                    contentDiv.querySelectorAll('pre code').forEach((block) => {
-                        hljs.highlightBlock(block);
-                    });
-                }
+            if (typeof SimpleMarkdown !== 'undefined') {
+                contentDiv.innerHTML = SimpleMarkdown.parse(content);
             } else {
-                contentDiv.textContent = content;
+                // Fallback to plain text with line breaks
+                contentDiv.innerHTML = '<pre>' + content + '</pre>';
             }
             
             this.showPage('markdown-viewer');
