@@ -39,10 +39,7 @@ Simply open `index.html` in your web browser, or run a local server:
 
 ```bash
 # Using Python 3
-python3 -m http.server 8080
-
-# Using Node.js
-npx http-server -p 8080
+python server.py
 
 # Then open http://localhost:8080 in your browser
 ```

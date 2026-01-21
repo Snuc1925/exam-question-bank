@@ -12,7 +12,31 @@ const app = {
         console.log('Initializing application...');
         await this.loadCourses();
         this.setupMarked();
+        this.setupKeyboardNavigation(); // Thêm dòng này
     },
+
+// Thêm hàm mới này vào object app
+setupKeyboardNavigation: function() {
+    document.addEventListener('keydown', (e) => {
+        // Chỉ xử lý khi đang ở trang quiz
+        const quizPage = document.getElementById('quiz-page');
+        if (! quizPage || !quizPage.classList.contains('active')) {
+            return;
+        }
+
+        // Arrow Left = Previous question
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            this.previousQuestion();
+        }
+        
+        // Arrow Right = Next question
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            this.nextQuestion();
+        }
+    });
+},    
 
     // Setup marked.js for markdown rendering
     setupMarked: function() {
@@ -21,10 +45,17 @@ const app = {
     },
 
     // Load available courses
-    loadCourses: async function() {
+    loadCourses:  async function() {
         try {
-            // Since we're running locally, we need to manually define courses
-            // In a real scenario with a server, we'd fetch this from an API
+            const response = await fetch('/api/list-courses');
+            if (!response.ok) {
+                throw new Error('Failed to load courses');
+            }
+            this.courses = await response.json();
+            this.displayCourses();
+        } catch (error) {
+            console.error('Error loading courses:', error);
+            // Fallback to manual list
             this.courses = [
                 {
                     name: 'Data Visualization',
@@ -38,8 +69,6 @@ const app = {
                 }
             ];
             this.displayCourses();
-        } catch (error) {
-            console.error('Error loading courses:', error);
         }
     },
 
@@ -53,7 +82,6 @@ const app = {
             courseCard.className = 'course-card';
             courseCard.innerHTML = `
                 <h3>${course.name}</h3>
-                <p>${course.description}</p>
             `;
             courseCard.onclick = () => this.selectCourse(course);
             courseList.appendChild(courseCard);
@@ -73,22 +101,26 @@ const app = {
     loadCourseFiles: async function() {
         const course = this.currentCourse;
         
-        // Hiển thị trạng thái đang tải (tùy chọn)
-        document.getElementById('markdown-files').innerHTML = 'Đang tải...';
+        document.getElementById('markdown-files').innerHTML = 'Đang tải... ';
         document.getElementById('question-files').innerHTML = 'Đang tải...';
 
         try {
-            // Tự động quét bằng cách đọc file index.json trong thư mục course
-            const files = await this.scanCourseDirectory(course.path);
+            const response = await fetch(`/api/list-files?path=${course.path}`);
+            if (!response.ok) {
+                throw new Error('Failed to load course files');
+            }
+            
+            const files = await response.json();
             
             const markdownFiles = files.filter(f => f.endsWith('.md'));
-            const jsonFiles = files.filter(f => f.endsWith('.json') && f !== 'index.json'); // Loại bỏ index.json
+            const jsonFiles = files.filter(f => f.endsWith('.json') && f !== 'index.json');
             
             this.displayMarkdownFiles(markdownFiles);
             this.displayQuestionFiles(jsonFiles);
         } catch (error) {
             console.error('Error in loadCourseFiles:', error);
-            document.getElementById('markdown-files').innerHTML = '<p>Lỗi khi tải danh sách file.</p>';
+            document.getElementById('markdown-files').innerHTML = '<p>Lỗi khi tải danh sách file. </p>';
+            document.getElementById('question-files').innerHTML = '<p>Lỗi khi tải danh sách file. </p>';
         }
     },
 
@@ -187,17 +219,18 @@ const app = {
             this.currentQuiz = filename;
             this.currentQuestionIndex = 0;
             this.userAnswers = {};
+            this.checkedQuestions = {}; // Reset checked questions
             
             // Try to load saved progress
             this.loadProgress();
             
             document.getElementById('quiz-title').textContent = filename;
-            document.getElementById('total-questions').textContent = questions.length;
+            document.getElementById('total-questions').textContent = questions. length;
             
-            this.displayQuestion();
+            this. displayQuestion();
             this.showPage('quiz-page');
         } catch (error) {
-            console.error('Error loading quiz:', error);
+            console. error('Error loading quiz:', error);
             alert('Không thể tải quiz. Vui lòng đảm bảo file JSON tồn tại.');
         }
     },
@@ -206,13 +239,22 @@ const app = {
     displayQuestion: function() {
         const question = this.questions[this.currentQuestionIndex];
         const container = document.getElementById('question-container');
+        const isChecked = this.checkedQuestions[question.id];
         
         container.innerHTML = `
             <div class="question-text">
-                Câu ${this.currentQuestionIndex + 1}: ${question.question}
+                Câu ${this.currentQuestionIndex + 1}:  ${question.question}
             </div>
             <div class="answers-grid" id="answers-grid">
-                ${this.renderAnswers(question)}
+                ${this.renderAnswers(question, isChecked)}
+            </div>
+            <div class="check-answer-section">
+                <button id="check-answer-btn" class="btn btn-warning" onclick="app.checkAnswer()">
+                    ✓ Kiểm tra đáp án
+                </button>
+            </div>
+            <div id="answer-feedback" class="answer-feedback" style="display: none;">
+                <!-- Feedback will be shown here -->
             </div>
         `;
         
@@ -224,19 +266,36 @@ const app = {
         
         // Update button visibility
         this.updateQuizButtons();
+        
+        // If already checked, show feedback
+        if (isChecked) {
+            this. showAnswerFeedback();
+        }
     },
 
     // Render answer options
-    renderAnswers: function(question) {
+    renderAnswers: function(question, isChecked = false) {
         const savedAnswers = this.userAnswers[question.id] || [];
+        const correctAnswers = question.correctAnswers || [];
         
         return Object.entries(question.answers).map(([key, value]) => {
             const isSelected = savedAnswers.includes(key);
+            const isCorrect = correctAnswers.includes(key);
+            
+            let classes = 'answer-option';
+            if (isSelected) classes += ' selected';
+            if (isChecked) {
+                if (isCorrect) classes += ' correct';
+                else if (isSelected && !isCorrect) classes += ' incorrect';
+            }
+            
             return `
-                <div class="answer-option ${isSelected ? 'selected' : ''}" data-answer="${key}">
+                <div class="answer-option ${classes}" data-answer="${key}">
                     <div class="answer-checkbox"></div>
-                    <div class="answer-label">${key}.</div>
+                    <div class="answer-label">${key}. </div>
                     <div class="answer-text">${value}</div>
+                    ${isChecked && isCorrect ? '<div class="correct-mark">✓</div>' : ''}
+                    ${isChecked && isSelected && !isCorrect ? '<div class="incorrect-mark">✗</div>' : ''}
                 </div>
             `;
         }).join('');
@@ -246,13 +305,19 @@ const app = {
     setupAnswerSelection: function() {
         const question = this.questions[this.currentQuestionIndex];
         const options = document.querySelectorAll('.answer-option');
+        const isChecked = this.checkedQuestions[question.id];
+        
+        // Disable selection if already checked
+        if (isChecked) {
+            return;
+        }
         
         options.forEach(option => {
             option.onclick = () => {
                 const answer = option.dataset.answer;
                 
-                if (!this.userAnswers[question.id]) {
-                    this.userAnswers[question.id] = [];
+                if (! this.userAnswers[question. id]) {
+                    this. userAnswers[question.id] = [];
                 }
                 
                 const answerIndex = this.userAnswers[question.id].indexOf(answer);
@@ -269,6 +334,71 @@ const app = {
             };
         });
     },
+
+    // Check answer for current question
+    checkAnswer: function() {
+        const question = this.questions[this.currentQuestionIndex];
+        const userAnswer = this.userAnswers[question. id] || [];
+        
+        if (userAnswer.length === 0) {
+            this.showToast('Vui lòng chọn ít nhất một đáp án! ');
+            return;
+        }
+        
+        // Mark as checked
+        this.checkedQuestions[question.id] = true;
+        
+        // Re-render with highlighting
+        this.displayQuestion();
+    },
+
+    // Show answer feedback
+    showAnswerFeedback: function() {
+        const question = this.questions[this.currentQuestionIndex];
+        const userAnswer = this.userAnswers[question.id] || [];
+        const correctAnswer = question.correctAnswers || [];
+        const isCorrect = this.arraysEqual(userAnswer, correctAnswer);
+        
+        const feedbackDiv = document.getElementById('answer-feedback');
+        feedbackDiv. style.display = 'block';
+        
+        let feedbackHTML = `
+            <div class="feedback-result ${isCorrect ? 'correct' : 'incorrect'}">
+                ${isCorrect 
+                    ? '<span class="feedback-icon">✓</span> <strong>Chính xác!</strong>' 
+                    : '<span class="feedback-icon">✗</span> <strong>Chưa đúng!</strong>'}
+            </div>
+        `;
+        
+        if (! isCorrect) {
+            const correctAnswerText = correctAnswer
+                .map(a => `${a}. ${question.answers[a]}`)
+                .join(', ');
+            feedbackHTML += `
+                <div class="correct-answer-display">
+                    <strong>Đáp án đúng:</strong> ${correctAnswerText}
+                </div>
+            `;
+        }
+        
+        // Show explanation if available
+        if (question.explanation) {
+            feedbackHTML += `
+                <div class="explanation-box">
+                    <strong>📖 Giải thích:</strong>
+                    <p>${question. explanation}</p>
+                </div>
+            `;
+        }
+        
+        feedbackDiv. innerHTML = feedbackHTML;
+        
+        // Hide check button
+        const checkBtn = document.getElementById('check-answer-btn');
+        if (checkBtn) {
+            checkBtn.style.display = 'none';
+        }
+    },    
 
     // Update progress bar
     updateProgress: function() {
