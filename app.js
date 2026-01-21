@@ -70,32 +70,46 @@ const app = {
         this.showPage('course-detail');
     },
 
-    // Load markdown and JSON files for a course
     loadCourseFiles: async function() {
         const course = this.currentCourse;
         
-        // For local development, we need to define the files manually
-        // In a production environment, you'd scan the directory
-        const files = await this.scanCourseDirectory(course.path);
-        
-        const markdownFiles = files.filter(f => f.endsWith('.md'));
-        const jsonFiles = files.filter(f => f.endsWith('.json'));
-        
-        this.displayMarkdownFiles(markdownFiles);
-        this.displayQuestionFiles(jsonFiles);
+        // Hiển thị trạng thái đang tải (tùy chọn)
+        document.getElementById('markdown-files').innerHTML = 'Đang tải...';
+        document.getElementById('question-files').innerHTML = 'Đang tải...';
+
+        try {
+            // Tự động quét bằng cách đọc file index.json trong thư mục course
+            const files = await this.scanCourseDirectory(course.path);
+            
+            const markdownFiles = files.filter(f => f.endsWith('.md'));
+            const jsonFiles = files.filter(f => f.endsWith('.json') && f !== 'index.json'); // Loại bỏ index.json
+            
+            this.displayMarkdownFiles(markdownFiles);
+            this.displayQuestionFiles(jsonFiles);
+        } catch (error) {
+            console.error('Error in loadCourseFiles:', error);
+            document.getElementById('markdown-files').innerHTML = '<p>Lỗi khi tải danh sách file.</p>';
+        }
     },
 
     // Scan course directory for files
     scanCourseDirectory: async function(coursePath) {
-        // For local file system access, we need to know the files in advance
-        // This is a limitation of browser JavaScript without a backend
-        // To add new courses or files, update this mapping:
-        const fileMap = {
-            'courses/data-visualization': ['file_systems.md', 'file_systems.json', 'hdfs.json'],
-            'courses/operating-system': ['lecture.md', 'questions.json']
-        };
-        
-        return fileMap[coursePath] || [];
+        /**
+         * Giải pháp: Trình duyệt không thể tự "list files" trong folder cục bộ 
+         * vì lý do bảo mật. Chúng ta sẽ fetch một file 'index.json' đóng vai trò 
+         * là danh mục tệp tin của thư mục đó.
+         */
+        try {
+            const response = await fetch(`${coursePath}/index.json`);
+            if (!response.ok) {
+                throw new Error('Không tìm thấy file index.json trong thư mục ' + coursePath);
+            }
+            const fileList = await response.json();
+            return fileList; // Trả về mảng tên file: ["file1.md", "file2.json"]
+        } catch (error) {
+            console.warn(`Cảnh báo: Không thể quét thư mục ${coursePath}. Đảm bảo index.json tồn tại.`);
+            return [];
+        }
     },
 
     // Display markdown files

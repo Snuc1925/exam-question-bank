@@ -1,0 +1,1102 @@
+[
+  {
+    "id":  "fs_q1",
+    "question": "Trong Distributed File System, lợi ích nào KHÔNG được đề cập trực tiếp?",
+    "answers": {
+      "A": "File sharing giữa các client",
+      "B": "Uniform view từ các client khác nhau",
+      "C": "Tự động backup dữ liệu",
+      "D": "Centralized administration"
+    },
+    "correctAnswers": ["C"]
+  },
+  {
+    "id": "fs_q2",
+    "question": "Tính minh bạch mạng/truy cập (Network/Access Transparency) đạt được khi:",
+    "answers": {
+      "A": "Người dùng cần biết giao thức mạng đang s��� dụng",
+      "B": "Người dùng truy cập file từ xa như file cục bộ",
+      "C": "Hệ thống tự động mã hóa tất cả dữ liệu",
+      "D": "File được lưu trữ ở nhiều vị trí"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q3",
+    "question": "Điều gì ĐÚNG về mối quan hệ giữa Location Independence và Location Transparency?",
+    "answers": {
+      "A": "Location Independence luôn dẫn đến Location Transparency",
+      "B": "Location Transparency luôn dẫn đến Location Independence",
+      "C": "Chúng hoàn toàn độc lập với nhau",
+      "D": "Cả hai đều tương đương nhau"
+    },
+    "correctAnswers": ["A"]
+  },
+  {
+    "id": "fs_q4",
+    "question": "Hệ thống có Location Transparency nhưng KHÔNG có Location Independence sẽ:",
+    "answers": {
+      "A": "Tên file không chứa thông tin vị trí vật lý",
+      "B":  "Đường dẫn có thể bị hỏng khi di chuyển file",
+      "C": "File có thể di chuyển tự do mà không thay đổi tên",
+      "D": "Hệ thống tự động cập nhật mapping"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q5",
+    "question": "Cơ chế Mounting trong DFS có đặc điểm:",
+    "answers": {
+      "A": "Tạo ra một không gian tên thống nhất toàn cầu",
+      "B": "Gắn thư mục từ xa vào cây thư mục cục bộ",
+      "C": "Thay thế hoàn toàn cơ chế Naming",
+      "D": "Người dùng truy cập như file địa phương"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q6",
+    "question": "Tính sẵn sàng (Availability) trong DFS phải miễn nhiễm với:",
+    "answers": {
+      "A": "Số lượng người dùng tăng đột biến",
+      "B":  "System failures",
+      "C": "Thay đổi giao diện người dùng",
+      "D": "Hệ quả của việc phân tán"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q7",
+    "question": "Replication trong DFS mang lại lợi ích gì?",
+    "answers":  {
+      "A": "Fault Tolerance",
+      "B": "Load Balancing",
+      "C": "Giảm chi phí lưu trữ",
+      "D": "Tăng tốc độ ghi dữ liệu đơn lẻ"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q8",
+    "question": "Trong kiến trúc Client-Server, đặc điểm nào là ĐÚNG?",
+    "answers": {
+      "A": "Máy khách trực tiếp sở hữu file",
+      "B": "Dữ liệu được lưu trữ tập trung trên server",
+      "C":  "Có thể tạo ra điểm nghẽn khi server quá tải",
+      "D": "Mọi node đều có vai trò như nhau"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q9",
+    "question": "NFS (Network File System) thuộc loại kiến trúc nào?",
+    "answers":  {
+      "A": "Peer-to-Peer",
+      "B": "Client-Server",
+      "C": "Symmetric",
+      "D": "Hybrid P2P-Server"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q10",
+    "question": "Kiến trúc Symmetric/P2P có đặc điểm:",
+    "answers": {
+      "A": "Phi tập trung hoàn toàn",
+      "B": "Mỗi máy vừa là client vừa là server",
+      "C": "Khả năng chịu lỗi thấp hơn Client-Server",
+      "D":  "Dễ quản lý tập trung hơn"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q11",
+    "question": "Ivy file system sử dụng công nghệ gì để định vị dữ liệu?",
+    "answers": {
+      "A": "Central index server",
+      "B": "Chord DHT (Distributed Hash Table)",
+      "C": "DNS lookup",
+      "D": "Broadcast protocol"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q12",
+    "question": "Hạn chế chính của Direct Attached Storage (DAS) là:",
+    "answers": {
+      "A": "Tốc độ truy cập chậm",
+      "B": "Chỉ máy chủ kết nối trực tiếp mới truy cập được",
+      "C": "Khó chia sẻ dữ liệu giữa các máy chủ",
+      "D":  "Chi phí cao hơn NAS"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q13",
+    "question": "Trong DAS, File System và Block Storage:",
+    "answers": {
+      "A": "Nằm ở hai thiết bị khác nhau",
+      "B": "Nằm cùng một chỗ bên trong máy chủ",
+      "C": "Được kết nối qua mạng IP",
+      "D": "Được quản lý bởi server riêng biệt"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q14",
+    "question": "NAS (Network Attached Storage) truy cập dữ liệu qua:",
+    "answers": {
+      "A": "Cáp SCSI trực tiếp",
+      "B": "Mạng IP (Ethernet)",
+      "C": "Fibre Channel",
+      "D":  "Cáp USB"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q15",
+    "question": "Máy chủ NAS nhận yêu cầu theo dạng:",
+    "answers": {
+      "A": "Block I/O",
+      "B":  "File I/O",
+      "C": "Object I/O",
+      "D":  "Memory I/O"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q16",
+    "question": "Trong NAS, máy chủ phải xử lý:",
+    "answers": {
+      "A": "Chỉ Metadata",
+      "B": "Chỉ dữ liệu thực tế",
+      "C": "Cả Metadata và dữ liệu thực tế",
+      "D": "Chỉ authentication"
+    },
+    "correctAnswers": ["C"]
+  },
+  {
+    "id": "fs_q17",
+    "question": "SAN (Storage Area Network) thường sử dụng công nghệ kết nối:",
+    "answers": {
+      "A": "Ethernet thông thường",
+      "B": "Fibre Channel",
+      "C": "iSCSI",
+      "D": "Wi-Fi 6"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q18",
+    "question": "Trong SAN, File System nằm ở đâu?",
+    "answers": {
+      "A": "Trên Storage Server",
+      "B": "Trên máy chủ ứng dụng",
+      "C": "Trên network switch",
+      "D": "Phân tán trên tất cả các node"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q19",
+    "question": "Trong SAN, dữ liệu thực tế được truyền tải:",
+    "answers": {
+      "A": "Qua máy chủ metadata",
+      "B": "Trực tiếp giữa client và thiết bị lưu trữ qua mạng SAN",
+      "C": "Qua mạng Internet công cộng",
+      "D":  "Thông qua file server trung gian"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q20",
+    "question": "Lợi ích chính của SAN so với NAS là:",
+    "answers": {
+      "A": "Dễ cài đặt hơn",
+      "B":  "Hiệu suất cực cao và độ trễ thấp",
+      "C": "Chi phí thấp hơn",
+      "D": "Khả năng mở rộng không giới hạn"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q21",
+    "question": "Object Storage Device (OSD) khác với ổ đĩa truyền thống ở điểm:",
+    "answers":  {
+      "A": "Lưu trữ objects thay vì blocks",
+      "B": "Tự quản lý việc phân bổ không gian",
+      "C": "Chỉ có thể đọc, không ghi được",
+      "D": "Nhanh hơn về tốc độ quay đĩa"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q22",
+    "question": "Mỗi object trong OSD được xác định bằng:",
+    "answers": {
+      "A": "Tên file text",
+      "B": "Object ID (OID) 64-bit",
+      "C": "Địa chỉ IP",
+      "D": "UUID 128-bit"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q23",
+    "question": "Các đối tượng trong OSD có đặc điểm:",
+    "answers": {
+      "A": "Kích thước cố định",
+      "B": "Độ dài thay đổi",
+      "C": "Được tạo/giải phóng linh động",
+      "D": "Phải được định dạng trước khi sử dụng"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q24",
+    "question": "Bảo mật trong OSD được thực hiện:",
+    "answers": {
+      "A": "Trên toàn bộ đĩa (Zoning)",
+      "B": "Trên từng đối tượng bằng Capabilities",
+      "C": "Không có cơ chế bảo mật",
+      "D": "Chỉ qua mật khẩu đơn giản"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q25",
+    "question": "OSD hỗ trợ giao thức vận chuyển nào?",
+    "answers":  {
+      "A": "FC SCSI",
+      "B":  "iSCSI",
+      "C": "RPC",
+      "D": "FTP"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q26",
+    "question": "Trong Object-based File System, client có quyền:",
+    "answers": {
+      "A": "Chỉ yêu cầu file qua server",
+      "B": "Truy cập trực tiếp vào OSD để đọc/ghi dữ liệu",
+      "C": "Sửa đổi metadata trực tiếp",
+      "D": "Quản lý toàn bộ hệ thống file"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q27",
+    "question": "Metadata Server (MDS) quản lý thông tin nào?",
+    "answers":  {
+      "A": "Cấu trúc phân cấp file và thư mục",
+      "B": "Quyền truy cập (ACL)",
+      "C": "Bản đồ vị trí các objects",
+      "D": "Nội dung thực tế của file"
+    },
+    "correctAnswers":  ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q28",
+    "question": "Khi client muốn đọc file, MDS gửi cho client:",
+    "answers": {
+      "A": "Nội dung file đầy đủ",
+      "B": "Danh sách Object IDs",
+      "C":  "Vị trí các OSD chứa objects",
+      "D": "Capability/Token bảo mật"
+    },
+    "correctAnswers": ["B", "C", "D"]
+  },
+  {
+    "id": "fs_q29",
+    "question": "Lợi ích của việc tách riêng MDS là:",
+    "answers": {
+      "A": "Loại bỏ bottleneck tại server",
+      "B": "Tăng độ phức tạp hệ thống",
+      "C": "Khả năng mở rộng tốt hơn",
+      "D":  "Giảm chi phí phần cứng"
+    },
+    "correctAnswers": ["A", "C"]
+  },
+  {
+    "id": "fs_q30",
+    "question": "MDS đứng ngoài luồng vận chuyển dữ liệu, nghĩa là:",
+    "answers": {
+      "A":  "MDS không xử lý dữ liệu thực tế",
+      "B": "Client tương tác trực tiếp với OSD để lấy data",
+      "C": "MDS chỉ cung cấp thông tin điều phối",
+      "D": "MDS xử lý tất cả I/O operations"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q31",
+    "question": "Storage Pooling cho phép:",
+    "answers": {
+      "A": "Nhiều file systems chia sẻ chung các OSD",
+      "B": "Giảm dung lượng lưu trữ cần thiết",
+      "C":  "Tăng hiệu quả sử dụng tài nguyên",
+      "D": "Mỗi file system phải có OSD riêng"
+    },
+    "correctAnswers": ["A", "C"]
+  },
+  {
+    "id": "fs_q32",
+    "question": "So với NAS, Object-based File System có ưu điểm:",
+    "answers": {
+      "A":  "Client tự xử lý dữ liệu với OSD",
+      "B":  "Server không bị quá tải vận chuyển dữ liệu",
+      "C": "Đơn giản hơn trong triển khai",
+      "D": "Không cần Metadata Server"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q33",
+    "question": "So với SAN (hoạt động ở mức Block I/O), Object Storage:",
+    "answers": {
+      "A": "Hiểu về 'đối tượng' thay vì chỉ blocks",
+      "B": "Cho phép bảo mật tốt hơn ở mức thiết bị",
+      "C": "Phụ thuộc hoàn toàn vào máy chủ",
+      "D": "Quản lý không gian thông minh hơn"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q34",
+    "question": "Phương pháp Concatenation trong naming có đặc điểm:",
+    "answers": {
+      "A": "Tên file bao gồm tên máy chủ",
+      "B": "Làm lộ vị trí vật lý",
+      "C":  "Đạt được Location Independence",
+      "D": "Ví dụ: ServerA:/Folder/file.txt"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q35",
+    "question": "Single Global Directory có đặc điểm:",
+    "answers": {
+      "A": "Tất cả files trong một cấu trúc cây duy nhất",
+      "B":  "Không phụ thuộc vào vị trí máy chủ",
+      "C": "Mỗi client có namespace riêng",
+      "D": "Phải biết tên server để truy cập"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q36",
+    "question": "UNIX semantics trong file sharing có đặc điểm:",
+    "answers": {
+      "A": "Thay đổi từ write có hiệu lực ngay lập tức",
+      "B": "Users khác thấy dữ liệu mới ngay",
+      "C": "Thay đổi chỉ có hiệu lực sau khi đóng file",
+      "D": "Dễ triển khai nhất"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q37",
+    "question": "Session semantics hoạt động như thế nào?",
+    "answers": {
+      "A": "Thay đổi ngay lập tức với mọi người",
+      "B": "Thay đổi chỉ có hiệu lực cục bộ trong phiên",
+      "C": "Sau khi close file, thay đổi mới cập nhật lên server",
+      "D": "File không thể chia sẻ đồng thời"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q38",
+    "question": "Immutable-Shared-Files semantics quy định:",
+    "answers": {
+      "A": "File chia sẻ không thể sửa đổi",
+      "B": "Muốn sửa phải tạo file mới",
+      "C": "Rất dễ triển khai",
+      "D": "Cho phép concurrent writes"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q39",
+    "question": "Transaction semantics đảm bảo:",
+    "answers": {
+      "A": "Tính chất all-or-nothing",
+      "B": "Các thao tác đọc/ghi được nhóm lại",
+      "C": "Tính toàn vẹn dữ liệu",
+      "D": "Tốc độ xử lý nhanh nhất"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id":  "fs_q40",
+    "question": "Server caching lưu dữ liệu ở đâu?",
+    "answers": {
+      "A": "Trên đĩa cứng server",
+      "B": "Trên RAM của máy chủ",
+      "C": "Trên client machine",
+      "D": "Trên SSD riêng biệt"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q41",
+    "question": "Vấn đề của server caching là:",
+    "answers": {
+      "A": "Vẫn tốn độ trễ mạng",
+      "B": "Cần quản lý cache replacement strategy",
+      "C": "Không giảm được disk access",
+      "D": "Chi phí RAM cao"
+    },
+    "correctAnswers": ["A", "B"]
+  },
+  {
+    "id": "fs_q42",
+    "question": "Client caching trên RAM phù hợp với:",
+    "answers": {
+      "A":  "Máy trạm có ổ cứng lớn",
+      "B": "Diskless workstation",
+      "C": "Truy cập nhanh hơn từ disk",
+      "D": "Hệ thống có nhiều RAM"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q43",
+    "question": "Nhược điểm của client caching trên RAM là:",
+    "answers": {
+      "A": "Tốc độ chậm",
+      "B": "Cạnh tranh với virtual memory cho physical memory",
+      "C": "Không cache được file lớn",
+      "D":  "Tốn băng thông mạng"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q44",
+    "question": "Client caching trên local disk cho phép:",
+    "answers": {
+      "A": "Cache các file lớn",
+      "B":  "Quản lý virtual memory đơn giản hơn",
+      "C":  "Workstation hoạt động khi mất mạng",
+      "D":  "Tốc độ nhanh hơn RAM"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q45",
+    "question": "Lợi ích của caching trong DFS bao gồm:",
+    "answers": {
+      "A":  "Giảm remote access",
+      "B": "Giảm network traffic",
+      "C": "Giảm server load",
+      "D": "Tăng consistency"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q46",
+    "question": "Chi phí mạng khi cache các khối lớn so với nhiều yêu cầu nhỏ:",
+    "answers": {
+      "A": "Cao hơn đáng kể",
+      "B": "Thấp hơn",
+      "C": "Tương đương nhau",
+      "D": "Phụ thuộc vào băng thông"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q47",
+    "question": "Caching tối ưu hóa disk access bằng cách:",
+    "answers": {
+      "A":  "Đọc/ghi các khối lớn",
+      "B": "Tránh random disk blocks",
+      "C": "Tăng tốc độ quay đĩa",
+      "D": "Sử dụng SSD thay vì HDD"
+    },
+    "correctAnswers":  ["A", "B"]
+  },
+  {
+    "id": "fs_q48",
+    "question": "Thách thức lớn nhất của caching là:",
+    "answers": {
+      "A": "Chi phí phần cứng",
+      "B": "Cache-consistency problem",
+      "C": "Tốc độ truy cập",
+      "D": "Dung lượng lưu trữ"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q49",
+    "question": "Khi có nhiều writes, overhead để giải quyết cache consistency:",
+    "answers": {
+      "A": "Giảm xuống",
+      "B": "Không thay đổi",
+      "C": "Trở nên rất lớn và đáng kể",
+      "D": "Tùy thuộc vào số lượng clients"
+    },
+    "correctAnswers": ["C"]
+  },
+  {
+    "id": "fs_q50",
+    "question": "Caching ảnh hưởng đến tính chính xác dữ liệu như thế nào?",
+    "answers": {
+      "A": "Tăng độ chính xác",
+      "B": "Rủi ro đọc phải dữ liệu cũ",
+      "C": "Không ảnh hưởng",
+      "D": "Tự động đồng bộ hóa"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q51",
+    "question": "Replication nhằm mục tiêu:",
+    "answers":  {
+      "A": "Tăng độ tin cậy (Reliability)",
+      "B": "Cải thiện availability",
+      "C": "Load balancing",
+      "D":  "Giảm dung lượng lưu trữ"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q52",
+    "question": "Trong replication, khi một server hỏng:",
+    "answers": {
+      "A": "Dữ liệu bị mất hoàn toàn",
+      "B": "Hệ thống chuyển sang server khác",
+      "C": "Phải restore từ backup",
+      "D": "Users vẫn truy cập được dữ liệu"
+    },
+    "correctAnswers":  ["B", "D"]
+  },
+  {
+    "id": "fs_q53",
+    "question": "Thách thức thiết kế của replication là:",
+    "answers": {
+      "A": "Làm sao để minh bạch với người dùng",
+      "B": "Giữ các bản sao nhất quán",
+      "C": "Tăng tốc độ đọc",
+      "D":  "Xử lý sự cố mạng hoặc lỗi server"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q54",
+    "question": "Khi 1000 người truy cập cùng một file có replication:",
+    "answers": {
+      "A": "Tất cả phải đợi lần lượt",
+      "B": "Có thể chia 500 người cho mỗi server",
+      "C": "Chỉ server đầu tiên xử lý",
+      "D": "Giảm tải cho hệ thống"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q55",
+    "question": "Hệ thống có Location Independence sử dụng:",
+    "answers": {
+      "A": "Bản đồ ánh xạ giữa tên logic và địa chỉ vật lý",
+      "B":  "Hardcoded paths",
+      "C": "Tên file chứa thông tin server",
+      "D": "Cập nhật mapping khi file di chuyển"
+    },
+    "correctAnswers": ["A", "D"]
+  },
+  {
+    "id": "fs_q56",
+    "question": "Đường dẫn `\\CompanyShared\\Reports\\2023.pdf` thể hiện:",
+    "answers":  {
+      "A": "Location Independence",
+      "B": "Location Transparency",
+      "C": "Concatenation naming",
+      "D": "Không lộ vị trí vật lý cụ thể"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q57",
+    "question": "Trong P2P file system, mỗi node:",
+    "answers": {
+      "A": "Chỉ là client",
+      "B": "Chỉ là server",
+      "C": "Vừa là client vừa là server",
+      "D": "Có vai trò thay đổi theo thời gian"
+    },
+    "correctAnswers": ["C"]
+  },
+  {
+    "id": "fs_q58",
+    "question": "Google File System (GFS) sử dụng kiến trúc:",
+    "answers": {
+      "A": "Pure P2P",
+      "B": "Client-Server",
+      "C": "Symmetric",
+      "D": "Decentralized"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q59",
+    "question": "Chord DHT trong Ivy được dùng để:",
+    "answers": {
+      "A": "Mã hóa dữ liệu",
+      "B":  "Định vị dữ liệu trong mạng P2P",
+      "C":  "Thay thế cho central server",
+      "D": "Tăng tốc độ truyền tải"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q60",
+    "question": "Trong kiến trúc Client-Server, bottleneck xảy ra khi:",
+    "answers": {
+      "A": "Client quá ít",
+      "B": "Server bị quá tải",
+      "C": "Có quá nhiều requests đồng thời",
+      "D": "Băng thông mạng cao"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q61",
+    "question": "Centralized administration trong DFS có lợi ích:",
+    "answers": {
+      "A":  "Dễ quản lý và bảo mật",
+      "B": "Phân quyền tập trung",
+      "C": "Giảm overhead quản lý",
+      "D":  "Tăng scalability"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id":  "fs_q62",
+    "question": "Metadata trong MDS KHÔNG bao gồm:",
+    "answers": {
+      "A":  "Cấu trúc thư mục",
+      "B": "Quyền truy cập",
+      "C": "Nội dung file",
+      "D": "Bản đồ vị trí objects"
+    },
+    "correctAnswers": ["C"]
+  },
+  {
+    "id": "fs_q63",
+    "question": "Access Control List (ACL) trong metadata xác định:",
+    "answers": {
+      "A": "Kích thước file",
+      "B": "Ai có quyền đọc",
+      "C":  "Ai có quyền ghi",
+      "D": "Ai có quyền xóa"
+    },
+    "correctAnswers": ["B", "C", "D"]
+  },
+  {
+    "id": "fs_q64",
+    "question": "Capability/Token mà MDS cấp cho client dùng để:",
+    "answers":  {
+      "A": "Mã hóa dữ liệu",
+      "B": "Xác thực với OSD",
+      "C": "Truy cập trực tiếp OSD",
+      "D": "Thay thế password"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q65",
+    "question": "Khi file cực lớn, MDS:",
+    "answers": {
+      "A": "Bị quá tải như server truyền thống",
+      "B": "Vẫn hoạt động nhẹ nhàng",
+      "C":  "Chỉ gửi bản đồ, không gửi data",
+      "D": "Phải chia nhỏ và gửi từng phần"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q66",
+    "question": "Nếu muốn tăng dung lượng lưu trữ trong Object-based system:",
+    "answers": {
+      "A": "Nâng cấp MDS",
+      "B": "Thêm OSD",
+      "C": "Thay đổi file system",
+      "D": "Không ảnh hưởng đến MDS"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q67",
+    "question": "Nếu số lượng yêu cầu tìm kiếm tăng cao trong Object-based system:",
+    "answers": {
+      "A": "Thêm OSD",
+      "B": "Nâng cấp MDS cluster",
+      "C": "Giảm số lượng clients",
+      "D": "Không ảnh hưởng đến OSD"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q68",
+    "question":  "Trong NFS/SMB truyền thống, luồng dữ liệu đi qua:",
+    "answers":  {
+      "A": "Client → Server → Disk",
+      "B": "Client → Disk trực tiếp",
+      "C": "Client → MDS → OSD",
+      "D": "Server xử lý cả quản lý và vận chuyển"
+    },
+    "correctAnswers": ["A", "D"]
+  },
+  {
+    "id": "fs_q69",
+    "question": "DAS kết nối với server qua:",
+    "answers": {
+      "A": "Mạng IP",
+      "B": "Cáp vật lý trực tiếp",
+      "C": "Wireless",
+      "D": "Fibre Channel"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q70",
+    "question": "Thứ tự phát triển công nghệ lưu trữ là:",
+    "answers": {
+      "A": "DAS → NAS → SAN → Object Storage",
+      "B": "NAS → DAS → SAN → Object Storage",
+      "C": "SAN → NAS → DAS → Object Storage",
+      "D":  "DAS → SAN → NAS → Object Storage"
+    },
+    "correctAnswers": ["A"]
+  },
+  {
+    "id": "fs_q71",
+    "question": "iSCSI là giao thức được dùng trong:",
+    "answers": {
+      "A": "DAS",
+      "B": "SAN",
+      "C": "OSD",
+      "D": "NAS"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q72",
+    "question": "File I/O là đặc trưng của:",
+    "answers": {
+      "A": "DAS",
+      "B": "NAS",
+      "C": "SAN",
+      "D":  "Object Storage"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q73",
+    "question": "Block I/O là đặc trưng của:",
+    "answers":  {
+      "A": "NAS",
+      "B": "SAN",
+      "C":  "DAS",
+      "D": "P2P systems"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q74",
+    "question": "Object I/O là đặc trưng của:",
+    "answers": {
+      "A": "Traditional disk storage",
+      "B": "OSD",
+      "C": "Object-based File System",
+      "D": "NAS"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q75",
+    "question":  "Uniform view trong DFS có nghĩa là:",
+    "answers": {
+      "A": "Tất cả clients thấy cùng một giao diện",
+      "B": "Cùng cấu trúc thư mục từ các clients khác nhau",
+      "C": "Mọi user có quyền giống nhau",
+      "D": "Tính minh bạch về vị trí"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q76",
+    "question": "Scalability trong DFS đạt được bằng:",
+    "answers":  {
+      "A": "Replication",
+      "B": "Caching",
+      "C": "Tách metadata và data transfer",
+      "D": "Giảm số lượng users"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q77",
+    "question": "Fault tolerance trong DFS được cải thiện qua:",
+    "answers": {
+      "A": "Replication",
+      "B": "Single point of failure",
+      "C": "Backup thường xuyên",
+      "D": "Distributed architecture"
+    },
+    "correctAnswers": ["A", "C", "D"]
+  },
+  {
+    "id": "fs_q78",
+    "question": "Name resolution trong DFS chuyển đổi:",
+    "answers": {
+      "A": "Tên logic sang địa chỉ vật lý",
+      "B": "IP address sang hostname",
+      "C": "File name sang file location",
+      "D": "Object ID sang OSD address"
+    },
+    "correctAnswers": ["A", "C"]
+  },
+  {
+    "id": "fs_q79",
+    "question": "Mounting trong DFS làm cho:",
+    "answers": {
+      "A": "Remote directory trở thành local",
+      "B": "User cần biết vị trí vật lý",
+      "C": "Thư mục từ xa xuất hiện trong cây thư mục local",
+      "D": "Tăng network latency"
+    },
+    "correctAnswers": ["A", "C"]
+  },
+  {
+    "id": "fs_q80",
+    "question": "Consistency trong distributed caching đòi hỏi:",
+    "answers":  {
+      "A": "Tất cả clients thấy cùng dữ liệu",
+      "B": "Cập nhật đồng bộ trên các cache",
+      "C": "Chi phí overhead cao khi có nhiều writes",
+      "D": "Bỏ qua tính chính xác để tăng tốc"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q81",
+    "question": "Write-through caching có đặc điểm:",
+    "answers":  {
+      "A": "Ghi ngay vào server",
+      "B": "Consistency cao",
+      "C": "Hiệu suất ghi nhanh",
+      "D": "Độ trễ cao hơn write-back"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q82",
+    "question": "Diskless workstation phù hợp với loại caching:",
+    "answers": {
+      "A": "Client cache trên local disk",
+      "B": "Client cache trên RAM",
+      "C": "Server cache",
+      "D": "Không cache"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q83",
+    "question": "Trong Session semantics, hai users đồng thời mở cùng file:",
+    "answers": {
+      "A": "Thấy thay đổi của nhau ngay lập tức",
+      "B": "Mỗi người có phiên riêng",
+      "C":  "Thay đổi chỉ cập nhật khi close",
+      "D": "Có thể gây mất dữ liệu nếu cả hai cùng ghi"
+    },
+    "correctAnswers": ["B", "C", "D"]
+  },
+  {
+    "id": "fs_q84",
+    "question": "OSD thông minh hơn ổ đĩa truyền thống vì:",
+    "answers": {
+      "A": "Tự quản lý space allocation",
+      "B": "Hiểu về objects không chỉ blocks",
+      "C": "Có tốc độ quay nhanh hơn",
+      "D":  "Hỗ trợ per-object security"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q85",
+    "question": "Zoning trong traditional disk storage dùng để:",
+    "answers": {
+      "A": "Bảo mật toàn bộ đĩa",
+      "B": "Bảo mật từng đối tượng",
+      "C": "Chia đĩa thành các vùng",
+      "D":  "Tăng tốc độ truy cập"
+    },
+    "correctAnswers": ["A", "C"]
+  },
+  {
+    "id": "fs_q86",
+    "question": "RPC (Remote Procedure Call) được hỗ trợ bởi:",
+    "answers": {
+      "A": "Traditional disk",
+      "B": "OSD",
+      "C": "DAS",
+      "D": "Object-based systems"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q87",
+    "question": "Fibre Channel là công nghệ chủ yếu cho:",
+    "answers": {
+      "A": "NAS",
+      "B": "SAN",
+      "C":  "Kết nối tốc độ cao",
+      "D": "DAS"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q88",
+    "question":  "Trong Object-based File System, khi thêm OSD mới:",
+    "answers": {
+      "A": "Phải restart toàn bộ hệ thống",
+      "B": "MDS cập nhật mapping",
+      "C": "Tăng capacity một cách linh hoạt",
+      "D": "Không ảnh hưởng đến clients đang hoạt động"
+    },
+    "correctAnswers": ["B", "C", "D"]
+  },
+  {
+    "id": "fs_q89",
+    "question": "Transparent replication có nghĩa là:",
+    "answers": {
+      "A": "User biết rõ đang truy cập bản sao nào",
+      "B": "User không cần biết về việc nhân bản",
+      "C":  "Hệ thống tự động chọn replica phù hợp",
+      "D": "Tất cả replicas đều giống hệt nhau"
+    },
+    "correctAnswers": ["B", "C", "D"]
+  },
+  {
+    "id": "fs_q90",
+    "question": "Khi một replica không được cập nhật kịp thời do network partition:",
+    "answers": {
+      "A": "Xảy ra consistency problem",
+      "B": "Users có thể đọc stale data",
+      "C":  "Cần cơ chế reconciliation",
+      "D": "Không có vấn đề gì"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q91",
+    "question": "Load balancing trong replication thực hiện bằng:",
+    "answers":  {
+      "A": "Phân phối requests đến các replicas khác nhau",
+      "B": "Chỉ dùng một replica chính",
+      "C": "Round-robin scheduling",
+      "D": "Chọn replica gần nhất hoặc ít tải nhất"
+    },
+    "correctAnswers": ["A", "C", "D"]
+  },
+  {
+    "id": "fs_q92",
+    "question": "Virtual memory system cạnh tranh với client RAM cache về:",
+    "answers": {
+      "A": "Physical memory space",
+      "B": "CPU cycles",
+      "C": "Disk I/O bandwidth",
+      "D": "Network bandwidth"
+    },
+    "correctAnswers": ["A"]
+  },
+  {
+    "id": "fs_q93",
+    "question": "Cache replacement strategy cần thiết khi:",
+    "answers": {
+      "A": "Cache đầy",
+      "B": "Cần chọn item để loại bỏ",
+      "C": "Tất cả dữ liệu đều quan trọng như nhau",
+      "D":  "Sử dụng LRU hoặc LFU"
+    },
+    "correctAnswers":  ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q94",
+    "question": "Transaction semantics phù hợp với:",
+    "answers": {
+      "A":  "Database operations",
+      "B": "Yêu cầu ACID properties",
+      "C": "Simple file reads",
+      "D": "Critical data integrity"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q95",
+    "question": "Immutable files dễ triển khai vì:",
+    "answers": {
+      "A": "Không có concurrent write conflicts",
+      "B": "Không cần locking mechanisms",
+      "C": "Cho phép unlimited caching",
+      "D": "Users có thể sửa file bất kỳ"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  },
+  {
+    "id": "fs_q96",
+    "question": "Single global directory cung cấp:",
+    "answers": {
+      "A": "Unified namespace toàn hệ thống",
+      "B": "Location transparency",
+      "C": "Mỗi server có namespace riêng",
+      "D":  "Dễ quản lý hơn concatenation"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q97",
+    "question": "Network latency ảnh hưởng đến:",
+    "answers": {
+      "A": "Server caching performance",
+      "B": "Client-to-OSD data transfer",
+      "C": "Local disk access",
+      "D": "Metadata requests"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q98",
+    "question": "High-performance web search servers sử dụng:",
+    "answers": {
+      "A":  "Client caching",
+      "B": "Server caching in main memory",
+      "C": "No caching",
+      "D":  "Distributed caching layers"
+    },
+    "correctAnswers": ["B", "D"]
+  },
+  {
+    "id": "fs_q99",
+    "question": "Khi client mất kết nối mạng, client cache trên local disk cho phép:",
+    "answers": {
+      "A": "Tiếp tục làm việc với cached files",
+      "B": "Đồng bộ lại khi reconnect",
+      "C": "Mất tất cả dữ liệu",
+      "D": "Offline operation mode"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "fs_q100",
+    "question": "Các yếu tố ảnh hưởng đến availability trong DFS:",
+    "answers":  {
+      "A": "Replication factor",
+      "B": "Network reliability",
+      "C": "Server redundancy",
+      "D":  "User interface design"
+    },
+    "correctAnswers": ["A", "B", "C"]
+  }
+]
