@@ -1,0 +1,1442 @@
+[
+  {
+    "id":  "fe_q1",
+    "question": "Feature Engineering là gì theo định nghĩa của Jason Brownlee & Andrew Ng?",
+    "answers": {
+      "A": "Chỉ là data cleaning",
+      "B": "Dùng domain knowledge biến raw data thành features",
+      "C": "Giúp mô hình học dễ hơn và chính xác hơn",
+      "D": "Tự động hóa toàn bộ quy trình ML"
+    },
+    "correctAnswers": ["B", "C"],
+    "explanation": "Feature Engineering là dùng domain knowledge (B) để biến đổi raw data thành features giúp model học tốt hơn (C). Nó KHÔNG chỉ là cleaning và không tự động hóa toàn bộ ML."
+  },
+  {
+    "id": "fe_q2",
+    "question": "GIGO principle trong Machine Learning có ý nghĩa gì?",
+    "answers":  {
+      "A": "Garbage In, Garbage Out",
+      "B": "Dữ liệu rác + Mô hình tốt = Kết quả rác",
+      "C": "Good features quan trọng hơn complex model",
+      "D": "Garbage In, Gold Out"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "GIGO (A) nghĩa là dữ liệu rác cho kết quả rác dù model tốt (B), và good features + simple model thường tốt hơn (C). Không phải 'Gold Out'."
+  },
+  {
+    "id": "fe_q3",
+    "question": "Binarization được sử dụng khi nào?",
+    "answers": {
+      "A":  "Khi hành động có xảy ra quan trọng hơn số lần xảy ra",
+      "B": "Biến đổi counts thành 0 hoặc 1",
+      "C": "Khi cần giữ nguyên frequency information",
+      "D": "Giảm noise từ outliers"
+    },
+    "correctAnswers": ["A", "B", "D"],
+    "explanation": "Binarization dùng khi có/không quan trọng hơn số lần (A), chuyển sang 0/1 (B), giảm outlier noise (D). Nó BỎ frequency info, không giữ."
+  },
+  {
+    "id": "fe_q4",
+    "question": "Example về Binarization trong music recommendation?",
+    "answers": {
+      "A": "User nghe 100 lần có thể chỉ là quên tắt",
+      "B": "Listen_Count:  0, 1, 100, 1000",
+      "C": "Binarize thành Has_Listened: 0 or 1",
+      "D": "Giữ nguyên count để biết user yêu thích"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Binarization giải quyết vấn đề 100 lần có thể là quên tắt (A), từ counts (B) sang binary (C). Mục đích là BỎ count, không giữ."
+  },
+  {
+    "id": "fe_q5",
+    "question": "Fixed-width Binning (Equal Width) có đặc điểm gì?",
+    "answers":  {
+      "A": "Bin_Width = (Max - Min) / Number_of_Bins",
+      "B": "Dễ tính toán",
+      "C": "Nếu data skewed → nhiều bins trống",
+      "D": "Mỗi bin có số observations bằng nhau"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Equal Width:  formula (A), dễ tính (B), nhưng skewed data gây bins trống (C). Số observations bằng nhau là Equal Frequency, không phải Equal Width."
+  },
+  {
+    "id": "fe_q6",
+    "question": "Adaptive-width Binning (Equal Frequency) hoạt động như thế nào?",
+    "answers": {
+      "A": "Mỗi bin có số lượng observations bằng nhau",
+      "B": "Sử dụng Quantiles (điểm phân vị)",
+      "C": "Bin widths cố định",
+      "D": "Cân bằng hơn cho skewed data"
+    },
+    "correctAnswers": ["A", "B", "D"],
+    "explanation": "Equal Frequency: mỗi bin bằng nhau về số observations (A), dùng quantiles (B), tốt cho skewed data (D). Bin widths VARIABLE, không cố định."
+  },
+  {
+    "id": "fe_q7",
+    "question": "Các loại Quantiles phổ biến? ",
+    "answers": {
+      "A": "Median (2-quantile) - 50/50 split",
+      "B": "Quartiles (4-quantile) - mỗi phần 25%",
+      "C": "Deciles (10-quantile) - mỗi phần 10%",
+      "D": "Centiles (100-quantile) - mỗi phần 1%"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Quantiles phổ biến: Median (A), Quartiles Q1-Q4 (B), Deciles D1-D10 (C). Centiles/Percentiles cũng tồn tại nhưng ít phổ biến hơn trong binning."
+  },
+  {
+    "id": "fe_q8",
+    "question":  "So sánh Fixed-width vs Adaptive-width binning cho income data?",
+    "answers": {
+      "A": "Fixed-width: 90 người < 10M → bin 1 có 90, bins khác trống",
+      "B": "Adaptive-width:  Mỗi quartile có đúng 25 người",
+      "C": "Fixed-width tốt hơn cho skewed data",
+      "D":  "Adaptive-width học sự khác biệt giữa groups tốt hơn"
+    },
+    "correctAnswers": ["A", "B", "D"],
+    "explanation": "Fixed-width gây unbalanced bins với skewed data (A), Adaptive-width cân bằng (B) và học tốt hơn (D). Adaptive-width TỐT HƠN cho skewed, không phải Fixed."
+  },
+  {
+    "id": "fe_q9",
+    "question": "Log Transformation được áp dụng khi nào?",
+    "answers": {
+      "A": "Data bị positive skew (lệch phải)",
+      "B": "Có vài giá trị cực lớn",
+      "C":  "Transform về gần Normal Distribution",
+      "D": "Data đã Normal rồi"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Log Transformation cho positive skew (A), outliers lớn (B), để về Normal (C). Nếu đã Normal thì KHÔNG cần transform nữa."
+  },
+  {
+    "id": "fe_q10",
+    "question": "Effects của Log Transformation? ",
+    "answers": {
+      "A": "Compress large values",
+      "B": "Expand small values",
+      "C": "Giảm tác động outliers",
+      "D": "Tăng tác động outliers"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Log compress lớn (A), expand nhỏ (B), giảm outlier impact (C). Nó GIẢM outliers, không tăng."
+  },
+  {
+    "id": "fe_q11",
+    "question": "Box-Cox Transformation có đặc điểm gì? ",
+    "answers": {
+      "A": "Tự tìm optimal λ parameter",
+      "B": "Generalized power transformation",
+      "C": "Chỉ áp dụng cho x > 0 (positive values)",
+      "D": "Áp dụng cho mọi giá trị kể cả âm"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Box-Cox tự tìm λ (A), là generalized transformation (B), YÊU CẦU x > 0 (C). Nó KHÔNG áp dụng cho negative values."
+  },
+  {
+    "id": "fe_q12",
+    "question":  "Tại sao cần Feature Scaling?",
+    "answers": {
+      "A": "Age (0-100) vs Income (0-1B) → Income bị coi quan trọng gấp triệu lần",
+      "B": "Algorithms như Linear Regression, KNN, SVM sensitive to scale",
+      "C": "Scale về cùng range",
+      "D": "Tree-based models rất cần scaling"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Scaling cần vì magnitude differences (A) ảnh hưởng algorithms (B), cần scale về cùng range (C). Tree-based models KHÔNG cần scaling."
+  },
+  {
+    "id": "fe_q13",
+    "question": "Min-Max Scaling có đặc điểm gì?",
+    "answers":  {
+      "A": "Scale về range [0, 1]",
+      "B": "Formula: (x - min) / (max - min)",
+      "C": "Preserves zeros - tốt cho sparse data",
+      "D": "Very sensitive to outliers"
+    },
+    "correctAnswers": ["A", "B", "C", "D"],
+    "explanation":  "Min-Max:  scale [0,1] (A), formula (B), preserves zeros (C), nhưng VERY sensitive outliers (D) - một outlier lớn làm tất cả values khác về gần 0."
+  },
+  {
+    "id": "fe_q14",
+    "question": "Standard (Z-score) Scaling có đặc điểm gì?",
+    "answers": {
+      "A": "Mean = 0, Std = 1",
+      "B": "Formula: (x - μ) / σ",
+      "C": "Less sensitive to outliers hơn Min-Max",
+      "D":  "Bound về range [0, 1]"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Standard Scaling: mean 0 std 1 (A), formula (B), less outlier sensitive (C). Nó KHÔNG bound về [0,1] mà unbounded."
+  },
+  {
+    "id": "fe_q15",
+    "question":  "L2 Normalization khác các scaling khác như thế nào?",
+    "answers": {
+      "A":  "Normalize theo vector, không phải từng feature",
+      "B": "||x||₂ = 1 (vector length = 1)",
+      "C": "Direction giữ nguyên, magnitude thay đổi",
+      "D": "Normalize từng feature độc lập"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "L2 Norm: normalize vector (A), length=1 (B), giữ direction (C). Nó KHÔNG normalize từng feature độc lập như Min-Max/Standard."
+  },
+  {
+    "id": "fe_q16",
+    "question":  "Khi nào nên dùng Min-Max Scaling?",
+    "answers": {
+      "A": "Biết chắc min/max bounds",
+      "B": "Không có outliers",
+      "C": "Neural Networks với bounded activation",
+      "D": "Data có nhiều outliers"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Min-Max phù hợp:  known bounds (A), no outliers (B), bounded activations (C). KHÔNG dùng khi có nhiều outliers vì rất sensitive."
+  },
+  {
+    "id": "fe_q17",
+    "question": "Khi nào nên dùng Standard Scaling?",
+    "answers": {
+      "A":  "Linear Regression, Logistic Regression",
+      "B": "SVM, Neural Networks",
+      "C": "Data gần Normal Distribution",
+      "D": "Tree-based models (Random Forest, XGBoost)"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Standard Scaling cho Linear/Logistic (A), SVM/NN (B), near-Normal data (C). Tree-based models KHÔNG cần scaling."
+  },
+  {
+    "id": "fe_q18",
+    "question": "L2 Normalization được dùng khi nào? ",
+    "answers": {
+      "A": "Text processing (TF-IDF)",
+      "B": "Cosine similarity calculations",
+      "C": "Direction quan trọng hơn magnitude",
+      "D": "Linear regression chuẩn"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "L2 Norm cho text/TF-IDF (A), cosine similarity (B), khi direction matters (C). Linear regression chuẩn dùng Standard Scaling, không phải L2."
+  },
+  {
+    "id": "fe_q19",
+    "question": "Label Encoding có vấn đề gì?",
+    "answers": {
+      "A": "Gán mỗi category một số unique",
+      "B": "Model có thể hiểu lầm:  TP. HCM (2) 'lớn hơn' Hà Nội (0)",
+      "C": "Không phù hợp cho nominal categories",
+      "D": "Phù hợp cho mọi loại categorical data"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Label Encoding: gán số (A), nhưng gây ordinal assumption sai (B), không phù hợp nominal (C). Nó KHÔNG phù hợp mọi loại mà chỉ ordinal."
+  },
+  {
+    "id": "fe_q20",
+    "question":  "Ordinal Encoding khác Label Encoding như thế nào? ",
+    "answers": {
+      "A": "Tuân thủ thứ tự logic",
+      "B": "Preserves order relationship",
+      "C": "Phù hợp cho ordinal categories (Low, Medium, High)",
+      "D": "Gán số ngẫu nhiên"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Ordinal Encoding: tuân thủ order (A), preserves relationship (B), cho ordinal data (C). Nó KHÔNG gán ngẫu nhiên mà theo order."
+  },
+  {
+    "id": "fe_q21",
+    "question":  "One-Hot Encoding có đặc điểm gì?",
+    "answers": {
+      "A": "Tạo N binary columns cho N categories",
+      "B": "Không có ordinal assumption",
+      "C": "Curse of dimensionality:  1000 categories → 1000 columns",
+      "D": "Giảm dimensionality"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "One-Hot:  N columns (A), no ordinal assumption (B), nhưng dimensionality explosion (C). Nó TĂNG dimensions, không giảm."
+  },
+  {
+    "id": "fe_q22",
+    "question":  "Frequency Encoding hoạt động như thế nào?",
+    "answers": {
+      "A": "Thay category bằng count hoặc frequency rank",
+      "B": "Model biết category nào phổ biến, nào hiếm",
+      "C": "Single column - không tăng dimensionality",
+      "D":  "Tạo nhiều columns như One-Hot"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Frequency Encoding: replace bằng count/rank (A), model biết popular/rare (B), single column (C). Nó KHÔNG tạo nhiều columns như One-Hot."
+  },
+  {
+    "id": "fe_q23",
+    "question": "Target Mean Encoding có đặc điểm gì?",
+    "answers": {
+      "A":  "Replace category bằng mean của target variable",
+      "B": "Rất mạnh, phổ biến Kaggle competitions",
+      "C": "Data Leakage risk - dễ học thuộc training data",
+      "D": "Không có risk gì"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Target Mean:  replace bằng target mean (A), mạnh trong Kaggle (B), nhưng có leakage risk (C). Cần cross-validation để tránh leakage."
+  },
+  {
+    "id": "fe_q24",
+    "question": "Làm thế nào tránh Data Leakage trong Target Mean Encoding?",
+    "answers": {
+      "A":  "Dùng cross-validation khi tính encoding",
+      "B": "Encode trên toàn bộ dataset một lần",
+      "C":  "Out-of-fold encoding",
+      "D": "Regularization techniques"
+    },
+    "correctAnswers": ["A", "C", "D"],
+    "explanation": "Tránh leakage: cross-validation (A), out-of-fold (C), regularization (D). KHÔNG encode toàn bộ dataset một lần vì gây leakage."
+  },
+  {
+    "id":  "fe_q25",
+    "question": "Feature Hashing được dùng khi nào? ",
+    "answers": {
+      "A": "Very high cardinality (millions of categories)",
+      "B": "Hash to fixed-size vector",
+      "C": "Memory efficient",
+      "D": "Ít categories (< 10)"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Feature Hashing cho high cardinality (A), hash to fixed size (B), memory efficient (C). ÍT categories thì dùng One-Hot, không cần Hashing."
+  },
+  {
+    "id": "fe_q26",
+    "question": "Feature Hashing có nhược điểm gì?",
+    "answers": {
+      "A": "Hash collisions - hai categories khác nhau hash vào cùng bin",
+      "B": "Loss of interpretability",
+      "C": "Perfect separation - không collision",
+      "D": "Thường không ảnh hưởng quá lớn accuracy"
+    },
+    "correctAnswers": ["A", "B", "D"],
+    "explanation": "Hashing nhược điểm: collisions (A), không interpretable (B), nhưng thường không ảnh hưởng lớn (D). Không phải perfect separation."
+  },
+  {
+    "id": "fe_q27",
+    "question":  "Bin-counting trong advertising CTR là gì?",
+    "answers": {
+      "A": "Ad_ID → Clicks / Impressions",
+      "B": "Trực tiếp cung cấp relationship giữa feature và target",
+      "C":  "Hiệu quả cho linear và tree-based models",
+      "D": "Chỉ cho deep learning"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Bin-counting: statistical measure như CTR (A), trực tiếp relationship (B), tốt cho linear/trees (C). KHÔNG chỉ cho deep learning."
+  },
+  {
+    "id": "fe_q28",
+    "question": "Encoding selection:  khi nào dùng gì?",
+    "answers":  {
+      "A": "Ordinal data (S, M, L) → Ordinal Encoding",
+      "B": "Few categories (< 10) → One-Hot",
+      "C": "Many categories → Target Mean hoặc Frequency",
+      "D": "Very high cardinality → Feature Hashing"
+    },
+    "correctAnswers": ["A", "B", "C", "D"],
+    "explanation":  "Selection:  Ordinal cho ordered (A), One-Hot cho few (B), Target Mean cho many (C), Hashing cho very high (D). Tất cả đúng."
+  },
+  {
+    "id": "fe_q29",
+    "question":  "Bag-of-Words (BoW) có đặc điểm gì?",
+    "answers":  {
+      "A": "Coi text như túi từ, không quan tâm order",
+      "B": "Output:  flat vector của word frequencies",
+      "C": "Loses structure hoàn toàn",
+      "D": "Preserves grammar và syntax"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "BoW: túi từ no order (A), flat frequency vector (B), mất structure (C). Nó KHÔNG preserves grammar."
+  },
+  {
+    "id": "fe_q30",
+    "question": "BoW problem example?",
+    "answers": {
+      "A": "'John is quicker than Mary' và 'Mary is quicker than John'",
+      "B": "Hai câu có vectors giống nhau",
+      "C": "Mất thông tin word order",
+      "D": "Hai câu có vectors khác nhau hoàn toàn"
+    },
+    "correctAnswers":  ["A", "B", "C"],
+    "explanation": "BoW problem: hai câu nghĩa khác (A) nhưng vectors giống nhau (B) vì mất order (C). Chúng GIỐNG NHAU, không khác."
+  },
+  {
+    "id": "fe_q31",
+    "question":  "Bag-of-n-Grams khắc phục BoW như thế nào?",
+    "answers": {
+      "A": "Bigrams:  'Customer reviews', 'reviews build'",
+      "B": "Trigrams: 'Customer reviews build'",
+      "C": "Preserves một phần context",
+      "D": "Giảm dimensionality"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "n-Grams: bigrams (A), trigrams (B), preserves context (C). Nhưng nó TĂNG dimensionality explosion, không giảm."
+  },
+  {
+    "id":  "fe_q32",
+    "question": "n-Grams có nhược điểm gì?",
+    "answers": {
+      "A": "Dimensionality explosion:  vocabulary^n",
+      "B": "Extremely sparse vectors",
+      "C": "Giảm vocabulary size",
+      "D": "Computational expensive"
+    },
+    "correctAnswers": ["A", "B", "D"],
+    "explanation": "n-Grams nhược điểm: dimension explosion (A), sparse (B), expensive (D). Nó TĂNG vocabulary, không giảm."
+  },
+  {
+    "id":  "fe_q33",
+    "question": "Tokenization là gì?",
+    "answers": {
+      "A": "Chia text thành tokens (words, punctuation)",
+      "B": "'Tôi đi học' → ['Tôi', 'đi', 'học']",
+      "C": "Basic preprocessing step",
+      "D": "Phân tích cú pháp sâu"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Tokenization: chia thành tokens (A), ví dụ (B), basic step (C). Nó KHÔNG phân tích cú pháp sâu - đó là parsing."
+  },
+  {
+    "id": "fe_q34",
+    "question": "Chunking khác Tokenization như thế nào?",
+    "answers": {
+      "A": "Nhóm tokens thành meaningful phrases",
+      "B": "Noun Phrase:  'Con mèo đen', Verb Phrase: 'đang ngủ'",
+      "C":  "Sâu sắc hơn Tokenization",
+      "D":  "Đơn giản hơn Tokenization"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Chunking:  group thành phrases (A), ví dụ (B), sâu hơn tokenization (C). Nó PHỨC TẠP HƠN, không đơn giản hơn."
+  },
+  {
+    "id": "fe_q35",
+    "question": "TF-IDF core philosophy?",
+    "answers": {
+      "A": "Rare words carry more information than common words",
+      "B":  "Common words như 'and', 'the' → low value",
+      "C": "Rare words như 'Arachnocentric' → high signal",
+      "D": "Common words quan trọng nhất"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "TF-IDF philosophy: rare words more info (A), common low value (B), rare high signal (C). Common words ÍT quan trọng, không phải nhất."
+  },
+  {
+    "id": "fe_q36",
+    "question": "TF (Term Frequency) đo lường gì?",
+    "answers": {
+      "A":  "Frequency của term trong document",
+      "B":  "Formula: 1 + log(count(t, d))",
+      "C": "Tại sao dùng log?  Giảm impact của excessive repetition",
+      "D": "Frequency trong toàn bộ corpus"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "TF: frequency trong document (A), formula với log (B), giảm repetition impact (C). Frequency trong corpus là DF, không phải TF."
+  },
+  {
+    "id": "fe_q37",
+    "question": "IDF (Inverse Document Frequency) đo lường gì?",
+    "answers": {
+      "A": "Rarity của term trong corpus",
+      "B": "Formula: log(N / df(t))",
+      "C": "N = total documents, df(t) = docs containing t",
+      "D": "Frequency trong một document"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "IDF: rarity trong corpus (A), formula (B, C). Frequency trong một doc là TF, không phải IDF."
+  },
+  {
+    "id": "fe_q38",
+    "question": "TF-IDF combined formula properties?",
+    "answers": {
+      "A": "Increases khi term frequent trong document (high TF)",
+      "B": "Increases khi term rare trong corpus (high IDF)",
+      "C": "Equals 0 khi term trong mọi documents",
+      "D": "Always positive"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "TF-IDF:  tăng khi TF cao (A), IDF cao (B), bằng 0 khi df=N (C). Nó CÓ THỂ bằng 0, không always positive."
+  },
+  {
+    "id": "fe_q39",
+    "question":  "TF-IDF example:  10,000 articles, 'Cơm' vs 'Blockchain'? ",
+    "answers": {
+      "A": "'Cơm' xuất hiện 5,000 articles → IDF ≈ 0.3",
+      "B": "'Blockchain' xuất hiện 10 articles → IDF ≈ 3.0",
+      "C":  "'Blockchain' weight cao gấp 10 lần 'Cơm'",
+      "D": "'Cơm' weight cao hơn vì phổ biến"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Example: 'Cơm' IDF thấp (A), 'Blockchain' IDF cao (B), Blockchain weight 10x (C). Rare word 'Blockchain' cao hơn common 'Cơm'."
+  },
+  {
+    "id": "fe_q40",
+    "question": "Filtering for cleaner features bao gồm?",
+    "answers": {
+      "A":  "Stopwords removal",
+      "B": "Frequency-based filtering (too frequent, too rare)",
+      "C": "Stemming - reduce về root form",
+      "D": "Giữ tất cả words kể cả rare"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Filtering: remove stopwords (A), frequency filtering (B), stemming (C). Rare words NÊN BỎ để giảm sparse matrix, không giữ tất cả."
+  },
+  {
+    "id": "fe_q41",
+    "question": "Stemming example và mục đích?",
+    "answers": {
+      "A": "'fishing', 'fished', 'fisher' → 'fish'",
+      "B": "Reduce vocabulary complexity",
+      "C": "Group related words",
+      "D": "Tăng số từ vựng"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Stemming: ví dụ (A), reduce complexity (B), group related (C). Nó GIẢM vocabulary, không tăng."
+  },
+  {
+    "id": "fe_q42",
+    "question": "Word Embedding core philosophy?",
+    "answers": {
+      "A": "'You shall know a word by the company it keeps' - Firth 1957",
+      "B":  "Words trong similar contexts có similar meanings",
+      "C": "Trump context:  'Presidency', 'Campaign' → similar to Biden context",
+      "D": "Chỉ count word frequency"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Word Embedding:  Firth quote (A), similar contexts (B), example (C). Nó KHÔNG chỉ count mà encode semantics."
+  },
+  {
+    "id": "fe_q43",
+    "question":  "Word Embedding characteristics?",
+    "answers": {
+      "A": "Dense vectors - not sparse",
+      "B": "Short vectors:  50, 100, 300 dimensions",
+      "C": "Similar words → similar vectors",
+      "D":  "Sparse vectors với vocabulary size dimensions"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Embeddings: dense (A), short fixed size (B), semantic similarity (C). Chúng KHÔNG sparse mà dense."
+  },
+  {
+    "id": "fe_q44",
+    "question": "Word2vec có đặc điểm gì? ",
+    "answers": {
+      "A": "Unsupervised learning trên massive text",
+      "B": "No manual labeling needed",
+      "C": "Captures logical relationships",
+      "D": "Supervised learning với labels"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Word2vec: unsupervised (A), no labels (B), logical relationships (C). Nó KHÔNG supervised."
+  },
+  {
+    "id": "fe_q45",
+    "question": "Word2vec famous example?",
+    "answers": {
+      "A": "vector('King') - vector('Man') + vector('Woman') ≈ vector('Queen')",
+      "B": "Captures gender relationships",
+      "C": "Captures analogies",
+      "D": "Không có relationship nào"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Word2vec famous:  King-Man+Woman=Queen (A), gender (B), analogies (C). Nó CAPTURES nhiều relationships."
+  },
+  {
+    "id": "fe_q46",
+    "question": "So sánh BoW/TF-IDF vs Word Embedding về vector type?",
+    "answers": {
+      "A": "BoW/TF-IDF:  Sparse (many zeros)",
+      "B": "Word Embedding: Dense (all non-zero)",
+      "C": "BoW/TF-IDF dimensionality:  vocabulary size (10K-100K+)",
+      "D": "Word Embedding dimensionality: fixed small (50-300)"
+    },
+    "correctAnswers": ["A", "B", "C", "D"],
+    "explanation":  "Comparison: BoW sparse/large (A, C), Embedding dense/small (B, D). Tất cả đúng về sự khác biệt này."
+  },
+  {
+    "id": "fe_q47",
+    "question": "So sánh về semantics:  BoW vs Embedding?",
+    "answers":  {
+      "A": "BoW: 'Smart' và 'Intelligent' = separate columns hoàn toàn khác",
+      "B": "Embedding: 'Smart' ≈ 'Intelligent' (close vectors)",
+      "C": "BoW không hiểu semantic",
+      "D": "Embedding captures meaning"
+    },
+    "correctAnswers": ["A", "B", "C", "D"],
+    "explanation":  "Semantics: BoW no understanding (A, C), Embedding captures meaning (B, D). Đây là sự khác biệt cốt lõi."
+  },
+  {
+    "id":  "fe_q48",
+    "question": "Interaction Features là gì và tại sao?",
+    "answers": {
+      "A": "Tích của hai features khác nhau",
+      "B": "Area × Location_Score trong house price",
+      "C": "Kết hợp có tác động lớn hơn tổng riêng lẻ",
+      "D": "Chỉ cộng hai features"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Interaction:  tích features (A), example house (B), tác động lớn hơn sum (C). Không phải CHỈ cộng mà NHÂN."
+  },
+  {
+    "id": "fe_q49",
+    "question": "Polynomial Features mục đích?",
+    "answers": {
+      "A": "Nâng features lên powers (x², x³)",
+      "B": "Model non-linear relationships với linear algorithm",
+      "C": "Giảm model complexity",
+      "D": "Capture curvature"
+    },
+    "correctAnswers": ["A", "B", "D"],
+    "explanation": "Polynomial: powers (A), model non-linear (B), capture curves (D). Nó TĂNG complexity để model non-linearity, không giảm."
+  },
+  {
+    "id":  "fe_q50",
+    "question": "Feature Selection goals?",
+    "answers": {
+      "A": "Speed - train faster",
+      "B": "Interpretability - simpler models",
+      "C":  "Accuracy - better generalization",
+      "D": "Tăng số features"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Feature Selection goals: speed (A), interpretability (B), accuracy (C). Mục đích là GIẢM features, không tăng."
+  },
+  {
+    "id": "fe_q51",
+    "question": "Feature Selection benefits?",
+    "answers": {
+      "A": "Remove irrelevant features",
+      "B": "Remove redundant features",
+      "C":  "Avoid overfitting",
+      "D": "Tăng model complexity"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Benefits: remove irrelevant/redundant (A, B), avoid overfitting (C). Mục đích là GIẢM complexity, không tăng."
+  },
+  {
+    "id": "fe_q52",
+    "question": "Filter Methods có đặc điểm gì? ",
+    "answers": {
+      "A": "Independent của ML algorithm",
+      "B": "Dựa trên statistical properties",
+      "C": "Very fast",
+      "D": "Very slow"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Filter Methods: independent (A), statistical (B), very fast (C). Chúng NHANH NHẤT, không slow."
+  },
+  {
+    "id": "fe_q53",
+    "question": "Filter Methods examples?",
+    "answers": {
+      "A": "Correlation coefficient (Pearson, Spearman)",
+      "B": "Chi-Square test",
+      "C": "ANOVA F-test",
+      "D":  "Forward Selection"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Filter examples:  Correlation (A), Chi-Square (B), ANOVA (C). Forward Selection là Wrapper method, không phải Filter."
+  },
+  {
+    "id": "fe_q54",
+    "question": "Wrapper Methods có đặc điểm gì?",
+    "answers": {
+      "A": "Evaluate dựa trên specific ML algorithm",
+      "B": "Try nhiều feature combinations",
+      "C": "Very slow - exponential complexity",
+      "D":  "High overfitting risk"
+    },
+    "correctAnswers": ["A", "B", "C", "D"],
+    "explanation":  "Wrapper:  algorithm-dependent (A), try combinations (B), very slow (C), high overfitting (D). Tất cả đúng về Wrapper."
+  },
+  {
+    "id": "fe_q55",
+    "question": "Wrapper Methods examples?",
+    "answers": {
+      "A": "Exhaustive search - try all combinations",
+      "B": "Forward Selection - thêm từng feature",
+      "C":  "Backward Elimination - bỏ từng feature",
+      "D":  "Correlation coefficient"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Wrapper examples:  Exhaustive (A), Forward (B), Backward (C). Correlation là Filter method, không phải Wrapper."
+  },
+  {
+    "id": "fe_q56",
+    "question": "Forward Selection hoạt động như thế nào?",
+    "answers": {
+      "A": "Start with no features",
+      "B": "Add one feature at a time",
+      "C": "Keep feature if improves performance",
+      "D":  "Start with all features"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Forward Selection:  start empty (A), add one (B), keep if improves (C). Nó BẮT ĐẦU với no features, không phải all."
+  },
+  {
+    "id": "fe_q57",
+    "question": "Backward Elimination hoạt động như thế nào?",
+    "answers": {
+      "A": "Start with all features",
+      "B": "Remove one feature at a time",
+      "C": "Keep removal if doesn't hurt performance",
+      "D": "Start with no features"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Backward Elimination: start all (A), remove one (B), keep if OK (C). Nó BẮT ĐẦU với all features, không phải empty."
+  },
+  {
+    "id": "fe_q58",
+    "question": "Embedded Methods có đặc điểm gì?",
+    "answers": {
+      "A": "Feature selection during model training",
+      "B": "Integrated vào algorithm",
+      "C": "Speed:  medium (between Filter and Wrapper)",
+      "D": "Independent hoàn toàn khỏi model"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Embedded: during training (A), integrated (B), medium speed (C). Nó KHÔNG independent mà integrated vào model."
+  },
+  {
+    "id": "fe_q59",
+    "question": "Embedded Methods examples?",
+    "answers": {
+      "A": "Lasso Regression (L1) - forces some β → 0",
+      "B": "Ridge Regression (L2) - shrinks coefficients",
+      "C": "Decision Trees - auto select features at splits",
+      "D": "Chi-Square test"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Embedded:  Lasso (A), Ridge (B), Trees (C). Chi-Square là Filter method, không phải Embedded."
+  },
+  {
+    "id": "fe_q60",
+    "question": "Lasso vs Ridge Regression difference?",
+    "answers": {
+      "A": "Lasso (L1): forces some β = 0 → eliminates features",
+      "B": "Ridge (L2): shrinks β nhưng không eliminate",
+      "C": "Lasso cho feature selection",
+      "D": "Ridge cho feature selection"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Lasso eliminates (A), cho selection (C), Ridge chỉ shrinks (B). Ridge KHÔNG eliminate nên không dùng cho selection."
+  },
+  {
+    "id": "fe_q61",
+    "question":  "Decision Trees tự động select features như thế nào?",
+    "answers": {
+      "A": "Chọn features at each split",
+      "B":  "Features never used → not important",
+      "C": "Feature importance scores từ tree structure",
+      "D": "Sử dụng tất cả features equally"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Trees: select at splits (A), unused = not important (B), importance scores (C). Chúng KHÔNG dùng tất cả equally."
+  },
+  {
+    "id": "fe_q62",
+    "question": "Random Forest Feature Importance?",
+    "answers": {
+      "A": "Aggregate importance across trees",
+      "B": "Robust measure",
+      "C": "Dựa trên gain from splits",
+      "D": "Chỉ từ một tree"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "RF importance: aggregate across trees (A), robust (B), dựa gain (C). Nó từ NHIỀU trees, không phải chỉ một."
+  },
+  {
+    "id": "fe_q63",
+    "question": "So sánh Filter, Wrapper, Embedded về speed?",
+    "answers": {
+      "A": "Filter:  Fast",
+      "B": "Wrapper: Very Slow",
+      "C": "Embedded: Medium",
+      "D": "Wrapper nhanh nhất"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Speed comparison: Filter fast (A), Wrapper very slow (B), Embedded medium (C). Wrapper CHẬM NHẤT, không nhanh."
+  },
+  {
+    "id": "fe_q64",
+    "question": "So sánh về overfitting risk?",
+    "answers": {
+      "A": "Filter:  Low overfitting risk",
+      "B": "Wrapper: High overfitting risk",
+      "C": "Embedded: Medium risk",
+      "D": "Filter có high overfitting"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Overfitting:  Filter low (A), Wrapper high (B), Embedded medium (C). Filter có LOW risk, không phải high."
+  },
+  {
+    "id": "fe_q65",
+    "question": "Algorithm dependency comparison?",
+    "answers": {
+      "A": "Filter: Independent của algorithm",
+      "B": "Wrapper: Dependent on specific algorithm",
+      "C": "Embedded:  Partial dependency",
+      "D": "Filter phụ thuộc hoàn toàn algorithm"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Dependency: Filter independent (A), Wrapper dependent (B), Embedded partial (C). Filter INDEPENDENT, không dependent."
+  },
+  {
+    "id": "fe_q66",
+    "question": "Khi nào nên dùng Filter Methods?",
+    "answers": {
+      "A": "Large datasets (millions of rows)",
+      "B": "Need quick baseline",
+      "C": "Exploratory analysis",
+      "D": "Small datasets với nhiều resources"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Filter cho: large data (A), quick baseline (B), exploration (C). Small datasets với resources có thể dùng Wrapper."
+  },
+  {
+    "id": "fe_q67",
+    "question":  "Khi nào nên dùng Wrapper Methods?",
+    "answers": {
+      "A": "Small feature sets",
+      "B": "Need optimal performance cho specific algorithm",
+      "C": "Computational resources available",
+      "D": "Large feature sets với limited time"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Wrapper cho: small features (A), optimal for algo (B), có resources (C). KHÔNG phù hợp large features + limited time."
+  },
+  {
+    "id": "fe_q68",
+    "question": "Khi nào nên dùng Embedded Methods? ",
+    "answers": {
+      "A": "Want balance giữa speed và accuracy",
+      "B": "Tree-based models (very common)",
+      "C": "Regularized linear models",
+      "D": "Không bao giờ"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Embedded cho:  balance (A), trees (B), regularized linear (C). Nó RẤT PHỔ BIẾN, không phải 'không bao giờ'."
+  },
+  {
+    "id": "fe_q69",
+    "question": "Feature Selection cho Tree-based models?",
+    "answers": {
+      "A": "Best:  Embedded (built-in feature importance)",
+      "B": "Trees tự động select features",
+      "C": "Random Forest, Gradient Boosting có importance scores",
+      "D": "Phải dùng Wrapper methods"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Tree-based: best embedded (A), auto select (B), có importance (C). KHÔNG phải phải dùng Wrapper."
+  },
+  {
+    "id": "fe_q70",
+    "question": "Feature Selection cho Linear models?",
+    "answers": {
+      "A": "Filter methods + Lasso regularization",
+      "B": "Lasso (L1) cho automatic selection",
+      "C": "Correlation analysis",
+      "D": "Chỉ Wrapper methods"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Linear models: Filter + Lasso (A), Lasso auto (B), correlation (C). KHÔNG chỉ Wrapper mà có nhiều options."
+  },
+  {
+    "id": "fe_q71",
+    "question": "Deep Learning có cần Feature Selection không?",
+    "answers": {
+      "A": "Usually skip feature selection",
+      "B":  "Neural networks learn representations automatically",
+      "C": "Feature engineering vẫn quan trọng",
+      "D": "Luôn phải feature selection"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Deep Learning: usually skip selection (A), auto learn (B), nhưng engineering vẫn quan trọng (C). KHÔNG phải luôn phải selection."
+  },
+  {
+    "id": "fe_q72",
+    "question": "Feature Engineering Pipeline tổng thể?",
+    "answers":  {
+      "A": "Raw Data → Binarization/Binning → Transformation",
+      "B": "Scaling → Encoding → Vectorization",
+      "C": "Feature Creation → Feature Selection → Model Training",
+      "D": "Bỏ qua các bước preprocessing"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Pipeline: preprocessing (A), encoding/vectorization (B), creation/selection (C). KHÔNG bỏ qua preprocessing."
+  },
+  {
+    "id": "fe_q73",
+    "question": "Feature Engineering key principles?",
+    "answers": {
+      "A": "Domain knowledge critical",
+      "B": "Experimentation - try multiple strategies",
+      "C": "Avoid data leakage",
+      "D": "Một strategy fits all"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Principles: domain knowledge (A), experiment (B), avoid leakage (C). KHÔNG có one-size-fits-all strategy."
+  },
+  {
+    "id": "fe_q74",
+    "question": "Balance trong Feature Engineering?",
+    "answers":  {
+      "A": "Too many features → overfitting, slow",
+      "B": "Too few features → underfitting, poor performance",
+      "C": "Cần tìm sweet spot",
+      "D": "Càng nhiều features càng tốt"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Balance:  too many bad (A), too few bad (B), cần balance (C). KHÔNG phải càng nhiều càng tốt."
+  },
+  {
+    "id":  "fe_q75",
+    "question": "Feature Engineering là iterative process?",
+    "answers": {
+      "A": "Continuously refine based on model feedback",
+      "B": "Experiment và evaluate",
+      "C": "One-time setup",
+      "D": "Monitor performance và adjust"
+    },
+    "correctAnswers": ["A", "B", "D"],
+    "explanation": "Feature Engineering: continuous refinement (A), experiment (B), monitor/adjust (D). KHÔNG phải one-time mà iterative."
+  },
+  {
+    "id": "fe_q76",
+    "question":  "Tại sao log transformation dùng log(x+1) thay vì log(x)?",
+    "answers": {
+      "A": "Xử lý zeros - log(0) undefined",
+      "B": "log(0+1) = 0 (valid)",
+      "C": "Preserve zeros trong data",
+      "D": "Không có lý do"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "log(x+1) để handle zeros (A), log(1)=0 valid (B), preserve zeros (C). Có lý do rõ ràng, không phải 'không có'."
+  },
+  {
+    "id": "fe_q77",
+    "question": "Quantile-based binning tính bin edges như thế nào?",
+    "answers": {
+      "A": "Sort data",
+      "B": "Chia thành equal-sized groups",
+      "C": "Edges là values tại quantile positions",
+      "D": "Chia theo (Max-Min)/N"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Quantile binning: sort (A), equal groups (B), edges tại quantiles (C). Formula (Max-Min)/N là Equal Width, không phải Quantile."
+  },
+  {
+    "id": "fe_q78",
+    "question": "Standard Scaling khi nào không phù hợp?",
+    "answers": {
+      "A":  "Data có nhiều outliers cực đoan",
+      "B": "Data không gần Normal Distribution",
+      "C": "Tree-based models (không cần scaling)",
+      "D": "Linear models"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Standard Scaling không phù hợp: extreme outliers (A), non-normal (B), trees (C). Nó PHÙ HỢP linear models."
+  },
+  {
+    "id": "fe_q79",
+    "question":  "One-Hot Encoding tạo bao nhiêu columns cho N categories?",
+    "answers": {
+      "A": "N columns",
+      "B": "Mỗi category = 1 column",
+      "C": "Có thể dùng N-1 columns để tránh multicollinearity",
+      "D": "N² columns"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "One-Hot:  N columns (A, B), hoặc N-1 để tránh multicollinearity (C). KHÔNG phải N²."
+  },
+  {
+    "id": "fe_q80",
+    "question": "Target Mean Encoding regularization techniques?",
+    "answers": {
+      "A": "Add smoothing parameter",
+      "B": "Blend with global mean",
+      "C": "Use cross-validation out-of-fold",
+      "D": "Không cần regularization"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Target Mean regularization: smoothing (A), blend global mean (B), CV out-of-fold (C). CẦN regularization để tránh leakage."
+  },
+  {
+    "id": "fe_q81",
+    "question": "Hash collision trong Feature Hashing xử lý như thế nào?",
+    "answers": {
+      "A": "Hai categories khác nhau có thể hash vào cùng bin",
+      "B": "Accept collision - usually không ảnh hưởng lớn",
+      "C": "Tăng hash space size để giảm collision",
+      "D": "Không có collision nào"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Hash collision: có thể xảy ra (A), accept vì minor impact (B), tăng space giảm collision (C). CÓ collision, không phải 'không có'."
+  },
+  {
+    "id": "fe_q82",
+    "question": "TF-IDF cho documents rất ngắn (1-2 words)?",
+    "answers": {
+      "A":  "TF component ít hữu ích (mỗi word chỉ xuất hiện 1 lần)",
+      "B": "IDF component vẫn quan trọng",
+      "C": "Có thể chỉ dùng IDF",
+      "D": "TF-IDF hoàn hảo cho short docs"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Short docs: TF ít hữu ích (A), IDF vẫn quan trọng (B), có thể chỉ IDF (C). TF-IDF KHÔNG hoàn hảo cho very short docs."
+  },
+  {
+    "id": "fe_q83",
+    "question": "Word2vec training methods?",
+    "answers": {
+      "A": "CBOW (Continuous Bag of Words) - predict word from context",
+      "B": "Skip-gram - predict context from word",
+      "C": "Unsupervised learning",
+      "D": "Supervised với labeled data"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Word2vec methods: CBOW (A), Skip-gram (B), unsupervised (C). Nó KHÔNG supervised."
+  },
+  {
+    "id": "fe_q84",
+    "question": "Stopwords removal có thể gây vấn đề khi nào?",
+    "answers":  {
+      "A": "Phrases quan trọng chứa stopwords:  'not good' → 'good'",
+      "B": "Sentiment analysis - negation words quan trọng",
+      "C": "Named entities:  'The Who' (band name)",
+      "D": "Luôn nên remove stopwords"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Stopwords removal problems: negation (A), sentiment (B), named entities (C). KHÔNG luôn nên remove - depends on task."
+  },
+  {
+    "id": "fe_q85",
+    "question": "Polynomial features degree cao có vấn đề gì?",
+    "answers":  {
+      "A": "Dimensionality explosion",
+      "B": "Overfitting risk",
+      "C": "Computational expensive",
+      "D": "Luôn improve performance"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "High degree polynomials: dimension explosion (A), overfitting (B), expensive (C). KHÔNG luôn improve mà có thể overfit."
+  },
+  {
+    "id": "fe_q86",
+    "question":  "Interaction features nên tạo cho tất cả feature pairs?",
+    "answers": {
+      "A": "Không - computational cost O(n²)",
+      "B": "Chỉ tạo cho pairs có domain knowledge hoặc correlation",
+      "C": "Feature selection sau khi create",
+      "D": "Có - tạo tất cả pairs"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Interactions:  KHÔNG tạo tất cả (A), chỉ promising pairs (B), select sau (C). Tạo tất cả gây dimension explosion."
+  },
+  {
+    "id": "fe_q87",
+    "question":  "RFE (Recursive Feature Elimination) hoạt động? ",
+    "answers": {
+      "A": "Train model",
+      "B": "Remove least important feature",
+      "C": "Repeat until desired number",
+      "D": "Add features từng cái một"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "RFE: train (A), remove least important (B), repeat (C). Nó REMOVE features, không add."
+  },
+  {
+    "id": "fe_q88",
+    "question": "Feature importance từ trees đáng tin cậy như thế nào?",
+    "answers": {
+      "A": "Có thể biased với high-cardinality features",
+      "B": "Có thể biased với correlated features",
+      "C":  "Nên dùng permutation importance để verify",
+      "D": "Hoàn toàn đáng tin cậy 100%"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Tree importance: có biases (A, B), nên verify với permutation (C). KHÔNG hoàn toàn đáng tin 100%."
+  },
+  {
+    "id": "fe_q89",
+    "question": "Variance threshold filtering là gì?",
+    "answers": {
+      "A": "Remove features với variance thấp",
+      "B": "Low variance → ít information",
+      "C": "Example: feature với 99% cùng giá trị",
+      "D": "Remove features với variance cao"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Variance threshold: remove low variance (A), low info (B), example (C). Nó remove LOW variance, không phải high."
+  },
+  {
+    "id": "fe_q90",
+    "question": "Feature scaling cho mixed data types (numeric + categorical)?",
+    "answers": {
+      "A": "Scale chỉ numeric features",
+      "B": "Encode categorical trước",
+      "C": "Sau khi encode, scale nếu cần",
+      "D": "Scale cả categorical trực tiếp"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Mixed data:  scale chỉ numeric (A), encode categorical first (B), scale sau encode nếu cần (C). KHÔNG scale categorical trực tiếp."
+  },
+  {
+    "id": "fe_q91",
+    "question": "Target encoding cho regression vs classification?",
+    "answers":  {
+      "A": "Regression: mean của continuous target",
+      "B": "Classification: mean của binary target (probability)",
+      "C": "Cùng concept nhưng khác target type",
+      "D": "Chỉ dùng cho classification"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Target encoding: regression dùng mean continuous (A), classification dùng mean binary/probability (B), cùng concept (C). Dùng cho CẢ HAI tasks, không chỉ classification."
+  },
+  {
+    "id": "fe_q92",
+    "question": "Box-Cox transformation khi data có negative values?",
+    "answers":  {
+      "A": "Không áp dụng trực tiếp - yêu cầu x > 0",
+      "B": "Shift data:  add constant để làm tất cả positive",
+      "C": "Dùng Yeo-Johnson transformation (cho phép negative)",
+      "D": "Box-Cox hoàn hảo cho negative values"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Box-Cox với negatives: không áp dụng trực tiếp (A), shift data (B), hoặc dùng Yeo-Johnson (C). Box-Cox YÊU CẦU positive, không 'hoàn hảo' cho negatives."
+  },
+  {
+    "id": "fe_q93",
+    "question":  "Khi nào binning có thể làm giảm model performance?",
+    "answers": {
+      "A": "Lose information từ continuous values",
+      "B": "Tree-based models đã handle non-linearity tốt",
+      "C":  "Binning có thể redundant cho trees",
+      "D": "Luôn improve performance"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Binning có thể harmful:  lose info (A), trees đã handle (B), redundant (C). KHÔNG luôn improve - depends on algorithm."
+  },
+  {
+    "id": "fe_q94",
+    "question": "TF-IDF normalization (L2 norm) mục đích?",
+    "answers": {
+      "A": "Normalize document vectors về unit length",
+      "B": "Documents dài và ngắn comparable",
+      "C": "Tốt cho cosine similarity",
+      "D":  "Làm tăng document length bias"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "TF-IDF L2 norm: unit length (A), long/short comparable (B), tốt cho cosine (C). Nó GIẢM length bias, không tăng."
+  },
+  {
+    "id": "fe_q95",
+    "question": "Word embeddings pre-trained (Word2Vec, GloVe) vs train from scratch?",
+    "answers":  {
+      "A": "Pre-trained: học từ billions of words",
+      "B": "Pre-trained: tốt khi ít training data",
+      "C": "From scratch: tốt khi domain-specific vocabulary",
+      "D": "Pre-trained luôn tốt hơn"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Pre-trained: massive data (A), good for small datasets (B), from scratch cho domain-specific (C). Pre-trained KHÔNG luôn tốt hơn - depends on domain."
+  },
+  {
+    "id": "fe_q96",
+    "question": "Feature hashing hash space size chọn như thế nào?",
+    "answers": {
+      "A": "Trade-off: lớn h��n → ít collision, nhiều memory",
+      "B": "Nhỏ hơn → nhiều collision, ít memory",
+      "C":  "Thường chọn power of 2 (2^10, 2^16, 2^20)",
+      "D": "Chọn exact bằng số categories"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Hash space size: trade-off (A, B), thường power of 2 (C). KHÔNG chọn exact = categories vì mục đích là dimension reduction."
+  },
+  {
+    "id": "fe_q97",
+    "question":  "Categorical encoding cho tree-based models?",
+    "answers": {
+      "A":  "Label/Ordinal encoding thường đủ",
+      "B": "Trees handle categorical well without One-Hot",
+      "C":  "Target encoding rất hiệu quả",
+      "D": "Bắt buộc phải One-Hot"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Trees: Label/Ordinal OK (A), handle categorical well (B), Target encoding tốt (C). KHÔNG bắt buộc One-Hot cho trees."
+  },
+  {
+    "id": "fe_q98",
+    "question": "Feature engineering cho time series data?",
+    "answers": {
+      "A": "Lag features:  values từ previous timesteps",
+      "B": "Rolling statistics: mean, std over windows",
+      "C": "Time-based features: day of week, month, season",
+      "D": "Ignore temporal order"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Time series features: lags (A), rolling stats (B), time-based (C). KHÔNG ignore temporal order - đó là đặc trưng quan trọng nhất."
+  },
+  {
+    "id": "fe_q99",
+    "question":  "Missing values handling trước feature engineering?",
+    "answers":  {
+      "A": "Imputation: mean, median, mode",
+      "B": "Create 'missing' indicator feature",
+      "C": "Remove rows/columns với missing",
+      "D": "Ignore hoàn toàn missing values"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Missing handling: imputation (A), indicator (B), removal (C). KHÔNG ignore vì missing có thể affect transformations."
+  },
+  {
+    "id": "fe_q100",
+    "question":  "Feature engineering reproducibility best practices?",
+    "answers":  {
+      "A": "Save transformation parameters (mean, std, quantiles)",
+      "B": "Fit transformations chỉ trên training set",
+      "C": "Apply same transformations to validation/test sets",
+      "D": "Fit riêng biệt cho mỗi set"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Reproducibility: save parameters (A), fit on train only (B), apply to val/test (C). KHÔNG fit riêng cho mỗi set vì gây data leakage."
+  },
+  {
+    "id": "fe_q101",
+    "question": "Outlier handling trong feature engineering?",
+    "answers":  {
+      "A": "Clipping/Winsorization: cap tại percentiles",
+      "B": "Log transformation giảm outlier impact",
+      "C": "Robust scaling (median, IQR) thay vì mean/std",
+      "D": "Luôn remove outliers"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Outlier handling: clipping (A), log transform (B), robust scaling (C). KHÔNG luôn remove - outliers có thể mang thông tin quan trọng."
+  },
+  {
+    "id": "fe_q102",
+    "question": "Feature engineering cho imbalanced classification?",
+    "answers": {
+      "A": "Target encoding cẩn thận với rare classes",
+      "B": "Frequency encoding có thể highlight class imbalance",
+      "C": "Stratified sampling trong CV",
+      "D": "Ignore class imbalance hoàn toàn"
+    },
+    "correctAnswers":  ["A", "B", "C"],
+    "explanation": "Imbalanced data: cẩn thận target encoding (A), frequency có thể help (B), stratified CV (C). KHÔNG ignore imbalance."
+  },
+  {
+    "id": "fe_q103",
+    "question": "Curse of dimensionality ảnh hưởng như thế nào?",
+    "answers": {
+      "A": "Too many features → data becomes sparse",
+      "B": "Distance metrics less meaningful trong high dimensions",
+      "C": "Overfitting risk tăng",
+      "D":  "Luôn tốt khi có nhiều features"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Curse of dimensionality: sparse data (A), distances meaningless (B), overfitting (C). KHÔNG phải luôn tốt - cần feature selection."
+  },
+  {
+    "id": "fe_q104",
+    "question":  "Feature engineering automation tools?",
+    "answers":  {
+      "A": "Featuretools - automated feature generation",
+      "B": "TPOT - genetic algorithm feature selection",
+      "C": "AutoML platforms có automated feature engineering",
+      "D":  "Không có tools nào"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Automation tools tồn tại:  Featuretools (A), TPOT (B), AutoML (C). Có NHIỀU tools available."
+  },
+  {
+    "id": "fe_q105",
+    "question": "Domain knowledge trong feature engineering quan trọng vì sao?",
+    "answers":  {
+      "A": "Hiểu business context → create meaningful features",
+      "B":  "Biết features nào có causal relationship với target",
+      "C": "Tránh spurious correlations",
+      "D": "Không cần domain knowledge - machine tự học"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Domain knowledge: meaningful features (A), causal relationships (B), tránh spurious (C). Domain knowledge RẤT QUAN TRỌNG, không phải 'không cần'."
+  },
+  {
+    "id": "fe_q106",
+    "question": "Feature leakage là gì?",
+    "answers": {
+      "A": "Sử dụng information không available tại prediction time",
+      "B": "Target information leak vào features",
+      "C": "Gây overly optimistic performance estimates",
+      "D": "Không phải vấn đề"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Feature leakage: future info (A), target leak (B), false performance (C). Đây là VẤN ĐỀ NGHIÊM TRỌNG, không phải 'không phải vấn đề'."
+  },
+  {
+    "id": "fe_q107",
+    "question": "Temporal leakage trong time series?",
+    "answers": {
+      "A": "Dùng future information để predict past",
+      "B":  "Features từ timesteps sau target",
+      "C": "Phải ensure features chỉ từ past/present",
+      "D": "Không quan trọng trong time series"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Temporal leakage: future info (A), features sau target (B), phải ensure past only (C). RẤT QUAN TRỌNG trong time series."
+  },
+  {
+    "id": "fe_q108",
+    "question": "Feature scaling cho neural networks?",
+    "answers":  {
+      "A": "Rất quan trọng - ảnh hưởng convergence",
+      "B": "Standard scaling hoặc Min-Max thường dùng",
+      "C":  "Batch Normalization có thể thay thế một phần",
+      "D": "Neural networks không cần scaling"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "NN scaling: rất quan trọng (A), Standard/Min-Max (B), Batch Norm helps (C). NN RẤT CẦN scaling cho convergence."
+  },
+  {
+    "id": "fe_q109",
+    "question": "Cross-validation trong feature engineering?",
+    "answers": {
+      "A": "Fit transformations trên training folds only",
+      "B": "Apply to validation folds",
+      "C": "Tránh data leakage",
+      "D": "Fit trên toàn bộ data including validation"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "CV trong FE: fit on train folds (A), apply to val (B), tránh leakage (C). KHÔNG fit trên toàn bộ data."
+  },
+  {
+    "id": "fe_q110",
+    "question":  "Feature importance interpretation challenges?",
+    "answers": {
+      "A": "Correlated features chia sẻ importance",
+      "B": "Importance không phải causation",
+      "C": "Model-specific - khác nhau giữa algorithms",
+      "D": "Feature importance = causal impact"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Importance challenges: correlation (A), không phải causation (B), model-specific (C). Importance KHÔNG BẰNG causation."
+  },
+  {
+    "id": "fe_q111",
+    "question":  "Text preprocessing - lowercasing khi nào có vấn đề?",
+    "answers": {
+      "A": "Named entities:  'Apple' (company) vs 'apple' (fruit)",
+      "B": "Acronyms: 'US' vs 'us'",
+      "C": "Sentiment: 'HAPPY' (emphasis) vs 'happy'",
+      "D": "Luôn nên lowercase"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Lowercasing issues: named entities (A), acronyms (B), sentiment (C). KHÔNG luôn lowercase - depends on task."
+  },
+  {
+    "id": "fe_q112",
+    "question": "Stemming vs Lemmatization? ",
+    "answers": {
+      "A": "Stemming: rule-based, fast, 'studies' → 'studi'",
+      "B":  "Lemmatization: dictionary-based, slow, 'studies' → 'study'",
+      "C": "Lemmatization linguistically correct",
+      "D": "Stemming luôn tốt hơn"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation":  "Stemming vs Lemma: stemming fast/crude (A), lemma slow/accurate (B, C). KHÔNG phải stemming luôn tốt - trade-off."
+  },
+  {
+    "id": "fe_q113",
+    "question": "n-gram size selection?",
+    "answers":  {
+      "A": "Unigrams: broad coverage",
+      "B": "Bigrams/Trigrams: more context nhưng sparse",
+      "C": "Higher n → exponentially more features",
+      "D": "Luôn dùng highest n possible"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "n-gram selection: unigrams broad (A), higher n more context but sparse (B, C). KHÔNG luôn highest - balance needed."
+  },
+  {
+    "id": "fe_q114",
+    "question": "Feature engineering cho recommendation systems?",
+    "answers":  {
+      "A": "User features: demographics, history",
+      "B": "Item features: category, popularity",
+      "C": "Interaction features: user-item interactions",
+      "D": "Chỉ cần collaborative filtering"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Recommendation FE: user features (A), item features (B), interactions (C). KHÔNG chỉ collaborative filtering - features help cold start."
+  },
+  {
+    "id": "fe_q115",
+    "question":  "Binning cho fraud detection?",
+    "answers":  {
+      "A": "Transaction amount bins",
+      "B": "Time of day bins",
+      "C":  "Frequency bins",
+      "D": "Không cần binning"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Fraud detection binning: amount (A), time (B), frequency (C) - tất cả useful.  Binning GIÚP ÍCH cho fraud detection."
+  },
+  {
+    "id": "fe_q116",
+    "question": "Feature engineering evaluation metrics?",
+    "answers":  {
+      "A": "Model performance improvement",
+      "B": "Feature importance scores",
+      "C": "Correlation với target",
+      "D": "Không cần evaluate features"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "FE evaluation: model performance (A), importance (B), correlation (C). PHẢI evaluate để biết features có useful."
+  },
+  {
+    "id": "fe_q117",
+    "question": "Interaction features cho linear models vs trees?",
+    "answers": {
+      "A": "Linear models: cần manual interaction features",
+      "B": "Trees: tự động capture interactions",
+      "C": "Interactions critical cho linear models",
+      "D": "Trees cũng cần manual interactions"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Interactions: linear cần manual (A, C), trees auto (B). Trees KHÔNG cần manual interactions - already handled."
+  },
+  {
+    "id": "fe_q118",
+    "question":  "Feature engineering cho image data?",
+    "answers": {
+      "A": "Hand-crafted:  edges, textures, colors",
+      "B": "Deep learning: learned features tự động",
+      "C": "Transfer learning: pre-trained embeddings",
+      "D": "Không cần features cho images"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Image FE: hand-crafted (A), deep learning (B), transfer learning (C). CẦN features - hoặc manual hoặc learned."
+  },
+  {
+    "id": "fe_q119",
+    "question": "Seasonality features cho time series?",
+    "answers": {
+      "A": "Cyclical encoding:  sin/cos transformations",
+      "B": "Preserve cyclical nature (day 1 gần day 365)",
+      "C": "One-hot encoding cho time units",
+      "D": "Bỏ qua seasonality"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Seasonality: cyclical encoding (A), preserve cycles (B), one-hot (C). KHÔNG bỏ qua - seasonality quan trọng."
+  },
+  {
+    "id": "fe_q120",
+    "question": "Feature engineering best practices summary?",
+    "answers": {
+      "A": "Start simple, iterate based on performance",
+      "B":  "Document transformations và rationale",
+      "C": "Version control feature engineering code",
+      "D": "Làm càng phức tạp càng tốt ngay từ đầu"
+    },
+    "correctAnswers": ["A", "B", "C"],
+    "explanation": "Best practices: start simple iterate (A), document (B), version control (C). KHÔNG làm phức tạp ngay đầu - iterate progressively."
+  }
+]
