@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fs_q1",
+    "question": "Which file systems support journaling?",
+    "answers": {
+      "A": "FAT32",
+      "B": "NTFS",
+      "C": "ext4",
+      "D": "exFAT"
+    },
+    "correctAnswers": ["B", "C"]
+  },
+  {
+    "id": "fs_q2",
+    "question": "What information does an inode store?",
+    "answers": {
+      "A": "File permissions",
+      "B": "File content",
+      "C": "File size",
+      "D": "Pointers to data blocks"
+    },
+    "correctAnswers": ["A", "C", "D"]
+  },
+  {
+    "id": "fs_q3",
+    "question": "Which file system is default for Windows?",
+    "answers": {
+      "A": "FAT32",
+      "B": "NTFS",
+      "C": "ext4",
+      "D": "HFS+"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "fs_q4",
+    "question": "What are benefits of file caching?",
+    "answers": {
+      "A": "Improved read performance",
+      "B": "Reduced disk access",
+      "C": "Increased file size limit",
+      "D": "Better security"
+    },
+    "correctAnswers": ["A", "B"]
+  }
+]

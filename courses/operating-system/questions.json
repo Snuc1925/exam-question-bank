@@ -1,0 +1,57 @@
+[
+  {
+    "id": "os_q1",
+    "question": "What are the main components of an operating system?",
+    "answers": {
+      "A": "Kernel",
+      "B": "Web Browser",
+      "C": "Process Scheduler",
+      "D": "Memory Manager"
+    },
+    "correctAnswers": ["A", "C", "D"]
+  },
+  {
+    "id": "os_q2",
+    "question": "Which scheduling algorithm provides the best average waiting time?",
+    "answers": {
+      "A": "FCFS",
+      "B": "SJF",
+      "C": "Round Robin",
+      "D": "Priority Scheduling"
+    },
+    "correctAnswers": ["B"]
+  },
+  {
+    "id": "os_q3",
+    "question": "What are the necessary conditions for deadlock?",
+    "answers": {
+      "A": "Mutual Exclusion",
+      "B": "Hold and Wait",
+      "C": "Preemption",
+      "D": "Circular Wait"
+    },
+    "correctAnswers": ["A", "B", "D"]
+  },
+  {
+    "id": "os_q4",
+    "question": "What are synchronization primitives?",
+    "answers": {
+      "A": "Mutex",
+      "B": "Array",
+      "C": "Semaphore",
+      "D": "Monitor"
+    },
+    "correctAnswers": ["A", "C", "D"]
+  },
+  {
+    "id": "os_q5",
+    "question": "What are benefits of virtual memory?",
+    "answers": {
+      "A": "Process isolation",
+      "B": "Faster CPU speed",
+      "C": "Larger address space",
+      "D": "Reduced power consumption"
+    },
+    "correctAnswers": ["A", "C"]
+  }
+]
