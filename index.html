@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Question Bank - Hệ thống ôn tập</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Simple Markdown renderer -->
+    <script src="lib/simple-markdown.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Exam Question Bank</h1>
+            <p class="subtitle">Hệ thống hỗ trợ ôn tập</p>
+        </header>
+
+        <!-- Course Selection Page -->
+        <div id="course-selection" class="page active">
+            <h2>Chọn môn học</h2>
+            <div id="course-list" class="course-list">
+                <!-- Courses will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Course Detail Page -->
+        <div id="course-detail" class="page">
+            <button class="back-btn" onclick="app.showCourseSelection()">← Quay lại</button>
+            <h2 id="course-title"></h2>
+            <div class="file-sections">
+                <div class="file-section">
+                    <h3>📝 Lecture Notes</h3>
+                    <div id="markdown-files" class="file-list">
+                        <!-- Markdown files will be listed here -->
+                    </div>
+                </div>
+                <div class="file-section">
+                    <h3>❓ Question Banks</h3>
+                    <div id="question-files" class="file-list">
+                        <!-- Question files will be listed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Markdown Viewer Page -->
+        <div id="markdown-viewer" class="page">
+            <button class="back-btn" onclick="app.showCourseDetail()">← Quay lại</button>
+            <h2 id="markdown-title"></h2>
+            <div id="markdown-content" class="markdown-content">
+                <!-- Markdown content will be rendered here -->
+            </div>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quiz-page" class="page">
+            <div class="quiz-header">
+                <button class="back-btn" onclick="app.showCourseDetail()">← Quay lại</button>
+                <div class="quiz-info">
+                    <h2 id="quiz-title"></h2>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <p class="progress-text">
+                        <span id="current-question">1</span> / <span id="total-questions">0</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div id="question-container" class="question-container">
+                <!-- Questions will be loaded here -->
+            </div>
+
+            <div class="quiz-controls">
+                <button id="prev-btn" class="btn btn-secondary" onclick="app.previousQuestion()">← Câu trước</button>
+                <button id="save-btn" class="btn btn-info" onclick="app.saveProgress()">💾 Lưu tiến độ</button>
+                <button id="next-btn" class="btn btn-primary" onclick="app.nextQuestion()">Câu sau →</button>
+                <button id="submit-btn" class="btn btn-success" onclick="app.submitQuiz()" style="display: none;">✓ Nộp bài</button>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results-page" class="page">
+            <button class="back-btn" onclick="app.showCourseDetail()">← Quay lại</button>
+            <h2>Kết quả kiểm tra</h2>
+            <div id="results-summary" class="results-summary">
+                <!-- Results summary will be shown here -->
+            </div>
+            <div id="wrong-answers" class="wrong-answers">
+                <!-- Wrong answers will be listed here -->
+            </div>
+            <div class="results-actions">
+                <button class="btn btn-primary" onclick="app.retakeQuiz()">🔄 Làm lại</button>
+                <button class="btn btn-secondary" onclick="app.showCourseDetail()">← Quay về môn học</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
