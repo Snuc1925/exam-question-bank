@@ -88,7 +88,8 @@ const app = {
     // Scan course directory for files
     scanCourseDirectory: async function(coursePath) {
         // For local file system access, we need to know the files in advance
-        // This is a limitation of browser JavaScript
+        // This is a limitation of browser JavaScript without a backend
+        // To add new courses or files, update this mapping:
         const fileMap = {
             'courses/data-visualization': ['file_systems.md', 'file_systems.json', 'hdfs.json'],
             'courses/operating-system': ['lecture.md', 'questions.json']
@@ -346,11 +347,8 @@ const app = {
             const userAnswer = this.userAnswers[question.id] || [];
             const correctAnswer = question.correctAnswers;
             
-            // Sort for comparison
-            const userSorted = [...userAnswer].sort();
-            const correctSorted = [...correctAnswer].sort();
-            
-            const isCorrect = JSON.stringify(userSorted) === JSON.stringify(correctSorted);
+            // Check if arrays are equal
+            const isCorrect = this.arraysEqual(userAnswer, correctAnswer);
             
             if (isCorrect) {
                 correct++;
@@ -369,6 +367,20 @@ const app = {
             percentage: (correct / total * 100).toFixed(1),
             wrongAnswers
         };
+    },
+
+    // Helper function to compare arrays
+    arraysEqual: function(arr1, arr2) {
+        if (arr1.length !== arr2.length) return false;
+        
+        const sorted1 = [...arr1].sort();
+        const sorted2 = [...arr2].sort();
+        
+        for (let i = 0; i < sorted1.length; i++) {
+            if (sorted1[i] !== sorted2[i]) return false;
+        }
+        
+        return true;
     },
 
     // Display results
