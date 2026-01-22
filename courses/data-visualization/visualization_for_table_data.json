@@ -1,0 +1,552 @@
+[
+  {
+    "id": "viz_v2_01",
+    "question": "Trong hệ tọa độ Descartes, nếu ta thay đổi tỷ lệ khung hình (aspect ratio), điều gì sẽ xảy ra?",
+    "answers": [
+      "Dữ liệu gốc bị biến đổi giá trị toán học (F)",
+      "Độ dốc của các đường biểu diễn xu hướng thay đổi về mặt thị giác (T)",
+      "Làm thay đổi nhận thức về tốc độ thay đổi của dữ liệu (T)",
+      "Khoảng cách lưới giữa các điểm dữ liệu luôn được giữ cố định (F)"
+    ],
+    "explanation": "Thay đổi tỷ lệ khung hình không đổi giá trị dữ liệu nhưng làm thay đổi độ dốc hình học, khiến người xem cảm thấy xu hướng nhanh hơn hoặc chậm hơn."
+  },
+  {
+    "id": "viz_v2_02",
+    "question": "Khi nào việc sử dụng thang đo Logarit là SAI lầm?",
+    "answers": [
+      "Dữ liệu chứa các giá trị bằng 0 hoặc giá trị âm (T)",
+      "Dữ liệu có phạm vi thay đổi từ 1 đến 1000 (F)",
+      "Khi cần nhấn mạnh vào sự thay đổi tuyệt đối thay vì tỷ lệ phần trăm (T)",
+      "Dữ liệu về dân số các quốc gia (F)"
+    ],
+    "explanation": "Hàm Log(0) hoặc Log số âm không xác định. Ngoài ra, Log scale dùng cho tỷ lệ (relative change), nếu muốn xem thay đổi tuyệt đối (absolute change) thì phải dùng Linear."
+  },
+  {
+    "id": "viz_v2_03",
+    "question": "Một biểu đồ cột (Bar chart) có đường cơ sở (baseline) bắt đầu từ 50 thay vì 0. Hậu quả là gì?",
+    "answers": [
+      "Biểu đồ vẫn hợp lệ nếu mục tiêu là so sánh sự khác biệt nhỏ (F)",
+      "Tỷ lệ diện tích giữa các cột không còn tương ứng với tỷ lệ dữ liệu thực tế (T)",
+      "Người xem bị đánh lừa về mức độ chênh lệch giữa các đối tượng (T)",
+      "Biểu đồ tự động chuyển thành biểu đồ chấm (F)"
+    ],
+    "explanation": "Nguyên tắc 'Proportional Ink': diện tích mực phải tỷ lệ với giá trị. Nếu không bắt đầu từ 0, Bar chart sẽ phóng đại sự khác biệt một cách sai lệch."
+  },
+  {
+    "id": "viz_v2_04",
+    "question": "Ưu điểm lớn nhất của biểu đồ chấm (Dot plot) so với biểu đồ cột (Bar chart) là gì?",
+    "answers": [
+      "Luôn luôn bắt mắt và rực rỡ hơn (F)",
+      "Có thể cắt ngắn trục tọa độ (không bắt đầu từ 0) mà vẫn hợp lệ (T)",
+      "Giảm bớt sự lộn xộn (clutter) khi có quá nhiều danh mục (T)",
+      "Mã hóa dữ liệu bằng độ dài tốt hơn (F)"
+    ],
+    "explanation": "Vì Dot plot mã hóa bằng vị trí (position) thay vì độ dài/diện tích (length/area), nó không chịu ràng buộc khắt khe về đường cơ sở tại số 0 như Bar chart."
+  },
+  {
+    "id": "viz_v2_05",
+    "question": "Thang màu phân kỳ (Diverging) KHÔNG nên dùng trong trường hợp nào?",
+    "answers": [
+      "Dữ liệu về nhiệt độ từ -10 độ C đến 40 độ C (F)",
+      "Dữ liệu về doanh thu bán hàng của các cửa hàng từ thấp đến cao (T)",
+      "Dữ liệu về tỷ lệ phiếu bầu cho hai đảng đối lập (F)",
+      "Dữ liệu chỉ tăng dần theo một hướng (T)"
+    ],
+    "explanation": "Dữ liệu tăng dần một hướng nên dùng thang tuần tự (Sequential). Thang phân kỳ chỉ dùng khi có một điểm trung tâm (neutral point) có ý nghĩa (ví dụ: 0 độ, hoặc 50% phiếu bầu)."
+  },
+  {
+    "id": "viz_v2_06",
+    "question": "Tại sao việc sắp xếp thứ tự các danh mục trong Bar chart theo bảng chữ cái thường bị coi là kém hiệu quả?",
+    "answers": [
+      "Làm khó người xem trong việc tìm kiếm giá trị lớn nhất/nhỏ nhất (T)",
+      "Làm mất đi tính ngẫu nhiên của dữ liệu (F)",
+      "Không giúp làm nổi bật các xu hướng hoặc so sánh giữa các nhóm (T)",
+      "Làm biểu đồ bị sai lệch về mặt thống kê (F)"
+    ],
+    "explanation": "Trừ khi người xem cần tra cứu một mục cụ thể theo tên, việc sắp xếp theo giá trị sẽ giúp so sánh và nhận diện mẫu (pattern) nhanh hơn nhiều."
+  },
+  {
+    "id": "viz_v2_07",
+    "question": "Đặc điểm nào của biểu đồ Violin khiến nó ưu việt hơn Boxplot truyền thống?",
+    "answers": [
+      "Nó hiển thị được các phân phối có nhiều đỉnh (multimodal) (T)",
+      "Nó luôn đơn giản và dễ đọc hơn đối với người không chuyên (F)",
+      "Nó cung cấp cái nhìn chi tiết về mật độ dữ liệu tại mọi điểm (T)",
+      "Nó không cần tính toán giá trị trung vị (F)"
+    ],
+    "explanation": "Boxplot có thể 'giấu' đi việc dữ liệu bị chia thành 2 cụm, trong khi Violin plot sẽ hiện rõ qua độ rộng của thân violin."
+  },
+  {
+    "id": "viz_v2_08",
+    "question": "Trong trực quan hóa, tại sao màu sắc 'Qualitative' (định tính) cần có độ sáng và độ bão hòa tương đương nhau?",
+    "answers": [
+      "Để tránh việc một màu trông nổi bật hơn và bị hiểu lầm là quan trọng hơn (T)",
+      "Để tiết kiệm mực khi in biểu đồ màu (F)",
+      "Để đảm bảo sự công bằng thị giác giữa các nhóm dữ liệu rời rạc (T)",
+      "Để người bị mù màu dễ phân biệt hơn (F)"
+    ],
+    "explanation": "Màu sắc định tính dùng để phân loại. Nếu một màu quá chói hoặc đậm, mắt người sẽ tự động gán cho nó một giá trị 'nặng' hơn các màu khác."
+  },
+  {
+    "id": "viz_v2_09",
+    "question": "Lỗi 'Overplotting' thường xảy ra ở biểu đồ nào khi kích thước mẫu lớn?",
+    "answers": [
+      "Strip Chart (Biểu đồ dải) (T)",
+      "Boxplot (F)",
+      "Heatmap (F)",
+      "Scatter plot (T)"
+    ],
+    "explanation": "Khi có quá nhiều điểm, chúng sẽ đè lên nhau tạo thành một khối đen đặc, làm mất thông tin về mật độ. Boxplot và Heatmap được thiết kế để giải quyết chính vấn đề này."
+  },
+  {
+    "id": "viz_v2_10",
+    "question": "Tham số 'Bandwidth' trong Density plot tương ứng với yếu tố nào trong Histogram?",
+    "answers": [
+      "Bin width (Độ rộng của khoảng chia) (T)",
+      "Số lượng mẫu dữ liệu (F)",
+      "Độ cao của cột (F)",
+      "Sự phân hóa của dữ liệu (F)"
+    ],
+    "explanation": "Cả hai đều quyết định mức độ chi tiết (smoothing) của biểu đồ phân phối."
+  },
+  {
+    "id": "viz_v2_11",
+    "question": "Hệ tọa độ cực (Polar) cực kỳ hữu ích cho trường hợp nào?",
+    "answers": [
+      "Dữ liệu có tính chất lặp lại theo chu kỳ thời gian (T)",
+      "Dữ liệu có nhãn danh mục rất dài (F)",
+      "So sánh trực quan diện tích các hình tròn (F)",
+      "Khi điểm kết thúc của dữ liệu có liên kết logic với điểm bắt đầu (T)"
+    ],
+    "explanation": "Ví dụ: Nhiệt độ theo 12 tháng, hướng gió 360 độ là những dữ liệu tuần hoàn phù hợp nhất với Polar."
+  },
+  {
+    "id": "viz_v2_12",
+    "question": "Biểu đồ cột xếp chồng (Stacked Bar) gặp khó khăn lớn nhất trong việc gì?",
+    "answers": [
+      "So sánh độ dài của các thành phần không nằm ở đường cơ sở (T)",
+      "Hiển thị tổng giá trị của toàn bộ cột (F)",
+      "Phân biệt màu sắc giữa các nhóm (F)",
+      "Xác định xu hướng của các nhóm nằm ở giữa (T)"
+    ],
+    "explanation": "Do không chung một đường cơ sở (baseline), mắt người rất khó so sánh chính xác độ dài của các đoạn nằm lửng lơ ở giữa các cột."
+  },
+  {
+    "id": "viz_v2_13",
+    "question": "Phương pháp 'Jittering' được áp dụng khi nào?",
+    "answers": [
+      "Khi muốn biến biểu đồ cột thành biểu đồ đường (F)",
+      "Khi các điểm dữ liệu bị trùng lặp quá nhiều tại cùng một giá trị (T)",
+      "Để tạo ra hình dáng giống biểu đồ Violin cho Strip Chart (F)",
+      "Để tránh hiện tượng các điểm dữ liệu đè lên nhau hoàn toàn (T)"
+    ],
+    "explanation": "Jittering thêm một chút nhiễu ngẫu nhiên vào vị trí các điểm để người xem thấy được thực tế có bao nhiêu điểm tại tọa độ đó."
+  },
+  {
+    "id": "viz_v2_14",
+    "question": "Điều gì là ĐÚNG khi nói về biểu đồ Ridgeline (đường chân trời)?",
+    "answers": [
+      "Nó cho phép so sánh nhiều phân phối một cách gọn gàng (T)",
+      "Nó chỉ dùng được cho tối đa 3 nhóm dữ liệu (F)",
+      "Nó hoạt động tốt nhất khi các phân phối có sự thay đổi rõ rệt theo một trình tự (T)",
+      "Nó luôn hiển thị dữ liệu thô dưới dạng các điểm chấm (F)"
+    ],
+    "explanation": "Ridgeline plot rất mạnh trong việc so sánh sự thay đổi của phân phối qua thời gian hoặc các nhóm có thứ tự."
+  },
+  {
+    "id": "viz_v2_15",
+    "question": "Thang màu tuần tự (Sequential) có đặc điểm gì?",
+    "answers": [
+      "Sử dụng các màu có độ rực rỡ khác nhau hoàn toàn (F)",
+      "Chỉ rõ mối quan hệ 'lớn hơn' hoặc 'nhỏ hơn' thông qua độ đậm nhạt (T)",
+      "Thường đi từ một màu nhạt (giá trị thấp) đến một màu đậm (giá trị cao) (T)",
+      "Luôn có một màu trắng ở chính giữa để phân kỳ dữ liệu (F)"
+    ],
+    "explanation": "Thang tuần tự dùng biến đổi sắc độ (lightness/saturation) của một hoặc vài màu gần nhau để biểu diễn lượng."
+  },
+  {
+    "id": "viz_v2_16",
+    "question": "Khi trực quan hóa dân số giữa các quận có sự chênh lệch hàng nghìn lần, nên dùng trục nào?",
+    "answers": [
+      "Trục tuyến tính (F)",
+      "Trục Logarit (T)",
+      "Trục cực (F)",
+      "Trục căn bậc hai (F)"
+    ],
+    "explanation": "Log scale nén các giá trị lớn và mở rộng các giá trị nhỏ, giúp quan sát được sự phân hóa ở cả hai đầu dữ liệu."
+  },
+  {
+    "id": "viz_v2_17",
+    "question": "Một Heatmap với quá nhiều màu sắc sặc sỡ không có quy luật sẽ gây ra lỗi gì?",
+    "answers": [
+      "Làm người xem không thể nhận ra các vùng nóng/lạnh (xu hướng) (T)",
+      "Làm dữ liệu bị sai lệch về mặt thống kê (F)",
+      "Gây rối loạn nhận thức về giá trị định lượng (T)",
+      "Làm biểu đồ trông chuyên nghiệp hơn (F)"
+    ],
+    "explanation": "Heatmap cần thang màu có thứ tự (tuần tự hoặc phân kỳ). Nếu dùng màu định tính (ngẫu nhiên), nó sẽ mất đi khả năng truyền tải mật độ/giá trị."
+  },
+  {
+    "id": "viz_v2_18",
+    "question": "Biểu đồ Sina (Sina plot) kết hợp ưu điểm của những loại biểu đồ nào?",
+    "answers": [
+      "Strip Chart và Violin Plot (T)",
+      "Boxplot và Bar Chart (F)",
+      "Heatmap và Histogram (F)",
+      "Nó hiển thị cả dữ liệu thô và mật độ phân phối (T)"
+    ],
+    "explanation": "Sina plot vẽ các điểm dữ liệu nhưng giới hạn độ rộng của chúng theo mật độ kernel, tạo ra hình dáng violin."
+  },
+  {
+    "id": "viz_v2_19",
+    "question": "Râu (whiskers) trong Boxplot KHÔNG đại diện cho điều gì?",
+    "answers": [
+      "Toàn bộ phạm vi của dữ liệu bao gồm cả ngoại lai (T)",
+      "Khoảng cách tối đa 1.5 lần IQR tính từ cạnh hộp (F)",
+      "Độ lệch chuẩn của tập dữ liệu (T)",
+      "Giá trị trung bình của dữ liệu (F)"
+    ],
+    "explanation": "Râu chỉ mở rộng đến giá trị thực tế gần nhất trong khoảng 1.5*IQR. Nó không phải là độ lệch chuẩn và cũng không bao trùm các điểm ngoại lai (điểm ngoại lai được vẽ riêng)."
+  },
+  {
+    "id": "viz_v2_20",
+    "question": "Tại sao Histogram nhạy cảm với 'vị trí bắt đầu' của bin?",
+    "answers": [
+      "Vì nếu thay đổi mốc bắt đầu, một điểm dữ liệu có thể rơi vào bin này hoặc bin khác (T)",
+      "Vì nó làm thay đổi giá trị trung bình của dữ liệu (F)",
+      "Vì nó có thể làm thay đổi hoàn toàn hình dáng biểu đồ với cùng một bin width (T)",
+      "Vì nó ảnh hưởng đến màu sắc hiển thị (F)"
+    ],
+    "explanation": "Đây là một điểm yếu của Histogram. Cùng một bộ dữ liệu, chỉ cần dịch mốc bắt đầu bin một chút, hình ảnh phân phối có thể trông khác hẳn."
+  },
+  {
+    "id": "viz_v2_21",
+    "question": "Mục đích chính của việc sử dụng màu sắc 'Highlight' là gì?",
+    "answers": [
+      "Để làm biểu đồ trông đẹp hơn (F)",
+      "Dẫn dắt người xem chú ý vào một phần cụ thể của câu chuyện dữ liệu (T)",
+      "Giảm độ phức tạp của toàn bộ biểu đồ (F)",
+      "Để thay thế cho việc dán nhãn (labeling) (F)"
+    ],
+    "explanation": "Highlight dùng sự tương phản màu sắc để chỉ định 'đây là điểm quan trọng nhất bạn cần nhìn'."
+  },
+  {
+    "id": "viz_v2_22",
+    "question": "Khi so sánh diện tích của các bang, tại sao thang căn bậc hai (Square-root) lại được coi là 'tự nhiên'?",
+    "answers": [
+      "Vì diện tích tỷ lệ thuận với bình phương kích thước tuyến tính (T)",
+      "Vì mắt người có xu hướng đánh giá kích thước theo diện tích bề mặt (T)",
+      "Vì nó làm cho các bang nhỏ trông lớn hơn (F)",
+      "Vì nó luôn chính xác hơn thang logarit (F)"
+    ],
+    "explanation": "Khi vẽ diện tích, nếu ta dùng bán kính hoặc cạnh để biểu diễn dữ liệu, ta đang vô tình bình phương giá trị đó lên. Dùng căn bậc hai giúp đưa về tỷ lệ tuyến tính chuẩn."
+  },
+  {
+    "id": "viz_v2_23",
+    "question": "Lợi ích của biểu đồ 'Kim tự tháp tuổi' là gì?",
+    "answers": [
+      "Cho phép so sánh trực tiếp hai phân phối đối xứng qua một trục (T)",
+      "Hiển thị được mối quan hệ giữa 3 biến số trở lên (F)",
+      "Dễ dàng nhận ra sự mất cân bằng giữa các nhóm (ví dụ nam và nữ) (T)",
+      "Luôn chính xác hơn biểu đồ mật độ chồng lấp (F)"
+    ],
+    "explanation": "Kim tự tháp tuổi là cách trực quan kinh điển để so sánh cơ cấu dân số/giới tính."
+  },
+  {
+    "id": "viz_v2_24",
+    "question": "Điều gì có thể xảy ra nếu chọn bandwidth quá lớn trong Density plot?",
+    "answers": [
+      "Biểu đồ trở nên quá mượt và mất đi các đặc trưng quan trọng của phân phối (T)",
+      "Biểu đồ xuất hiện nhiều đỉnh giả (F)",
+      "Phân phối trông giống như một phân phối chuẩn (Gaussian) dù thực tế không phải (T)",
+      "Biểu đồ không thể vẽ được (F)"
+    ],
+    "explanation": "Bandwidth quá lớn sẽ 'san phẳng' mọi chi tiết, khiến các cụm dữ liệu riêng biệt bị hòa lẫn vào nhau."
+  },
+  {
+    "id": "viz_v2_25",
+    "question": "Trong trực quan hóa số lượng, khi nào nên giữ nguyên 'thứ tự tự nhiên' của danh mục thay vì sắp xếp theo giá trị?",
+    "answers": [
+      "Khi danh mục là các nhóm tuổi (18-24, 25-34...) (T)",
+      "Khi danh mục là tên các quốc gia (F)",
+      "Khi danh mục là các thứ trong tuần (Thứ 2, Thứ 3...) (T)",
+      "Khi danh mục là tên các bộ phim (F)"
+    ],
+    "explanation": "Các danh mục có thứ tự thời gian hoặc logic nội tại (ordinal data) phải được giữ nguyên để tránh gây nhầm lẫn cho người xem."
+  },
+  {
+    "id": "viz_v2_26",
+    "question": "Thanh lỗi (Error bars) có thể đại diện cho những đại lượng nào sau đây?",
+    "answers": [
+      "Độ lệch chuẩn (Standard Deviation) (T)",
+      "Sai số chuẩn (Standard Error) (T)",
+      "Khoảng tin cậy (Confidence Interval) (T)",
+      "Giá trị trung vị (Median) (F)"
+    ],
+    "explanation": "Đây chính là lý do Error bars gây nhầm lẫn: nếu không chú thích rõ, người xem không biết thanh đó đại diện cho cái gì."
+  },
+  {
+    "id": "viz_v2_27",
+    "question": "Đặc điểm của tọa độ Descartes 2D là gì?",
+    "answers": [
+      "Hai trục x và y vuông góc với nhau (T)",
+      "Các điểm dữ liệu được xác định bởi góc và bán kính (F)",
+      "Giá trị dữ liệu được đặt cách đều dọc theo các trục (T)",
+      "Trục x luôn phải biểu diễn thời gian (F)"
+    ],
+    "explanation": "Đây là hệ tọa độ phổ biến nhất, dựa trên lưới vuông góc phẳng."
+  },
+  {
+    "id": "viz_v2_28",
+    "question": "Một biểu đồ phân phối có 'đuôi dài' (long tail) về bên phải. Cách tóm tắt nào bằng Boxplot là chính xác?",
+    "answers": [
+      "Đường trung vị sẽ nằm lệch về phía dưới (cạnh thấp) của hộp (T)",
+      "Hộp sẽ đối xứng hoàn hảo (F)",
+      "Sẽ có nhiều điểm ngoại lai xuất hiện ở phía trên râu (T)",
+      "Râu phía dưới sẽ dài hơn râu phía trên (F)"
+    ],
+    "explanation": "Với phân phối lệch phải (positive skew), trung vị gần Q1 hơn và các giá trị cực đại kéo dài tạo ra ngoại lai phía trên."
+  },
+  {
+    "id": "viz_v2_29",
+    "question": "Tại sao không nên dùng màu sắc 'cầu vồng' (rainbow palette) cho dữ liệu tuần tự?",
+    "answers": [
+      "Các màu sắc không có thứ tự độ sáng logic (T)",
+      "Màu vàng thường trông sáng hơn các màu khác dù không phải giá trị cao nhất (T)",
+      "Làm người mù màu cực kỳ khó phân biệt (T)",
+      "Vì nó quá đẹp làm lu mờ dữ liệu (F)"
+    ],
+    "explanation": "Màu cầu vồng (Jet/Rainbow) bị các chuyên gia trực quan hóa tẩy chay vì nó không có sự chuyển biến độ sáng đồng nhất, gây nhiễu nhận thức."
+  },
+  {
+    "id": "viz_v2_30",
+    "question": "Ưu điểm của biểu đồ cột nhóm (Grouped Bar) so với biểu đồ cột tách biệt (Faceting) là gì?",
+    "answers": [
+      "Dễ dàng so sánh trực tiếp các danh mục con trong cùng một nhóm chính (T)",
+      "Tiết kiệm diện tích màn hình hơn (T)",
+      "Luôn rõ ràng hơn khi có hàng chục nhóm phụ (F)",
+      "Không cần dùng đến màu sắc (F)"
+    ],
+    "explanation": "Grouped bar đặt các cột cạnh nhau nên so sánh 'khoảng cách' thị giác là ngắn nhất. Tuy nhiên nếu quá nhiều nhóm sẽ bị rối."
+  },
+  {
+    "id": "viz_v2_31",
+    "question": "Trong hệ tọa độ cực, điều gì xảy ra nếu gốc tọa độ (center) không bắt đầu từ 0?",
+    "answers": [
+      "Diện tích các vùng sẽ bị bóp méo trầm trọng (T)",
+      "Biểu đồ vẫn chính xác về mặt góc độ (F)",
+      "Tương tự như lỗi không bắt đầu từ 0 ở Bar chart nhưng mức độ sai lệch cao hơn (T)",
+      "Biểu đồ tự động chuyển thành hình xoắn ốc (F)"
+    ],
+    "explanation": "Trong Polar, diện tích tỷ lệ với bình phương bán kính. Một sai lệch nhỏ ở gốc sẽ làm sai lệch cực lớn diện tích hiển thị của các điểm gần tâm."
+  },
+  {
+    "id": "viz_v2_32",
+    "question": "Tại sao việc trực quan hóa 'độ không chắc chắn' (uncertainty) lại quan trọng?",
+    "answers": [
+      "Để người xem không quá tin tưởng vào các con số ước tính (T)",
+      "Để làm biểu đồ trông phức tạp và hàn lâm hơn (F)",
+      "Để cung cấp cái nhìn trung thực về sai số và biến thiên của dữ liệu (T)",
+      "Để che giấu sự thiếu hụt dữ liệu (F)"
+    ],
+    "explanation": "Trực quan hóa không chỉ là vẽ con số, mà còn là vẽ 'sự tin cậy' của con số đó."
+  },
+  {
+    "id": "viz_v2_33",
+    "question": "Dữ liệu nào sau đây là dữ liệu 'Đa chiều' (Multivariate)?",
+    "answers": [
+      "Doanh thu của một công ty qua 12 tháng (F)",
+      "Thông tin về hành khách Titanic: Tuổi, Giới tính, Hạng vé, Sống sót (T)",
+      "Danh sách tên 100 thành phố lớn nhất thế giới (F)",
+      "Nhiệt độ, độ ẩm và áp suất khí quyển đo được tại một trạm (T)"
+    ],
+    "explanation": "Dữ liệu đa chiều có nhiều biến số (thuộc tính) cho mỗi đối tượng quan sát."
+  },
+  {
+    "id": "viz_v2_34",
+    "question": "Trong biểu đồ mật độ (Density plot), diện tích dưới đường cong luôn bằng bao nhiêu?",
+    "answers": [
+      "1 (T)",
+      "100 (F)",
+      "Tổng số mẫu dữ liệu (F)",
+      "Tùy thuộc vào bandwidth (F)"
+    ],
+    "explanation": "Đây là tính chất của hàm mật độ xác suất (PDF) trong thống kê."
+  },
+  {
+    "id": "viz_v2_35",
+    "question": "Khi muốn làm nổi bật một xu hướng trong Heatmap, ta nên làm gì?",
+    "answers": [
+      "Sắp xếp các hàng và cột theo một tiêu chí có ý nghĩa (ví dụ: giá trị trung bình) (T)",
+      "Dùng càng nhiều màu sắc khác nhau càng tốt (F)",
+      "Sử dụng thang màu phân kỳ nếu dữ liệu có điểm trung lập (T)",
+      "Giữ nguyên thứ tự ngẫu nhiên của các ô (F)"
+    ],
+    "explanation": "Thứ tự sắp xếp hàng/cột trong Heatmap quyết định việc người xem có thấy được 'cụm' (clusters) dữ liệu hay không."
+  },
+  {
+    "id": "viz_v2_36",
+    "question": "Hạn chế của thang đo căn bậc hai so với thang đo logarit là gì?",
+    "answers": [
+      "Nó không nén các giá trị cực lớn hiệu quả bằng thang logarit (T)",
+      "Nó không thể xử lý được giá trị bằng 0 (F)",
+      "Nó khó giải thích ý nghĩa cho người xem phổ thông hơn (T)",
+      "Nó chỉ dùng được cho diện tích hình tròn (F)"
+    ],
+    "explanation": "Logarit mạnh hơn trong việc xử lý dữ liệu trải dài nhiều bậc độ lớn (orders of magnitude)."
+  },
+  {
+    "id": "viz_v2_37",
+    "question": "Trong biểu đồ cột dọc, khi nào bạn buộc phải viết nhãn theo chiều dọc hoặc nghiêng?",
+    "answers": [
+      "Khi có quá nhiều cột và nhãn quá dài (T)",
+      "Khi muốn biểu đồ trông lạ mắt (F)",
+      "Đây là một dấu hiệu cho thấy bạn nên chuyển sang biểu đồ cột ngang (T)",
+      "Khi nhãn là các con số (F)"
+    ],
+    "explanation": "Việc xoay nhãn là giải pháp tình thế yếu kém. Cột ngang là giải pháp thiết kế tốt hơn trong trường hợp này."
+  },
+  {
+    "id": "viz_v2_38",
+    "question": "Tại sao Boxplot không phù hợp cho mẫu dữ liệu quá nhỏ (ví dụ n < 5)?",
+    "answers": [
+      "Các giá trị phân vị không còn mang nhiều ý nghĩa thống kê (T)",
+      "Nó làm biểu đồ trông quá trống trải (F)",
+      "Trong trường hợp này, biểu đồ dải (Strip chart) hiển thị từng điểm sẽ tốt hơn (T)",
+      "Boxplot bắt buộc phải có ít nhất 100 mẫu mới vẽ được (F)"
+    ],
+    "explanation": "Với ít mẫu, việc tóm tắt bằng các con số phân vị có thể gây hiểu lầm về phân phối thực tế."
+  },
+  {
+    "id": "viz_v2_39",
+    "question": "Điều gì là ĐÚNG khi nói về thang màu 'Highlight'?",
+    "answers": [
+      "Phần lớn dữ liệu nên dùng màu xám hoặc màu trung tính nhạt (T)",
+      "Dữ liệu quan trọng nên dùng màu rực rỡ, độ tương phản cao (T)",
+      "Tất cả các màu phải có độ bão hòa cao (F)",
+      "Chỉ được dùng tối đa 2 màu trên toàn biểu đồ (F)"
+    ],
+    "explanation": "Nguyên lý là dùng sự im lặng của màu sắc xung quanh để làm bật lên tiếng nói của điểm dữ liệu quan trọng."
+  },
+  {
+    "id": "viz_v2_40",
+    "question": "Khi biểu diễn sự thay đổi của một phân phối theo thời gian (nhiều năm), lựa chọn nào là tối ưu?",
+    "answers": [
+      "Ridgeline plot (T)",
+      "Stacked bar plot (F)",
+      "Nhiều biểu đồ Violin đặt cạnh nhau dọc theo trục thời gian (T)",
+      "Pie chart (F)"
+    ],
+    "explanation": "Cả Ridgeline và các Violin plots nối tiếp đều giúp quan sát sự dịch chuyển của 'đỉnh' và 'đuôi' phân phối qua các năm."
+  },
+  {
+    "id": "viz_v2_41",
+    "question": "Quy tắc quan trọng nhất khi sử dụng màu sắc biểu diễn dữ liệu định lượng là gì?",
+    "answers": [
+      "Màu sắc phải tuân theo một thứ tự logic về cảm nhận độ sáng (T)",
+      "Luôn dùng màu đỏ cho giá trị cao nhất (F)",
+      "Không dùng quá 10 sắc thái màu khác nhau (F)",
+      "Đảm bảo các bước nhảy màu tương ứng với các bước nhảy giá trị (T)"
+    ],
+    "explanation": "Sự thay đổi về màu sắc mà mắt cảm nhận được phải tỷ lệ thuận với sự thay đổi của con số."
+  },
+  {
+    "id": "viz_v2_42",
+    "question": "Hạn chế của biểu đồ mật độ (Density plot) so với Histogram khi giải thích cho khách hàng không chuyên là gì?",
+    "answers": [
+      "Khách hàng khó hiểu khái niệm 'mật độ' hơn là 'số lượng đếm' (T)",
+      "Density plot trông quá mượt làm họ nghi ngờ dữ liệu bị làm giả (T)",
+      "Density plot chiếm nhiều bộ nhớ máy tính hơn (F)",
+      "Density plot không hiển thị được trung vị (F)"
+    ],
+    "explanation": "Histogram trực quan hơn vì nó chỉ đơn giản là đếm. Density plot là một khái niệm toán học trừu tượng hơn."
+  },
+  {
+    "id": "viz_v2_43",
+    "question": "Tại sao diện tích của các bang vùng Đông Bắc Hoa Kỳ nên được trực quan hóa bằng thang căn bậc hai?",
+    "answers": [
+      "Để giảm bớt sự chênh lệch thị giác giữa bang lớn nhất và nhỏ nhất (T)",
+      "Vì dữ liệu diện tích vốn dĩ là bình phương của đơn vị chiều dài (T)",
+      "Để bang nhỏ nhất không bị biến mất trên biểu đồ (F)",
+      "Vì bang vùng này thường có hình vuông (F)"
+    ],
+    "explanation": "Đây là ứng dụng chuẩn của Square-root scale cho dữ liệu liên quan đến diện tích bề mặt."
+  },
+  {
+    "id": "viz_v2_44",
+    "question": "Một biến số có phân phối đồng nhất (Uniform distribution). Hình dạng của Violin plot sẽ như thế nào?",
+    "answers": [
+      "Giống một hình chữ nhật với hai đầu hơi bo tròn (T)",
+      "Giống một hình thoi dài (F)",
+      "Có một bụng phình to ở giữa (F)",
+      "Thân violin có độ rộng gần như không đổi dọc theo trục giá trị (T)"
+    ],
+    "explanation": "Phân phối đồng nhất nghĩa là mật độ tại mọi điểm là như nhau, nên độ rộng thân violin sẽ hằng số."
+  },
+  {
+    "id": "viz_v2_45",
+    "question": "Lỗi 'Truncating the axis' (Cắt cụt trục) ảnh hưởng đến biểu đồ nào nghiêm trọng nhất?",
+    "answers": [
+      "Bar chart (T)",
+      "Line chart (F)",
+      "Scatter plot (F)",
+      "Dot plot (F)"
+    ],
+    "explanation": "Với Bar chart, độ dài cột là tất cả. Với Line hay Scatter, người ta quan tâm đến vị trí và xu hướng nên việc cắt trục đôi khi được chấp nhận (nhưng phải cẩn thận)."
+  },
+  {
+    "id": "viz_v2_46",
+    "question": "Sự khác biệt giữa 'Cột nhóm' (Grouped) và 'Cột xếp chồng' (Stacked) là gì?",
+    "answers": [
+      "Grouped ưu tiên so sánh giữa các thành phần con, Stacked ưu tiên xem tổng thể (T)",
+      "Stacked giúp tiết kiệm không gian hơn Grouped (T)",
+      "Grouped không dùng màu sắc, Stacked bắt buộc dùng màu (F)",
+      "Grouped luôn tốt hơn Stacked trong mọi trường hợp (F)"
+    ],
+    "explanation": "Tùy vào mục tiêu (so sánh thành phần hay xem tổng thể) mà ta chọn loại phù hợp."
+  },
+  {
+    "id": "viz_v2_47",
+    "question": "Khi trực quan hóa phân phối nhiệt độ hàng ngày trong một tháng, biểu đồ nào cho thấy từng điểm dữ liệu cụ thể?",
+    "answers": [
+      "Strip Chart (T)",
+      "Histogram (F)",
+      "Boxplot (F)",
+      "Sina Plot (T)"
+    ],
+    "explanation": "Strip Chart và Sina Plot đều vẽ các chấm đại diện cho từng ngày, giúp ta thấy được những ngày có nhiệt độ đặc biệt."
+  },
+  {
+    "id": "viz_v2_48",
+    "question": "Câu nói 'Mọi trực quan hóa đều là các phép biến đổi dữ liệu' ám chỉ điều gì?",
+    "answers": [
+      "Việc chọn thang đo, hệ tọa độ hay màu sắc đều là cách chúng ta nhào nặn dữ liệu để truyền tải ý đồ (T)",
+      "Dữ liệu luôn bị làm sai lệch khi vẽ biểu đồ (F)",
+      "Người làm trực quan hóa có quyền thay đổi con số gốc (F)",
+      "Trực quan hóa là sự ánh xạ từ giá trị dữ liệu sang các thuộc tính hình học (T)"
+    ],
+    "explanation": "Mỗi lựa chọn thiết kế là một phép ánh xạ (mapping). Hiểu rõ các phép biến đổi này giúp tránh tạo ra các biểu đồ gây hiểu lầm."
+  },
+  {
+    "id": "viz_v2_49",
+    "question": "Phân phối tuổi của hành khách trên tàu Titanic thường được minh họa bằng Histogram. Tại sao?",
+    "answers": [
+      "Vì tuổi là dữ liệu định lượng liên tục có thể chia nhóm (bins) (T)",
+      "Vì nó giúp thấy được số lượng người ở từng độ tuổi một cách trực quan (T)",
+      "Vì Histogram là cách duy nhất để vẽ dữ liệu Titanic (F)",
+      "Vì nó tự động loại bỏ các hành khách không rõ tuổi (F)"
+    ],
+    "explanation": "Histogram là lựa chọn cơ bản và hiệu quả nhất để xem phân phối của một biến định lượng đơn lẻ."
+  },
+  {
+    "id": "viz_v2_50",
+    "question": "Tại sao việc trực quan hóa dữ liệu đa chiều lại khó khăn?",
+    "answers": [
+      "Vì màn hình và giấy vẽ chỉ có 2 chiều (2D) (T)",
+      "Vì con người khó nhận thức được quá nhiều biến số cùng lúc (T)",
+      "Vì không có phần mềm nào hỗ trợ vẽ nhiều hơn 2 biến (F)",
+      "Vì dữ liệu đa chiều thường bị thiếu (F)"
+    ],
+    "explanation": "Thử thách lớn nhất là làm thế nào để 'ép' nhiều chiều thông tin (màu sắc, kích thước, vị trí, hình dạng...) vào không gian 2D mà vẫn dễ hiểu."
+  }
+]
