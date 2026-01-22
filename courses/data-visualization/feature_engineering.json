@@ -2,1170 +2,991 @@
   {
     "id": "fe_q1",
     "question": "Feature Engineering quan trọng vì lý do nào?",
-    "answers": {
-      "A": "Biến đổi raw data thành features dễ học hơn",
-      "B": "Thay thế hoàn toàn cho việc chọn mô hình",
-      "C":  "Good features + Simple model > Bad features + Complex model",
-      "D": "Loại bỏ nhu cầu data cleaning"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Feature Engineering biến raw data thành features tốt (A). Không thay thế model selection (B sai), không loại bỏ cleaning (D sai). C đúng nhưng là kết quả, không phải lý do."
+    "answers": [
+      "Biến đổi raw data thành features dễ học hơn (T)",
+      "Thay thế hoàn toàn cho việc chọn mô hình (F)",
+      "Good features + Simple model > Bad features + Complex model (F)",
+      "Loại bỏ nhu cầu data cleaning (F)"
+    ],
+    "explanation": "Feature Engineering biến raw data thành features tốt . Không thay thế model selection (B sai), không loại bỏ cleaning (D sai). C đúng nhưng là kết quả, không phải lý do."
   },
-
   {
     "id": "fe_q2",
     "question": "GIGO Principle có nghĩa là gì?",
-    "answers":  {
-      "A": "Good Input, Good Output",
-      "B": "Garbage In, Garbage Out",
-      "C": "Dữ liệu tốt luôn cho kết quả tốt",
-      "D": "Mô hình phức tạp luôn tốt hơn"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "GIGO:  Garbage In, Garbage Out (B) - dữ liệu rác cho kết quả rác. A, C, D đều sai."
+    "answers": [
+      "Good Input, Good Output (F)",
+      "Garbage In, Garbage Out (T)",
+      "Dữ liệu tốt luôn cho kết quả tốt (F)",
+      "Mô hình phức tạp luôn tốt hơn (F)"
+    ],
+    "explanation": "GIGO: Garbage In, Garbage Out - dữ liệu rác cho kết quả rác. A, C, D đều sai."
   },
-
   {
     "id": "fe_q3",
     "question": "Binarization phù hợp khi nào?",
-    "answers": {
-      "A":  "Hành động có xảy ra quan trọng hơn số lần",
-      "B":  "Cần biết chính xác frequency",
-      "C": "Giảm noise từ outliers",
-      "D": "Data có nhiều missing values"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Binarization giảm noise từ outliers (C). A đúng về concept nhưng không phải criterion chính.  B sai - binarization mất frequency. D không liên quan."
+    "answers": [
+      "Hành động có xảy ra quan trọng hơn số lần (F)",
+      "Cần biết chính xác frequency (F)",
+      "Giảm noise từ outliers (T)",
+      "Data có nhiều missing values (F)"
+    ],
+    "explanation": "Binarization giảm noise từ outliers . A đúng về concept nhưng không phải criterion chính. B sai - binarization mất frequency. D không liên quan."
   },
-
   {
     "id": "fe_q4",
     "question": "Equal Width Binning có nhược điểm gì?",
-    "answers":  {
-      "A": "Phức tạp tính toán",
-      "B": "Nếu data skewed, nhiều bins trống",
-      "C": "Không interpretable",
-      "D": "Cần biết distribution trước"
-    },
-    "correctAnswers": ["D"],
-    "explanation": "Equal Width với skewed data tạo bins trống (D). Dễ tính (A sai), interpretable (C sai), không cần distribution (B sai - đó là adaptive)."
+    "answers": [
+      "Phức tạp tính toán (F)",
+      "Nếu data skewed, nhiều bins trống (F)",
+      "Không interpretable (F)",
+      "Cần biết distribution trước (T)"
+    ],
+    "explanation": "Equal Width với skewed data tạo bins trống . Dễ tính (A sai), interpretable (C sai), không cần distribution (B sai - đó là adaptive)."
   },
-
   {
     "id": "fe_q5",
     "question": "Quantiles chia data như thế nào?",
-    "answers": {
-      "A": "Chia theo equal intervals",
-      "B": "Chia để mỗi phần có số observations bằng nhau",
-      "C": "Chia theo distribution density",
-      "D": "Chia ngẫu nhiên"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Quantiles chia để mỗi phần có số observations bằng nhau (A - đúng nhưng không rõ ràng). B rõ ràng hơn.  Equal intervals (A) là fixed-width.  C là adaptive concept. D sai."
+    "answers": [
+      "Chia theo equal intervals (T)",
+      "Chia để mỗi phần có số observations bằng nhau (F)",
+      "Chia theo distribution density (F)",
+      "Chia ngẫu nhiên (F)"
+    ],
+    "explanation": "Quantiles chia để mỗi phần có số observations bằng nhau (A - đúng nhưng không rõ ràng). B rõ ràng hơn. Equal intervals là fixed-width. C là adaptive concept. D sai."
   },
-
   {
     "id": "fe_q6",
-    "question":  "Quartiles chia data thành mấy phần?",
-    "answers": {
-      "A": "2 phần",
-      "B": "4 phần",
-      "C": "10 phần",
-      "D": "Mỗi phần 25% observations"
-    },
-    "correctAnswers": ["B", "D"],
-    "explanation":  "Quartiles chia làm 4 phần (B), mỗi phần 25% (D). 2 phần (A) là Median. 10 phần (C) là Deciles."
+    "question": "Quartiles chia data thành mấy phần?",
+    "answers": [
+      "2 phần (F)",
+      "4 phần (T)",
+      "10 phần (F)",
+      "Mỗi phần 25% observations (T)"
+    ],
+    "explanation": "Quartiles chia làm 4 phần , mỗi phần 25% . 2 phần là Median. 10 phần là Deciles."
   },
-
   {
     "id": "fe_q7",
     "question": "Equal Frequency Binning có ưu điểm gì?",
-    "answers": {
-      "A": "Bin widths cố định",
-      "B": "Balanced counts trong mỗi bin",
-      "C": "Phù hợp cho skewed data",
-      "D":  "Dễ tính toán nhất"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation":  "Equal Frequency:  balanced counts (B), tốt cho skewed data (C). Bin widths variable (A sai). Không dễ nhất (D sai)."
+    "answers": [
+      "Bin widths cố định (F)",
+      "Balanced counts trong mỗi bin (T)",
+      "Phù hợp cho skewed data (T)",
+      "Dễ tính toán nhất (F)"
+    ],
+    "explanation": "Equal Frequency: balanced counts , tốt cho skewed data . Bin widths variable (A sai). Không dễ nhất (D sai)."
   },
-
   {
-    "id":  "fe_q8",
+    "id": "fe_q8",
     "question": "Log Transformation dùng khi nào?",
-    "answers": {
-      "A":  "Data bị positive skew",
-      "B": "Có vài giá trị cực lớn",
-      "C": "Data đã Normal Distribution",
-      "D": "Giảm tác động outliers"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Log Transformation: positive skew (A), giá trị cực lớn (B). Không dùng khi đã Normal (C sai). D đúng nhưng là effect, không phải criterion."
+    "answers": [
+      "Data bị positive skew (T)",
+      "Có vài giá trị cực lớn (T)",
+      "Data đã Normal Distribution (F)",
+      "Giảm tác động outliers (F)"
+    ],
+    "explanation": "Log Transformation: positive skew , giá trị cực lớn . Không dùng khi đã Normal (C sai). D đúng nhưng là effect, không phải criterion."
   },
-
   {
     "id": "fe_q9",
     "question": "Log Transformation có effect gì?",
-    "answers": {
-      "A": "Compress large values",
-      "B": "Expand small values",
-      "C": "Transform về Normal Distribution",
-      "D": "Tăng tác động outliers"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Log:  compress large (A), expand small (B), về Normal (C). Giảm outliers, không tăng (D sai)."
+    "answers": [
+      "Compress large values (T)",
+      "Expand small values (T)",
+      "Transform về Normal Distribution (T)",
+      "Tăng tác động outliers (F)"
+    ],
+    "explanation": "Log: compress large , expand small , về Normal . Giảm outliers, không tăng (D sai)."
   },
-
   {
     "id": "fe_q10",
     "question": "Box-Cox Transformation có đặc điểm gì?",
-    "answers": {
-      "A": "Tự động tìm optimal λ",
-      "B": "Yêu cầu x > 0",
-      "C":  "Chỉ áp dụng được log transformation",
-      "D": "Mạnh hơn Log transformation"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Box-Cox: tự tìm λ (A), yêu cầu x > 0 (B), mạnh hơn Log (D). Không chỉ log (C sai) - generalized power."
+    "answers": [
+      "Tự động tìm optimal λ (T)",
+      "Yêu cầu x > 0 (T)",
+      "Chỉ áp dụng được log transformation (F)",
+      "Mạnh hơn Log transformation (T)"
+    ],
+    "explanation": "Box-Cox: tự tìm λ , yêu cầu x > 0 , mạnh hơn Log . Không chỉ log (C sai) - generalized power."
   },
-
   {
     "id": "fe_q11",
     "question": "Tại sao cần Feature Scaling?",
-    "answers":  {
-      "A": "Algorithms như Linear Regression nhạy cảm với magnitude",
-      "B": "Tránh feature có magnitude lớn chiếm ưu thế",
-      "C": "Tăng diversity của features",
-      "D": "Scale về cùng range"
-    },
-    "correctAnswers": ["A", "D"],
-    "explanation": "Scaling cần vì algorithms nhạy magnitude (A), scale cùng range (D). B đúng nhưng là kết quả.  C sai - không tăng diversity."
+    "answers": [
+      "Algorithms như Linear Regression nhạy cảm với magnitude (T)",
+      "Tránh feature có magnitude lớn chiếm ưu thế (F)",
+      "Tăng diversity của features (F)",
+      "Scale về cùng range (T)"
+    ],
+    "explanation": "Scaling cần vì algorithms nhạy magnitude , scale cùng range . B đúng nhưng là kết quả. C sai - không tăng diversity."
   },
-
   {
     "id": "fe_q12",
     "question": "Min-Max Scaling có công thức nào?",
-    "answers": {
-      "A": "x' = (x - μ) / σ",
-      "B": "x' = (x - x_min) / (x_max - x_min)",
-      "C": "x' = x / ||x||₂",
-      "D": "x' = log(x)"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Min-Max: (x - x_min) / (x_max - x_min) (B). A là Standard.  C là L2 Norm. D là Log."
+    "answers": [
+      "x' = (x - μ) / σ (F)",
+      "x' = (x - x_min) / (x_max - x_min) (T)",
+      "x' = x / ||x||₂ (F)",
+      "x' = log(x) (F)"
+    ],
+    "explanation": "Min-Max: (x - x_min) / (x_max - x_min) . A là Standard. C là L2 Norm. D là Log."
   },
-
   {
     "id": "fe_q13",
     "question": "Min-Max Scaling có đặc điểm gì? ",
-    "answers": {
-      "A": "Đưa data về [0, 1]",
-      "B": "Preserves zeros",
-      "C": "Sensitive to outliers",
-      "D": "Mean = 0, std = 1"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Min-Max: về [0,1] (A), preserves zeros (B), sensitive outliers (C). Mean=0/std=1 (D) là Standard."
+    "answers": [
+      "Đưa data về [0, 1] (T)",
+      "Preserves zeros (T)",
+      "Sensitive to outliers (T)",
+      "Mean = 0, std = 1 (F)"
+    ],
+    "explanation": "Min-Max: về [0,1] , preserves zeros , sensitive outliers . Mean=0/std=1 là Standard."
   },
-
   {
     "id": "fe_q14",
     "question": "Standard Scaling (Z-score) có công thức nào? ",
-    "answers": {
-      "A": "x' = (x - x_min) / (x_max - x_min)",
-      "B": "x' = (x - μ) / σ",
-      "C":  "x' = x / ||x||₂",
-      "D": "x' = log(x + 1)"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Standard Scaling: (x - μ) / σ (B). A là Min-Max. C là L2 Norm. D là Log."
+    "answers": [
+      "x' = (x - x_min) / (x_max - x_min) (F)",
+      "x' = (x - μ) / σ (T)",
+      "x' = x / ||x||₂ (F)",
+      "x' = log(x + 1) (F)"
+    ],
+    "explanation": "Standard Scaling: (x - μ) / σ . A là Min-Max. C là L2 Norm. D là Log."
   },
-
   {
     "id": "fe_q15",
     "question": "Standard Scaling có đặc điểm gì?",
-    "answers": {
-      "A":  "Mean = 0, std = 1",
-      "B": "Less sensitive to outliers hơn Min-Max",
-      "C":  "Bound về [0, 1]",
-      "D": "Không bound về fixed range"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Standard:  mean=0/std=1 (A), ít sensitive outliers (B), unbounded (D). Không bound [0,1] (C sai)."
+    "answers": [
+      "Mean = 0, std = 1 (T)",
+      "Less sensitive to outliers hơn Min-Max (T)",
+      "Bound về [0, 1] (F)",
+      "Không bound về fixed range (T)"
+    ],
+    "explanation": "Standard: mean=0/std=1 , ít sensitive outliers , unbounded . Không bound [0,1] (C sai)."
   },
-
   {
     "id": "fe_q16",
     "question": "L2 Normalization có đặc điểm gì? ",
-    "answers": {
-      "A": "Normalize theo vector",
-      "B": "Tổng bình phương = 1",
-      "C":  "Direction giữ nguyên, magnitude thay đổi",
-      "D": "Normalize từng feature độc lập"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "L2 Norm: theo vector (A), tổng bình phương=1 (B), giữ direction (C). Không độc lập từng feature (D sai)."
+    "answers": [
+      "Normalize theo vector (T)",
+      "Tổng bình phương = 1 (T)",
+      "Direction giữ nguyên, magnitude thay đổi (T)",
+      "Normalize từng feature độc lập (F)"
+    ],
+    "explanation": "L2 Norm: theo vector , tổng bình phương=1 , giữ direction . Không độc lập từng feature (D sai)."
   },
-
   {
     "id": "fe_q17",
     "question": "L2 Normalization dùng khi nào?",
-    "answers": {
-      "A": "Text processing (TF-IDF)",
-      "B": "Cosine similarity",
-      "C":  "Direction quan trọng hơn magnitude",
-      "D": "Neural Networks với bounded activation"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "L2 Norm:  text/TF-IDF (A), cosine similarity (B), direction quan trọng (C). Bounded activation (D) dùng Min-Max."
+    "answers": [
+      "Text processing (TF-IDF) (T)",
+      "Cosine similarity (T)",
+      "Direction quan trọng hơn magnitude (T)",
+      "Neural Networks với bounded activation (F)"
+    ],
+    "explanation": "L2 Norm: text/TF-IDF , cosine similarity , direction quan trọng . Bounded activation dùng Min-Max."
   },
-
   {
     "id": "fe_q18",
     "question": "Label Encoding có vấn đề gì?",
-    "answers": {
-      "A": "Model hiểu lầm ordinal relationship",
-      "B": "Tạo quá nhiều columns",
-      "C": "Không phù hợp nominal categories",
-      "D": "Tốn bộ nhớ"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Label Encoding: model hiểu lầm order (A), không phù hợp nominal (C). Không tạo nhiều columns (B sai). Tiết kiệm bộ nhớ (D sai)."
+    "answers": [
+      "Model hiểu lầm ordinal relationship (T)",
+      "Tạo quá nhiều columns (F)",
+      "Không phù hợp nominal categories (T)",
+      "Tốn bộ nhớ (F)"
+    ],
+    "explanation": "Label Encoding: model hiểu lầm order , không phù hợp nominal . Không tạo nhiều columns (B sai). Tiết kiệm bộ nhớ (D sai)."
   },
-
   {
     "id": "fe_q19",
     "question": "Ordinal Encoding khác Label Encoding ở đâu?",
-    "answers": {
-      "A":  "Tuân thủ thứ tự logic",
-      "B": "Preserves order relationship",
-      "C": "Tạo binary columns",
-      "D": "Phù hợp ordinal categories"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Ordinal Encoding: thứ tự logic (A), preserves order (B), phù hợp ordinal (D). Không tạo binary columns (C sai - đó là One-Hot)."
+    "answers": [
+      "Tuân thủ thứ tự logic (T)",
+      "Preserves order relationship (T)",
+      "Tạo binary columns (F)",
+      "Phù hợp ordinal categories (T)"
+    ],
+    "explanation": "Ordinal Encoding: thứ tự logic , preserves order , phù hợp ordinal . Không tạo binary columns (C sai - đó là One-Hot)."
   },
-
   {
     "id": "fe_q20",
     "question": "One-Hot Encoding có ưu điểm gì? ",
-    "answers": {
-      "A": "Không có ordinal assumption",
-      "B": "Tiết kiệm bộ nhớ",
-      "C":  "Phù hợp hầu hết algorithms",
-      "D": "Tạo N binary columns cho N categories"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "One-Hot: không ordinal assumption (A), phù hợp algorithms (C). Tốn bộ nhớ (B sai). D đúng nhưng là đặc điểm, không phải ưu điểm."
+    "answers": [
+      "Không có ordinal assumption (T)",
+      "Tiết kiệm bộ nhớ (F)",
+      "Phù hợp hầu hết algorithms (T)",
+      "Tạo N binary columns cho N categories (F)"
+    ],
+    "explanation": "One-Hot: không ordinal assumption , phù hợp algorithms . Tốn bộ nhớ (B sai). D đúng nhưng là đặc điểm, không phải ưu điểm."
   },
-
   {
     "id": "fe_q21",
     "question": "One-Hot Encoding có nhược điểm gì?",
-    "answers": {
-      "A": "Curse of dimensionality",
-      "B": "Sparse data (nhiều zeros)",
-      "C": "Ordinal assumption sai",
-      "D": "1000 categories → 1000 columns"
-    },
-    "correctAnswers":  ["A", "B", "D"],
-    "explanation": "One-Hot nhược điểm: curse of dimensionality (A), sparse (B), nhiều columns (D). Không có ordinal assumption (C) là ưu điểm."
+    "answers": [
+      "Curse of dimensionality (T)",
+      "Sparse data (nhiều zeros) (T)",
+      "Ordinal assumption sai (F)",
+      "1000 categories → 1000 columns (T)"
+    ],
+    "explanation": "One-Hot nhược điểm: curse of dimensionality , sparse , nhiều columns . Không có ordinal assumption là ưu điểm."
   },
-
   {
     "id": "fe_q22",
     "question": "Frequency Encoding thay category bằng gì?",
-    "answers": {
-      "A": "Binary values",
-      "B": "Count hoặc frequency rank",
-      "C": "Mean của target variable",
-      "D": "Hash value"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Frequency Encoding: count/frequency rank (B). Binary (A) là binarization. Mean target (C) là Target Mean. Hash (D) là Feature Hashing."
+    "answers": [
+      "Binary values (F)",
+      "Count hoặc frequency rank (T)",
+      "Mean của target variable (F)",
+      "Hash value (F)"
+    ],
+    "explanation": "Frequency Encoding: count/frequency rank . Binary là binarization. Mean target là Target Mean. Hash là Feature Hashing."
   },
-
   {
     "id": "fe_q23",
     "question": "Frequency Encoding có lợi ích gì?",
-    "answers": {
-      "A": "Model biết category nào phổ biến",
-      "B": "Single column, không tăng dimensionality",
-      "C":  "Captures relationship với target",
-      "D": "Tạo nhiều features mới"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Frequency:  biết phổ biến/hiếm (A), single column (B). Relationship với target (C) là Target Mean. Không tạo nhiều features (D sai)."
+    "answers": [
+      "Model biết category nào phổ biến (T)",
+      "Single column, không tăng dimensionality (T)",
+      "Captures relationship với target (F)",
+      "Tạo nhiều features mới (F)"
+    ],
+    "explanation": "Frequency: biết phổ biến/hiếm , single column . Relationship với target là Target Mean. Không tạo nhiều features (D sai)."
   },
-
   {
     "id": "fe_q24",
-    "question":  "Target Mean Encoding có đặc điểm gì? ",
-    "answers": {
-      "A": "Thay category bằng mean của target",
-      "B": "Rất mạnh, phổ biến Kaggle",
-      "C": "Captures relationship với target",
-      "D": "Không có data leakage risk"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Target Mean: mean của target (A), mạnh/Kaggle (B), captures relationship (C). Có leakage risk (D sai)."
+    "question": "Target Mean Encoding có đặc điểm gì? ",
+    "answers": [
+      "Thay category bằng mean của target (T)",
+      "Rất mạnh, phổ biến Kaggle (T)",
+      "Captures relationship với target (T)",
+      "Không có data leakage risk (F)"
+    ],
+    "explanation": "Target Mean: mean của target , mạnh/Kaggle , captures relationship . Có leakage risk (D sai)."
   },
-
   {
     "id": "fe_q25",
     "question": "Target Mean Encoding có vấn đề gì?",
-    "answers": {
-      "A": "Data leakage risk",
-      "B": "Học thuộc training data",
-      "C": "Solution:  dùng cross-validation",
-      "D":  "Không phù hợp tree-based models"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Target Mean vấn đề: data leakage (A), overfitting (B), solution CV (C). Rất phù hợp trees (D sai)."
+    "answers": [
+      "Data leakage risk (T)",
+      "Học thuộc training data (T)",
+      "Solution:  dùng cross-validation (T)",
+      "Không phù hợp tree-based models (F)"
+    ],
+    "explanation": "Target Mean vấn đề: data leakage , overfitting , solution CV . Rất phù hợp trees (D sai)."
   },
-
   {
     "id": "fe_q26",
     "question": "Feature Hashing có ưu điểm gì? ",
-    "answers": {
-      "A": "Handle very high cardinality",
-      "B":  "Fixed dimensionality",
-      "C":  "Memory efficient",
-      "D": "High interpretability"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Feature Hashing: high cardinality (A), fixed dim (B), memory efficient (C). Loss interpretability (D sai)."
+    "answers": [
+      "Handle very high cardinality (T)",
+      "Fixed dimensionality (T)",
+      "Memory efficient (T)",
+      "High interpretability (F)"
+    ],
+    "explanation": "Feature Hashing: high cardinality , fixed dim , memory efficient . Loss interpretability (D sai)."
   },
-
   {
     "id": "fe_q27",
     "question": "Feature Hashing có nhược điểm gì?",
-    "answers": {
-      "A": "Hash collisions",
-      "B":  "Loss of interpretability",
-      "C": "Tốn bộ nhớ",
-      "D": "Hai categories khác nhau có thể hash cùng bin"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Hashing nhược điểm: collisions (A), loss interpretability (B), cùng bin (D). Tiết kiệm bộ nhớ (C sai)."
+    "answers": [
+      "Hash collisions (T)",
+      "Loss of interpretability (T)",
+      "Tốn bộ nhớ (F)",
+      "Hai categories khác nhau có thể hash cùng bin (T)"
+    ],
+    "explanation": "Hashing nhược điểm: collisions , loss interpretability , cùng bin . Tiết kiệm bộ nhớ (C sai)."
   },
-
   {
     "id": "fe_q28",
     "question": "Bin-counting encoding dùng gì?",
-    "answers":  {
-      "A": "Statistical measures liên quan category và target",
-      "B": "Hash function",
-      "C": "Click-Through Rate (CTR)",
-      "D": "Frequency rank"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Bin-counting: statistical measures (A), ví dụ CTR (C). Hash (B) là Feature Hashing. Frequency rank (D) là Frequency Encoding."
+    "answers": [
+      "Statistical measures liên quan category và target (T)",
+      "Hash function (F)",
+      "Click-Through Rate (CTR) (T)",
+      "Frequency rank (F)"
+    ],
+    "explanation": "Bin-counting: statistical measures , ví dụ CTR . Hash là Feature Hashing. Frequency rank là Frequency Encoding."
   },
-
   {
     "id": "fe_q29",
     "question": "Bag-of-Words có đặc điểm gì? ",
-    "answers": {
-      "A": "Coi văn bản như túi từ",
-      "B": "Không quan tâm order",
-      "C": "Preserves grammar",
-      "D": "Loses structure hoàn toàn"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "BoW: túi từ (A), không order (B), mất structure (D). Không preserve grammar (C sai)."
+    "answers": [
+      "Coi văn bản như túi từ (T)",
+      "Không quan tâm order (T)",
+      "Preserves grammar (F)",
+      "Loses structure hoàn toàn (T)"
+    ],
+    "explanation": "BoW: túi từ , không order , mất structure . Không preserve grammar (C sai)."
   },
-
   {
     "id": "fe_q30",
     "question": "Bag-of-n-Grams có ưu điểm gì so với BoW?",
-    "answers": {
-      "A": "Captures local context",
-      "B":  "Bigram captures negation",
-      "C": "Giảm dimensionality",
-      "D":  "not good ≠ good"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "n-Grams: local context (A), negation (B), phân biệt not good/good (D). Tăng dimensionality (C sai)."
+    "answers": [
+      "Captures local context (T)",
+      "Bigram captures negation (T)",
+      "Giảm dimensionality (F)",
+      "not good ≠ good (T)"
+    ],
+    "explanation": "n-Grams: local context , negation , phân biệt not good/good . Tăng dimensionality (C sai)."
   },
-
   {
     "id": "fe_q31",
-    "question":  "Bag-of-n-Grams có nhược điểm gì?",
-    "answers": {
-      "A":  "Dimensionality explosion",
-      "B": "Extremely sparse vectors",
-      "C": "Vocabulary size^n",
-      "D": "Tiết kiệm bộ nhớ"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "n-Grams nhược điểm: dimensionality explosion (A), sparse (B), size^n (C). Tốn bộ nhớ (D sai)."
+    "question": "Bag-of-n-Grams có nhược điểm gì?",
+    "answers": [
+      "Dimensionality explosion (T)",
+      "Extremely sparse vectors (T)",
+      "Vocabulary size^n (T)",
+      "Tiết kiệm bộ nhớ (F)"
+    ],
+    "explanation": "n-Grams nhược điểm: dimensionality explosion , sparse , size^n . Tốn bộ nhớ (D sai)."
   },
-
   {
     "id": "fe_q32",
     "question": "Tokenization có chức năng gì?",
-    "answers": {
-      "A": "Chia text thành tokens",
-      "B": "Gán weights cho words",
-      "C": "Tokens là words, punctuation",
-      "D": "Remove stopwords"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Tokenization: chia thành tokens (A), words/punctuation (C). Gán weights (B) là TF-IDF. Remove stopwords (D) là filtering."
+    "answers": [
+      "Chia text thành tokens (T)",
+      "Gán weights cho words (F)",
+      "Tokens là words, punctuation (T)",
+      "Remove stopwords (F)"
+    ],
+    "explanation": "Tokenization: chia thành tokens , words/punctuation . Gán weights là TF-IDF. Remove stopwords là filtering."
   },
-
   {
     "id": "fe_q33",
     "question": "Chunking có chức năng gì?",
-    "answers": {
-      "A": "Chia text thành tokens",
-      "B": "Nhóm tokens thành phrases",
-      "C": "Phrase detection",
-      "D": "Meaningful phrases như Noun/Verb Phrase"
-    },
-    "correctAnswers": ["B", "C", "D"],
-    "explanation":  "Chunking: nhóm thành phrases (B), phrase detection (C), NP/VP (D). Chia tokens (A) là Tokenization."
+    "answers": [
+      "Chia text thành tokens (F)",
+      "Nhóm tokens thành phrases (T)",
+      "Phrase detection (T)",
+      "Meaningful phrases như Noun/Verb Phrase (T)"
+    ],
+    "explanation": "Chunking: nhóm thành phrases , phrase detection , NP/VP . Chia tokens là Tokenization."
   },
-
   {
     "id": "fe_q34",
     "question": "TF-IDF core philosophy là gì?",
-    "answers": {
-      "A": "Common words carry more information",
-      "B": "Rare words carry more information",
-      "C": "All words equally important",
-      "D": "Frequent words have low value"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "TF-IDF philosophy: rare words carry more info (B). Common words low value (D đúng nhưng là kết quả). A, C sai."
+    "answers": [
+      "Common words carry more information (F)",
+      "Rare words carry more information (T)",
+      "All words equally important (F)",
+      "Frequent words have low value (F)"
+    ],
+    "explanation": "TF-IDF philosophy: rare words carry more info . Common words low value (D đúng nhưng là kết quả). A, C sai."
   },
-
   {
     "id": "fe_q35",
-    "question":  "TF (Term Frequency) đo gì?",
-    "answers": {
-      "A": "Rarity của term trong corpus",
-      "B": "Frequency của term trong document",
-      "C": "Formula: 1 + log(count(t, d))",
-      "D": "Number of documents containing term"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "TF: frequency trong document (B), formula 1+log(count) (C). Rarity (A) là IDF. Doc count (D) là df trong IDF."
+    "question": "TF (Term Frequency) đo gì?",
+    "answers": [
+      "Rarity của term trong corpus (F)",
+      "Frequency của term trong document (T)",
+      "Formula: 1 + log(count(t, d)) (T)",
+      "Number of documents containing term (F)"
+    ],
+    "explanation": "TF: frequency trong document , formula 1+log(count) . Rarity là IDF. Doc count là df trong IDF."
   },
-
   {
     "id": "fe_q36",
-    "question":  "IDF (Inverse Document Frequency) đo gì?",
-    "answers": {
-      "A": "Frequency trong document",
-      "B": "Rarity của term trong corpus",
-      "C": "Formula: log(N / df(t))",
-      "D": "N = total documents"
-    },
-    "correctAnswers": ["B", "C", "D"],
-    "explanation":  "IDF: rarity trong corpus (B), formula log(N/df) (C), N=total docs (D). Frequency trong doc (A) là TF."
+    "question": "IDF (Inverse Document Frequency) đo gì?",
+    "answers": [
+      "Frequency trong document (F)",
+      "Rarity của term trong corpus (T)",
+      "Formula: log(N / df(t)) (T)",
+      "N = total documents (T)"
+    ],
+    "explanation": "IDF: rarity trong corpus , formula log(N/df) , N=total docs . Frequency trong doc là TF."
   },
-
   {
     "id": "fe_q37",
     "question": "TF-IDF combined formula là gì?",
-    "answers": {
-      "A": "TF × IDF",
-      "B":  "[1 + log(count)] × log(N / df)",
-      "C": "TF + IDF",
-      "D":  "log(TF × IDF)"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "TF-IDF: TF × IDF (A), [1+log(count)] × log(N/df) (B). Không phải + (C) hay log tổng (D)."
+    "answers": [
+      "TF × IDF (T)",
+      "[1 + log(count)] × log(N / df) (T)",
+      "TF + IDF (F)",
+      "log(TF × IDF) (F)"
+    ],
+    "explanation": "TF-IDF: TF × IDF , [1+log(count)] × log(N/df) . Không phải + hay log tổng ."
   },
-
   {
-    "id":  "fe_q38",
+    "id": "fe_q38",
     "question": "TF-IDF có properties gì?",
-    "answers": {
-      "A": "Tăng khi term frequent trong document",
-      "B": "Tăng khi term rare trong corpus",
-      "C": "Equals 0 khi term trong mọi documents",
-      "D": "Luôn > 0"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "TF-IDF: tăng khi frequent/doc (A), rare/corpus (B), =0 khi df=N (C). Không luôn >0 (D sai)."
+    "answers": [
+      "Tăng khi term frequent trong document (T)",
+      "Tăng khi term rare trong corpus (T)",
+      "Equals 0 khi term trong mọi documents (T)",
+      "Luôn > 0 (F)"
+    ],
+    "explanation": "TF-IDF: tăng khi frequent/doc , rare/corpus , =0 khi df=N . Không luôn >0 (D sai)."
   },
-
   {
     "id": "fe_q39",
     "question": "Stopwords Removal có mục đích gì?",
-    "answers": {
-      "A": "Remove extremely common words",
-      "B":  "Remove rare words",
-      "C":  "Remove 'and', 'the', 'là', 'của'",
-      "D": "Remove typos"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Stopwords: remove common words (A), như 'and/the/là' (C). Rare words (B) và typos (D) là frequency filtering."
+    "answers": [
+      "Remove extremely common words (T)",
+      "Remove rare words (F)",
+      "Remove 'and', 'the', 'là', 'của' (T)",
+      "Remove typos (F)"
+    ],
+    "explanation": "Stopwords: remove common words , như 'and/the/là' . Rare words và typos là frequency filtering."
   },
-
   {
     "id": "fe_q40",
     "question": "Frequency-Based Filtering remove gì?",
-    "answers": {
-      "A": "Too frequent words",
-      "B": "Too rare words (< 5 occurrences)",
-      "C": "Stopwords",
-      "D": "Typos, ultra-rare terms"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Frequency Filtering: too frequent (A), too rare (B), typos (D). Stopwords (C) là Stopwords Removal riêng."
+    "answers": [
+      "Too frequent words (T)",
+      "Too rare words (< 5 occurrences) (T)",
+      "Stopwords (F)",
+      "Typos, ultra-rare terms (T)"
+    ],
+    "explanation": "Frequency Filtering: too frequent , too rare , typos . Stopwords là Stopwords Removal riêng."
   },
-
   {
     "id": "fe_q41",
     "question": "Stemming có chức năng gì?",
-    "answers": {
-      "A": "Reduce words về root form",
-      "B": "fishing, fished, fisher → fish",
-      "C": "Reduce vocabulary complexity",
-      "D": "Tăng vocabulary size"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Stemming: về root (A), ví dụ →fish (B), giảm complexity (C). Giảm vocabulary (D sai - không tăng)."
+    "answers": [
+      "Reduce words về root form (T)",
+      "fishing, fished, fisher → fish (T)",
+      "Reduce vocabulary complexity (T)",
+      "Tăng vocabulary size (F)"
+    ],
+    "explanation": "Stemming: về root , ví dụ →fish , giảm complexity . Giảm vocabulary (D sai - không tăng)."
   },
-
   {
     "id": "fe_q42",
     "question": "Word Embedding core philosophy là gì?",
-    "answers": {
-      "A":  "You shall know a word by the company it keeps",
-      "B": "Words in similar contexts have similar meanings",
-      "C": "Rare words carry more information",
-      "D": "Frequency determines importance"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Word Embedding: company it keeps (A), similar contexts (B). Rare words (C) là TF-IDF. Frequency (D) là BoW."
+    "answers": [
+      "You shall know a word by the company it keeps (T)",
+      "Words in similar contexts have similar meanings (T)",
+      "Rare words carry more information (F)",
+      "Frequency determines importance (F)"
+    ],
+    "explanation": "Word Embedding: company it keeps , similar contexts . Rare words là TF-IDF. Frequency là BoW."
   },
-
   {
     "id": "fe_q43",
-    "question":  "Word Embedding có đặc điểm gì? ",
-    "answers": {
-      "A": "Dense vectors (không sparse)",
-      "B": "Short vectors:  50-300 dimensions",
-      "C":  "Sparse vectors với nhiều zeros",
-      "D": "Similar words → similar vectors"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Word Embedding: dense (A), short 50-300 (B), similar→similar (D). Không sparse (C sai)."
+    "question": "Word Embedding có đặc điểm gì? ",
+    "answers": [
+      "Dense vectors (không sparse) (T)",
+      "Short vectors:  50-300 dimensions (T)",
+      "Sparse vectors với nhiều zeros (F)",
+      "Similar words → similar vectors (T)"
+    ],
+    "explanation": "Word Embedding: dense , short 50-300 , similar→similar . Không sparse (C sai)."
   },
-
   {
     "id": "fe_q44",
     "question": "Word2vec có đặc điểm gì? ",
-    "answers": {
-      "A": "Unsupervised learning",
-      "B": "Supervised learning với labels",
-      "C": "Reads billions of words",
-      "D":  "Captures logical relationships"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation":  "Word2vec: unsupervised (A), billions words (C), logical relationships (D). Không supervised (B sai)."
+    "answers": [
+      "Unsupervised learning (T)",
+      "Supervised learning với labels (F)",
+      "Reads billions of words (T)",
+      "Captures logical relationships (T)"
+    ],
+    "explanation": "Word2vec: unsupervised , billions words , logical relationships . Không supervised (B sai)."
   },
-
   {
     "id": "fe_q45",
     "question": "Word2vec famous example là gì?",
-    "answers": {
-      "A":  "King - Man + Woman ≈ Queen",
-      "B": "Smart ≈ Intelligent",
-      "C": "Trump ≈ Biden",
-      "D": "University ≠ Apple"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Famous example: King-Man+Woman≈Queen (A). B, C, D đúng nhưng không phải famous example nhất."
+    "answers": [
+      "King - Man + Woman ≈ Queen (T)",
+      "Smart ≈ Intelligent (F)",
+      "Trump ≈ Biden (F)",
+      "University ≠ Apple (F)"
+    ],
+    "explanation": "Famous example: King-Man+Woman≈Queen . B, C, D đúng nhưng không phải famous example nhất."
   },
-
   {
     "id": "fe_q46",
     "question": "So sánh BoW/TF-IDF vs Word Embedding về vector type:",
-    "answers": {
-      "A": "BoW:  sparse, Embedding: dense",
-      "B": "BoW: dense, Embedding: sparse",
-      "C": "Cả hai đều sparse",
-      "D": "Cả hai đều dense"
-    },
-    "correctAnswers": ["A"],
+    "answers": [
+      "BoW:  sparse, Embedding: dense (T)",
+      "BoW: dense, Embedding: sparse (F)",
+      "Cả hai đều sparse (F)",
+      "Cả hai đều dense (F)"
+    ],
     "explanation": "BoW/TF-IDF: sparse (nhiều zeros). Word Embedding: dense (all non-zero). A đúng."
   },
-
   {
     "id": "fe_q47",
     "question": "So sánh BoW/TF-IDF vs Word Embedding về dimensionality:",
-    "answers":  {
-      "A": "BoW: 10K-100K+, Embedding: 50-300",
-      "B": "BoW: 50-300, Embedding: 10K+",
-      "C": "BoW: vocabulary size, Embedding: fixed small",
-      "D": "Cả hai đều fixed small"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "BoW:  vocab size/lớn (A, C). Embedding: fixed small 50-300 (A, C). B, D sai."
+    "answers": [
+      "BoW: 10K-100K+, Embedding: 50-300 (T)",
+      "BoW: 50-300, Embedding: 10K+ (F)",
+      "BoW: vocabulary size, Embedding: fixed small (T)",
+      "Cả hai đều fixed small (F)"
+    ],
+    "explanation": "BoW: vocab size/lớn (A, C). Embedding: fixed small 50-300 (A, C). B, D sai."
   },
-
   {
     "id": "fe_q48",
     "question": "So sánh BoW/TF-IDF vs Word Embedding về semantics:",
-    "answers": {
-      "A": "BoW: no semantic, Embedding: captures meaning",
-      "B": "BoW: Smart ≠ Intelligent, Embedding: Smart ≈ Intelligent",
-      "C": "Cả hai capture semantics",
-      "D": "Cả hai không capture semantics"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "BoW: no semantics (A), separate columns (B). Embedding: captures meaning (A), similar vectors (B). C, D sai."
+    "answers": [
+      "BoW: no semantic, Embedding: captures meaning (T)",
+      "BoW: Smart ≠ Intelligent, Embedding: Smart ≈ Intelligent (T)",
+      "Cả hai capture semantics (F)",
+      "Cả hai không capture semantics (F)"
+    ],
+    "explanation": "BoW: no semantics , separate columns . Embedding: captures meaning , similar vectors . C, D sai."
   },
-
   {
     "id": "fe_q49",
     "question": "Interaction Features có mục đích gì?",
-    "answers": {
-      "A": "Tích của hai features",
-      "B": "Kết hợp features có tác động lớn hơn tổng",
-      "C": "Remove redundant features",
-      "D":  "Area × Location_Score"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Interaction:  tích features (A), tác động lớn hơn tổng (B). Không remove (C sai). D là ví dụ, không phải mục đích."
+    "answers": [
+      "Tích của hai features (T)",
+      "Kết hợp features có tác động lớn hơn tổng (T)",
+      "Remove redundant features (F)",
+      "Area × Location_Score (F)"
+    ],
+    "explanation": "Interaction: tích features , tác động lớn hơn tổng . Không remove (C sai). D là ví dụ, không phải mục đích."
   },
-
   {
     "id": "fe_q50",
     "question": "Polynomial Features có mục đích gì? ",
-    "answers": {
-      "A": "Nâng features lên powers",
-      "B": "Model non-linear relationships",
-      "C": "Với linear algorithm",
-      "D": "Giảm complexity"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Polynomial:  nâng powers (A), non-linear (B), với linear algo (C). Tăng complexity (D sai)."
+    "answers": [
+      "Nâng features lên powers (T)",
+      "Model non-linear relationships (T)",
+      "Với linear algorithm (T)",
+      "Giảm complexity (F)"
+    ],
+    "explanation": "Polynomial: nâng powers , non-linear , với linear algo . Tăng complexity (D sai)."
   },
-
   {
     "id": "fe_q51",
     "question": "Feature Selection có goals gì?",
-    "answers": {
-      "A": "Speed - train faster",
-      "B": "Interpretability - simpler models",
-      "C": "Accuracy - better generalization",
-      "D": "Tăng số features"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Feature Selection goals: speed (A), interpretability (B), accuracy (C). Giảm features (D sai - không tăng)."
+    "answers": [
+      "Speed - train faster (T)",
+      "Interpretability - simpler models (T)",
+      "Accuracy - better generalization (T)",
+      "Tăng số features (F)"
+    ],
+    "explanation": "Feature Selection goals: speed , interpretability , accuracy . Giảm features (D sai - không tăng)."
   },
-
   {
     "id": "fe_q52",
     "question": "Feature Selection có benefits gì?",
-    "answers": {
-      "A": "Remove irrelevant features",
-      "B": "Remove redundant features",
-      "C": "Reduce computational cost",
-      "D": "Tăng overfitting"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Benefits: remove irrelevant (A), redundant (B), reduce cost (C). Giảm overfitting (D sai - không tăng)."
+    "answers": [
+      "Remove irrelevant features (T)",
+      "Remove redundant features (T)",
+      "Reduce computational cost (T)",
+      "Tăng overfitting (F)"
+    ],
+    "explanation": "Benefits: remove irrelevant , redundant , reduce cost . Giảm overfitting (D sai - không tăng)."
   },
-
   {
     "id": "fe_q53",
     "question": "Filter Methods có đặc điểm gì? ",
-    "answers": {
-      "A": "Independent của ML algorithm",
-      "B": "Dựa statistical properties",
-      "C": "Very fast",
-      "D": "Very slow"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Filter: independent (A), statistical (B), fast (C). Không slow (D sai)."
+    "answers": [
+      "Independent của ML algorithm (T)",
+      "Dựa statistical properties (T)",
+      "Very fast (T)",
+      "Very slow (F)"
+    ],
+    "explanation": "Filter: independent , statistical , fast . Không slow (D sai)."
   },
-
   {
     "id": "fe_q54",
     "question": "Filter Methods bao gồm techniques nào?",
-    "answers":  {
-      "A": "Correlation coefficient",
-      "B": "Chi-Square test",
-      "C": "Recursive Feature Elimination",
-      "D":  "Information Gain"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Filter:  Correlation (A), Chi-Square (B), Information Gain (D). RFE (C) là Wrapper."
+    "answers": [
+      "Correlation coefficient (T)",
+      "Chi-Square test (T)",
+      "Recursive Feature Elimination (F)",
+      "Information Gain (T)"
+    ],
+    "explanation": "Filter: Correlation , Chi-Square , Information Gain . RFE là Wrapper."
   },
-
   {
     "id": "fe_q55",
     "question": "Wrapper Methods có đặc điểm gì? ",
-    "answers": {
-      "A": "Evaluate dựa specific ML algorithm",
-      "B": "Try nhiều feature combinations",
-      "C": "Very fast",
-      "D": "High overfitting risk"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Wrapper: specific algorithm (A), try combinations (B), high overfitting (D). Very slow (C sai - không fast)."
+    "answers": [
+      "Evaluate dựa specific ML algorithm (T)",
+      "Try nhiều feature combinations (T)",
+      "Very fast (F)",
+      "High overfitting risk (T)"
+    ],
+    "explanation": "Wrapper: specific algorithm , try combinations , high overfitting . Very slow (C sai - không fast)."
   },
-
   {
     "id": "fe_q56",
-    "question":  "Wrapper Methods bao gồm gì?",
-    "answers":  {
-      "A": "Forward Selection",
-      "B": "Backward Elimination",
-      "C": "Recursive Feature Elimination",
-      "D": "Chi-Square test"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Wrapper: Forward (A), Backward (B), RFE (C). Chi-Square (D) là Filter."
+    "question": "Wrapper Methods bao gồm gì?",
+    "answers": [
+      "Forward Selection (T)",
+      "Backward Elimination (T)",
+      "Recursive Feature Elimination (T)",
+      "Chi-Square test (F)"
+    ],
+    "explanation": "Wrapper: Forward , Backward , RFE . Chi-Square là Filter."
   },
-
   {
     "id": "fe_q57",
     "question": "Forward Selection hoạt động thế nào?",
-    "answers": {
-      "A":  "Start with no features",
-      "B": "Add one feature at a time",
-      "C": "Keep feature if improves performance",
-      "D":  "Start with all features"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Forward: start no features (A), add one (B), keep if improves (C). All features (D) là Backward."
+    "answers": [
+      "Start with no features (T)",
+      "Add one feature at a time (T)",
+      "Keep feature if improves performance (T)",
+      "Start with all features (F)"
+    ],
+    "explanation": "Forward: start no features , add one , keep if improves . All features là Backward."
   },
-
   {
     "id": "fe_q58",
     "question": "Backward Elimination hoạt động thế nào?",
-    "answers": {
-      "A":  "Start with all features",
-      "B": "Remove one feature at a time",
-      "C":  "Keep removal if doesn't hurt",
-      "D": "Start with no features"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Backward: start all (A), remove one (B), keep if ok (C). No features (D) là Forward."
+    "answers": [
+      "Start with all features (T)",
+      "Remove one feature at a time (T)",
+      "Keep removal if doesn't hurt (T)",
+      "Start with no features (F)"
+    ],
+    "explanation": "Backward: start all , remove one , keep if ok . No features là Forward."
   },
-
   {
     "id": "fe_q59",
     "question": "Embedded Methods có đặc điểm gì?",
-    "answers": {
-      "A": "Feature selection during model training",
-      "B": "Integrated vào algorithm",
-      "C": "Medium speed",
-      "D": "Independent của algorithm"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Embedded: during training (A), integrated (B), medium speed (C). Không independent (D sai)."
+    "answers": [
+      "Feature selection during model training (T)",
+      "Integrated vào algorithm (T)",
+      "Medium speed (T)",
+      "Independent của algorithm (F)"
+    ],
+    "explanation": "Embedded: during training , integrated , medium speed . Không independent (D sai)."
   },
-
   {
     "id": "fe_q60",
     "question": "Embedded Methods bao gồm gì? ",
-    "answers": {
-      "A": "Lasso Regression (L1)",
-      "B": "Decision Trees",
-      "C": "Random Forest Feature Importance",
-      "D":  "Forward Selection"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Embedded: Lasso (A), Trees (B), RF importance (C). Forward (D) là Wrapper."
+    "answers": [
+      "Lasso Regression (L1) (T)",
+      "Decision Trees (T)",
+      "Random Forest Feature Importance (T)",
+      "Forward Selection (F)"
+    ],
+    "explanation": "Embedded: Lasso , Trees , RF importance . Forward là Wrapper."
   },
-
   {
     "id": "fe_q61",
     "question": "Lasso Regression (L1) có đặc điểm gì?",
-    "answers": {
-      "A": "Loss = MSE + λ × Σ|βᵢ|",
-      "B": "Penalty forces some βᵢ → 0",
-      "C":  "Features với β = 0 eliminated",
-      "D": "Shrinks coefficients, không eliminate"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Lasso (L1): MSE + λΣ|β| (A), β→0 (B), eliminate (C). Shrink không eliminate (D) là Ridge (L2)."
+    "answers": [
+      "Loss = MSE + λ × Σ|βᵢ| (T)",
+      "Penalty forces some βᵢ → 0 (T)",
+      "Features với β = 0 eliminated (T)",
+      "Shrinks coefficients, không eliminate (F)"
+    ],
+    "explanation": "Lasso (L1): MSE + λΣ|β| , β→0 , eliminate . Shrink không eliminate là Ridge (L2)."
   },
-
   {
     "id": "fe_q62",
     "question": "Ridge Regression (L2) có đặc điểm gì?",
-    "answers": {
-      "A":  "Loss = MSE + λ × Σ(βᵢ²)",
-      "B": "Shrinks coefficients",
-      "C": "Doesn't eliminate features",
-      "D": "Forces βᵢ → 0"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Ridge (L2): MSE + λΣ(β²) (A), shrinks (B), không eliminate (C). Forces β→0 (D) là Lasso."
+    "answers": [
+      "Loss = MSE + λ × Σ(βᵢ²) (T)",
+      "Shrinks coefficients (T)",
+      "Doesn't eliminate features (T)",
+      "Forces βᵢ → 0 (F)"
+    ],
+    "explanation": "Ridge (L2): MSE + λΣ(β²) , shrinks , không eliminate . Forces β→0 là Lasso."
   },
-
   {
     "id": "fe_q63",
     "question": "Decision Trees feature selection thế nào?",
-    "answers": {
-      "A": "Automatically select features at splits",
-      "B": "Features never used → not important",
-      "C": "Feature importance scores từ structure",
-      "D": "Dùng correlation coefficient"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Decision Trees: auto select (A), not used→not important (B), importance scores (C). Correlation (D) là Filter."
+    "answers": [
+      "Automatically select features at splits (T)",
+      "Features never used → not important (T)",
+      "Feature importance scores từ structure (T)",
+      "Dùng correlation coefficient (F)"
+    ],
+    "explanation": "Decision Trees: auto select , not used→not important , importance scores . Correlation là Filter."
   },
-
   {
     "id": "fe_q64",
     "question": "So sánh Filter vs Wrapper về speed:",
-    "answers": {
-      "A": "Filter: Fast, Wrapper: Very Slow",
-      "B": "Filter: Very Slow, Wrapper: Fast",
-      "C": "Cả hai đều Fast",
-      "D": "Cả hai đều Slow"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Filter:  Fast.  Wrapper: Very Slow (exponential complexity). A đúng."
+    "answers": [
+      "Filter: Fast, Wrapper: Very Slow (T)",
+      "Filter: Very Slow, Wrapper: Fast (F)",
+      "Cả hai đều Fast (F)",
+      "Cả hai đều Slow (F)"
+    ],
+    "explanation": "Filter: Fast. Wrapper: Very Slow (exponential complexity). A đúng."
   },
-
   {
     "id": "fe_q65",
     "question": "So sánh Filter vs Wrapper về overfitting risk:",
-    "answers": {
-      "A": "Filter: Low, Wrapper: High",
-      "B": "Filter: High, Wrapper: Low",
-      "C": "Cả hai Low",
-      "D": "Cả hai High"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Filter: Low overfitting. Wrapper: High overfitting.  A đúng."
+    "answers": [
+      "Filter: Low, Wrapper: High (T)",
+      "Filter: High, Wrapper: Low (F)",
+      "Cả hai Low (F)",
+      "Cả hai High (F)"
+    ],
+    "explanation": "Filter: Low overfitting. Wrapper: High overfitting. A đúng."
   },
-
   {
     "id": "fe_q66",
     "question": "So sánh Filter vs Wrapper về algorithm dependency:",
-    "answers": {
-      "A": "Filter: Independent, Wrapper:  Dependent",
-      "B": "Filter: Dependent, Wrapper:  Independent",
-      "C": "Cả hai Independent",
-      "D": "Cả hai Dependent"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Filter:  Independent của algorithm. Wrapper: Dependent on specific algorithm. A đúng."
+    "answers": [
+      "Filter: Independent, Wrapper:  Dependent (T)",
+      "Filter: Dependent, Wrapper:  Independent (F)",
+      "Cả hai Independent (F)",
+      "Cả hai Dependent (F)"
+    ],
+    "explanation": "Filter: Independent của algorithm. Wrapper: Dependent on specific algorithm. A đúng."
   },
-
   {
     "id": "fe_q67",
     "question": "Embedded Methods có speed và overfitting thế nào?",
-    "answers": {
-      "A":  "Speed: Medium, Overfitting:  Medium",
-      "B": "Speed: Fast, Overfitting:  Low",
-      "C": "Speed:  Slow, Overfitting: High",
-      "D": "Between Filter and Wrapper"
-    },
-    "correctAnswers": ["A", "D"],
-    "explanation": "Embedded: Medium speed/overfitting (A), giữa Filter và Wrapper (D). B, C sai."
+    "answers": [
+      "Speed: Medium, Overfitting:  Medium (T)",
+      "Speed: Fast, Overfitting:  Low (F)",
+      "Speed:  Slow, Overfitting: High (F)",
+      "Between Filter and Wrapper (T)"
+    ],
+    "explanation": "Embedded: Medium speed/overfitting , giữa Filter và Wrapper . B, C sai."
   },
-
   {
-    "id":  "fe_q68",
+    "id": "fe_q68",
     "question": "Large datasets nên dùng method nào?",
-    "answers": {
-      "A": "Start:  Filter methods",
-      "B": "Refine: Embedded methods",
-      "C": "Wrapper methods",
-      "D": "Chi-Square test"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Large datasets: start Filter (A), refine Embedded (B). Wrapper (C) quá chậm. Chi-Square (D) là 1 filter technique."
+    "answers": [
+      "Start:  Filter methods (T)",
+      "Refine: Embedded methods (T)",
+      "Wrapper methods (F)",
+      "Chi-Square test (F)"
+    ],
+    "explanation": "Large datasets: start Filter , refine Embedded . Wrapper quá chậm. Chi-Square là 1 filter technique."
   },
-
   {
     "id": "fe_q69",
     "question": "Small datasets nên dùng method nào?",
-    "answers":  {
-      "A": "Can afford:  Wrapper methods",
-      "B":  "Quick:  Embedded methods",
-      "C":  "Filter methods",
-      "D": "Chỉ dùng Correlation"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Small datasets: có thể Wrapper (A), nhanh dùng Embedded (B). Filter (C) cũng ok nhưng không tối ưu. D quá hạn chế."
+    "answers": [
+      "Can afford:  Wrapper methods (T)",
+      "Quick:  Embedded methods (T)",
+      "Filter methods (F)",
+      "Chỉ dùng Correlation (F)"
+    ],
+    "explanation": "Small datasets: có thể Wrapper , nhanh dùng Embedded . Filter cũng ok nhưng không tối ưu. D quá hạn chế."
   },
-
   {
     "id": "fe_q70",
     "question": "Tree-based models nên dùng method nào?",
-    "answers": {
-      "A": "Embedded methods",
-      "B": "Built-in feature importance",
-      "C": "Random Forest importance",
-      "D": "Wrapper methods"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Trees best: Embedded (A), built-in importance (B), RF (C). Wrapper (D) không cần thiết."
+    "answers": [
+      "Embedded methods (T)",
+      "Built-in feature importance (T)",
+      "Random Forest importance (T)",
+      "Wrapper methods (F)"
+    ],
+    "explanation": "Trees best: Embedded , built-in importance , RF . Wrapper không cần thiết."
   },
-
   {
     "id": "fe_q71",
-    "question":  "Linear models nên dùng method nào?",
-    "answers":  {
-      "A": "Filter methods",
-      "B": "Lasso regularization",
-      "C": "Correlation coefficient",
-      "D": "Tree feature importance"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Linear models: Filter (A), Lasso (B). Correlation (C) là 1 filter technique. Tree importance (D) không phù hợp."
+    "question": "Linear models nên dùng method nào?",
+    "answers": [
+      "Filter methods (T)",
+      "Lasso regularization (T)",
+      "Correlation coefficient (F)",
+      "Tree feature importance (F)"
+    ],
+    "explanation": "Linear models: Filter , Lasso . Correlation là 1 filter technique. Tree importance không phù hợp."
   },
-
   {
     "id": "fe_q72",
     "question": "Deep Learning có cần feature selection không?",
-    "answers": {
-      "A": "Usually skip feature selection",
-      "B": "Neural networks learn representations automatically",
-      "C": "Luôn cần feature selection",
-      "D": "Phải dùng Wrapper methods"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Deep Learning: usually skip (A), tự học representations (B). Không luôn cần (C sai), không phải Wrapper (D sai)."
+    "answers": [
+      "Usually skip feature selection (T)",
+      "Neural networks learn representations automatically (T)",
+      "Luôn cần feature selection (F)",
+      "Phải dùng Wrapper methods (F)"
+    ],
+    "explanation": "Deep Learning: usually skip , tự học representations . Không luôn cần (C sai), không phải Wrapper (D sai)."
   },
-
   {
     "id": "fe_q73",
     "question": "Median là quantile nào?",
-    "answers": {
-      "A": "2-quantile",
-      "B":  "4-quantile",
-      "C": "50th percentile",
-      "D":  "Q2 trong Quartiles"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation":  "Median: 2-quantile (A), 50th percentile (C), Q2 (D). 4-quantile (B) là Quartiles (Q1-Q4)."
+    "answers": [
+      "2-quantile (T)",
+      "4-quantile (F)",
+      "50th percentile (T)",
+      "Q2 trong Quartiles (T)"
+    ],
+    "explanation": "Median: 2-quantile , 50th percentile , Q2 . 4-quantile là Quartiles (Q1-Q4)."
   },
-
   {
     "id": "fe_q74",
-    "question":  "Deciles chia data thành mấy phần?",
-    "answers": {
-      "A": "2 phần",
-      "B": "4 phần",
-      "C": "10 phần",
-      "D": "Mỗi phần 10%"
-    },
-    "correctAnswers": ["C", "D"],
-    "explanation": "Deciles: 10 phần (C), mỗi phần 10% (D). 2 phần (A) là Median.  4 phần (B) là Quartiles."
+    "question": "Deciles chia data thành mấy phần?",
+    "answers": [
+      "2 phần (F)",
+      "4 phần (F)",
+      "10 phần (T)",
+      "Mỗi phần 10% (T)"
+    ],
+    "explanation": "Deciles: 10 phần , mỗi phần 10% . 2 phần là Median. 4 phần là Quartiles."
   },
-
   {
-    "id":  "fe_q75",
+    "id": "fe_q75",
     "question": "Equal Width Binning phù hợp khi nào?",
-    "answers":  {
-      "A": "Data uniform",
-      "B": "Known range",
-      "C": "Data skewed",
-      "D": "Không có outliers"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Equal Width: data uniform (A), known range (B). Data skewed (C) dùng Equal Frequency.  D đúng nhưng không phải criterion chính."
+    "answers": [
+      "Data uniform (T)",
+      "Known range (T)",
+      "Data skewed (F)",
+      "Không có outliers (F)"
+    ],
+    "explanation": "Equal Width: data uniform , known range . Data skewed dùng Equal Frequency. D đúng nhưng không phải criterion chính."
   },
-
   {
     "id": "fe_q76",
     "question": "Equal Frequency Binning phù hợp khi nào?",
-    "answers": {
-      "A": "Skewed data",
-      "B":  "Focus on distribution",
-      "C": "Data uniform",
-      "D": "Cần balanced bins"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Equal Frequency: skewed data (A), focus distribution (B). Uniform (C) dùng Equal Width. D đúng nhưng là kết quả."
+    "answers": [
+      "Skewed data (T)",
+      "Focus on distribution (T)",
+      "Data uniform (F)",
+      "Cần balanced bins (F)"
+    ],
+    "explanation": "Equal Frequency: skewed data , focus distribution . Uniform dùng Equal Width. D đúng nhưng là kết quả."
   },
-
   {
     "id": "fe_q77",
     "question": "Log Transformation formula khi có zeros:",
-    "answers": {
-      "A": "log(x)",
-      "B": "log(x + 1)",
-      "C": "(x^λ - 1) / λ",
-      "D": "1 + log(x)"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Log với zeros:  log(x+1) (B). log(x) (A) undefined khi x=0. C là Box-Cox.  D là TF formula."
+    "answers": [
+      "log(x) (F)",
+      "log(x + 1) (T)",
+      "(x^λ - 1) / λ (F)",
+      "1 + log(x) (F)"
+    ],
+    "explanation": "Log với zeros: log(x+1) . log(x) undefined khi x=0. C là Box-Cox. D là TF formula."
   },
-
   {
     "id": "fe_q78",
     "question": "Box-Cox Transformation formula khi λ = 0:",
-    "answers":  {
-      "A": "(x^λ - 1) / λ",
-      "B": "log(x)",
-      "C": "x^λ",
-      "D":  "1 + log(x)"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Box-Cox khi λ=0: log(x) (B). λ≠0 dùng (x^λ-1)/λ (A). C, D sai."
+    "answers": [
+      "(x^λ - 1) / λ (F)",
+      "log(x) (T)",
+      "x^λ (F)",
+      "1 + log(x) (F)"
+    ],
+    "explanation": "Box-Cox khi λ=0: log(x) . λ≠0 dùng (x^λ-1)/λ . C, D sai."
   },
-
   {
     "id": "fe_q79",
     "question": "Min-Max Scaling sensitive to outliers vì sao?",
-    "answers":  {
-      "A": "Một giá trị khổng lồ → tất cả ép về gần 0",
-      "B":  "Dựa vào x_max và x_min",
-      "C": "Outlier kéo min/max xa",
-      "D": "Dùng mean và std"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Min-Max sensitive: outlier ép values (A), dựa min/max (B), kéo xa (C). Mean/std (D) là Standard Scaling."
+    "answers": [
+      "Một giá trị khổng lồ → tất cả ép về gần 0 (T)",
+      "Dựa vào x_max và x_min (T)",
+      "Outlier kéo min/max xa (T)",
+      "Dùng mean và std (F)"
+    ],
+    "explanation": "Min-Max sensitive: outlier ép values , dựa min/max , kéo xa . Mean/std là Standard Scaling."
   },
-
   {
     "id": "fe_q80",
     "question": "Standard Scaling less sensitive to outliers vì sao?",
-    "answers": {
-      "A": "Dùng mean và std",
-      "B": "Mean/std ít bị outliers ảnh hưởng hơn min/max",
-      "C": "Unbounded range",
-      "D": "Dựa vào x_min và x_max"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Standard less sensitive: dùng mean/std (A), unbounded (C). B không chính xác - mean/std vẫn bị ảnh hưởng.  D là Min-Max."
+    "answers": [
+      "Dùng mean và std (T)",
+      "Mean/std ít bị outliers ảnh hưởng hơn min/max (F)",
+      "Unbounded range (T)",
+      "Dựa vào x_min và x_max (F)"
+    ],
+    "explanation": "Standard less sensitive: dùng mean/std , unbounded . B không chính xác - mean/std vẫn bị ảnh hưởng. D là Min-Max."
   },
-
   {
     "id": "fe_q81",
     "question": "L2 Normalization formula là gì?",
-    "answers": {
-      "A": "x' = x / ||x||₂",
-      "B": "||x||₂ = sqrt(x₁² + x₂² + ... + xₙ²)",
-      "C": "x' = (x - μ) / σ",
-      "D": "Tổng bình phương = 1"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "L2 Norm: x/||x||₂ (A), ||x||₂=sqrt(tổng bình phương) (B). C là Standard.  D là effect, không phải formula."
+    "answers": [
+      "x' = x / ||x||₂ (T)",
+      "||x||₂ = sqrt(x₁² + x₂² + ... + xₙ²) (T)",
+      "x' = (x - μ) / σ (F)",
+      "Tổng bình phương = 1 (F)"
+    ],
+    "explanation": "L2 Norm: x/||x||₂ , ||x||₂=sqrt(tổng bình phương) . C là Standard. D là effect, không phải formula."
   },
-
   {
     "id": "fe_q82",
     "question": "One-Hot Encoding cho 3 categories tạo mấy columns?",
-    "answers": {
-      "A": "1",
-      "B": "2",
-      "C": "3",
-      "D": "4"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "One-Hot cho N categories tạo N binary columns.  3 categories → 3 columns (C)."
+    "answers": [
+      "1 (F)",
+      "2 (F)",
+      "3 (T)",
+      "4 (F)"
+    ],
+    "explanation": "One-Hot cho N categories tạo N binary columns. 3 categories → 3 columns ."
   },
-
   {
     "id": "fe_q83",
     "question": "Feature Hashing dùng khi nào?",
-    "answers": {
-      "A": "Millions of categories",
-      "B": "User_IDs, Product_IDs",
-      "C": "Memory constraints",
-      "D": "Few categories (< 10)"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Feature Hashing: millions categories (A), IDs (B), memory constraints (C). Few categories (D) dùng One-Hot."
+    "answers": [
+      "Millions of categories (T)",
+      "User_IDs, Product_IDs (T)",
+      "Memory constraints (T)",
+      "Few categories (< 10) (F)"
+    ],
+    "explanation": "Feature Hashing: millions categories , IDs , memory constraints . Few categories dùng One-Hot."
   },
-
   {
     "id": "fe_q84",
     "question": "Bigram của 'Customer reviews build' là gì?",
-    "answers": {
-      "A":  "['Customer', 'reviews', 'build']",
-      "B":  "['Customer reviews', 'reviews build']",
-      "C": "['Customer reviews build']",
-      "D":  "['Customer', 'reviews']"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Bigram (n=2): consecutive pairs.  'Customer reviews', 'reviews build' (B). A là Unigram.  C là Trigram. D incomplete."
+    "answers": [
+      "['Customer', 'reviews', 'build'] (F)",
+      "['Customer reviews', 'reviews build'] (T)",
+      "['Customer reviews build'] (F)",
+      "['Customer', 'reviews'] (F)"
+    ],
+    "explanation": "Bigram (n=2): consecutive pairs. 'Customer reviews', 'reviews build' . A là Unigram. C là Trigram. D incomplete."
   },
-
   {
     "id": "fe_q85",
     "question": "TF-IDF khi term xuất hiện trong mọi documents:",
-    "answers": {
-      "A": "TF-IDF = 0",
-      "B": "IDF = log(N/N) = log(1) = 0",
-      "C": "TF-IDF maximum",
-      "D": "IDF maximum"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Term trong mọi docs: df=N → IDF=log(1)=0 (B) → TF-IDF=0 (A). Không max (C, D sai)."
+    "answers": [
+      "TF-IDF = 0 (T)",
+      "IDF = log(N/N) = log(1) = 0 (T)",
+      "TF-IDF maximum (F)",
+      "IDF maximum (F)"
+    ],
+    "explanation": "Term trong mọi docs: df=N → IDF=log(1)=0 → TF-IDF=0 . Không max (C, D sai)."
   },
-
   {
     "id": "fe_q86",
     "question": "Stemming benefit là gì?",
-    "answers": {
-      "A": "Reduce vocabulary complexity",
-      "B": "Group related words",
-      "C": "Tăng vocabulary size",
-      "D": "fishing, fished → fish"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Stemming: reduce complexity (A), group related (B). Giảm vocabulary (C sai - không tăng). D là ví dụ."
+    "answers": [
+      "Reduce vocabulary complexity (T)",
+      "Group related words (T)",
+      "Tăng vocabulary size (F)",
+      "fishing, fished → fish (F)"
+    ],
+    "explanation": "Stemming: reduce complexity , group related . Giảm vocabulary (C sai - không tăng). D là ví dụ."
   },
-
   {
     "id": "fe_q87",
     "question": "Word2vec training có đặc điểm gì? ",
-    "answers": {
-      "A": "Unsupervised learning",
-      "B": "Reads billions of words",
-      "C":  "No manual labeling",
-      "D":  "Cần labeled data"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Word2vec: unsupervised (A), billions words (B), no labeling (C). Không cần labeled (D sai)."
+    "answers": [
+      "Unsupervised learning (T)",
+      "Reads billions of words (T)",
+      "No manual labeling (T)",
+      "Cần labeled data (F)"
+    ],
+    "explanation": "Word2vec: unsupervised , billions words , no labeling . Không cần labeled (D sai)."
   },
-
   {
     "id": "fe_q88",
     "question": "Interaction Feature trong House Price:",
-    "answers": {
-      "A": "Area × Location_Score",
-      "B": "Large house + premium location → exponentially higher",
-      "C": "Tác động lớn hơn additive",
-      "D": "Area + Location_Score"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Interaction: Area × Location (A), lớn hơn additive (C). B đúng concept nhưng không precise.  D là addition, không phải interaction."
+    "answers": [
+      "Area × Location_Score (T)",
+      "Large house + premium location → exponentially higher (F)",
+      "Tác động lớn hơn additive (T)",
+      "Area + Location_Score (F)"
+    ],
+    "explanation": "Interaction: Area × Location , lớn hơn additive . B đúng concept nhưng không precise. D là addition, không phải interaction."
   },
-
   {
     "id": "fe_q89",
     "question": "Polynomial degree 3 cho x=2 tạo features gì?",
-    "answers":  {
-      "A": "x, x², x³",
-      "B": "2, 4, 8",
-      "C": "x, x²",
-      "D": "2, 4, 6"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Polynomial degree 3: x, x², x³ (A) → 2, 4, 8 (B). Degree 2 (C). D sai calculation."
+    "answers": [
+      "x, x², x³ (T)",
+      "2, 4, 8 (T)",
+      "x, x² (F)",
+      "2, 4, 6 (F)"
+    ],
+    "explanation": "Polynomial degree 3: x, x², x³ → 2, 4, 8 . Degree 2 . D sai calculation."
   },
-
   {
     "id": "fe_q90",
     "question": "RFE (Recursive Feature Elimination) hoạt động thế nào? ",
-    "answers": {
-      "A": "Train model",
-      "B": "Remove least important feature",
-      "C": "Repeat until desired number",
-      "D": "Add one feature at a time"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "RFE: train (A), remove least important (B), repeat (C). Add feature (D) là Forward Selection."
+    "answers": [
+      "Train model (T)",
+      "Remove least important feature (T)",
+      "Repeat until desired number (T)",
+      "Add one feature at a time (F)"
+    ],
+    "explanation": "RFE: train , remove least important , repeat . Add feature là Forward Selection."
   }
 ]

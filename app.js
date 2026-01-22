@@ -6,236 +6,158 @@ const app = {
     currentQuestionIndex: 0,
     userAnswers: {},
     questions: [],
-    
+    checkedQuestions: {}, // Thêm để lưu trạng thái đã nhấn "Kiểm tra" hay chưa
+
     // Initialize the application
     init: async function() {
         console.log('Initializing application...');
         await this.loadCourses();
         this.setupMarked();
-        this.setupKeyboardNavigation(); // Thêm dòng này
+        this.setupKeyboardNavigation();
     },
 
-// Thêm hàm mới này vào object app
-setupKeyboardNavigation: function() {
-    document.addEventListener('keydown', (e) => {
-        // Chỉ xử lý khi đang ở trang quiz
-        const quizPage = document.getElementById('quiz-page');
-        if (! quizPage || !quizPage.classList.contains('active')) {
-            return;
-        }
+    setupKeyboardNavigation: function() {
+        document.addEventListener('keydown', (e) => {
+            const quizPage = document.getElementById('quiz-page');
+            if (!quizPage || !quizPage.classList.contains('active')) return;
 
-        // Arrow Left = Previous question
-        if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            this.previousQuestion();
-        }
-        
-        // Arrow Right = Next question
-        if (e.key === 'ArrowRight') {
-            e.preventDefault();
-            this.nextQuestion();
-        }
-    });
-},    
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                this.previousQuestion();
+            }
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                this.nextQuestion();
+            }
+        });
+    },
 
-    // Setup marked.js for markdown rendering
     setupMarked: function() {
-        // Using simple markdown renderer (lib/simple-markdown.js)
-        // No setup needed
+        // Simple markdown renderer setup
     },
 
-    // Load available courses
-    loadCourses:  async function() {
+    loadCourses: async function() {
         try {
             const response = await fetch('/api/list-courses');
-            if (!response.ok) {
-                throw new Error('Failed to load courses');
-            }
+            if (!response.ok) throw new Error('Failed to load courses');
             this.courses = await response.json();
             this.displayCourses();
         } catch (error) {
             console.error('Error loading courses:', error);
-            // Fallback to manual list
             this.courses = [
-                {
-                    name: 'Data Visualization',
-                    path: 'courses/data-visualization',
-                    description: 'Học về trực quan hóa dữ liệu'
-                },
-                {
-                    name: 'Operating System',
-                    path: 'courses/operating-system',
-                    description: 'Hệ điều hành và các khái niệm cơ bản'
-                }
+                { name: 'Data Visualization', path: 'courses/data-visualization' },
+                { name: 'Operating System', path: 'courses/operating-system' }
             ];
             this.displayCourses();
         }
     },
 
-    // Display courses on the main page
     displayCourses: function() {
         const courseList = document.getElementById('course-list');
         courseList.innerHTML = '';
-        
         this.courses.forEach(course => {
             const courseCard = document.createElement('div');
             courseCard.className = 'course-card';
-            courseCard.innerHTML = `
-                <h3>${course.name}</h3>
-            `;
+            courseCard.innerHTML = `<h3>${course.name}</h3>`;
             courseCard.onclick = () => this.selectCourse(course);
             courseList.appendChild(courseCard);
         });
     },
 
-    // Select a course and load its files
     selectCourse: async function(course) {
         this.currentCourse = course;
         document.getElementById('course-title').textContent = course.name;
-        
-        // Load files for this course
         await this.loadCourseFiles();
         this.showPage('course-detail');
     },
 
     loadCourseFiles: async function() {
         const course = this.currentCourse;
-        
-        document.getElementById('markdown-files').innerHTML = 'Đang tải... ';
-        document.getElementById('question-files').innerHTML = 'Đang tải...';
-
         try {
             const response = await fetch(`/api/list-files?path=${course.path}`);
-            if (!response.ok) {
-                throw new Error('Failed to load course files');
-            }
-            
             const files = await response.json();
-            
-            const markdownFiles = files.filter(f => f.endsWith('.md'));
-            const jsonFiles = files.filter(f => f.endsWith('.json') && f !== 'index.json');
-            
-            this.displayMarkdownFiles(markdownFiles);
-            this.displayQuestionFiles(jsonFiles);
+            this.displayMarkdownFiles(files.filter(f => f.endsWith('.md')));
+            this.displayQuestionFiles(files.filter(f => f.endsWith('.json') && f !== 'index.json'));
         } catch (error) {
-            console.error('Error in loadCourseFiles:', error);
-            document.getElementById('markdown-files').innerHTML = '<p>Lỗi khi tải danh sách file. </p>';
-            document.getElementById('question-files').innerHTML = '<p>Lỗi khi tải danh sách file. </p>';
+            console.error('Error:', error);
         }
     },
 
-    // Scan course directory for files
-    scanCourseDirectory: async function(coursePath) {
-        /**
-         * Giải pháp: Trình duyệt không thể tự "list files" trong folder cục bộ 
-         * vì lý do bảo mật. Chúng ta sẽ fetch một file 'index.json' đóng vai trò 
-         * là danh mục tệp tin của thư mục đó.
-         */
-        try {
-            const response = await fetch(`${coursePath}/index.json`);
-            if (!response.ok) {
-                throw new Error('Không tìm thấy file index.json trong thư mục ' + coursePath);
-            }
-            const fileList = await response.json();
-            return fileList; // Trả về mảng tên file: ["file1.md", "file2.json"]
-        } catch (error) {
-            console.warn(`Cảnh báo: Không thể quét thư mục ${coursePath}. Đảm bảo index.json tồn tại.`);
-            return [];
-        }
-    },
-
-    // Display markdown files
     displayMarkdownFiles: function(files) {
         const container = document.getElementById('markdown-files');
-        container.innerHTML = '';
-        
-        if (files.length === 0) {
-            container.innerHTML = '<p style="color: #6c757d;">Không có lecture notes</p>';
-            return;
-        }
-        
+        container.innerHTML = files.length ? '' : '<p>Không có lecture notes</p>';
         files.forEach(file => {
-            const fileItem = document.createElement('div');
-            fileItem.className = 'file-item';
-            fileItem.textContent = file;
-            fileItem.onclick = () => this.viewMarkdown(file);
-            container.appendChild(fileItem);
+            const item = document.createElement('div');
+            item.className = 'file-item';
+            item.textContent = file;
+            item.onclick = () => this.viewMarkdown(file);
+            container.appendChild(item);
         });
     },
 
-    // Display question files
     displayQuestionFiles: function(files) {
         const container = document.getElementById('question-files');
-        container.innerHTML = '';
-        
-        if (files.length === 0) {
-            container.innerHTML = '<p style="color: #6c757d;">Không có question bank</p>';
-            return;
-        }
-        
+        container.innerHTML = files.length ? '' : '<p>Không có question bank</p>';
         files.forEach(file => {
-            const fileItem = document.createElement('div');
-            fileItem.className = 'file-item';
-            fileItem.textContent = file;
-            fileItem.onclick = () => this.startQuiz(file);
-            container.appendChild(fileItem);
+            const item = document.createElement('div');
+            item.className = 'file-item';
+            item.textContent = file;
+            item.onclick = () => this.startQuiz(file);
+            container.appendChild(item);
         });
     },
 
-    // View a markdown file
     viewMarkdown: async function(filename) {
         const filepath = `${this.currentCourse.path}/${filename}`;
-        
         try {
             const response = await fetch(filepath);
             const content = await response.text();
-            
             document.getElementById('markdown-title').textContent = filename;
-            const contentDiv = document.getElementById('markdown-content');
-            
-            if (typeof SimpleMarkdown !== 'undefined') {
-                contentDiv.innerHTML = SimpleMarkdown.parse(content);
-            } else {
-                // Fallback to plain text with line breaks
-                contentDiv.innerHTML = '<pre>' + content + '</pre>';
-            }
-            
+            document.getElementById('markdown-content').innerHTML = typeof SimpleMarkdown !== 'undefined' 
+                ? SimpleMarkdown.parse(content) 
+                : `<pre>${content}</pre>`;
             this.showPage('markdown-viewer');
-        } catch (error) {
-            console.error('Error loading markdown:', error);
-            alert('Không thể tải file markdown. Vui lòng đảm bảo file tồn tại.');
-        }
+        } catch (error) { alert('Lỗi tải file'); }
     },
 
-    // Start a quiz
+    shuffle: function(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    },
+
     startQuiz: async function(filename) {
         const filepath = `${this.currentCourse.path}/${filename}`;
-        
         try {
             const response = await fetch(filepath);
-            const questions = await response.json();
+            let rawQuestions = await response.json();
             
-            this.questions = questions;
+            this.questions = rawQuestions.map((q, qIdx) => {
+                let processedAnswers = q.answers.map((ansText, aIdx) => {
+                    const isCorrect = ansText.includes('(T)');
+                    const cleanText = ansText.replace(/\s*\(T\)$|\s*\(F\)$/, '').trim();
+                    return { uid: `q${qIdx}-a${aIdx}`, text: cleanText, isCorrect: isCorrect };
+                });
+                this.shuffle(processedAnswers);
+                return { ...q, id: q.id || `q-${qIdx}`, processedAnswers };
+            });
+
             this.currentQuiz = filename;
             this.currentQuestionIndex = 0;
             this.userAnswers = {};
-            this.checkedQuestions = {}; // Reset checked questions
-            
-            // Try to load saved progress
+            this.checkedQuestions = {};
             this.loadProgress();
             
             document.getElementById('quiz-title').textContent = filename;
-            document.getElementById('total-questions').textContent = questions. length;
-            
-            this. displayQuestion();
+            document.getElementById('total-questions').textContent = this.questions.length;
+            this.displayQuestion();
             this.showPage('quiz-page');
-        } catch (error) {
-            console. error('Error loading quiz:', error);
-            alert('Không thể tải quiz. Vui lòng đảm bảo file JSON tồn tại.');
-        }
+        } catch (error) { console.error('Error loading quiz:', error); }
     },
 
-    // Display current question
+    // --- HÀM BỊ THIẾU CẦN THÊM LẠI ---
     displayQuestion: function() {
         const question = this.questions[this.currentQuestionIndex];
         const container = document.getElementById('question-container');
@@ -243,178 +165,105 @@ setupKeyboardNavigation: function() {
         
         container.innerHTML = `
             <div class="question-text">
-                Câu ${this.currentQuestionIndex + 1}:  ${question.question}
+                Câu ${this.currentQuestionIndex + 1}: ${question.question}
             </div>
             <div class="answers-grid" id="answers-grid">
                 ${this.renderAnswers(question, isChecked)}
             </div>
             <div class="check-answer-section">
-                <button id="check-answer-btn" class="btn btn-warning" onclick="app.checkAnswer()">
-                    ✓ Kiểm tra đáp án
-                </button>
+                ${!isChecked ? `
+                    <button id="check-answer-btn" class="btn btn-warning" onclick="app.checkAnswer()">
+                        ✓ Kiểm tra đáp án
+                    </button>
+                ` : ''}
             </div>
-            <div id="answer-feedback" class="answer-feedback" style="display: none;">
-                <!-- Feedback will be shown here -->
-            </div>
+            <div id="answer-feedback" class="answer-feedback" style="display: ${isChecked ? 'block' : 'none'};"></div>
         `;
         
-        // Update progress
         this.updateProgress();
-        
-        // Setup answer selection
         this.setupAnswerSelection();
-        
-        // Update button visibility
         this.updateQuizButtons();
-        
-        // If already checked, show feedback
-        if (isChecked) {
-            this. showAnswerFeedback();
-        }
+        if (isChecked) this.showAnswerFeedback();
     },
 
-    // Render answer options
     renderAnswers: function(question, isChecked = false) {
         const savedAnswers = this.userAnswers[question.id] || [];
-        const correctAnswers = question.correctAnswers || [];
-        
-        return Object.entries(question.answers).map(([key, value]) => {
-            const isSelected = savedAnswers.includes(key);
-            const isCorrect = correctAnswers.includes(key);
-            
-            let classes = 'answer-option';
-            if (isSelected) classes += ' selected';
+        return question.processedAnswers.map((ans, index) => {
+            const charLabel = String.fromCharCode(65 + index);
+            const isSelected = savedAnswers.includes(ans.uid);
+            const isCorrect = ans.isCorrect;
+            let classes = 'answer-option' + (isSelected ? ' selected' : '');
             if (isChecked) {
                 if (isCorrect) classes += ' correct';
                 else if (isSelected && !isCorrect) classes += ' incorrect';
             }
-            
             return `
-                <div class="answer-option ${classes}" data-answer="${key}">
+                <div class="answer-option ${classes}" data-uid="${ans.uid}">
                     <div class="answer-checkbox"></div>
-                    <div class="answer-label">${key}. </div>
-                    <div class="answer-text">${value}</div>
+                    <div class="answer-label">${charLabel}. </div>
+                    <div class="answer-text">${ans.text}</div>
                     ${isChecked && isCorrect ? '<div class="correct-mark">✓</div>' : ''}
                     ${isChecked && isSelected && !isCorrect ? '<div class="incorrect-mark">✗</div>' : ''}
-                </div>
-            `;
+                </div>`;
         }).join('');
     },
 
-    // Setup answer selection handlers
     setupAnswerSelection: function() {
         const question = this.questions[this.currentQuestionIndex];
-        const options = document.querySelectorAll('.answer-option');
-        const isChecked = this.checkedQuestions[question.id];
-        
-        // Disable selection if already checked
-        if (isChecked) {
-            return;
-        }
-        
-        options.forEach(option => {
+        if (this.checkedQuestions[question.id]) return;
+        document.querySelectorAll('.answer-option').forEach(option => {
             option.onclick = () => {
-                const answer = option.dataset.answer;
-                
-                if (! this.userAnswers[question. id]) {
-                    this. userAnswers[question.id] = [];
-                }
-                
-                const answerIndex = this.userAnswers[question.id].indexOf(answer);
-                
-                if (answerIndex > -1) {
-                    // Remove answer
-                    this.userAnswers[question.id].splice(answerIndex, 1);
-                    option.classList.remove('selected');
-                } else {
-                    // Add answer
-                    this.userAnswers[question.id].push(answer);
-                    option.classList.add('selected');
-                }
+                const uid = option.dataset.uid;
+                if (!this.userAnswers[question.id]) this.userAnswers[question.id] = [];
+                const idx = this.userAnswers[question.id].indexOf(uid);
+                if (idx > -1) this.userAnswers[question.id].splice(idx, 1);
+                else this.userAnswers[question.id].push(uid);
+                this.displayQuestion(); // Re-render to show selected state
             };
         });
     },
 
-    // Check answer for current question
     checkAnswer: function() {
         const question = this.questions[this.currentQuestionIndex];
-        const userAnswer = this.userAnswers[question. id] || [];
-        
-        if (userAnswer.length === 0) {
-            this.showToast('Vui lòng chọn ít nhất một đáp án! ');
+        if (!(this.userAnswers[question.id]?.length > 0)) {
+            alert('Vui lòng chọn ít nhất một đáp án!');
             return;
         }
-        
-        // Mark as checked
         this.checkedQuestions[question.id] = true;
-        
-        // Re-render with highlighting
         this.displayQuestion();
     },
 
-    // Show answer feedback
     showAnswerFeedback: function() {
         const question = this.questions[this.currentQuestionIndex];
-        const userAnswer = this.userAnswers[question.id] || [];
-        const correctAnswer = question.correctAnswers || [];
-        const isCorrect = this.arraysEqual(userAnswer, correctAnswer);
+        const userSelection = this.userAnswers[question.id] || [];
+        const correctUids = question.processedAnswers.filter(a => a.isCorrect).map(a => a.uid);
+        const isCorrect = userSelection.length === correctUids.length && userSelection.every(u => correctUids.includes(u));
         
         const feedbackDiv = document.getElementById('answer-feedback');
-        feedbackDiv. style.display = 'block';
+        let feedbackHTML = `<div class="feedback-result ${isCorrect ? 'correct' : 'incorrect'}">
+            ${isCorrect ? '✓ Chính xác!' : '✗ Chưa đúng!'}</div>`;
         
-        let feedbackHTML = `
-            <div class="feedback-result ${isCorrect ? 'correct' : 'incorrect'}">
-                ${isCorrect 
-                    ? '<span class="feedback-icon">✓</span> <strong>Chính xác!</strong>' 
-                    : '<span class="feedback-icon">✗</span> <strong>Chưa đúng!</strong>'}
-            </div>
-        `;
-        
-        if (! isCorrect) {
-            const correctAnswerText = correctAnswer
-                .map(a => `${a}. ${question.answers[a]}`)
-                .join(', ');
-            feedbackHTML += `
-                <div class="correct-answer-display">
-                    <strong>Đáp án đúng:</strong> ${correctAnswerText}
-                </div>
-            `;
+        if (!isCorrect) {
+            const correctLabels = question.processedAnswers
+                .map((a, i) => a.isCorrect ? String.fromCharCode(65 + i) : null)
+                .filter(l => l).join(', ');
+            feedbackHTML += `<div class="correct-answer-display"><strong>Đáp án đúng:</strong> ${correctLabels}</div>`;
         }
-        
-        // Show explanation if available
-        if (question.explanation) {
-            feedbackHTML += `
-                <div class="explanation-box">
-                    <strong>📖 Giải thích:</strong>
-                    <p>${question. explanation}</p>
-                </div>
-            `;
-        }
-        
-        feedbackDiv. innerHTML = feedbackHTML;
-        
-        // Hide check button
-        const checkBtn = document.getElementById('check-answer-btn');
-        if (checkBtn) {
-            checkBtn.style.display = 'none';
-        }
-    },    
+        if (question.explanation) feedbackHTML += `<div class="explanation-box"><strong>Giải thích:</strong> ${question.explanation}</div>`;
+        feedbackDiv.innerHTML = feedbackHTML;
+    },
 
-    // Update progress bar
     updateProgress: function() {
         const progress = ((this.currentQuestionIndex + 1) / this.questions.length) * 100;
         document.getElementById('progress-fill').style.width = `${progress}%`;
         document.getElementById('current-question').textContent = this.currentQuestionIndex + 1;
     },
 
-    // Update quiz control buttons
     updateQuizButtons: function() {
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const submitBtn = document.getElementById('submit-btn');
-        
         prevBtn.disabled = this.currentQuestionIndex === 0;
-        
         if (this.currentQuestionIndex === this.questions.length - 1) {
             nextBtn.style.display = 'none';
             submitBtn.style.display = 'block';
@@ -424,200 +273,87 @@ setupKeyboardNavigation: function() {
         }
     },
 
-    // Previous question
-    previousQuestion: function() {
-        if (this.currentQuestionIndex > 0) {
-            this.currentQuestionIndex--;
-            this.displayQuestion();
-        }
-    },
+    previousQuestion: function() { if (this.currentQuestionIndex > 0) { this.currentQuestionIndex--; this.displayQuestion(); } },
+    nextQuestion: function() { if (this.currentQuestionIndex < this.questions.length - 1) { this.currentQuestionIndex++; this.displayQuestion(); } },
 
-    // Next question
-    nextQuestion: function() {
-        if (this.currentQuestionIndex < this.questions.length - 1) {
-            this.currentQuestionIndex++;
-            this.displayQuestion();
-        }
-    },
-
-    // Save progress to localStorage
     saveProgress: function() {
-        const progressData = {
-            course: this.currentCourse.path,
-            quiz: this.currentQuiz,
-            questionIndex: this.currentQuestionIndex,
-            answers: this.userAnswers,
-            timestamp: new Date().toISOString()
-        };
-        
         const key = `progress_${this.currentCourse.path}_${this.currentQuiz}`;
-        localStorage.setItem(key, JSON.stringify(progressData));
-        
-        this.showToast('Đã lưu tiến độ!');
+        localStorage.setItem(key, JSON.stringify({
+            questionIndex: this.currentQuestionIndex,
+            answers: this.userAnswers
+        }));
+        this.showToast('Đã lưu!');
     },
 
-    // Load progress from localStorage
     loadProgress: function() {
         const key = `progress_${this.currentCourse.path}_${this.currentQuiz}`;
         const saved = localStorage.getItem(key);
-        
         if (saved) {
-            const progressData = JSON.parse(saved);
-            this.currentQuestionIndex = progressData.questionIndex || 0;
-            this.userAnswers = progressData.answers || {};
-            console.log('Loaded progress:', progressData);
+            const data = JSON.parse(saved);
+            this.currentQuestionIndex = data.questionIndex || 0;
+            this.userAnswers = data.answers || {};
         }
     },
 
-    // Submit quiz and show results
+    calculateResults: function() {
+        let correctCount = 0;
+        const wrongAnswers = [];
+        this.questions.forEach(q => {
+            const userSelection = this.userAnswers[q.id] || [];
+            const correctUids = q.processedAnswers.filter(a => a.isCorrect).map(a => a.uid);
+            const isCorrect = userSelection.length === correctUids.length && userSelection.every(u => correctUids.includes(u));
+            if (isCorrect) correctCount++;
+            else wrongAnswers.push({ question: q, userSelection, correctUids });
+        });
+        return { correct: correctCount, total: this.questions.length, percentage: (correctCount / this.questions.length * 100).toFixed(1), wrongAnswers };
+    },
+
+    displayResults: function(results) {
+        document.getElementById('results-summary').innerHTML = `
+            <div class="score-display">${results.correct}/${results.total}</div>
+            <p>Bạn đúng ${results.percentage}%</p>`;
+        
+        const wrongDiv = document.getElementById('wrong-answers');
+        wrongDiv.innerHTML = results.wrongAnswers.length ? '<h3>❌ Các câu sai:</h3>' : '<h3>🎉 Hoàn hảo!</h3>';
+        results.wrongAnswers.forEach(item => {
+            const q = item.question;
+            const correctTexts = q.processedAnswers.filter(a => a.isCorrect).map(a => a.text).join(', ');
+            const userTexts = q.processedAnswers.filter(a => item.userSelection.includes(a.uid)).map(a => a.text).join(', ') || 'Không chọn';
+            
+            wrongDiv.innerHTML += `
+                <div class="wrong-answer-item" style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                    <div class="wrong-answer-question"><strong>${q.question}</strong></div>
+                    <div style="color: red;">Bạn chọn: ${userTexts}</div>
+                    <div style="color: green;">Đáp án đúng: ${correctTexts}</div>
+                </div>`;
+        });
+    },
+
     submitQuiz: function() {
-        const results = this.calculateResults();
-        this.displayResults(results);
-        
-        // Clear saved progress
-        const key = `progress_${this.currentCourse.path}_${this.currentQuiz}`;
-        localStorage.removeItem(key);
-        
+        this.displayResults(this.calculateResults());
+        localStorage.removeItem(`progress_${this.currentCourse.path}_${this.currentQuiz}`);
         this.showPage('results-page');
     },
 
-    // Calculate quiz results
-    calculateResults: function() {
-        let correct = 0;
-        let total = this.questions.length;
-        const wrongAnswers = [];
-        
-        this.questions.forEach(question => {
-            const userAnswer = this.userAnswers[question.id] || [];
-            const correctAnswer = question.correctAnswers;
-            
-            // Check if arrays are equal
-            const isCorrect = this.arraysEqual(userAnswer, correctAnswer);
-            
-            if (isCorrect) {
-                correct++;
-            } else {
-                wrongAnswers.push({
-                    question: question,
-                    userAnswer: userAnswer,
-                    correctAnswer: correctAnswer
-                });
-            }
-        });
-        
-        return {
-            correct,
-            total,
-            percentage: (correct / total * 100).toFixed(1),
-            wrongAnswers
-        };
-    },
-
-    // Helper function to compare arrays
-    arraysEqual: function(arr1, arr2) {
-        if (arr1.length !== arr2.length) return false;
-        
-        const sorted1 = [...arr1].sort();
-        const sorted2 = [...arr2].sort();
-        
-        for (let i = 0; i < sorted1.length; i++) {
-            if (sorted1[i] !== sorted2[i]) return false;
-        }
-        
-        return true;
-    },
-
-    // Display results
-    displayResults: function(results) {
-        const summaryDiv = document.getElementById('results-summary');
-        const wrongDiv = document.getElementById('wrong-answers');
-        
-        summaryDiv.innerHTML = `
-            <div class="score-display">${results.correct}/${results.total}</div>
-            <div class="score-details">
-                Bạn đã trả lời đúng ${results.correct} câu trên tổng số ${results.total} câu 
-                (${results.percentage}%)
-            </div>
-        `;
-        
-        if (results.wrongAnswers.length > 0) {
-            wrongDiv.innerHTML = `
-                <h3>❌ Các câu trả lời sai</h3>
-                ${results.wrongAnswers.map((item, index) => this.renderWrongAnswer(item, index)).join('')}
-            `;
-        } else {
-            wrongDiv.innerHTML = '<h3 style="color: #28a745;">🎉 Hoàn hảo! Bạn đã trả lời đúng tất cả!</h3>';
-        }
-    },
-
-    // Render a wrong answer
-    renderWrongAnswer: function(item, index) {
-        const question = item.question;
-        
-        const userAnswerText = item.userAnswer.length > 0 
-            ? item.userAnswer.map(a => `${a}. ${question.answers[a]}`).join(', ')
-            : 'Không có câu trả lời';
-            
-        const correctAnswerText = item.correctAnswer
-            .map(a => `${a}. ${question.answers[a]}`).join(', ');
-        
-        return `
-            <div class="wrong-answer-item">
-                <div class="wrong-answer-question">${question.question}</div>
-                <div class="answer-comparison">
-                    <div class="your-answer">
-                        <span class="answer-label-result">Câu trả lời của bạn:</span>
-                        ${userAnswerText}
-                    </div>
-                    <div class="correct-answer">
-                        <span class="answer-label-result">Đáp án đúng:</span>
-                        ${correctAnswerText}
-                    </div>
-                </div>
-            </div>
-        `;
-    },
-
-    // Retake quiz
     retakeQuiz: function() {
         this.currentQuestionIndex = 0;
         this.userAnswers = {};
+        this.checkedQuestions = {};
         this.displayQuestion();
         this.showPage('quiz-page');
     },
 
-    // Show a page
-    showPage: function(pageId) {
-        document.querySelectorAll('.page').forEach(page => {
-            page.classList.remove('active');
-        });
-        document.getElementById(pageId).classList.add('active');
+    showPage: function(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
     },
 
-    // Show course selection
-    showCourseSelection: function() {
-        this.showPage('course-selection');
-    },
-
-    // Show course detail
-    showCourseDetail: function() {
-        this.showPage('course-detail');
-    },
-
-    // Show toast notification
-    showToast: function(message) {
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.textContent = message;
-        document.body.appendChild(toast);
-        
-        setTimeout(() => {
-            toast.remove();
-        }, 3000);
+    showToast: function(msg) {
+        const t = document.createElement('div');
+        t.className = 'toast'; t.textContent = msg;
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 2000);
     }
 };
 
-// Initialize app when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    app.init();
-});
+document.addEventListener('DOMContentLoaded', () => app.init());

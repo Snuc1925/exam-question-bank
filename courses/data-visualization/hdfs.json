@@ -1,1203 +1,1102 @@
 [
   {
-    "id":  "hdfs_q1",
+    "id": "hdfs_q1",
     "question": "HDFS được thiết kế tối ưu cho loại workload nào?",
-    "answers": {
-      "A":  "Random read/write operations",
-      "B": "Write once, read many times",
-      "C": "Frequent file modifications",
-      "D": "Real-time data processing"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "HDFS được thiết kế cho mô hình 'Write once, read many times' (ghi một lần, đọc nhiều lần), chỉ hỗ trợ append.  Nó KHÔNG tối ưu cho random write, frequent modifications hay real-time processing."
+    "answers": [
+      "Random read/write operations (F)",
+      "Write once, read many times (T)",
+      "Frequent file modifications (F)",
+      "Real-time data processing (F)"
+    ],
+    "explanation": "HDFS được thiết kế cho mô hình 'Write once, read many times' (ghi một lần, đọc nhiều lần), chỉ hỗ trợ append. Nó KHÔNG tối ưu cho random write, frequent modifications hay real-time processing."
   },
   {
     "id": "hdfs_q2",
     "question": "Tại sao HDFS chia file thành các chunks lớn (64 MB)?",
-    "answers": {
-      "A": "Giảm kích thước metadata",
-      "B": "Giảm network communication",
-      "C": "Tăng tốc độ random access",
-      "D": "Tăng replication factor"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation":  "Chunks lớn giúp giảm metadata size (ít blocks hơn = ít metadata hơn) và giảm network communication (ít lần request hơn). Nó KHÔNG tăng tốc random access và không liên quan đến replication factor."
+    "answers": [
+      "Giảm kích thước metadata (T)",
+      "Giảm network communication (T)",
+      "Tăng tốc độ random access (F)",
+      "Tăng replication factor (F)"
+    ],
+    "explanation": "Chunks lớn giúp giảm metadata size (ít blocks hơn = ít metadata hơn) và giảm network communication (ít lần request hơn). Nó KHÔNG tăng tốc random access và không liên quan đến replication factor."
   },
   {
     "id": "hdfs_q3",
     "question": "Default replication factor trong HDFS là bao nhiêu?",
-    "answers": {
-      "A": "2",
-      "B": "3",
-      "C": "4",
-      "D": "5"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "2 (F)",
+      "3 (T)",
+      "4 (F)",
+      "5 (F)"
+    ],
     "explanation": "HDFS mặc định replicate mỗi chunk sang 3 nodes khác nhau để đảm bảo fault tolerance và data availability."
   },
   {
     "id": "hdfs_q4",
     "question": "NameNode lưu trữ metadata ở đâu?",
-    "answers": {
-      "A": "Trên disk trong file FSImage",
-      "B": "Trong RAM (main memory)",
-      "C": "Phân tán trên các DataNodes",
-      "D": "Trong database riêng biệt"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Toàn bộ metadata của NameNode được lưu trong RAM để đảm bảo truy cập nhanh.  Không có demand paging.  FSImage trên disk chỉ là bản backup/checkpoint."
+    "answers": [
+      "Trên disk trong file FSImage (F)",
+      "Trong RAM (main memory) (T)",
+      "Phân tán trên các DataNodes (F)",
+      "Trong database riêng biệt (F)"
+    ],
+    "explanation": "Toàn bộ metadata của NameNode được lưu trong RAM để đảm bảo truy cập nhanh. Không có demand paging. FSImage trên disk chỉ là bản backup/checkpoint."
   },
   {
     "id": "hdfs_q5",
-    "question":  "Vai trò chính của Transaction Log trong NameNode là gì?",
-    "answers":  {
-      "A": "Lưu trữ nội dung file",
-      "B": "Ghi lại các thay đổi filesystem (tạo/xóa file)",
-      "C": "Theo dõi heartbeat của DataNodes",
-      "D": "Quản lý checksum của blocks"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Transaction Log (Edit Log) ghi lại mọi thay đổi về filesystem như file creations, deletions...  để có thể recovery khi cần."
+    "question": "Vai trò chính của Transaction Log trong NameNode là gì?",
+    "answers": [
+      "Lưu trữ nội dung file (F)",
+      "Ghi lại các thay đổi filesystem (tạo/xóa file) (T)",
+      "Theo dõi heartbeat của DataNodes (F)",
+      "Quản lý checksum của blocks (F)"
+    ],
+    "explanation": "Transaction Log (Edit Log) ghi lại mọi thay đổi về filesystem như file creations, deletions... để có thể recovery khi cần."
   },
   {
     "id": "hdfs_q6",
     "question": "DataNode gửi heartbeat đến NameNode với tần suất nào?",
-    "answers":  {
-      "A": "Mỗi giây",
-      "B": "Mỗi 3 giây",
-      "C": "Mỗi 5 giây",
-      "D": "Mỗi 10 giây"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "DataNode gửi heartbeat mỗi 3 giây để báo cho NameNode biết nó vẫn còn hoạt động.  NameNode dùng heartbeat để phát hiện DataNode failure."
+    "answers": [
+      "Mỗi giây (F)",
+      "Mỗi 3 giây (T)",
+      "Mỗi 5 giây (F)",
+      "Mỗi 10 giây (F)"
+    ],
+    "explanation": "DataNode gửi heartbeat mỗi 3 giây để báo cho NameNode biết nó vẫn còn hoạt động. NameNode dùng heartbeat để phát hiện DataNode failure."
   },
   {
     "id": "hdfs_q7",
-    "question":  "Trong chiến lược chunk placement mặc định với replication factor = 3, replica thứ hai được đặt ở đâu?",
-    "answers": {
-      "A": "Cùng node với replica thứ nhất",
-      "B": "Cùng rack với replica thứ nhất",
-      "C": "Trên một remote rack khác",
-      "D": "Random placement"
-    },
-    "correctAnswers": ["C"],
+    "question": "Trong chiến lược chunk placement mặc định với replication factor = 3, replica thứ hai được đặt ở đâu?",
+    "answers": [
+      "Cùng node với replica thứ nhất (F)",
+      "Cùng rack với replica thứ nhất (F)",
+      "Trên một remote rack khác (T)",
+      "Random placement (F)"
+    ],
     "explanation": "Replica thứ nhất ở local node, replica thứ hai ở remote rack (để tăng fault tolerance), replica thứ ba cùng remote rack với replica thứ hai."
   },
   {
     "id": "hdfs_q8",
     "question": "Mục đích chính của Data Rebalancer là gì?",
-    "answers": {
-      "A":  "Tăng replication factor",
-      "B":  "Đảm bảo % disk đầy ở các DataNode tương đồng",
-      "C": "Giảm network traffic",
-      "D": "Tăng tốc độ read operations"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Rebalancer đảm bảo % disk usage cân bằng giữa các DataNode, thường chạy khi thêm node mới.  Nó được throttle để tránh network congestion."
+    "answers": [
+      "Tăng replication factor (F)",
+      "Đảm bảo % disk đầy ở các DataNode tương đồng (T)",
+      "Giảm network traffic (F)",
+      "Tăng tốc độ read operations (F)"
+    ],
+    "explanation": "Rebalancer đảm bảo % disk usage cân bằng giữa các DataNode, thường chạy khi thêm node mới. Nó được throttle để tránh network congestion."
   },
   {
     "id": "hdfs_q9",
     "question": "HDFS sử dụng thuật toán checksum nào để đảm bảo data correctness?",
-    "answers":  {
-      "A": "MD5",
-      "B": "SHA-256",
-      "C": "CRC32",
-      "D": "SHA-1"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "HDFS sử dụng CRC32 để tính checksum mỗi 512 bytes.  Checksum được lưu ở DataNode và kiểm tra khi client đọc dữ liệu."
+    "answers": [
+      "MD5 (F)",
+      "SHA-256 (F)",
+      "CRC32 (T)",
+      "SHA-1 (F)"
+    ],
+    "explanation": "HDFS sử dụng CRC32 để tính checksum mỗi 512 bytes. Checksum được lưu ở DataNode và kiểm tra khi client đọc dữ liệu."
   },
   {
     "id": "hdfs_q10",
     "question": "Trong data pipelining, ai chịu trách nhiệm forward data đến DataNode tiếp theo?",
-    "answers": {
-      "A":  "Client",
-      "B": "NameNode",
-      "C": "DataNode đầu tiên trong pipeline",
-      "D": "Secondary NameNode"
-    },
-    "correctAnswers": ["C"],
+    "answers": [
+      "Client (F)",
+      "NameNode (F)",
+      "DataNode đầu tiên trong pipeline (T)",
+      "Secondary NameNode (F)"
+    ],
     "explanation": "Client ghi vào DataNode đầu tiên, sau đó DataNode này forward data đến node tiếp theo trong pipeline. Điều này giảm network load cho client."
   },
   {
     "id": "hdfs_q11",
-    "question":  "Vai trò của Secondary NameNode là gì?",
-    "answers": {
-      "A": "Thay thế NameNode khi nó fail",
-      "B": "Checkpointing FsImage và Transaction Log",
-      "C": "Load balancing cho NameNode",
-      "D":  "Lưu trữ backup của data blocks"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Secondary NameNode thực hiện checkpointing:  merge FSImage và Transaction Log thành FSImage mới.  Nó KHÔNG tự động failover khi NameNode chết."
+    "question": "Vai trò của Secondary NameNode là gì?",
+    "answers": [
+      "Thay thế NameNode khi nó fail (F)",
+      "Checkpointing FsImage và Transaction Log (T)",
+      "Load balancing cho NameNode (F)",
+      "Lưu trữ backup của data blocks (F)"
+    ],
+    "explanation": "Secondary NameNode thực hiện checkpointing: merge FSImage và Transaction Log thành FSImage mới. Nó KHÔNG tự động failover khi NameNode chết."
   },
   {
     "id": "hdfs_q12",
     "question": "Trong HDFS HA mode, Active NameNode ghi edit logs vào đâu?",
-    "answers": {
-      "A": "Chỉ vào local disk",
-      "B": "Journal Nodes hoặc Shared Storage",
-      "C": "Trực tiếp vào Standby NameNode",
-      "D": "Vào Zookeeper"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Chỉ vào local disk (F)",
+      "Journal Nodes hoặc Shared Storage (T)",
+      "Trực tiếp vào Standby NameNode (F)",
+      "Vào Zookeeper (F)"
+    ],
     "explanation": "Active NameNode ghi edit logs vào Journal Nodes (phổ biến) hoặc Shared Storage (NFS) để Standby NameNode có thể đọc và đồng bộ."
   },
   {
-    "id":  "hdfs_q13",
+    "id": "hdfs_q13",
     "question": "Vai trò của ZKFC (ZK Failover Controller) trong HDFS HA là gì?",
-    "answers": {
-      "A": "Lưu trữ metadata",
-      "B": "Theo dõi health của NameNode và thực hiện failover",
-      "C": "Quản lý DataNode heartbeats",
-      "D": "Replication engine"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "ZKFC chạy trên mỗi NameNode, theo dõi health của nó.  Khi Active NameNode fail, ZKFC báo Zookeeper để kích hoạt Standby thành Active."
+    "answers": [
+      "Lưu trữ metadata (F)",
+      "Theo dõi health của NameNode và thực hiện failover (T)",
+      "Quản lý DataNode heartbeats (F)",
+      "Replication engine (F)"
+    ],
+    "explanation": "ZKFC chạy trên mỗi NameNode, theo dõi health của nó. Khi Active NameNode fail, ZKFC báo Zookeeper để kích hoạt Standby thành Active."
   },
   {
     "id": "hdfs_q14",
     "question": "Ưu điểm của Quorum Journal Nodes so với Shared Storage (NFS) là gì?",
-    "answers": {
-      "A": "Dễ setup hơn",
-      "B":  "Tin cậy cao hơn, không có single point of failure",
-      "C": "Tốc độ nhanh hơn",
-      "D": "Chi phí thấp hơn"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Dễ setup hơn (F)",
+      "Tin cậy cao hơn, không có single point of failure (T)",
+      "Tốc độ nhanh hơn (F)",
+      "Chi phí thấp hơn (F)"
+    ],
     "explanation": "Quorum Journal Nodes phân tán edit logs trên nhiều nodes (quorum), tránh single point of failure như NFS. Đây là phương pháp được khuyến nghị."
   },
   {
     "id": "hdfs_q15",
     "question": "Lệnh nào dùng để liệt kê đệ quy tất cả file trong HDFS?",
-    "answers": {
-      "A":  "hdfs dfs -ls /",
-      "B": "hdfs dfs -ls -R /",
-      "C": "hdfs dfs -cat /",
-      "D": "hdfs dfs -du -s /"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "hdfs dfs -ls / (F)",
+      "hdfs dfs -ls -R / (T)",
+      "hdfs dfs -cat / (F)",
+      "hdfs dfs -du -s / (F)"
+    ],
     "explanation": "Option -R (recursive) cho phép liệt kê đệ quy tất cả file và thư mục con trong một đường dẫn."
   },
   {
     "id": "hdfs_q16",
     "question": "Sự khác biệt giữa 'hdfs dfs -put' và 'hdfs dfs -moveFromLocal' là gì?",
-    "answers": {
-      "A": "Không có sự khác biệt",
-      "B": "moveFromLocal xóa file local sau khi upload",
-      "C": "put nhanh hơn moveFromLocal",
-      "D":  "moveFromLocal hỗ trợ compression"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Không có sự khác biệt (F)",
+      "moveFromLocal xóa file local sau khi upload (T)",
+      "put nhanh hơn moveFromLocal (F)",
+      "moveFromLocal hỗ trợ compression (F)"
+    ],
     "explanation": "moveFromLocal upload file lên HDFS và XÓA file ở máy local sau khi hoàn thành. put thì giữ nguyên file local."
   },
   {
     "id": "hdfs_q17",
     "question": "Text file format có hạn chế gì trong HDFS?",
-    "answers":  {
-      "A": "Không hỗ trợ block compression",
-      "B": "Không hiệu quả khi query",
-      "C": "Không splittable",
-      "D":  "Không human-readable"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation":  "Text files (CSV, JSON) không hỗ trợ block compression và không hiệu quả khi query.  Chúng vẫn splittable và human-readable, nhưng chỉ tốt cho development."
+    "answers": [
+      "Không hỗ trợ block compression (T)",
+      "Không hiệu quả khi query (T)",
+      "Không splittable (F)",
+      "Không human-readable (F)"
+    ],
+    "explanation": "Text files (CSV, JSON) không hỗ trợ block compression và không hiệu quả khi query. Chúng vẫn splittable và human-readable, nhưng chỉ tốt cho development."
   },
   {
     "id": "hdfs_q18",
     "question": "Sequence File thường được sử dụng cho mục đích gì?",
-    "answers":  {
-      "A": "Lưu trữ images và videos",
-      "B": "Transfer data giữa MapReduce jobs",
-      "C": "Archive các file nhỏ",
-      "D":  "Real-time analytics"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation":  "Sequence File (binary key-value format) thường dùng để transfer data giữa MapReduce jobs và archive các file nhỏ trong Hadoop."
+    "answers": [
+      "Lưu trữ images và videos (F)",
+      "Transfer data giữa MapReduce jobs (T)",
+      "Archive các file nhỏ (T)",
+      "Real-time analytics (F)"
+    ],
+    "explanation": "Sequence File (binary key-value format) thường dùng để transfer data giữa MapReduce jobs và archive các file nhỏ trong Hadoop."
   },
   {
     "id": "hdfs_q19",
     "question": "Ưu điểm của Avro format là gì?",
-    "answers": {
-      "A": "Flexible schema (schema evolution)",
-      "B": "Schema được nhúng trong file",
-      "C": "Column-oriented storage",
-      "D": "Data corruption detection"
-    },
-    "correctAnswers": ["A", "B", "D"],
+    "answers": [
+      "Flexible schema (schema evolution) (T)",
+      "Schema được nhúng trong file (T)",
+      "Column-oriented storage (F)",
+      "Data corruption detection (T)"
+    ],
     "explanation": "Avro là row-based (không phải column-oriented), nhưng có flexible schema, schema nhúng trong file, và hỗ trợ data corruption detection."
   },
   {
     "id": "hdfs_q20",
     "question": "Parquet format phù hợp cho use case nào?",
-    "answers": {
-      "A":  "Streaming data processing",
-      "B": "Analytics query trên specific columns",
-      "C": "Write-heavy workloads",
-      "D": "Schema evolution"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Parquet là column-oriented format, hiệu quả cho disk I/O khi query một vài cột cụ thể trong bảng lớn.  Không phù hợp cho write-heavy hay streaming."
+    "answers": [
+      "Streaming data processing (F)",
+      "Analytics query trên specific columns (T)",
+      "Write-heavy workloads (F)",
+      "Schema evolution (F)"
+    ],
+    "explanation": "Parquet là column-oriented format, hiệu quả cho disk I/O khi query một vài cột cụ thể trong bảng lớn. Không phù hợp cho write-heavy hay streaming."
   },
   {
     "id": "hdfs_q21",
     "question": "ORC format có tính năng nào giúp tối ưu query performance?",
-    "answers": {
-      "A": "Lightweight indexing",
-      "B": "Indices with aggregated values (min, max, sum, count)",
-      "C": "Row-oriented storage",
-      "D": "Skip irrelevant blocks"
-    },
-    "correctAnswers": ["A", "B", "D"],
+    "answers": [
+      "Lightweight indexing (T)",
+      "Indices with aggregated values (min, max, sum, count) (T)",
+      "Row-oriented storage (F)",
+      "Skip irrelevant blocks (T)"
+    ],
     "explanation": "ORC là column-oriented (không phải row-oriented), có lightweight indexing, indices với aggregated values, và có thể skip irrelevant blocks để tối ưu query."
   },
   {
     "id": "hdfs_q22",
     "question": "HDFS được thiết kế để chạy trên loại hardware nào?",
-    "answers":  {
-      "A": "High-end servers",
-      "B": "Commodity hardware",
-      "C": "Specialized storage systems",
-      "D": "Cloud-only infrastructure"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "High-end servers (F)",
+      "Commodity hardware (T)",
+      "Specialized storage systems (F)",
+      "Cloud-only infrastructure (F)"
+    ],
     "explanation": "HDFS được thiết kế để chạy trên commodity hardware (phần cứng thông thường, giá rẻ), không cần high-end servers đắt tiền."
   },
   {
     "id": "hdfs_q23",
-    "question":  "Kích thước file tối thiểu mà HDFS được thiết kế để xử lý hiệu quả là bao nhiêu?",
-    "answers": {
-      "A": "1 KB",
-      "B": "1 MB",
-      "C":  "100 MB",
-      "D":  "1 GB"
-    },
-    "correctAnswers": ["C"],
+    "question": "Kích thước file tối thiểu mà HDFS được thiết kế để xử lý hiệu quả là bao nhiêu?",
+    "answers": [
+      "1 KB (F)",
+      "1 MB (F)",
+      "100 MB (T)",
+      "1 GB (F)"
+    ],
     "explanation": "HDFS được thiết kế cho big files (từ 100 MB đến vài TB). File nhỏ (KB, MB) sẽ tạo quá nhiều metadata và không hiệu quả."
   },
   {
     "id": "hdfs_q24",
     "question": "NameNode lưu trữ loại metadata nào?",
-    "answers": {
-      "A": "List of files",
-      "B": "List of blocks cho mỗi file",
-      "C": "Nội dung thực tế của file",
-      "D": "List of DataNodes cho mỗi block"
-    },
-    "correctAnswers":  ["A", "B", "D"],
+    "answers": [
+      "List of files (T)",
+      "List of blocks cho mỗi file (T)",
+      "Nội dung thực tế của file (F)",
+      "List of DataNodes cho mỗi block (T)"
+    ],
     "explanation": "NameNode lưu metadata (list of files, blocks, DataNodes mapping), KHÔNG lưu nội dung thực tế của file (nội dung được lưu ở DataNodes)."
   },
   {
-    "id":  "hdfs_q25",
+    "id": "hdfs_q25",
     "question": "DataNode lưu trữ data chunks ở đâu?",
-    "answers": {
-      "A": "Trong RAM",
-      "B": "Trong NameNode",
-      "C": "Trong local filesystem (ext3, ext4... )",
-      "D": "Trong database"
-    },
-    "correctAnswers": ["C"],
+    "answers": [
+      "Trong RAM (F)",
+      "Trong NameNode (F)",
+      "Trong local filesystem (ext3, ext4... ) (T)",
+      "Trong database (F)"
+    ],
     "explanation": "DataNode lưu chunks dưới dạng file trong local filesystem (ext3, ext4.. .), không phải trong RAM hay database."
   },
   {
     "id": "hdfs_q26",
     "question": "Block Report của DataNode chứa thông tin gì?",
-    "answers":  {
-      "A": "Danh sách tất cả blocks đang lưu trữ",
-      "B": "Nội dung của blocks",
-      "C": "Checksum của blocks",
-      "D": "CPU usage"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Block Report chứa danh sách các blocks mà DataNode đang lưu trữ, gửi định kỳ cho NameNode.  Không chứa nội dung hay checksum chi tiết."
+    "answers": [
+      "Danh sách tất cả blocks đang lưu trữ (T)",
+      "Nội dung của blocks (F)",
+      "Checksum của blocks (F)",
+      "CPU usage (F)"
+    ],
+    "explanation": "Block Report chứa danh sách các blocks mà DataNode đang lưu trữ, gửi định kỳ cho NameNode. Không chứa nội dung hay checksum chi tiết."
   },
   {
     "id": "hdfs_q27",
     "question": "Khi nào Data Rebalancer thường được chạy?",
-    "answers": {
-      "A": "Khi thêm DataNode mới",
-      "B": "Khi xóa file",
-      "C": "Khi DataNode bị full",
-      "D": "Mỗi ngày tự động"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Rebalancer thường chạy khi thêm DataNode mới vào cluster để cân bằng lại dữ liệu.  Nó là command line tool, không chạy tự động hàng ngày."
+    "answers": [
+      "Khi thêm DataNode mới (T)",
+      "Khi xóa file (F)",
+      "Khi DataNode bị full (F)",
+      "Mỗi ngày tự động (F)"
+    ],
+    "explanation": "Rebalancer thường chạy khi thêm DataNode mới vào cluster để cân bằng lại dữ liệu. Nó là command line tool, không chạy tự động hàng ngày."
   },
   {
     "id": "hdfs_q28",
-    "question":  "Nếu checksum validation fail khi client đọc data, HDFS sẽ làm gì?",
-    "answers": {
-      "A":  "Báo lỗi ngay lập tức",
-      "B": "Thử đọc từ replica khác",
-      "C": "Tự động sửa data",
-      "D": "Xóa block bị lỗi"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Khi validation fail, client sẽ thử đọc từ replica khác.  HDFS không tự động sửa data hay xóa block ngay lập tức."
+    "question": "Nếu checksum validation fail khi client đọc data, HDFS sẽ làm gì?",
+    "answers": [
+      "Báo lỗi ngay lập tức (F)",
+      "Thử đọc từ replica khác (T)",
+      "Tự động sửa data (F)",
+      "Xóa block bị lỗi (F)"
+    ],
+    "explanation": "Khi validation fail, client sẽ thử đọc từ replica khác. HDFS không tự động sửa data hay xóa block ngay lập tức."
   },
   {
     "id": "hdfs_q29",
     "question": "Lợi ích của data pipelining là gì?",
-    "answers": {
-      "A": "Giảm network load cho client",
-      "B": "Tăng write throughput",
-      "C": "Giảm CPU usage ở NameNode",
-      "D":  "Tăng replication factor"
-    },
-    "correctAnswers": ["A", "B"],
+    "answers": [
+      "Giảm network load cho client (T)",
+      "Tăng write throughput (T)",
+      "Giảm CPU usage ở NameNode (F)",
+      "Tăng replication factor (F)"
+    ],
     "explanation": "Pipelining giúp client chỉ cần ghi vào 1 DataNode, node đó sẽ forward cho các node khác. Điều này giảm network load cho client và tăng throughput."
   },
   {
     "id": "hdfs_q30",
     "question": "Trong HDFS HA, Standby NameNode làm gì?",
-    "answers": {
-      "A":  "Xử lý read requests",
-      "B": "Đọc edit logs từ Journal Nodes",
-      "C":  "Nhận block reports từ DataNodes",
-      "D": "Xử lý write requests"
-    },
-    "correctAnswers":  ["B", "C"],
-    "explanation":  "Standby NameNode đọc edit logs để đồng bộ metadata và nhận block reports/heartbeats từ DataNodes. Nó KHÔNG xử lý client requests (read/write)."
+    "answers": [
+      "Xử lý read requests (F)",
+      "Đọc edit logs từ Journal Nodes (T)",
+      "Nhận block reports từ DataNodes (T)",
+      "Xử lý write requests (F)"
+    ],
+    "explanation": "Standby NameNode đọc edit logs để đồng bộ metadata và nhận block reports/heartbeats từ DataNodes. Nó KHÔNG xử lý client requests (read/write)."
   },
   {
     "id": "hdfs_q31",
     "question": "Vấn đề 'split-brain' trong HDFS HA là gì?",
-    "answers": {
-      "A": "DataNode không biết gửi heartbeat cho node nào",
-      "B": "Có 2 Active NameNodes cùng lúc",
-      "C": "Metadata bị mất",
-      "D": "Network bị phân mảnh"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Split-brain xảy ra khi có 2 Active NameNodes cùng hoạt động, gây inconsistency.  ZKFC và Zookeeper đảm bảo chỉ có 1 Active tại một thời điểm."
+    "answers": [
+      "DataNode không biết gửi heartbeat cho node nào (F)",
+      "Có 2 Active NameNodes cùng lúc (T)",
+      "Metadata bị mất (F)",
+      "Network bị phân mảnh (F)"
+    ],
+    "explanation": "Split-brain xảy ra khi có 2 Active NameNodes cùng hoạt động, gây inconsistency. ZKFC và Zookeeper đảm bảo chỉ có 1 Active tại một thời điểm."
   },
   {
     "id": "hdfs_q32",
     "question": "Lệnh nào dùng để kiểm tra sức khỏe của HDFS filesystem?",
-    "answers": {
-      "A": "hdfs balancer",
-      "B": "hdfs fsck /",
-      "C": "hdfs dfs -checksum",
-      "D": "hdfs dfsadmin -report"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "hdfs balancer (F)",
+      "hdfs fsck / (T)",
+      "hdfs dfs -checksum (F)",
+      "hdfs dfsadmin -report (F)"
+    ],
     "explanation": "hdfs fsck (filesystem check) kiểm tra integrity của toàn bộ filesystem, phát hiện missing blocks, under-replicated blocks..."
   },
   {
     "id": "hdfs_q33",
     "question": "Safe mode trong HDFS là gì?",
-    "answers": {
-      "A": "Chế độ read-only, không cho phép write",
-      "B": "Chế độ backup",
-      "C": "Chế độ maintenance",
-      "D": "Chế độ high availability"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Safe mode là chế độ read-only của NameNode khi startup hoặc có vấn đề.  Phải tắt safe mode (dfsadmin -safemode leave) mới write được."
+    "answers": [
+      "Chế độ read-only, không cho phép write (T)",
+      "Chế độ backup (F)",
+      "Chế độ maintenance (F)",
+      "Chế độ high availability (F)"
+    ],
+    "explanation": "Safe mode là chế độ read-only của NameNode khi startup hoặc có vấn đề. Phải tắt safe mode (dfsadmin -safemode leave) mới write được."
   },
   {
     "id": "hdfs_q34",
-    "question":  "Sequence File có thể được split khi nào?",
-    "answers": {
-      "A":  "Chỉ khi không compressed",
-      "B": "Ngay cả khi đã compressed",
-      "C":  "Chỉ khi file > 1GB",
-      "D": "Không bao giờ splittable"
-    },
-    "correctAnswers": ["B"],
+    "question": "Sequence File có thể được split khi nào?",
+    "answers": [
+      "Chỉ khi không compressed (F)",
+      "Ngay cả khi đã compressed (T)",
+      "Chỉ khi file > 1GB (F)",
+      "Không bao giờ splittable (F)"
+    ],
     "explanation": "Sequence File hỗ trợ splitting ngay cả khi data đã được compressed - đây là ưu điểm lớn so với text compressed files."
   },
   {
     "id": "hdfs_q35",
-    "question":  "Avro schema được lưu ở đâu? ",
-    "answers": {
-      "A": "Trong file data",
-      "B": "Trong NameNode metadata",
-      "C": "Trong file riêng biệt",
-      "D":  "Trong DataNode"
-    },
-    "correctAnswers": ["A"],
+    "question": "Avro schema được lưu ở đâu? ",
+    "answers": [
+      "Trong file data (T)",
+      "Trong NameNode metadata (F)",
+      "Trong file riêng biệt (F)",
+      "Trong DataNode (F)"
+    ],
     "explanation": "Avro schema (JSON format) được nhúng trực tiếp trong file data, giúp file self-describing và hỗ trợ schema evolution."
   },
   {
     "id": "hdfs_q36",
-    "question":  "Parquet hỗ trợ loại columns nào?",
-    "answers":  {
-      "A": "Chỉ primitive columns",
-      "B": "Nested columns",
-      "C": "Complex data types",
-      "D": "Chỉ numeric columns"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation":  "Parquet hỗ trợ nested columns và complex data types thông qua Dremel encoding, không chỉ giới hạn ở primitive hay numeric types."
+    "question": "Parquet hỗ trợ loại columns nào?",
+    "answers": [
+      "Chỉ primitive columns (F)",
+      "Nested columns (T)",
+      "Complex data types (T)",
+      "Chỉ numeric columns (F)"
+    ],
+    "explanation": "Parquet hỗ trợ nested columns và complex data types thông qua Dremel encoding, không chỉ giới hạn ở primitive hay numeric types."
   },
   {
     "id": "hdfs_q37",
-    "question":  "ORC file lưu trữ data như thế nào?",
-    "answers": {
-      "A": "Row-oriented trong toàn bộ file",
-      "B": "Column-oriented trong toàn bộ file",
-      "C": "Collections of rows, trong mỗi collection là columnar",
-      "D": "Random storage"
-    },
-    "correctAnswers": ["C"],
+    "question": "ORC file lưu trữ data như thế nào?",
+    "answers": [
+      "Row-oriented trong toàn bộ file (F)",
+      "Column-oriented trong toàn bộ file (F)",
+      "Collections of rows, trong mỗi collection là columnar (T)",
+      "Random storage (F)"
+    ],
     "explanation": "ORC lưu collections of rows (stripes), trong mỗi stripe thì data được lưu theo columnar format - kết hợp ưu điểm của cả row và column storage."
   },
   {
     "id": "hdfs_q38",
-    "question":  "Format nào KHÔNG phải column-oriented? ",
-    "answers": {
-      "A": "Parquet",
-      "B": "ORC",
-      "C":  "Avro",
-      "D": "Text"
-    },
-    "correctAnswers": ["C", "D"],
-    "explanation":  "Avro và Text là row-based formats.  Parquet và ORC là column-oriented formats phù hợp cho analytics."
+    "question": "Format nào KHÔNG phải column-oriented? ",
+    "answers": [
+      "Parquet (F)",
+      "ORC (F)",
+      "Avro (T)",
+      "Text (T)"
+    ],
+    "explanation": "Avro và Text là row-based formats. Parquet và ORC là column-oriented formats phù hợp cho analytics."
   },
   {
     "id": "hdfs_q39",
     "question": "Tại sao HDFS áp dụng 'append only' pattern?",
-    "answers": {
-      "A": "Giảm synchronization complexity",
-      "B": "Tăng write speed",
-      "C": "Dễ implement",
-      "D": "Tiết kiệm disk space"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Append only giúp giảm synchronization complexity trong distributed system.  Random write sẽ phức tạp hơn nhiều và chậm hơn trong môi trường phân tán."
+    "answers": [
+      "Giảm synchronization complexity (T)",
+      "Tăng write speed (F)",
+      "Dễ implement (F)",
+      "Tiết kiệm disk space (F)"
+    ],
+    "explanation": "Append only giúp giảm synchronization complexity trong distributed system. Random write sẽ phức tạp hơn nhiều và chậm hơn trong môi trường phân tán."
   },
   {
     "id": "hdfs_q40",
     "question": "HDFS sử dụng kiến trúc gì? ",
-    "answers": {
-      "A": "Peer-to-peer",
-      "B": "Master/Slave",
-      "C":  "Client/Server",
-      "D": "Microservices"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Peer-to-peer (F)",
+      "Master/Slave (T)",
+      "Client/Server (F)",
+      "Microservices (F)"
+    ],
     "explanation": "HDFS sử dụng Master/Slave architecture với NameNode là master và DataNodes là slaves."
   },
   {
     "id": "hdfs_q41",
     "question": "Replica thứ ba trong chunk placement strategy được đặt ở đâu?",
-    "answers": {
-      "A": "Local node",
-      "B": "Cùng rack với replica thứ nhất",
-      "C": "Cùng rack với replica thứ hai",
-      "D": "Random placement"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Replica 1:  local node, Replica 2: remote rack, Replica 3: cùng remote rack với replica 2.  Chiến lược này cân bằng giữa reliability và network bandwidth."
+    "answers": [
+      "Local node (F)",
+      "Cùng rack với replica thứ nhất (F)",
+      "Cùng rack với replica thứ hai (T)",
+      "Random placement (F)"
+    ],
+    "explanation": "Replica 1: local node, Replica 2: remote rack, Replica 3: cùng remote rack với replica 2. Chiến lược này cân bằng giữa reliability và network bandwidth."
   },
   {
     "id": "hdfs_q42",
     "question": "Client đọc data từ replica nào?",
-    "answers":  {
-      "A": "Replica đầu tiên được tạo",
-      "B": "Replica gần nhất (nearest)",
-      "C": "Random replica",
-      "D": "Tất cả replicas đồng thời"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Replica đầu tiên được tạo (F)",
+      "Replica gần nhất (nearest) (T)",
+      "Random replica (F)",
+      "Tất cả replicas đồng thời (F)"
+    ],
     "explanation": "Client đọc từ replica gần nhất (về mặt network topology) để giảm latency và network traffic."
   },
   {
     "id": "hdfs_q43",
     "question": "Khi NameNode phát hiện DataNode failure, nó sẽ làm gì?",
-    "answers": {
-      "A":  "Chỉ log lại",
-      "B": "Chọn DataNode mới để re-replicate blocks",
-      "C": "Restart DataNode đó",
-      "D": "Không làm gì"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Chỉ log lại (F)",
+      "Chọn DataNode mới để re-replicate blocks (T)",
+      "Restart DataNode đó (F)",
+      "Không làm gì (F)"
+    ],
     "explanation": "NameNode sẽ chọn DataNode mới và trigger re-replication để duy trì replication factor, đảm bảo data availability."
   },
   {
     "id": "hdfs_q44",
     "question": "Rebalancer có ảnh hưởng đến cluster availability không?",
-    "answers": {
-      "A": "Có, cluster phải offline",
-      "B": "Không, cluster vẫn online khi rebalancer chạy",
-      "C":  "Chỉ ảnh hưởng read operations",
-      "D": "Chỉ ảnh hưởng write operations"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Cluster vẫn online và hoạt động bình thường khi rebalancer chạy.  Rebalancer được throttle để tránh ảnh hưởng performance."
+    "answers": [
+      "Có, cluster phải offline (F)",
+      "Không, cluster vẫn online khi rebalancer chạy (T)",
+      "Chỉ ảnh hưởng read operations (F)",
+      "Chỉ ảnh hưởng write operations (F)"
+    ],
+    "explanation": "Cluster vẫn online và hoạt động bình thường khi rebalancer chạy. Rebalancer được throttle để tránh ảnh hưởng performance."
   },
   {
     "id": "hdfs_q45",
-    "question":  "Checksum được tính theo đơn vị nào?",
-    "answers": {
-      "A":  "Per block (64 MB)",
-      "B": "Per file",
-      "C": "Per 512 bytes",
-      "D": "Per 1 MB"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Client tính checksum mỗi 512 bytes để phát hiện corruption chi tiết.  DataNode lưu trữ các checksums này."
+    "question": "Checksum được tính theo đơn vị nào?",
+    "answers": [
+      "Per block (64 MB) (F)",
+      "Per file (F)",
+      "Per 512 bytes (T)",
+      "Per 1 MB (F)"
+    ],
+    "explanation": "Client tính checksum mỗi 512 bytes để phát hiện corruption chi tiết. DataNode lưu trữ các checksums này."
   },
   {
     "id": "hdfs_q46",
     "question": "Secondary NameNode có thể tự động thay thế NameNode khi fail không?",
-    "answers": {
-      "A": "Có, tự động failover",
-      "B": "Không, phải manual intervention",
-      "C": "Chỉ trong HA mode",
-      "D":  "Có, nhưng mất vài phút"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Secondary NameNode KHÔNG tự động failover.  Nó chỉ thực hiện checkpointing.  Muốn auto failover cần dùng Active-Standby NameNode (HA mode)."
+    "answers": [
+      "Có, tự động failover (F)",
+      "Không, phải manual intervention (T)",
+      "Chỉ trong HA mode (F)",
+      "Có, nhưng mất vài phút (F)"
+    ],
+    "explanation": "Secondary NameNode KHÔNG tự động failover. Nó chỉ thực hiện checkpointing. Muốn auto failover cần dùng Active-Standby NameNode (HA mode)."
   },
   {
     "id": "hdfs_q47",
     "question": "Trong quá trình checkpointing, Secondary NameNode làm gì?",
-    "answers":  {
-      "A": "Copy FSImage và Transaction Log từ NameNode",
-      "B":  "Merge FSImage và Transaction Log",
-      "C": "Upload FSImage mới lên NameNode",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
-    "explanation": "Secondary NameNode:  1) Copy FSImage và Transaction Log, 2) Merge chúng thành FSImage mới, 3) Upload lên NameNode. Transaction Log sau đó được purged."
+    "answers": [
+      "Copy FSImage và Transaction Log từ NameNode (F)",
+      "Merge FSImage và Transaction Log (F)",
+      "Upload FSImage mới lên NameNode (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
+    "explanation": "Secondary NameNode: 1) Copy FSImage và Transaction Log, 2) Merge chúng thành FSImage mới, 3) Upload lên NameNode. Transaction Log sau đó được purged."
   },
   {
     "id": "hdfs_q48",
-    "question":  "Journal Nodes hoạt động theo cơ chế gì?",
-    "answers":  {
-      "A": "Majority vote (Quorum)",
-      "B": "All-or-nothing",
-      "C": "Master-slave replication",
-      "D": "Peer-to-peer sync"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Active NameNode ghi vào đa số (majority/quorum) JournalNodes.  Ví dụ với 3 JNs, cần ít nhất 2 nodes ghi thành công."
+    "question": "Journal Nodes hoạt động theo cơ chế gì?",
+    "answers": [
+      "Majority vote (Quorum) (T)",
+      "All-or-nothing (F)",
+      "Master-slave replication (F)",
+      "Peer-to-peer sync (F)"
+    ],
+    "explanation": "Active NameNode ghi vào đa số (majority/quorum) JournalNodes. Ví dụ với 3 JNs, cần ít nhất 2 nodes ghi thành công."
   },
   {
     "id": "hdfs_q49",
     "question": "Zookeeper trong HDFS HA có vai trò gì?",
-    "answers":  {
-      "A": "Lưu trữ metadata",
-      "B": "Coordination service và election",
-      "C": "Data replication",
-      "D": "Load balancing"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Lưu trữ metadata (F)",
+      "Coordination service và election (T)",
+      "Data replication (F)",
+      "Load balancing (F)"
+    ],
     "explanation": "Zookeeper là coordination service, giúp election và duy trì quyền kiểm soát, đảm bảo chỉ có 1 Active NameNode."
   },
   {
     "id": "hdfs_q50",
     "question": "Lệnh 'hdfs dfs -text' khác với '-cat' như thế nào?",
-    "answers": {
-      "A":  "Không có sự khác biệt",
-      "B": "-text hỗ trợ hi���n thị file compressed (zip)",
-      "C": "-text nhanh hơn",
-      "D": "-text chỉ dùng cho text files"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Không có sự khác biệt (F)",
+      "-text hỗ trợ hi���n thị file compressed (zip) (T)",
+      "-text nhanh hơn (F)",
+      "-text chỉ dùng cho text files (F)"
+    ],
     "explanation": "-text có thể hiển thị nội dung của compressed files (zip format), trong khi -cat chỉ hiển thị raw content."
   },
   {
     "id": "hdfs_q51",
     "question": "Option -f trong lệnh 'hdfs dfs -put' làm gì?",
-    "answers": {
-      "A":  "Fast upload",
-      "B": "Force overwrite nếu file tồn tại",
-      "C": "Format trước khi upload",
-      "D": "Follow symlinks"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Fast upload (F)",
+      "Force overwrite nếu file tồn tại (T)",
+      "Format trước khi upload (F)",
+      "Follow symlinks (F)"
+    ],
     "explanation": "Option -f (force) cho phép ghi đè file nếu nó đã tồn tại trên HDFS, thay vì báo lỗi."
   },
   {
     "id": "hdfs_q52",
     "question": "Option -p trong lệnh 'hdfs dfs -put' có tác dụng gì?",
-    "answers": {
-      "A": "Parallel upload",
-      "B": "Preserve timestamps, ownership và permissions",
-      "C": "Print progress",
-      "D": "Compress before upload"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Parallel upload (F)",
+      "Preserve timestamps, ownership và permissions (T)",
+      "Print progress (F)",
+      "Compress before upload (F)"
+    ],
     "explanation": "Option -p (preserve) giữ nguyên access time, modification time, ownership và file permissions khi upload."
   },
   {
     "id": "hdfs_q53",
-    "question":  "Lệnh nào xóa file trong HDFS? ",
-    "answers": {
-      "A": "hdfs dfs -delete",
-      "B": "hdfs dfs -rm",
-      "C": "hdfs dfs -remove",
-      "D": "hdfs dfs -del"
-    },
-    "correctAnswers": ["B"],
+    "question": "Lệnh nào xóa file trong HDFS? ",
+    "answers": [
+      "hdfs dfs -delete (F)",
+      "hdfs dfs -rm (T)",
+      "hdfs dfs -remove (F)",
+      "hdfs dfs -del (F)"
+    ],
     "explanation": "hdfs dfs -rm xóa file (đưa vào trash). Thêm option -r để xóa thư mục recursively."
   },
   {
     "id": "hdfs_q54",
     "question": "Lệnh 'hdfs dfs -du -s' hiển thị thông tin gì?",
-    "answers":  {
-      "A": "Disk usage của toàn bộ cluster",
-      "B": "Tổng dung lượng mà một thư mục/file chiếm dụng",
-      "C": "Số lượng file trong thư mục",
-      "D": "Replication factor"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Disk usage của toàn bộ cluster (F)",
+      "Tổng dung lượng mà một thư mục/file chiếm dụng (T)",
+      "Số lượng file trong thư mục (F)",
+      "Replication factor (F)"
+    ],
     "explanation": "-du (disk usage) với option -s (summary) hiển thị tổng dung lượng của một thư mục/file, không phải từng file con."
   },
   {
     "id": "hdfs_q55",
-    "question":  "Lệnh 'hdfs namenode -format' nên được sử dụng khi nào?",
-    "answers": {
-      "A":  "Định kỳ hàng tháng",
-      "B": "Khi setup cluster lần đầu",
-      "C": "Khi cluster bị chậm",
-      "D": "Khi thêm DataNode mới"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Format NameNode CHỈ nên dùng khi setup cluster lần đầu.  Lệnh này sẽ XÓA SẠCH dữ liệu cũ, rất nguy hiểm cho production system."
+    "question": "Lệnh 'hdfs namenode -format' nên được sử dụng khi nào?",
+    "answers": [
+      "Định kỳ hàng tháng (F)",
+      "Khi setup cluster lần đầu (T)",
+      "Khi cluster bị chậm (F)",
+      "Khi thêm DataNode mới (F)"
+    ],
+    "explanation": "Format NameNode CHỈ nên dùng khi setup cluster lần đầu. Lệnh này sẽ XÓA SẠCH dữ liệu cũ, rất nguy hiểm cho production system."
   },
   {
     "id": "hdfs_q56",
-    "question":  "Text file format phù hợp cho giai đoạn nào?",
-    "answers":  {
-      "A": "Production workloads",
-      "B": "Development và debugging",
-      "C": "Big data analytics",
-      "D": "Real-time processing"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Text files human-readable, dễ debug, phù hợp development.  Nhưng không hiệu quả cho production workloads hay big data analytics."
+    "question": "Text file format phù hợp cho giai đoạn nào?",
+    "answers": [
+      "Production workloads (F)",
+      "Development và debugging (T)",
+      "Big data analytics (F)",
+      "Real-time processing (F)"
+    ],
+    "explanation": "Text files human-readable, dễ debug, phù hợp development. Nhưng không hiệu quả cho production workloads hay big data analytics."
   },
   {
     "id": "hdfs_q57",
     "question": "Sequence File lưu trữ data theo format nào?",
-    "answers": {
-      "A": "Text-based",
-      "B": "Binary key-value pairs",
-      "C": "JSON",
-      "D": "XML"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Text-based (F)",
+      "Binary key-value pairs (T)",
+      "JSON (F)",
+      "XML (F)"
+    ],
     "explanation": "Sequence File là binary format lưu trữ key-value pairs, compact và hiệu quả hơn text format."
   },
   {
     "id": "hdfs_q58",
     "question": "Avro hỗ trợ loại data serialization nào?",
-    "answers": {
-      "A":  "Chỉ Binary",
-      "B": "Chỉ JSON",
-      "C": "Binary và JSON",
-      "D": "Chỉ XML"
-    },
-    "correctAnswers": ["C"],
+    "answers": [
+      "Chỉ Binary (F)",
+      "Chỉ JSON (F)",
+      "Binary và JSON (T)",
+      "Chỉ XML (F)"
+    ],
     "explanation": "Avro hỗ trợ cả binary và JSON serialization, linh hoạt cho các use cases khác nhau."
   },
   {
     "id": "hdfs_q59",
     "question": "Avro schema hỗ trợ loại data types nào?",
-    "answers": {
-      "A": "Primitive types (null, boolean, int, long... )",
-      "B": "Complex types (records, arrays, maps... )",
-      "C": "Chỉ numeric types",
-      "D": "Chỉ string types"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation":  "Avro hỗ trợ cả primitive types (null, boolean, int, long.. .) và complex types (records, arrays, maps.. .), rất linh hoạt."
+    "answers": [
+      "Primitive types (null, boolean, int, long... ) (T)",
+      "Complex types (records, arrays, maps... ) (T)",
+      "Chỉ numeric types (F)",
+      "Chỉ string types (F)"
+    ],
+    "explanation": "Avro hỗ trợ cả primitive types (null, boolean, int, long.. .) và complex types (records, arrays, maps.. .), rất linh hoạt."
   },
   {
-    "id":  "hdfs_q60",
+    "id": "hdfs_q60",
     "question": "Tại sao Parquet hiệu quả cho analytics queries?",
-    "answers": {
-      "A": "Column-oriented format",
-      "B": "Chỉ cần đọc specific columns cần thiết",
-      "C": "Efficient disk I/O",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
+    "answers": [
+      "Column-oriented format (F)",
+      "Chỉ cần đọc specific columns cần thiết (F)",
+      "Efficient disk I/O (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
     "explanation": "Parquet column-oriented, cho phép đọc chỉ các cột cần thiết thay vì toàn bộ row, giảm disk I/O đáng kể cho analytics queries."
   },
   {
     "id": "hdfs_q61",
-    "question":  "ORC indices lưu trữ thông tin gì?",
-    "answers": {
-      "A": "Min, Max values",
-      "B": "Sum, Count",
-      "C": "Checksum",
-      "D": "File size"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation":  "ORC indices lưu aggregated values (min, max, sum, count) cho mỗi cột, giúp skip blocks không cần thiết khi query."
+    "question": "ORC indices lưu trữ thông tin gì?",
+    "answers": [
+      "Min, Max values (T)",
+      "Sum, Count (T)",
+      "Checksum (F)",
+      "File size (F)"
+    ],
+    "explanation": "ORC indices lưu aggregated values (min, max, sum, count) cho mỗi cột, giúp skip blocks không cần thiết khi query."
   },
   {
     "id": "hdfs_q62",
-    "question":  "ORC stripe là gì?",
-    "answers": {
-      "A": "Một row trong file",
-      "B": "Collection of rows với columnar storage bên trong",
-      "C": "Một column trong file",
-      "D":  "Metadata section"
-    },
-    "correctAnswers": ["B"],
+    "question": "ORC stripe là gì?",
+    "answers": [
+      "Một row trong file (F)",
+      "Collection of rows với columnar storage bên trong (T)",
+      "Một column trong file (F)",
+      "Metadata section (F)"
+    ],
     "explanation": "ORC stripe là collection of rows, trong mỗi stripe data được lưu theo columnar format - kết hợp ưu điểm row và column storage."
   },
   {
     "id": "hdfs_q63",
-    "question":  "Format nào phù hợp nhất cho Hive queries?",
-    "answers": {
-      "A": "Text",
-      "B": "Sequence File",
-      "C": "Avro",
-      "D":  "ORC"
-    },
-    "correctAnswers": ["D"],
+    "question": "Format nào phù hợp nhất cho Hive queries?",
+    "answers": [
+      "Text (F)",
+      "Sequence File (F)",
+      "Avro (F)",
+      "ORC (T)"
+    ],
     "explanation": "ORC (Optimized Row Columnar) được thiết kế tối ưu cho Hive, với compression, indexing và columnar storage hiệu quả."
   },
   {
-    "id":  "hdfs_q64",
+    "id": "hdfs_q64",
     "question": "Format nào hỗ trợ schema evolution tốt nhất?",
-    "answers":  {
-      "A": "Text",
-      "B": "Sequence File",
-      "C":  "Avro",
-      "D": "Parquet"
-    },
-    "correctAnswers": ["C"],
+    "answers": [
+      "Text (F)",
+      "Sequence File (F)",
+      "Avro (T)",
+      "Parquet (F)"
+    ],
     "explanation": "Avro có flexible schema evolution, schema được nhúng trong file, cho phép thêm/xóa fields mà không break compatibility."
   },
   {
     "id": "hdfs_q65",
     "question": "Tất cả các formats nào đều splittable?",
-    "answers": {
-      "A": "Text, Sequence, Avro",
-      "B": "Sequence, Avro, Parquet, ORC",
-      "C":  "Text, Avro, Parquet",
-      "D": "Tất cả formats đều splittable"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Text, Sequence, Avro (F)",
+      "Sequence, Avro, Parquet, ORC (T)",
+      "Text, Avro, Parquet (F)",
+      "Tất cả formats đều splittable (F)"
+    ],
     "explanation": "Sequence, Avro, Parquet, ORC đều splittable (ngay cả khi compressed). Text files splittable nhưng không khi compressed."
   },
   {
     "id": "hdfs_q66",
     "question": "HDFS không hỗ trợ operation nào?",
-    "answers": {
-      "A": "Sequential read",
-      "B": "Random write trong file",
-      "C": "Append",
-      "D": "Delete file"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Sequential read (F)",
+      "Random write trong file (T)",
+      "Append (F)",
+      "Delete file (F)"
+    ],
     "explanation": "HDFS không hỗ trợ random write (modify giữa file). Chỉ hỗ trợ write once, append only pattern."
   },
   {
     "id": "hdfs_q67",
-    "question":  "NameNode metadata có sử dụng demand paging không?",
-    "answers": {
-      "A": "Có",
-      "B": "Không, toàn bộ metadata trong RAM",
-      "C": "Chỉ trong HA mode",
-      "D": "Tùy configuration"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Toàn bộ metadata được lưu trong RAM, KHÔNG có demand paging, để đảm bảo access speed nhanh nhất.  Đây là design choice quan tr���ng của HDFS."
+    "question": "NameNode metadata có sử dụng demand paging không?",
+    "answers": [
+      "Có (F)",
+      "Không, toàn bộ metadata trong RAM (T)",
+      "Chỉ trong HA mode (F)",
+      "Tùy configuration (F)"
+    ],
+    "explanation": "Toàn bộ metadata được lưu trong RAM, KHÔNG có demand paging, để đảm bảo access speed nhanh nhất. Đây là design choice quan tr���ng của HDFS."
   },
   {
     "id": "hdfs_q68",
     "question": "Transaction Log ghi lại thông tin gì?",
-    "answers": {
-      "A":  "Nội dung file",
-      "B": "File creations, deletions",
-      "C": "DataNode heartbeats",
-      "D":  "Checksum values"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Transaction Log (Edit Log) ghi lại các thay đổi filesystem như file creations, deletions, renames...  để recovery khi cần."
+    "answers": [
+      "Nội dung file (F)",
+      "File creations, deletions (T)",
+      "DataNode heartbeats (F)",
+      "Checksum values (F)"
+    ],
+    "explanation": "Transaction Log (Edit Log) ghi lại các thay đổi filesystem như file creations, deletions, renames... để recovery khi cần."
   },
   {
     "id": "hdfs_q69",
     "question": "DataNode lưu metadata của block gồm những gì?",
-    "answers": {
-      "A": "Block ID",
-      "B": "CRC checksum",
-      "C": "Block size",
-      "D": "File name"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "DataNode lưu metadata như CRC checksum của block.  Block ID, size được quản lý bởi NameNode.  File name là namespace metadata, không thuộc DataNode."
+    "answers": [
+      "Block ID (F)",
+      "CRC checksum (T)",
+      "Block size (F)",
+      "File name (F)"
+    ],
+    "explanation": "DataNode lưu metadata như CRC checksum của block. Block ID, size được quản lý bởi NameNode. File name là namespace metadata, không thuộc DataNode."
   },
   {
     "id": "hdfs_q70",
     "question": "Mục đích của Block Report là gì?",
-    "answers": {
-      "A": "Báo cáo blocks bị corrupt",
-      "B": "Cho NameNode biết DataNode đang lưu blocks nào",
-      "C": "Request thêm blocks",
-      "D": "Báo cáo disk usage"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Báo cáo blocks bị corrupt (F)",
+      "Cho NameNode biết DataNode đang lưu blocks nào (T)",
+      "Request thêm blocks (F)",
+      "Báo cáo disk usage (F)"
+    ],
     "explanation": "Block Report gửi định kỳ, chứa danh sách tất cả blocks mà DataNode đang lưu, giúp NameNode maintain block-to-DataNode mapping."
   },
   {
     "id": "hdfs_q71",
     "question": "Tần suất heartbeat có ý nghĩa gì? ",
-    "answers": {
-      "A": "Càng cao càng tốt",
-      "B": "Trade-off giữa failure detection speed và network overhead",
-      "C": "Không quan trọng",
-      "D": "Chỉ để monitoring"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Heartbeat mỗi 3 giây là trade-off:  đủ nhanh để detect failure kịp thời, nhưng không gây quá nhiều network overhead."
+    "answers": [
+      "Càng cao càng tốt (F)",
+      "Trade-off giữa failure detection speed và network overhead (T)",
+      "Không quan trọng (F)",
+      "Chỉ để monitoring (F)"
+    ],
+    "explanation": "Heartbeat mỗi 3 giây là trade-off: đủ nhanh để detect failure kịp thời, nhưng không gây quá nhiều network overhead."
   },
   {
     "id": "hdfs_q72",
     "question": "Replica placement strategy cân bằng giữa yếu tố nào?",
-    "answers": {
-      "A": "Reliability và network bandwidth",
-      "B":  "Speed và cost",
-      "C": "CPU và memory",
-      "D":  "Disk space và RAM"
-    },
-    "correctAnswers": ["A"],
+    "answers": [
+      "Reliability và network bandwidth (T)",
+      "Speed và cost (F)",
+      "CPU và memory (F)",
+      "Disk space và RAM (F)"
+    ],
     "explanation": "Strategy (1 local, 2 remote rack, 3 cùng remote rack) cân bằng reliability (rack failure tolerance) và network bandwidth (không cross-rack cho mọi replica)."
   },
   {
     "id": "hdfs_q73",
     "question": "NameNode cân bằng DataNode traffic như thế nào?",
-    "answers": {
-      "A": "Round-robin",
-      "B":  "Random placement cho additional replicas",
-      "C":  "Dựa trên disk usage",
-      "D": "Dựa trên CPU load"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation":  "NameNode cân bằng bằng cách:  random placement cho replicas bổ sung, và balance disk usage khi chọn nodes cho new replicas."
+    "answers": [
+      "Round-robin (F)",
+      "Random placement cho additional replicas (T)",
+      "Dựa trên disk usage (T)",
+      "Dựa trên CPU load (F)"
+    ],
+    "explanation": "NameNode cân bằng bằng cách: random placement cho replicas bổ sung, và balance disk usage khi chọn nodes cho new replicas."
   },
   {
     "id": "hdfs_q74",
     "question": "Khi nào cần chạy Rebalancer?",
-    "answers":  {
-      "A": "Khi có DataNode mới được thêm",
-      "B":  "Khi disk usage giữa các nodes chênh lệch lớn",
-      "C": "Hàng ngày",
-      "D": "Khi NameNode restart"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation":  "Rebalancer cần chạy khi thêm node mới hoặc khi disk usage giữa các nodes chênh lệch quá lớn.  Không cần chạy định kỳ hay khi restart."
+    "answers": [
+      "Khi có DataNode mới được thêm (T)",
+      "Khi disk usage giữa các nodes chênh lệch lớn (T)",
+      "Hàng ngày (F)",
+      "Khi NameNode restart (F)"
+    ],
+    "explanation": "Rebalancer cần chạy khi thêm node mới hoặc khi disk usage giữa các nodes chênh lệch quá lớn. Không cần chạy định kỳ hay khi restart."
   },
   {
     "id": "hdfs_q75",
     "question": "Throttling Rebalancer có mục đích gì?",
-    "answers": {
-      "A": "Tăng tốc độ rebalance",
-      "B": "Tránh network congestion",
-      "C":  "Giảm CPU usage",
-      "D": "Tiết kiệm disk space"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Tăng tốc độ rebalance (F)",
+      "Tránh network congestion (T)",
+      "Giảm CPU usage (F)",
+      "Tiết kiệm disk space (F)"
+    ],
     "explanation": "Throttling (giới hạn bandwidth) tránh Rebalancer chiếm hết network bandwidth, ảnh hưởng đến normal operations của cluster."
   },
   {
     "id": "hdfs_q76",
     "question": "Kích thước chunk để tính checksum (512 bytes) có ý nghĩa gì? ",
-    "answers": {
-      "A": "Phát hiện corruption chi tiết",
-      "B":  "Trade-off giữa granularity và overhead",
-      "C": "Tiết kiệm storage",
-      "D": "Tăng read speed"
-    },
-    "correctAnswers": ["A", "B"],
+    "answers": [
+      "Phát hiện corruption chi tiết (T)",
+      "Trade-off giữa granularity và overhead (T)",
+      "Tiết kiệm storage (F)",
+      "Tăng read speed (F)"
+    ],
     "explanation": "512 bytes đủ nhỏ để phát hiện corruption chi tiết, nhưng không tạo quá nhiều checksum overhead. Đây là trade-off tối ưu."
   },
   {
     "id": "hdfs_q77",
     "question": "Checksum được kiểm tra khi nào?",
-    "answers":  {
-      "A": "Khi file được tạo",
-      "B": "Khi client đọc file",
-      "C": "Định kỳ bởi DataNode",
-      "D": "Khi file được xóa"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Checksum được kiểm tra chủ yếu khi client đọc file.  DataNode cũng có thể chạy checksum verification định kỳ ở background."
+    "answers": [
+      "Khi file được tạo (F)",
+      "Khi client đọc file (T)",
+      "Định kỳ bởi DataNode (F)",
+      "Khi file được xóa (F)"
+    ],
+    "explanation": "Checksum được kiểm tra chủ yếu khi client đọc file. DataNode cũng có thể chạy checksum verification định kỳ ở background."
   },
   {
     "id": "hdfs_q78",
-    "question":  "Trong data pipelining, replica được ghi theo thứ tự nào?",
-    "answers": {
-      "A": "Parallel đồng thời",
-      "B": "Sequential theo pipeline",
-      "C": "Random order",
-      "D": "Tùy thuộc vào network speed"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Replicas được ghi sequential theo pipeline:  Client → DN1 → DN2 → DN3.  DN1 forward data cho DN2 trong khi vẫn nhận data từ client."
+    "question": "Trong data pipelining, replica được ghi theo thứ tự nào?",
+    "answers": [
+      "Parallel đồng thời (F)",
+      "Sequential theo pipeline (T)",
+      "Random order (F)",
+      "Tùy thuộc vào network speed (F)"
+    ],
+    "explanation": "Replicas được ghi sequential theo pipeline: Client → DN1 → DN2 → DN3. DN1 forward data cho DN2 trong khi vẫn nhận data từ client."
   },
   {
     "id": "hdfs_q79",
-    "question":  "Lợi ích của pipelining so với client ghi trực tiếp đến tất cả replicas?",
-    "answers":  {
-      "A": "Giảm client network bandwidth usage",
-      "B": "Tăng overall throughput",
-      "C":  "Đơn giản hơn cho client",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers":  ["D"],
-    "explanation": "Pipelining:  giảm client bandwidth (chỉ gửi 1 lần), tăng throughput (các DN forward song song với việc nhận), và đơn giản hóa client logic."
+    "question": "Lợi ích của pipelining so với client ghi trực tiếp đến tất cả replicas?",
+    "answers": [
+      "Giảm client network bandwidth usage (F)",
+      "Tăng overall throughput (F)",
+      "Đơn giản hơn cho client (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
+    "explanation": "Pipelining: giảm client bandwidth (chỉ gửi 1 lần), tăng throughput (các DN forward song song với việc nhận), và đơn giản hóa client logic."
   },
   {
     "id": "hdfs_q80",
-    "question":  "FSImage trong NameNode là gì?",
-    "answers": {
-      "A": "Snapshot của filesystem namespace",
-      "B": "Danh sách DataNodes",
-      "C": "Checksum database",
-      "D": "User permissions"
-    },
-    "correctAnswers": ["A"],
+    "question": "FSImage trong NameNode là gì?",
+    "answers": [
+      "Snapshot của filesystem namespace (T)",
+      "Danh sách DataNodes (F)",
+      "Checksum database (F)",
+      "User permissions (F)"
+    ],
     "explanation": "FSImage là snapshot (checkpoint) của toàn bộ filesystem namespace tại một thời điểm, lưu trên disk để recovery."
   },
   {
     "id": "hdfs_q81",
     "question": "Tại sao cần merge FSImage và Transaction Log?",
-    "answers": {
-      "A": "Transaction Log ngày càng lớn",
-      "B": "Tăng tốc độ startup NameNode",
-      "C":  "Giảm recovery time",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
+    "answers": [
+      "Transaction Log ngày càng lớn (F)",
+      "Tăng tốc độ startup NameNode (F)",
+      "Giảm recovery time (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
     "explanation": "Merge tạo FSImage mới, giúp Transaction Log không quá lớn, tăng tốc startup (chỉ cần load FSImage + edit log ngắn), và giảm recovery time."
   },
   {
-    "id":  "hdfs_q82",
+    "id": "hdfs_q82",
     "question": "Trong HDFS HA, edit logs cần được share vì lý do gì?",
-    "answers": {
-      "A":  "Để Standby có thể đồng bộ metadata",
-      "B": "Để Standby sẵn sàng failover ngay lập tức",
-      "C": "Để tránh data loss",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
-    "explanation": "Share edit logs giúp Standby luôn sync (A), sẵn sàng failover không mất thời gian (B), và tránh data loss khi Active fail (C)."
+    "answers": [
+      "Để Standby có thể đồng bộ metadata (F)",
+      "Để Standby sẵn sàng failover ngay lập tức (F)",
+      "Để tránh data loss (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
+    "explanation": "Share edit logs giúp Standby luôn sync , sẵn sàng failover không mất thời gian , và tránh data loss khi Active fail ."
   },
   {
     "id": "hdfs_q83",
     "question": "Số lượng JournalNodes tối thiểu trong quorum là bao nhiêu?",
-    "answers": {
-      "A": "1",
-      "B": "2",
-      "C": "3",
-      "D": "5"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Cần ít nhất 3 JournalNodes để có quorum (majority). Với 3 nodes, quorum = 2, có thể tolerate 1 node failure.  Với 5 nodes có thể tolerate 2 failures."
+    "answers": [
+      "1 (F)",
+      "2 (F)",
+      "3 (T)",
+      "5 (F)"
+    ],
+    "explanation": "Cần ít nhất 3 JournalNodes để có quorum (majority). Với 3 nodes, quorum = 2, có thể tolerate 1 node failure. Với 5 nodes có thể tolerate 2 failures."
   },
   {
     "id": "hdfs_q84",
-    "question":  "Shared Storage (NFS) có nhược điểm gì trong HDFS HA?",
-    "answers":  {
-      "A": "Phức tạp để setup",
-      "B": "Single point of failure",
-      "C": "Chậm hơn JournalNodes",
-      "D": "Tốn chi phí cao"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "NFS là single point of failure - nếu NFS server chết thì cả Active và Standby đều không hoạt động được.  JournalNodes không có vấn đề này."
+    "question": "Shared Storage (NFS) có nhược điểm gì trong HDFS HA?",
+    "answers": [
+      "Phức tạp để setup (F)",
+      "Single point of failure (T)",
+      "Chậm hơn JournalNodes (F)",
+      "Tốn chi phí cao (F)"
+    ],
+    "explanation": "NFS là single point of failure - nếu NFS server chết thì cả Active và Standby đều không hoạt động được. JournalNodes không có vấn đề này."
   },
   {
     "id": "hdfs_q85",
     "question": "Zookeeper giúp tránh split-brain như thế nào?",
-    "answers": {
-      "A": "Sử dụng distributed consensus",
-      "B": "Chỉ cho phép một NameNode giữ active lock",
-      "C": "ZKFC kiểm tra và enforce",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
+    "answers": [
+      "Sử dụng distributed consensus (F)",
+      "Chỉ cho phép một NameNode giữ active lock (F)",
+      "ZKFC kiểm tra và enforce (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
     "explanation": "Zookeeper dùng distributed consensus, chỉ một NameNode có thể giữ active lock tại một thời điểm, ZKFC enforce rule này."
   },
   {
     "id": "hdfs_q86",
-    "question":  "Trong HA mode, DataNode gửi block reports cho ai? ",
-    "answers": {
-      "A": "Chỉ Active NameNode",
-      "B":  "Chỉ Standby NameNode",
-      "C": "Cả Active và Standby NameNode",
-      "D": "Zookeeper"
-    },
-    "correctAnswers": ["C"],
+    "question": "Trong HA mode, DataNode gửi block reports cho ai? ",
+    "answers": [
+      "Chỉ Active NameNode (F)",
+      "Chỉ Standby NameNode (F)",
+      "Cả Active và Standby NameNode (T)",
+      "Zookeeper (F)"
+    ],
     "explanation": "DataNode gửi block reports và heartbeats cho CẢ HAI Active và Standby NameNode để cả hai đều có thông tin vị trí blocks."
   },
   {
     "id": "hdfs_q87",
-    "question":  "Lệnh 'hdfs dfs -touchz' được dùng khi nào?",
-    "answers": {
-      "A":  "Tạo file rỗng",
-      "B": "Update timestamp của file",
-      "C": "Test xem có thể ghi vào HDFS không",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["A", "C"],
+    "question": "Lệnh 'hdfs dfs -touchz' được dùng khi nào?",
+    "answers": [
+      "Tạo file rỗng (T)",
+      "Update timestamp của file (F)",
+      "Test xem có thể ghi vào HDFS không (T)",
+      "Tất cả các đáp án trên (F)"
+    ],
     "explanation": "touchz tạo file rỗng (size = 0), thường dùng để test write permissions hoặc làm flag file. Nó KHÔNG update timestamp của file existing."
   },
   {
     "id": "hdfs_q88",
-    "question":  "Lệnh 'hdfs dfs -df -h' hiển thị gì?",
-    "answers":  {
-      "A": "Dung lượng trống của HDFS",
-      "B":  "Dung lượng đã sử dụng",
-      "C": "Capacity tổng",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
+    "question": "Lệnh 'hdfs dfs -df -h' hiển thị gì?",
+    "answers": [
+      "Dung lượng trống của HDFS (F)",
+      "Dung lượng đã sử dụng (F)",
+      "Capacity tổng (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
     "explanation": "-df (disk filesystem) với option -h (human-readable) hiển thị capacity, used, available space của HDFS dưới dạng GB, TB..."
   },
   {
     "id": "hdfs_q89",
     "question": "Lệnh 'hdfs balancer' cần quyền gì để chạy?",
-    "answers": {
-      "A": "User thông thường",
-      "B": "HDFS admin",
-      "C":  "Root",
-      "D": "Tùy configuration"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "User thông thường (F)",
+      "HDFS admin (T)",
+      "Root (F)",
+      "Tùy configuration (F)"
+    ],
     "explanation": "Balancer là admin operation, cần quyền HDFS admin để chạy. Nó di chuyển blocks giữa các DataNodes, operation quan trọng."
   },
   {
     "id": "hdfs_q90",
     "question": "Lệnh 'hdfs fsck' có thể fix lỗi tự động không?",
-    "answers": {
-      "A": "Có, tự động fix mọi lỗi",
-      "B": "Không, chỉ báo cáo lỗi",
-      "C": "Có, nhưng cần option -fix",
-      "D": "Tùy loại lỗi"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "fsck (filesystem check) chỉ BÁO CÁO các vấn đề như missing blocks, under-replicated blocks...  Không tự động fix, cần manual intervention."
+    "answers": [
+      "Có, tự động fix mọi lỗi (F)",
+      "Không, chỉ báo cáo lỗi (T)",
+      "Có, nhưng cần option -fix (F)",
+      "Tùy loại lỗi (F)"
+    ],
+    "explanation": "fsck (filesystem check) chỉ BÁO CÁO các vấn đề như missing blocks, under-replicated blocks... Không tự động fix, cần manual intervention."
   },
   {
     "id": "hdfs_q91",
     "question": "Khi nào NameNode tự động vào safe mode?",
-    "answers":  {
-      "A": "Khi startup",
-      "B": "Khi phát hiện quá nhiều under-replicated blocks",
-      "C": "Khi disk đầy",
-      "D": "Khi có DataNode failure"
-    },
-    "correctAnswers": ["A", "B"],
+    "answers": [
+      "Khi startup (T)",
+      "Khi phát hiện quá nhiều under-replicated blocks (T)",
+      "Khi disk đầy (F)",
+      "Khi có DataNode failure (F)"
+    ],
     "explanation": "NameNode tự động vào safe mode khi startup (để load metadata) và khi phát hiện filesystem issues nghiêm trọng như quá nhiều under-replicated blocks."
   },
   {
     "id": "hdfs_q92",
     "question": "So sánh row-based và column-based formats, đâu là đúng?",
-    "answers":  {
-      "A": "Row-based tốt cho read toàn bộ record",
-      "B": "Column-based tốt cho analytics trên specific columns",
-      "C": "Row-based tốt cho write operations",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
-    "explanation": "Row-based (Avro, Sequence) tốt khi cần full record và write-heavy.  Column-based (Parquet, ORC) tốt cho read specific columns trong analytics."
+    "answers": [
+      "Row-based tốt cho read toàn bộ record (F)",
+      "Column-based tốt cho analytics trên specific columns (F)",
+      "Row-based tốt cho write operations (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
+    "explanation": "Row-based (Avro, Sequence) tốt khi cần full record và write-heavy. Column-based (Parquet, ORC) tốt cho read specific columns trong analytics."
   },
   {
     "id": "hdfs_q93",
     "question": "Sequence File có thể lưu trữ small files hiệu quả như thế nào?",
-    "answers": {
-      "A": "Không thể, chỉ cho big files",
-      "B": "Pack nhiều small files thành một Sequence File (archive)",
-      "C": "Compress mỗi file riêng",
-      "D": "Merge small files"
-    },
-        "correctAnswers": ["B"],
+    "answers": [
+      "Không thể, chỉ cho big files (F)",
+      "Pack nhiều small files thành một Sequence File (archive) (T)",
+      "Compress mỗi file riêng (F)",
+      "Merge small files (F)"
+    ],
     "explanation": "Sequence File có thể dùng như archive để pack nhiều small files thành một file lớn (với filename làm key, content làm value), giảm metadata overhead."
   },
   {
     "id": "hdfs_q94",
     "question": "Avro schema evolution cho phép thay đổi gì? ",
-    "answers": {
-      "A": "Thêm fields mới",
-      "B": "Xóa fields",
-      "C": "Thay đổi data type",
-      "D": "Đổi tên fields"
-    },
-    "correctAnswers": ["A", "B"],
+    "answers": [
+      "Thêm fields mới (T)",
+      "Xóa fields (T)",
+      "Thay đổi data type (F)",
+      "Đổi tên fields (F)"
+    ],
     "explanation": "Avro hỗ trợ thêm fields mới (với default values) và xóa fields mà vẫn backward/forward compatible. Thay đổi data type và rename phức tạp hơn, cần careful handling."
   },
   {
     "id": "hdfs_q95",
-    "question":  "Parquet page compression khác với block compression như thế nào?",
-    "answers": {
-      "A": "Page compression nhỏ hơn block",
-      "B": "Page compression cho phép skip data hiệu quả hơn",
-      "C":  "Page compression tốt hơn cho columnar format",
-      "D":  "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
+    "question": "Parquet page compression khác với block compression như thế nào?",
+    "answers": [
+      "Page compression nhỏ hơn block (F)",
+      "Page compression cho phép skip data hiệu quả hơn (F)",
+      "Page compression tốt hơn cho columnar format (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
     "explanation": "Parquet compress theo pages (nhỏ hơn blocks), cho phép skip pages không cần thiết, và tối ưu cho columnar storage với compression ratio tốt."
   },
   {
     "id": "hdfs_q96",
     "question": "ORC block-mode compression có lợi ích gì?",
-    "answers":  {
-      "A": "Compression ratio cao hơn",
-      "B":  "Mỗi column được compress riêng trong row group",
-      "C": "Giảm CPU overhead khi decompress",
-      "D": "Tăng read speed"
-    },
-    "correctAnswers": ["A", "B"],
+    "answers": [
+      "Compression ratio cao hơn (T)",
+      "Mỗi column được compress riêng trong row group (T)",
+      "Giảm CPU overhead khi decompress (F)",
+      "Tăng read speed (F)"
+    ],
     "explanation": "ORC block-mode compression cho phép compress mỗi column riêng trong row group, đạt compression ratio cao hơn vì data trong một column thường homogeneous."
   },
   {
     "id": "hdfs_q97",
     "question": "Khi nào nên chọn Parquet thay vì ORC?",
-    "answers": {
-      "A":  "Khi dùng với Spark",
-      "B": "Khi cần nested data structures",
-      "C": "Khi dùng với Hive",
-      "D": "Khi cần ordered data"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Parquet tích hợp tốt với Spark và hỗ trợ nested structures tốt hơn.  ORC tối ưu hơn cho Hive và có ordered data store trong stripe."
+    "answers": [
+      "Khi dùng với Spark (T)",
+      "Khi cần nested data structures (T)",
+      "Khi dùng với Hive (F)",
+      "Khi cần ordered data (F)"
+    ],
+    "explanation": "Parquet tích hợp tốt với Spark và hỗ trợ nested structures tốt hơn. ORC tối ưu hơn cho Hive và có ordered data store trong stripe."
   },
   {
     "id": "hdfs_q98",
-    "question":  "HDFS chunk size (64 MB) ảnh hưởng đến performance như thế nào?",
-    "answers": {
-      "A": "Chunk lớn → ít metadata → ít RAM cho NameNode",
-      "B":  "Chunk lớn → ít network round trips",
-      "C": "Chunk lớn → kém hiệu quả cho small files",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
+    "question": "HDFS chunk size (64 MB) ảnh hưởng đến performance như thế nào?",
+    "answers": [
+      "Chunk lớn → ít metadata → ít RAM cho NameNode (F)",
+      "Chunk lớn → ít network round trips (F)",
+      "Chunk lớn → kém hiệu quả cho small files (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
     "explanation": "Chunk size lớn có nhiều trade-offs: giảm metadata và network trips (tốt cho big files), nhưng lãng phí space và kém hiệu quả cho small files."
   },
   {
     "id": "hdfs_q99",
     "question": "Replication factor = 3 có nghĩa là gì về storage overhead?",
-    "answers": {
-      "A": "Mỗi GB data thực tế cần 3 GB storage",
-      "B": "Storage overhead = 200%",
-      "C": "Đánh đổi giữa reliability và cost",
-      "D": "Tất cả các đáp án trên"
-    },
-    "correctAnswers": ["D"],
+    "answers": [
+      "Mỗi GB data thực tế cần 3 GB storage (F)",
+      "Storage overhead = 200% (F)",
+      "Đánh đổi giữa reliability và cost (F)",
+      "Tất cả các đáp án trên (T)"
+    ],
     "explanation": "Replication factor = 3 nghĩa là cần 3x storage (200% overhead). Đây là trade-off giữa data reliability/availability và storage cost."
   },
   {
     "id": "hdfs_q100",
     "question": "HDFS phù hợp cho workload nào nhất?",
-    "answers":  {
-      "A": "Batch processing trên big files",
-      "B": "Streaming analytics",
-      "C": "OLTP database",
-      "D": "Random read/write operations"
-    },
-    "correctAnswers": ["A"],
+    "answers": [
+      "Batch processing trên big files (T)",
+      "Streaming analytics (F)",
+      "OLTP database (F)",
+      "Random read/write operations (F)"
+    ],
     "explanation": "HDFS được thiết kế tối ưu cho batch processing trên big files (MapReduce, Spark). KHÔNG phù hợp cho OLTP, random access hay low-latency operations."
   }
 ]
-    

@@ -2,650 +2,551 @@
   {
     "id": "viz_q1",
     "question": "Trực quan hóa là gì?",
-    "answers": {
-      "A": "Trình bày dữ liệu bằng yếu tố đồ họa",
-      "B": "Lưu trữ dữ liệu dưới dạng văn bản",
-      "C": "Truyền tải ý nghĩa qua hình ảnh",
-      "D": "Chỉ dùng cho dữ liệu số"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Trực quan hóa là trình bày dữ liệu bằng đồ họa (A) để truyền tải ý nghĩa.  C đúng nhưng không đầy đủ.  Không chỉ văn bản (B sai) hay chỉ dữ liệu số (D sai)."
+    "answers": [
+      "Trình bày dữ liệu bằng yếu tố đồ họa (T)",
+      "Lưu trữ dữ liệu dưới dạng văn bản (F)",
+      "Truyền tải ý nghĩa qua hình ảnh (F)",
+      "Chỉ dùng cho dữ liệu số (F)"
+    ],
+    "explanation": "Trực quan hóa là trình bày dữ liệu bằng đồ họa để truyền tải ý nghĩa. C đúng nhưng không đầy đủ. Không chỉ văn bản (B sai) hay chỉ dữ liệu số (D sai)."
   },
-
   {
     "id": "viz_q2",
     "question": "Bao nhiêu phần trăm vỏ não dành cho xử lý thị giác?",
-    "answers": {
-      "A": "10%",
-      "B": "20%",
-      "C": "30%",
-      "D":  "50%"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "30% vỏ não dành riêng cho xử lý thị giác (C), cho thấy tầm quan trọng của trực quan hóa."
+    "answers": [
+      "10% (F)",
+      "20% (F)",
+      "30% (T)",
+      "50% (F)"
+    ],
+    "explanation": "30% vỏ não dành riêng cho xử lý thị giác , cho thấy tầm quan trọng của trực quan hóa."
   },
-
   {
     "id": "viz_q3",
     "question": "Con người xử lý hình ảnh nhanh hơn văn bản bao nhiêu lần?",
-    "answers": {
-      "A": "2-5 lần",
-      "B": "6-600 lần",
-      "C": "100-1000 lần",
-      "D": "Chậm hơn văn bản"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Con người xử lý hình ảnh nhanh hơn 6-600 lần so với văn bản (B), chứng minh hiệu quả của visualization."
+    "answers": [
+      "2-5 lần (F)",
+      "6-600 lần (T)",
+      "100-1000 lần (F)",
+      "Chậm hơn văn bản (F)"
+    ],
+    "explanation": "Con người xử lý hình ảnh nhanh hơn 6-600 lần so với văn bản , chứng minh hiệu quả của visualization."
   },
-
   {
     "id": "viz_q4",
     "question": "Lợi ích của Trực quan hóa bao gồm:",
-    "answers": {
-      "A": "Phát hiện quy luật, xu hướng ngay lập tức",
-      "B": "Phát hiện outliers nhanh chóng",
-      "C": "Tăng khả năng ghi nhớ",
-      "D": "Thay thế hoàn toàn phân tích số liệu"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Lợi ích:  phát hiện quy luật/xu hướng (A), outliers (B). Tăng ghi nhớ (C) đúng nhưng không phải lợi ích chính. Không thay thế phân tích (D sai)."
+    "answers": [
+      "Phát hiện quy luật, xu hướng ngay lập tức (T)",
+      "Phát hiện outliers nhanh chóng (T)",
+      "Tăng khả năng ghi nhớ (F)",
+      "Thay thế hoàn toàn phân tích số liệu (F)"
+    ],
+    "explanation": "Lợi ích: phát hiện quy luật/xu hướng , outliers . Tăng ghi nhớ đúng nhưng không phải lợi ích chính. Không thay thế phân tích (D sai)."
   },
-
   {
     "id": "viz_q5",
     "question": "Data Visualization có đặc điểm gì?",
-    "answers":  {
-      "A": "Biểu diễn dữ liệu có cấu trúc (dạng số)",
-      "B": "Xử lý dữ liệu trừu tượng",
-      "C": "Khám phá quy luật để hỗ trợ quyết định",
-      "D":  "Mô phỏng hiện tượng khoa học"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Data Visualization:  dữ liệu có cấu trúc/số (A), hỗ trợ quyết định (C). Trừu tượng (B) là Information Viz. Mô phỏng khoa học (D) là Scientific Viz."
+    "answers": [
+      "Biểu diễn dữ liệu có cấu trúc (dạng số) (T)",
+      "Xử lý dữ liệu trừu tượng (F)",
+      "Khám phá quy luật để hỗ trợ quyết định (T)",
+      "Mô phỏng hiện tượng khoa học (F)"
+    ],
+    "explanation": "Data Visualization: dữ liệu có cấu trúc/số , hỗ trợ quyết định . Trừu tượng là Information Viz. Mô phỏng khoa học là Scientific Viz."
   },
-
   {
-    "id":  "viz_q6",
+    "id": "viz_q6",
     "question": "Data Visualization bao gồm ví dụ nào?",
-    "answers":  {
-      "A": "Charts (biểu đồ)",
-      "B": "Graphs (đồ thị)",
-      "C": "Dashboards (bảng điều khiển)",
-      "D": "Mind maps (bản đồ tư duy)"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Data Visualization: charts (A), graphs (B), dashboards (C). Mind maps (D) là Information Visualization."
+    "answers": [
+      "Charts (biểu đồ) (T)",
+      "Graphs (đồ thị) (T)",
+      "Dashboards (bảng điều khiển) (T)",
+      "Mind maps (bản đồ tư duy) (F)"
+    ],
+    "explanation": "Data Visualization: charts , graphs , dashboards . Mind maps là Information Visualization."
   },
-
   {
     "id": "viz_q7",
     "question": "Scientific Visualization có trọng tâm gì?",
-    "answers": {
-      "A": "Minh họa hiện tượng khoa học phức tạp",
-      "B": "Biểu diễn dữ liệu dạng số",
-      "C":  "Hỗ trợ hiểu dữ liệu khoa học",
-      "D": "Xử lý dữ liệu trừu tượng"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Scientific Visualization: minh họa hiện tượng khoa học (A). Dữ liệu số (B) là Data Viz. C đúng nhưng là mục đích, không phải trọng tâm. Trừu tượng (D) là Information Viz."
+    "answers": [
+      "Minh họa hiện tượng khoa học phức tạp (T)",
+      "Biểu diễn dữ liệu dạng số (F)",
+      "Hỗ trợ hiểu dữ liệu khoa học (F)",
+      "Xử lý dữ liệu trừu tượng (F)"
+    ],
+    "explanation": "Scientific Visualization: minh họa hiện tượng khoa học . Dữ liệu số là Data Viz. C đúng nhưng là mục đích, không phải trọng tâm. Trừu tượng là Information Viz."
   },
-
   {
-    "id":  "viz_q8",
+    "id": "viz_q8",
     "question": "Scientific Visualization bao gồm ví dụ nào?",
-    "answers": {
-      "A": "Mô hình phân tử",
-      "B": "Mô phỏng thời tiết",
-      "C": "Mô hình 3D cơ quan cơ thể",
-      "D": "Biểu đồ cột (bar charts)"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Scientific Viz: mô hình phân tử (A), thời tiết (B), 3D cơ quan (C). Bar charts (D) là Data Visualization."
+    "answers": [
+      "Mô hình phân tử (T)",
+      "Mô phỏng thời tiết (T)",
+      "Mô hình 3D cơ quan cơ thể (T)",
+      "Biểu đồ cột (bar charts) (F)"
+    ],
+    "explanation": "Scientific Viz: mô hình phân tử , thời tiết , 3D cơ quan . Bar charts là Data Visualization."
   },
-
   {
     "id": "viz_q9",
     "question": "Information Visualization có đặc điểm gì? ",
-    "answers": {
-      "A": "Xử lý dữ liệu trừu tượng và không phải số",
-      "B": "Làm rõ thông tin phức tạp",
-      "C": "Tìm kiếm hiện tượng thú vị",
-      "D": "Chỉ dùng cho dữ liệu có cấu trúc"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Information Viz: trừu tượng/không số (A), làm rõ phức tạp (B), tìm hiện tượng (C). Không chỉ dữ liệu có cấu trúc (D sai)."
+    "answers": [
+      "Xử lý dữ liệu trừu tượng và không phải số (T)",
+      "Làm rõ thông tin phức tạp (T)",
+      "Tìm kiếm hiện tượng thú vị (T)",
+      "Chỉ dùng cho dữ liệu có cấu trúc (F)"
+    ],
+    "explanation": "Information Viz: trừu tượng/không số , làm rõ phức tạp , tìm hiện tượng . Không chỉ dữ liệu có cấu trúc (D sai)."
   },
-
   {
     "id": "viz_q10",
     "question": "Information Visualization bao gồm ví dụ nào?",
-    "answers": {
-      "A": "Diagrams (sơ đồ)",
-      "B": "Mind maps (bản đồ tư duy)",
-      "C": "Bản đồ mạng lưới quan hệ",
-      "D": "Mô phỏng thời tiết"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Information Viz: diagrams (A), mind maps (B), network maps (C). Mô phỏng thời tiết (D) là Scientific Visualization."
+    "answers": [
+      "Diagrams (sơ đồ) (T)",
+      "Mind maps (bản đồ tư duy) (T)",
+      "Bản đồ mạng lưới quan hệ (T)",
+      "Mô phỏng thời tiết (F)"
+    ],
+    "explanation": "Information Viz: diagrams , mind maps , network maps . Mô phỏng thời tiết là Scientific Visualization."
   },
-
   {
     "id": "viz_q11",
     "question": "Giá trị của Trực quan hóa được thể hiện qua:",
-    "answers": {
-      "A": "Một bức tranh đáng giá ngàn lời nói",
-      "B": "Hệ thống tốt đáng giá hơn ngàn con số",
-      "C": "Thay thế hoàn toàn số liệu",
-      "D": "Chỉ dùng cho presentation"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Giá trị: một tranh = ngàn lời (A), hệ thống tốt > ngàn số (B). Không thay thế số liệu (C sai), không chỉ presentation (D sai)."
+    "answers": [
+      "Một bức tranh đáng giá ngàn lời nói (T)",
+      "Hệ thống tốt đáng giá hơn ngàn con số (T)",
+      "Thay thế hoàn toàn số liệu (F)",
+      "Chỉ dùng cho presentation (F)"
+    ],
+    "explanation": "Giá trị: một tranh = ngàn lời , hệ thống tốt > ngàn số . Không thay thế số liệu (C sai), không chỉ presentation (D sai)."
   },
-
   {
     "id": "viz_q12",
     "question": "Ba chức năng chính của Trực quan hóa là gì?",
-    "answers":  {
-      "A": "Ghi lại thông tin",
-      "B": "Hỗ trợ tư duy và lập luận",
-      "C": "Truyền tải thông tin cho người khác",
-      "D":  "Tạo hình ảnh đẹp mắt"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Ba chức năng: Record (A), Support reasoning (B), Convey (C). Đẹp mắt (D) không phải chức năng chính."
+    "answers": [
+      "Ghi lại thông tin (T)",
+      "Hỗ trợ tư duy và lập luận (T)",
+      "Truyền tải thông tin cho người khác (T)",
+      "Tạo hình ảnh đẹp mắt (F)"
+    ],
+    "explanation": "Ba chức năng: Record , Support reasoning , Convey . Đẹp mắt không phải chức năng chính."
   },
-
   {
-    "id":  "viz_q13",
+    "id": "viz_q13",
     "question": "Chức năng 'Ghi lại thông tin' bao gồm:",
-    "answers": {
-      "A":  "Lưu trữ dữ liệu dưới dạng hình ảnh",
-      "B": "Bảo tồn dữ liệu",
-      "C": "Phát triển giả thuyết",
-      "D": "Blueprints, photographs"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Record information:  lưu trữ (A), bảo tồn (B). Phát triển giả thuyết (C) là Support reasoning. D là ví dụ, không phải định nghĩa."
+    "answers": [
+      "Lưu trữ dữ liệu dưới dạng hình ảnh (T)",
+      "Bảo tồn dữ liệu (T)",
+      "Phát triển giả thuyết (F)",
+      "Blueprints, photographs (F)"
+    ],
+    "explanation": "Record information: lưu trữ , bảo tồn . Phát triển giả thuyết là Support reasoning. D là ví dụ, không phải định nghĩa."
   },
-
   {
-    "id":  "viz_q14",
+    "id": "viz_q14",
     "question": "Ví dụ của 'Ghi lại thông tin' bao gồm:",
-    "answers": {
-      "A": "Blueprints (bản thiết kế)",
-      "B": "Photographs (ảnh chụp)",
-      "C": "Seismographs (biểu đồ địa chấn)",
-      "D": "Mind maps"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Record information: blueprints (A), photographs (B), seismographs (C). Mind maps (D) là Convey information."
+    "answers": [
+      "Blueprints (bản thiết kế) (T)",
+      "Photographs (ảnh chụp) (T)",
+      "Seismographs (biểu đồ địa chấn) (T)",
+      "Mind maps (F)"
+    ],
+    "explanation": "Record information: blueprints , photographs , seismographs . Mind maps là Convey information."
   },
-
   {
     "id": "viz_q15",
     "question": "Chức năng 'Hỗ trợ tư duy và lập luận' bao gồm:",
-    "answers":  {
-      "A": "Phát triển và đánh giá giả thuyết",
-      "B":  "Khám phá quy luật",
-      "C": "Mở rộng bộ nhớ",
-      "D":  "Lưu trữ dữ liệu"
-    },
-    "correctAnswers":  ["A", "B", "C"],
-    "explanation": "Support reasoning: phát triển giả thuyết (A), khám phá quy luật (B), mở rộng bộ nhớ (C). Lưu trữ (D) là Record information."
+    "answers": [
+      "Phát triển và đánh giá giả thuyết (T)",
+      "Khám phá quy luật (T)",
+      "Mở rộng bộ nhớ (T)",
+      "Lưu trữ dữ liệu (F)"
+    ],
+    "explanation": "Support reasoning: phát triển giả thuyết , khám phá quy luật , mở rộng bộ nhớ . Lưu trữ là Record information."
   },
-
   {
     "id": "viz_q16",
     "question": "Chức năng 'Truyền tải thông tin' bao gồm:",
-    "answers": {
-      "A": "Giải thích và thuyết phục",
-      "B": "Chia sẻ và truyền cảm hứng",
-      "C": "Khám phá quy luật chưa biết",
-      "D": "Communicate với người khác"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Convey information: giải thích/thuyết phục (A), chia sẻ/cảm hứng (B). Khám phá (C) là Support reasoning. D đúng nhưng quá chung chung."
+    "answers": [
+      "Giải thích và thuyết phục (T)",
+      "Chia sẻ và truyền cảm hứng (T)",
+      "Khám phá quy luật chưa biết (F)",
+      "Communicate với người khác (F)"
+    ],
+    "explanation": "Convey information: giải thích/thuyết phục , chia sẻ/cảm hứng . Khám phá là Support reasoning. D đúng nhưng quá chung chung."
   },
-
   {
     "id": "viz_q17",
-    "question":  "Mục tiêu nghiên cứu Trực quan hóa là gì?",
-    "answers":  {
-      "A": "Hiểu cách con người nhận thức",
-      "B":  "Hiểu cách mắt và não tiếp nhận hình ảnh",
-      "C": "Phát triển nguyên tắc tạo hệ thống hiệu quả",
-      "D": "Tạo hình ảnh đẹp nhất"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Mục tiêu:  hiểu nhận thức (A), mắt/não (B), phát triển nguyên tắc (C). Hình đẹp (D) không phải mục tiêu chính."
+    "question": "Mục tiêu nghiên cứu Trực quan hóa là gì?",
+    "answers": [
+      "Hiểu cách con người nhận thức (T)",
+      "Hiểu cách mắt và não tiếp nhận hình ảnh (T)",
+      "Phát triển nguyên tắc tạo hệ thống hiệu quả (T)",
+      "Tạo hình ảnh đẹp nhất (F)"
+    ],
+    "explanation": "Mục tiêu: hiểu nhận thức , mắt/não , phát triển nguyên tắc . Hình đẹp không phải mục tiêu chính."
   },
-
   {
     "id": "viz_q18",
     "question": "Nghiên cứu Trực quan hóa muốn giảm thiểu gì?",
-    "answers":  {
-      "A": "Sự sai lệch trong hiểu thông tin",
-      "B": "Thời gian xử lý hình ảnh",
-      "C": "Chi phí tạo visualization",
-      "D": "Độ phức tạp của dữ liệu"
-    },
-    "correctAnswers":  ["A"],
-    "explanation": "Nghiên cứu muốn giảm sai lệch hiểu thông tin (A). B, C, D không phải mục tiêu chính của nghiên cứu."
+    "answers": [
+      "Sự sai lệch trong hiểu thông tin (T)",
+      "Thời gian xử lý hình ảnh (F)",
+      "Chi phí tạo visualization (F)",
+      "Độ phức tạp của dữ liệu (F)"
+    ],
+    "explanation": "Nghiên cứu muốn giảm sai lệch hiểu thông tin . B, C, D không phải mục tiêu chính của nghiên cứu."
   },
-
   {
     "id": "viz_q19",
-    "question":  "Quy trình Trực quan hóa là gì?",
-    "answers": {
-      "A": "Lưu trữ → Tư duy phân tích → Truyền thông điệp",
-      "B": "Record → Reasoning → Convey",
-      "C": "Ghi lại → Hỗ trợ tư duy → Truyền tải",
-      "D": "Tạo hình → Phân tích → Presentation"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Quy trình:  Lưu trữ→Tư duy→Truyền (A), Record→Reasoning→Convey (B), Ghi→Hỗ trợ→Truyền tải (C). D không chính xác."
+    "question": "Quy trình Trực quan hóa là gì?",
+    "answers": [
+      "Lưu trữ → Tư duy phân tích → Truyền thông điệp (T)",
+      "Record → Reasoning → Convey (T)",
+      "Ghi lại → Hỗ trợ tư duy → Truyền tải (T)",
+      "Tạo hình → Phân tích → Presentation (F)"
+    ],
+    "explanation": "Quy trình: Lưu trữ→Tư duy→Truyền , Record→Reasoning→Convey , Ghi→Hỗ trợ→Truyền tải . D không chính xác."
   },
-
   {
     "id": "viz_q20",
-    "question":  "Tại sao cần Trực quan hóa? ",
-    "answers": {
-      "A": "30% vỏ não dành cho thị giác",
-      "B": "Xử lý hình ảnh nhanh hơn văn bản",
-      "C": "Phát hiện outliers ngay lập tức",
-      "D": "Giảm dung lượng dữ liệu"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Lý do cần: 30% não (A), nhanh hơn (B), phát hiện outliers (C). Không giảm dung lượng (D sai)."
+    "question": "Tại sao cần Trực quan hóa? ",
+    "answers": [
+      "30% vỏ não dành cho thị giác (T)",
+      "Xử lý hình ảnh nhanh hơn văn bản (T)",
+      "Phát hiện outliers ngay lập tức (T)",
+      "Giảm dung lượng dữ liệu (F)"
+    ],
+    "explanation": "Lý do cần: 30% não , nhanh hơn , phát hiện outliers . Không giảm dung lượng (D sai)."
   },
-
   {
     "id": "viz_q21",
     "question": "Data Visualization khác Scientific Visualization ở điểm nào?",
-    "answers":  {
-      "A": "Data:  dữ liệu số, Scientific: hiện tượng khoa học",
-      "B": "Data: charts/graphs, Scientific: mô hình 3D",
-      "C":  "Data: quyết định, Scientific: hiểu khoa học",
-      "D":  "Data: trừu tượng, Scientific: có cấu trúc"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Khác biệt chính: Data dùng dữ liệu số, Scientific dùng hiện tượng khoa học (A). B đúng về ví dụ.  C đúng về mục đích.  D sai - ngược lại."
+    "answers": [
+      "Data:  dữ liệu số, Scientific: hiện tượng khoa học (T)",
+      "Data: charts/graphs, Scientific: mô hình 3D (F)",
+      "Data: quyết định, Scientific: hiểu khoa học (F)",
+      "Data: trừu tượng, Scientific: có cấu trúc (F)"
+    ],
+    "explanation": "Khác biệt chính: Data dùng dữ liệu số, Scientific dùng hiện tượng khoa học . B đúng về ví dụ. C đúng về mục đích. D sai - ngược lại."
   },
-
   {
     "id": "viz_q22",
     "question": "Information Visualization khác Data Visualization ở điểm nào?",
-    "answers":  {
-      "A": "Information: trừu tượng, Data: có cấu trúc",
-      "B": "Information: không số, Data: số",
-      "C": "Information:  mind maps, Data: charts",
-      "D": "Hoàn toàn giống nhau"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Khác biệt:  Information trừu tượng/không số (A, B), Data có cấu trúc/số.  C đúng về ví dụ. D sai - không giống."
+    "answers": [
+      "Information: trừu tượng, Data: có cấu trúc (T)",
+      "Information: không số, Data: số (T)",
+      "Information:  mind maps, Data: charts (F)",
+      "Hoàn toàn giống nhau (F)"
+    ],
+    "explanation": "Khác biệt: Information trừu tượng/không số (A, B), Data có cấu trúc/số. C đúng về ví dụ. D sai - không giống."
   },
-
   {
     "id": "viz_q23",
     "question": "Loại Visualization nào dùng cho dữ liệu có cấu trúc?",
-    "answers": {
-      "A": "Data Visualization",
-      "B":  "Scientific Visualization",
-      "C": "Information Visualization",
-      "D":  "Tất cả đều dùng"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Data Visualization dùng cho dữ liệu có cấu trúc/số (A). Scientific cho khoa học (B). Information cho trừu tượng (C). D sai."
+    "answers": [
+      "Data Visualization (T)",
+      "Scientific Visualization (F)",
+      "Information Visualization (F)",
+      "Tất cả đều dùng (F)"
+    ],
+    "explanation": "Data Visualization dùng cho dữ liệu có cấu trúc/số . Scientific cho khoa học . Information cho trừu tượng . D sai."
   },
-
   {
     "id": "viz_q24",
     "question": "Loại Visualization nào dùng cho dữ liệu trừu tượng?",
-    "answers": {
-      "A": "Data Visualization",
-      "B": "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Không có loại nào"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Information Visualization xử lý dữ liệu trừu tượng (C). Data cho số (A). Scientific cho khoa học (B). D sai."
+    "answers": [
+      "Data Visualization (F)",
+      "Scientific Visualization (F)",
+      "Information Visualization (T)",
+      "Không có loại nào (F)"
+    ],
+    "explanation": "Information Visualization xử lý dữ liệu trừu tượng . Data cho số . Scientific cho khoa học . D sai."
   },
-
   {
     "id": "viz_q25",
     "question": "Dashboards thuộc loại Visualization nào?",
-    "answers":  {
-      "A": "Data Visualization",
-      "B":  "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Không thuộc loại nào"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Dashboards là ví dụ của Data Visualization (A) - biểu diễn dữ liệu số để hỗ trợ quyết định."
+    "answers": [
+      "Data Visualization (T)",
+      "Scientific Visualization (F)",
+      "Information Visualization (F)",
+      "Không thuộc loại nào (F)"
+    ],
+    "explanation": "Dashboards là ví dụ của Data Visualization - biểu diễn dữ liệu số để hỗ trợ quyết định."
   },
-
   {
     "id": "viz_q26",
     "question": "Mô hình phân tử thuộc loại Visualization nào?",
-    "answers": {
-      "A": "Data Visualization",
-      "B": "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Cả A và B"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Mô hình phân tử là Scientific Visualization (B) - minh họa hiện tượng khoa học phức tạp."
+    "answers": [
+      "Data Visualization (F)",
+      "Scientific Visualization (T)",
+      "Information Visualization (F)",
+      "Cả A và B (F)"
+    ],
+    "explanation": "Mô hình phân tử là Scientific Visualization - minh họa hiện tượng khoa học phức tạp."
   },
-
   {
     "id": "viz_q27",
     "question": "Mind maps thuộc loại Visualization nào?",
-    "answers":  {
-      "A": "Data Visualization",
-      "B":  "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Cả A và C"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Mind maps là Information Visualization (C) - xử lý thông tin trừu tượng, làm rõ phức tạp."
+    "answers": [
+      "Data Visualization (F)",
+      "Scientific Visualization (F)",
+      "Information Visualization (T)",
+      "Cả A và C (F)"
+    ],
+    "explanation": "Mind maps là Information Visualization - xử lý thông tin trừu tượng, làm rõ phức tạp."
   },
-
   {
     "id": "viz_q28",
-    "question":  "Chức năng nào giúp phát triển giả thuyết? ",
-    "answers": {
-      "A": "Record information",
-      "B": "Support reasoning",
-      "C": "Convey information",
-      "D": "Cả ba chức năng"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Support reasoning (B) giúp phát triển và đánh giá giả thuyết.  Record (A) lưu trữ.  Convey (C) truyền tải. D sai."
+    "question": "Chức năng nào giúp phát triển giả thuyết? ",
+    "answers": [
+      "Record information (F)",
+      "Support reasoning (T)",
+      "Convey information (F)",
+      "Cả ba chức năng (F)"
+    ],
+    "explanation": "Support reasoning giúp phát triển và đánh giá giả thuyết. Record lưu trữ. Convey truyền tải. D sai."
   },
-
   {
     "id": "viz_q29",
-    "question":  "Chức năng nào giúp thuyết phục người khác?",
-    "answers": {
-      "A": "Record information",
-      "B":  "Support reasoning",
-      "C": "Convey information",
-      "D": "Cả A và B"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Convey information (C) giúp giải thích và thuyết phục. Record (A) lưu trữ. Support reasoning (B) tư duy. D sai."
+    "question": "Chức năng nào giúp thuyết phục người khác?",
+    "answers": [
+      "Record information (F)",
+      "Support reasoning (F)",
+      "Convey information (T)",
+      "Cả A và B (F)"
+    ],
+    "explanation": "Convey information giúp giải thích và thuyết phục. Record lưu trữ. Support reasoning tư duy. D sai."
   },
-
   {
     "id": "viz_q30",
     "question": "Photographs là ví dụ của chức năng nào?",
-    "answers": {
-      "A": "Record information",
-      "B": "Support reasoning",
-      "C":  "Convey information",
-      "D": "Cả A và C"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Photographs là Record information (A) - lưu trữ và bảo tồn dữ liệu dưới dạng hình ảnh."
+    "answers": [
+      "Record information (T)",
+      "Support reasoning (F)",
+      "Convey information (F)",
+      "Cả A và C (F)"
+    ],
+    "explanation": "Photographs là Record information - lưu trữ và bảo tồn dữ liệu dưới dạng hình ảnh."
   },
-
   {
     "id": "viz_q31",
     "question": "Mở rộng bộ nhớ thuộc chức năng nào?",
-    "answers": {
-      "A": "Record information",
-      "B": "Support reasoning",
-      "C": "Convey information",
-      "D": "Không thuộc chức năng nào"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Mở rộng bộ nhớ thuộc Support reasoning (B) - hỗ trợ tư duy và lập luận."
+    "answers": [
+      "Record information (F)",
+      "Support reasoning (T)",
+      "Convey information (F)",
+      "Không thuộc chức năng nào (F)"
+    ],
+    "explanation": "Mở rộng bộ nhớ thuộc Support reasoning - hỗ trợ tư duy và lập luận."
   },
-
   {
     "id": "viz_q32",
     "question": "Trực quan hóa tăng cường khả năng gì?",
-    "answers": {
-      "A": "Ghi nhớ thông tin",
-      "B":  "Truy xuất thông tin",
-      "C": "Xử lý thị giác",
-      "D":  "Tạo dữ liệu mới"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Trực quan hóa tăng cường ghi nhớ (A) và truy xuất (B). Xử lý thị giác (C) là khả năng sẵn có. Không tạo data (D sai)."
+    "answers": [
+      "Ghi nhớ thông tin (T)",
+      "Truy xuất thông tin (T)",
+      "Xử lý thị giác (F)",
+      "Tạo dữ liệu mới (F)"
+    ],
+    "explanation": "Trực quan hóa tăng cường ghi nhớ và truy xuất . Xử lý thị giác là khả năng sẵn có. Không tạo data (D sai)."
   },
-
   {
     "id": "viz_q33",
     "question": "Hệ thống Trực quan hóa hiệu quả giúp gì?",
-    "answers":  {
-      "A": "Giảm sai lệch hiểu thông tin",
-      "B": "Tăng tốc độ xử lý thị giác",
-      "C": "Hỗ trợ nhận thức tốt hơn",
-      "D":  "Thay thế hoàn toàn dữ liệu số"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Hệ thống hiệu quả:  giảm sai lệch (A), hỗ trợ nhận thức (C). Tốc độ thị giác (B) là khả năng tự nhiên. Không thay thế số (D sai)."
+    "answers": [
+      "Giảm sai lệch hiểu thông tin (T)",
+      "Tăng tốc độ xử lý thị giác (F)",
+      "Hỗ trợ nhận thức tốt hơn (T)",
+      "Thay thế hoàn toàn dữ liệu số (F)"
+    ],
+    "explanation": "Hệ thống hiệu quả: giảm sai lệch , hỗ trợ nhận thức . Tốc độ thị giác là khả năng tự nhiên. Không thay thế số (D sai)."
   },
-
   {
     "id": "viz_q34",
     "question": "Nghiên cứu Trực quan hóa tập trung vào gì?",
-    "answers":  {
-      "A": "Cách mắt và não tiếp nhận hình ảnh",
-      "B": "Cách con người thấu hiểu hình ảnh",
-      "C": "Phát triển nguyên tắc và kỹ thuật",
-      "D": "Tạo hình ảnh đẹp mắt nhất"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Nghiên cứu tập trung:  mắt/não (A), thấu hiểu (B), nguyên tắc/kỹ thuật (C). Đẹp mắt (D) không phải tập trung chính."
+    "answers": [
+      "Cách mắt và não tiếp nhận hình ảnh (T)",
+      "Cách con người thấu hiểu hình ảnh (T)",
+      "Phát triển nguyên tắc và kỹ thuật (T)",
+      "Tạo hình ảnh đẹp mắt nhất (F)"
+    ],
+    "explanation": "Nghiên cứu tập trung: mắt/não , thấu hiểu , nguyên tắc/kỹ thuật . Đẹp mắt không phải tập trung chính."
   },
-
   {
     "id": "viz_q35",
     "question": "Ba phân ngành chính của Visualization là gì?",
-    "answers": {
-      "A": "Data Visualization",
-      "B":  "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Business Visualization"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Ba phân ngành chính: Data (A), Scientific (B), Information (C). Business Visualization (D) không phải phân ngành chính."
+    "answers": [
+      "Data Visualization (T)",
+      "Scientific Visualization (T)",
+      "Information Visualization (T)",
+      "Business Visualization (F)"
+    ],
+    "explanation": "Ba phân ngành chính: Data , Scientific , Information . Business Visualization không phải phân ngành chính."
   },
-
   {
     "id": "viz_q36",
     "question": "Mục đích của Data Visualization là gì?",
-    "answers": {
-      "A": "Khám phá quy luật",
-      "B": "Khám phá xu hướng",
-      "C": "Hỗ trợ ra quyết định",
-      "D": "Mô phỏng khoa học"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Mục đích Data Viz: quy luật (A), xu hướng (B), quyết định (C). Mô phỏng khoa học (D) là Scientific Viz."
+    "answers": [
+      "Khám phá quy luật (T)",
+      "Khám phá xu hướng (T)",
+      "Hỗ trợ ra quyết định (T)",
+      "Mô phỏng khoa học (F)"
+    ],
+    "explanation": "Mục đích Data Viz: quy luật , xu hướng , quyết định . Mô phỏng khoa học là Scientific Viz."
   },
-
   {
     "id": "viz_q37",
     "question": "Mục đích của Scientific Visualization là gì?",
-    "answers":  {
-      "A": "Hỗ trợ hiểu dữ liệu khoa học",
-      "B": "Hỗ trợ hiểu kết quả mô phỏng",
-      "C": "Hỗ trợ ra quyết định kinh doanh",
-      "D": "Minh họa hiện tượng phức tạp"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Mục đích Scientific Viz: hiểu data khoa học (A), kết quả mô phỏng (B). Quyết định kinh doanh (C) là Data Viz. D là trọng tâm, không phải mục đích."
+    "answers": [
+      "Hỗ trợ hiểu dữ liệu khoa học (T)",
+      "Hỗ trợ hiểu kết quả mô phỏng (T)",
+      "Hỗ trợ ra quyết định kinh doanh (F)",
+      "Minh họa hiện tượng phức tạp (F)"
+    ],
+    "explanation": "Mục đích Scientific Viz: hiểu data khoa học , kết quả mô phỏng . Quyết định kinh doanh là Data Viz. D là trọng tâm, không phải mục đích."
   },
-
   {
     "id": "viz_q38",
     "question": "Mục đích của Information Visualization là gì?",
-    "answers": {
-      "A": "Làm rõ thông tin phức tạp",
-      "B": "Dễ hiểu hơn",
-      "C": "Tìm kiếm hiện tượng thú vị",
-      "D": "Biểu diễn dữ liệu số"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Mục đích Information Viz: làm rõ (A), dễ hiểu (B), tìm hiện tượng (C). Dữ liệu số (D) là Data Visualization."
+    "answers": [
+      "Làm rõ thông tin phức tạp (T)",
+      "Dễ hiểu hơn (T)",
+      "Tìm kiếm hiện tượng thú vị (T)",
+      "Biểu diễn dữ liệu số (F)"
+    ],
+    "explanation": "Mục đích Information Viz: làm rõ , dễ hiểu , tìm hiện tượng . Dữ liệu số là Data Visualization."
   },
-
   {
     "id": "viz_q39",
     "question": "Seismographs (biểu đồ địa chấn) là ví dụ của gì?",
-    "answers":  {
-      "A": "Record information",
-      "B": "Data Visualization",
-      "C": "Scientific Visualization",
-      "D":  "Support reasoning"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Seismographs là Record information (A) - ghi lại và lưu trữ dữ liệu.  Cũng có thể coi là Scientific (C) nhưng theo tài liệu là Record."
+    "answers": [
+      "Record information (T)",
+      "Data Visualization (F)",
+      "Scientific Visualization (F)",
+      "Support reasoning (F)"
+    ],
+    "explanation": "Seismographs là Record information - ghi lại và lưu trữ dữ liệu. Cũng có thể coi là Scientific nhưng theo tài liệu là Record."
   },
-
   {
     "id": "viz_q40",
     "question": "Blueprints (bản thiết kế) phục vụ mục đích gì?",
-    "answers":  {
-      "A": "Lưu trữ thông tin",
-      "B":  "Bảo tồn dữ liệu",
-      "C": "Hỗ trợ tư duy",
-      "D": "Truyền tải cho người khác"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation":  "Blueprints là Record information:  lưu trữ (A), bảo tồn (B). C, D là các chức năng khác."
+    "answers": [
+      "Lưu trữ thông tin (T)",
+      "Bảo tồn dữ liệu (T)",
+      "Hỗ trợ tư duy (F)",
+      "Truyền tải cho người khác (F)"
+    ],
+    "explanation": "Blueprints là Record information: lưu trữ , bảo tồn . C, D là các chức năng khác."
   },
-
   {
     "id": "viz_q41",
-    "question":  "Trực quan hóa giúp phát hiện gì ngay lập tức?",
-    "answers": {
-      "A": "Quy luật (patterns)",
-      "B": "Xu hướng (trends)",
-      "C": "Điểm ngoại lệ (outliers)",
-      "D": "Dữ liệu thiếu (missing data)"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Phát hiện ngay lập tức: quy luật (A), xu hướng (B), outliers (C). Missing data (D) không nhất thiết ngay lập tức."
+    "question": "Trực quan hóa giúp phát hiện gì ngay lập tức?",
+    "answers": [
+      "Quy luật (patterns) (T)",
+      "Xu hướng (trends) (T)",
+      "Điểm ngoại lệ (outliers) (T)",
+      "Dữ liệu thiếu (missing data) (F)"
+    ],
+    "explanation": "Phát hiện ngay lập tức: quy luật , xu hướng , outliers . Missing data không nhất thiết ngay lập tức."
   },
-
   {
     "id": "viz_q42",
     "question": "Con người xử lý thông tin thị giác như thế nào? ",
-    "answers": {
-      "A": "30% vỏ não dành riêng cho thị giác",
-      "B": "Nhanh hơn 6-600 lần so với văn bản",
-      "C": "Chậm hơn xử lý văn bản",
-      "D": "Dùng 50% vỏ não"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Xử lý thị giác:  30% não (A), nhanh hơn 6-600 lần (B). Không chậm (C sai), không 50% (D sai)."
+    "answers": [
+      "30% vỏ não dành riêng cho thị giác (T)",
+      "Nhanh hơn 6-600 lần so với văn bản (T)",
+      "Chậm hơn xử lý văn bản (F)",
+      "Dùng 50% vỏ não (F)"
+    ],
+    "explanation": "Xử lý thị giác: 30% não , nhanh hơn 6-600 lần . Không chậm (C sai), không 50% (D sai)."
   },
-
   {
-    "id":  "viz_q43",
+    "id": "viz_q43",
     "question": "Khám phá quy luật chưa biết thuộc chức năng nào?",
-    "answers": {
-      "A": "Record information",
-      "B": "Support reasoning",
-      "C":  "Convey information",
-      "D": "Cả ba chức năng"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Khám phá quy luật chưa biết thuộc Support reasoning (B) - hỗ trợ tư duy và lập luận."
+    "answers": [
+      "Record information (F)",
+      "Support reasoning (T)",
+      "Convey information (F)",
+      "Cả ba chức năng (F)"
+    ],
+    "explanation": "Khám phá quy luật chưa biết thuộc Support reasoning - hỗ trợ tư duy và lập luận."
   },
-
   {
     "id": "viz_q44",
     "question": "Chia sẻ và truyền cảm hứng thuộc chức năng nào?",
-    "answers": {
-      "A": "Record information",
-      "B": "Support reasoning",
-      "C":  "Convey information",
-      "D": "Cả A và C"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Chia sẻ và truyền cảm hứng thuộc Convey information (C) - truyền tải cho người khác."
+    "answers": [
+      "Record information (F)",
+      "Support reasoning (F)",
+      "Convey information (T)",
+      "Cả A và C (F)"
+    ],
+    "explanation": "Chia sẻ và truyền cảm hứng thuộc Convey information - truyền tải cho người khác."
   },
-
   {
     "id": "viz_q45",
     "question": "Đánh giá giả thuyết thuộc chức năng nào?",
-    "answers": {
-      "A": "Record information",
-      "B": "Support reasoning",
-      "C": "Convey information",
-      "D": "Không thuộc chức năng nào"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Đánh giá giả thuyết thuộc Support reasoning (B) - phát triển và đánh giá giả thuyết."
+    "answers": [
+      "Record information (F)",
+      "Support reasoning (T)",
+      "Convey information (F)",
+      "Không thuộc chức năng nào (F)"
+    ],
+    "explanation": "Đánh giá giả thuyết thuộc Support reasoning - phát triển và đánh giá giả thuyết."
   },
-
   {
     "id": "viz_q46",
     "question": "Charts và Graphs thuộc loại Visualization nào?",
-    "answers": {
-      "A":  "Data Visualization",
-      "B":  "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Cả A và C"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Charts và Graphs là Data Visualization (A) - biểu diễn dữ liệu có cấu trúc."
+    "answers": [
+      "Data Visualization (T)",
+      "Scientific Visualization (F)",
+      "Information Visualization (F)",
+      "Cả A và C (F)"
+    ],
+    "explanation": "Charts và Graphs là Data Visualization - biểu diễn dữ liệu có cấu trúc."
   },
-
   {
     "id": "viz_q47",
     "question": "Mô phỏng thời tiết thuộc loại Visualization nào?",
-    "answers": {
-      "A": "Data Visualization",
-      "B": "Scientific Visualization",
-      "C": "Information Visualization",
-      "D":  "Cả A và B"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Mô phỏng thời tiết là Scientific Visualization (B) - minh họa hiện tượng khoa học."
+    "answers": [
+      "Data Visualization (F)",
+      "Scientific Visualization (T)",
+      "Information Visualization (F)",
+      "Cả A và B (F)"
+    ],
+    "explanation": "Mô phỏng thời tiết là Scientific Visualization - minh họa hiện tượng khoa học."
   },
-
   {
     "id": "viz_q48",
     "question": "Bản đồ mạng lưới quan hệ thuộc loại nào?",
-    "answers":  {
-      "A": "Data Visualization",
-      "B":  "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Không thuộc loại nào"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Bản đồ mạng lưới quan hệ là Information Visualization (C) - xử lý dữ liệu trừu tượng về quan hệ."
+    "answers": [
+      "Data Visualization (F)",
+      "Scientific Visualization (F)",
+      "Information Visualization (T)",
+      "Không thuộc loại nào (F)"
+    ],
+    "explanation": "Bản đồ mạng lưới quan hệ là Information Visualization - xử lý dữ liệu trừu tượng về quan hệ."
   },
-
   {
-    "id":  "viz_q49",
+    "id": "viz_q49",
     "question": "Mô hình 3D cơ quan cơ thể thuộc loại nào?",
-    "answers":  {
-      "A": "Data Visualization",
-      "B":  "Scientific Visualization",
-      "C": "Information Visualization",
-      "D": "Cả A và B"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Mô hình 3D cơ quan là Scientific Visualization (B) - minh họa cấu trúc khoa học phức tạp."
+    "answers": [
+      "Data Visualization (F)",
+      "Scientific Visualization (T)",
+      "Information Visualization (F)",
+      "Cả A và B (F)"
+    ],
+    "explanation": "Mô hình 3D cơ quan là Scientific Visualization - minh họa cấu trúc khoa học phức tạp."
   },
-
   {
     "id": "viz_q50",
     "question": "Diagrams (sơ đồ) thuộc loại Visualization nào? ",
-    "answers": {
-      "A": "Data Visualization",
-      "B": "Scientific Visualization",
-      "C":  "Information Visualization",
-      "D": "Cả A và C"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Diagrams là Information Visualization (C) - làm rõ thông tin phức tạp, thường trừu tượng."
+    "answers": [
+      "Data Visualization (F)",
+      "Scientific Visualization (F)",
+      "Information Visualization (T)",
+      "Cả A và C (F)"
+    ],
+    "explanation": "Diagrams là Information Visualization - làm rõ thông tin phức tạp, thường trừu tượng."
   }
 ]

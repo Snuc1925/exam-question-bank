@@ -2,910 +2,771 @@
   {
     "id": "oltp_olap_q1",
     "question": "Đâu là lợi ích chính của Data Integration? ",
-    "answers": {
-      "A": "Single point of access - điểm truy cập duy nhất",
-      "B": "Tăng data redundancy trong hệ thống",
-      "C": "Giảm thời gian đối soát thủ công",
-      "D": "Loại bỏ hoàn toàn OLTP systems"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Data Integration mang lại single point of access (A), giảm thời gian đối soát (không phải C - đó là kết quả gián tiếp). Không tăng redundancy (B sai) và không loại bỏ OLTP (D sai)."
+    "answers": [
+      "Single point of access - điểm truy cập duy nhất (T)",
+      "Tăng data redundancy trong hệ thống (F)",
+      "Giảm thời gian đối soát thủ công (F)",
+      "Loại bỏ hoàn toàn OLTP systems (F)"
+    ],
+    "explanation": "Data Integration mang lại single point of access , giảm thời gian đối soát (không phải C - đó là kết quả gián tiếp). Không tăng redundancy (B sai) và không loại bỏ OLTP (D sai)."
   },
-
   {
     "id": "oltp_olap_q2",
     "question": "Thách thức nào thuộc về Physical Systems trong Data Integration?",
-    "answers": {
-      "A": "Schema differences giữa các bảng",
-      "B": "Hardware diversity và tiêu chuẩn kết nối không đồng nhất",
-      "C": "Business rules xung đột giữa các bộ phận",
-      "D": "Different data models (quan hệ, đồ thị, hướng đối tượng)"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Hardware diversity (B) thuộc Physical Systems.  Schema differences (A) và data models (D) thuộc Logical Structures. Business rules (C) thuộc Business Organization."
+    "answers": [
+      "Schema differences giữa các bảng (F)",
+      "Hardware diversity và tiêu chuẩn kết nối không đồng nhất (T)",
+      "Business rules xung đột giữa các bộ phận (F)",
+      "Different data models (quan hệ, đồ thị, hướng đối tượng) (F)"
+    ],
+    "explanation": "Hardware diversity thuộc Physical Systems. Schema differences và data models thuộc Logical Structures. Business rules thuộc Business Organization."
   },
-
   {
     "id": "oltp_olap_q3",
     "question": "Data Warehouse được tối ưu cho mục đích nào?",
-    "answers":  {
-      "A": "Transaction processing với INSERT, UPDATE, DELETE",
-      "B": "Fast query processing cho concurrent users",
-      "C": "Query và analysis phức tạp",
-      "D": "Real-time payment processing"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Data Warehouse tối ưu cho query và analysis (C). Transaction processing (A), fast concurrent processing (B), real-time payment (D) đều là đặc điểm của OLTP."
+    "answers": [
+      "Transaction processing với INSERT, UPDATE, DELETE (F)",
+      "Fast query processing cho concurrent users (F)",
+      "Query và analysis phức tạp (T)",
+      "Real-time payment processing (F)"
+    ],
+    "explanation": "Data Warehouse tối ưu cho query và analysis . Transaction processing , fast concurrent processing , real-time payment đều là đặc điểm của OLTP."
   },
-
   {
     "id": "oltp_olap_q4",
     "question": "Đặc tính 'Subject-Oriented' của Data Warehouse có nghĩa là:",
-    "answers": {
-      "A": "Tổ chức xung quanh chủ đề nghiệp vụ như Khách hàng, Sản phẩm",
-      "B": "Dữ liệu từ nhiều nguồn về định dạng chung",
-      "C": "Loại bỏ dữ liệu không cần thiết cho phân tích",
-      "D": "Dữ liệu không thay đổi sau khi nạp"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Subject-Oriented:  tổ chức theo chủ đề nghiệp vụ (A). Định dạng chung (B) là Integrated. Không thay đổi (D) là Non-volatile."
+    "answers": [
+      "Tổ chức xung quanh chủ đề nghiệp vụ như Khách hàng, Sản phẩm (T)",
+      "Dữ liệu từ nhiều nguồn về định dạng chung (F)",
+      "Loại bỏ dữ liệu không cần thiết cho phân tích (F)",
+      "Dữ liệu không thay đổi sau khi nạp (F)"
+    ],
+    "explanation": "Subject-Oriented: tổ chức theo chủ đề nghiệp vụ . Định dạng chung là Integrated. Không thay đổi là Non-volatile."
   },
-
   {
     "id": "oltp_olap_q5",
     "question": "Trong ETL process, Transform step có chức năng gì?",
-    "answers":  {
-      "A": "Lấy dữ liệu từ source systems",
-      "B": "Đưa dữ liệu vào Data Warehouse",
-      "C":  "Tính toán, định dạng lại dữ liệu phù hợp yêu cầu",
-      "D": "Lưu trữ metadata"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Transform (C) chuyển đổi dữ liệu.  Extract (A) lấy dữ liệu. Load (B) đưa vào DW. Metadata (D) không phải chức năng của Transform."
+    "answers": [
+      "Lấy dữ liệu từ source systems (F)",
+      "Đưa dữ liệu vào Data Warehouse (F)",
+      "Tính toán, định dạng lại dữ liệu phù hợp yêu cầu (T)",
+      "Lưu trữ metadata (F)"
+    ],
+    "explanation": "Transform chuyển đổi dữ liệu. Extract lấy dữ liệu. Load đưa vào DW. Metadata không phải chức năng của Transform."
   },
-
   {
     "id": "oltp_olap_q6",
     "question": "Staging Area trong ETL có vai trò nào?",
-    "answers":  {
-      "A": "Consolidation - chứa dữ liệu tạm từ nhiều nguồn",
-      "B": "Change detection và data cleansing",
-      "C":  "Thay thế Data Warehouse",
-      "D":  "Lưu trữ vĩnh viễn dữ liệu lịch sử"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Staging Area:  consolidation (A) và change detection/cleansing (B). Không thay thế DW (C sai) và không lưu vĩnh viễn (D sai) - chỉ là vùng đệm tạm thời."
+    "answers": [
+      "Consolidation - chứa dữ liệu tạm từ nhiều nguồn (T)",
+      "Change detection và data cleansing (T)",
+      "Thay thế Data Warehouse (F)",
+      "Lưu trữ vĩnh viễn dữ liệu lịch sử (F)"
+    ],
+    "explanation": "Staging Area: consolidation và change detection/cleansing . Không thay thế DW (C sai) và không lưu vĩnh viễn (D sai) - chỉ là vùng đệm tạm thời."
   },
-
   {
     "id": "oltp_olap_q7",
     "question": "OLTP system có đặc điểm nào? ",
-    "answers": {
-      "A": "Measurement bằng transactions per second",
-      "B": "Lưu historical aggregated data",
-      "C": "Data model là Entity model (3NF)",
-      "D": "Low transaction volume"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "OLTP: transactions/second (A), Entity model 3NF (C). Historical aggregated data (B) và low volume (D) là OLAP."
+    "answers": [
+      "Measurement bằng transactions per second (T)",
+      "Lưu historical aggregated data (F)",
+      "Data model là Entity model (3NF) (T)",
+      "Low transaction volume (F)"
+    ],
+    "explanation": "OLTP: transactions/second , Entity model 3NF . Historical aggregated data và low volume là OLAP."
   },
-
   {
     "id": "oltp_olap_q8",
     "question": "Tại sao phải tách OLAP khỏi OLTP?",
-    "answers": {
-      "A": "OLAP queries có thể lock tables trong OLTP",
-      "B":  "OLTP và OLAP dùng cùng schema nên cần tách",
-      "C": "OLAP resource-intensive, tiêu thụ nhiều CPU/RAM",
-      "D": "OLTP cần consistency và concurrency cao"
-    },
-    "correctAnswers": ["A", "D"],
-    "explanation": "Tách vì:  OLAP lock tables (A), OLTP cần consistency/concurrency (D). Khác schema (B sai - đó là lý do, không phải 'cùng schema'). Resource-intensive (C đúng nhưng không đủ để giải thích tách biệt)."
+    "answers": [
+      "OLAP queries có thể lock tables trong OLTP (T)",
+      "OLTP và OLAP dùng cùng schema nên cần tách (F)",
+      "OLAP resource-intensive, tiêu thụ nhiều CPU/RAM (F)",
+      "OLTP cần consistency và concurrency cao (T)"
+    ],
+    "explanation": "Tách vì: OLAP lock tables , OLTP cần consistency/concurrency . Khác schema (B sai - đó là lý do, không phải 'cùng schema'). Resource-intensive (C đúng nhưng không đủ để giải thích tách biệt)."
   },
-
   {
     "id": "oltp_olap_q9",
     "question": "Fact Table trong Data Cube chứa gì?",
-    "answers": {
-      "A":  "Measures như revenue, quantity sold",
-      "B": "Descriptive attributes để filter",
-      "C": "Foreign keys dẫn đến dimension tables",
-      "D": "Product name, brand, category"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Fact Table: measures (A) và foreign keys (C). Descriptive attributes (B) và product details (D) thuộc Dimension tables."
+    "answers": [
+      "Measures như revenue, quantity sold (T)",
+      "Descriptive attributes để filter (F)",
+      "Foreign keys dẫn đến dimension tables (T)",
+      "Product name, brand, category (F)"
+    ],
+    "explanation": "Fact Table: measures và foreign keys . Descriptive attributes và product details thuộc Dimension tables."
   },
-
   {
     "id": "oltp_olap_q10",
     "question": "Dimension Table có chức năng gì?",
-    "answers":  {
-      "A": "Lưu trữ số liệu đo lường",
-      "B": "Cung cấp context cho measures",
-      "C": "Chứa descriptive attributes",
-      "D":  "Lưu transactions/events"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "Dimension Table: context (B), descriptive attributes (C). Measures (A) và transactions (D) thuộc Fact table."
+    "answers": [
+      "Lưu trữ số liệu đo lường (F)",
+      "Cung cấp context cho measures (T)",
+      "Chứa descriptive attributes (T)",
+      "Lưu transactions/events (F)"
+    ],
+    "explanation": "Dimension Table: context , descriptive attributes . Measures và transactions thuộc Fact table."
   },
-
   {
     "id": "oltp_olap_q11",
     "question": "Star Schema có đặc điểm nào? ",
-    "answers": {
-      "A": "Dimension tables denormalized",
-      "B":  "Nhiều Fact tables",
-      "C":  "Query performance nhanh do ít JOINs",
-      "D": "Dimension tables normalized theo hierarchies"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Star Schema: denormalized dimensions (A), nhanh (C). Nhiều Fact tables (B) là Constellation.  Normalized dimensions (D) là Snowflake."
+    "answers": [
+      "Dimension tables denormalized (T)",
+      "Nhiều Fact tables (F)",
+      "Query performance nhanh do ít JOINs (T)",
+      "Dimension tables normalized theo hierarchies (F)"
+    ],
+    "explanation": "Star Schema: denormalized dimensions , nhanh . Nhiều Fact tables là Constellation. Normalized dimensions là Snowflake."
   },
-
   {
-    "id":  "oltp_olap_q12",
+    "id": "oltp_olap_q12",
     "question": "Snowflake Schema khác Star Schema ở điểm nào?",
-    "answers": {
-      "A": "Dimension tables được normalized",
-      "B": "Giảm data redundancy, tiết kiệm storage",
-      "C": "Queries đơn giản hơn với ít JOINs",
-      "D": "Tăng complexity của queries"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Snowflake: normalized (A), tiết kiệm storage (B), nhiều JOINs phức tạp (D). Queries đơn giản (C sai) - Star mới đơn giản."
+    "answers": [
+      "Dimension tables được normalized (T)",
+      "Giảm data redundancy, tiết kiệm storage (T)",
+      "Queries đơn giản hơn với ít JOINs (F)",
+      "Tăng complexity của queries (T)"
+    ],
+    "explanation": "Snowflake: normalized , tiết kiệm storage , nhiều JOINs phức tạp . Queries đơn giản (C sai) - Star mới đơn giản."
   },
-
   {
-    "id":  "oltp_olap_q13",
+    "id": "oltp_olap_q13",
     "question": "Fact Constellation (Galaxy Schema) có đặc điểm gì?",
-    "answers":  {
-      "A": "Chỉ có 1 Fact table",
-      "B": "Nhiều Fact tables share dimensions",
-      "C": "Collection of multiple stars",
-      "D": "Dimension tables denormalized hoàn toàn"
-    },
-    "correctAnswers":  ["B", "C"],
-    "explanation":  "Fact Constellation: nhiều Fact tables (B), multiple stars (C). Không phải 1 Fact (A sai). Dimensions có thể denormalized hoặc normalized (D không hoàn toàn đúng)."
+    "answers": [
+      "Chỉ có 1 Fact table (F)",
+      "Nhiều Fact tables share dimensions (T)",
+      "Collection of multiple stars (T)",
+      "Dimension tables denormalized hoàn toàn (F)"
+    ],
+    "explanation": "Fact Constellation: nhiều Fact tables , multiple stars . Không phải 1 Fact (A sai). Dimensions có thể denormalized hoặc normalized (D không hoàn toàn đúng)."
   },
-
   {
     "id": "oltp_olap_q14",
     "question": "Concept Hierarchy hỗ trợ thao tác OLAP nào?",
-    "answers":  {
-      "A": "Roll-up và Drill-down",
-      "B": "Slice và Dice",
-      "C": "Pivot",
-      "D": "ETL processing"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Concept Hierarchy hỗ trợ Roll-up/Drill-down (A) dựa trên levels. Slice/Dice (B) và Pivot (C) không phụ thuộc hierarchy. ETL (D) không liên quan."
+    "answers": [
+      "Roll-up và Drill-down (T)",
+      "Slice và Dice (F)",
+      "Pivot (F)",
+      "ETL processing (F)"
+    ],
+    "explanation": "Concept Hierarchy hỗ trợ Roll-up/Drill-down dựa trên levels. Slice/Dice và Pivot không phụ thuộc hierarchy. ETL không liên quan."
   },
-
   {
     "id": "oltp_olap_q15",
     "question": "Roll-up operation thực hiện như thế nào?",
-    "answers": {
-      "A": "Leo lên các bậc cao hơn trong hierarchy",
-      "B": "Đi từ summarized xuống detailed data",
-      "C": "Giảm bớt dimensions",
-      "D": "Thêm dimensions mới"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Roll-up: leo lên hierarchy (A), giảm dimensions (C). Đi xuống detailed (B) và thêm dimensions (D) là Drill-down."
+    "answers": [
+      "Leo lên các bậc cao hơn trong hierarchy (T)",
+      "Đi từ summarized xuống detailed data (F)",
+      "Giảm bớt dimensions (T)",
+      "Thêm dimensions mới (F)"
+    ],
+    "explanation": "Roll-up: leo lên hierarchy , giảm dimensions . Đi xuống detailed và thêm dimensions là Drill-down."
   },
-
   {
     "id": "oltp_olap_q16",
     "question": "Drill-down operation có đặc điểm gì?",
-    "answers":  {
-      "A": "Tóm tắt dữ liệu lên tổng quát",
-      "B": "Đi từ summarized xuống detailed data",
-      "C": "Thêm dimensions vào phân tích",
-      "D":  "Leo xuống các bậc thấp hơn trong hierarchy"
-    },
-    "correctAnswers": ["B", "C", "D"],
-    "explanation":  "Drill-down: xuống detailed (B), thêm dimensions (C), xuống hierarchy (D). Tóm tắt lên (A) là Roll-up."
+    "answers": [
+      "Tóm tắt dữ liệu lên tổng quát (F)",
+      "Đi từ summarized xuống detailed data (T)",
+      "Thêm dimensions vào phân tích (T)",
+      "Leo xuống các bậc thấp hơn trong hierarchy (T)"
+    ],
+    "explanation": "Drill-down: xuống detailed , thêm dimensions , xuống hierarchy . Tóm tắt lên là Roll-up."
   },
-
   {
     "id": "oltp_olap_q17",
     "question": "Phân biệt Slice và Dice:",
-    "answers": {
-      "A": "Slice chọn một giá trị duy nhất, Dice chọn dải giá trị",
-      "B": "Slice biến 3D → 2D, Dice tạo sub-cube",
-      "C": "Cả hai đều là filtering operations",
-      "D": "Slice và Dice hoàn toàn giống nhau"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Slice: một giá trị, 3D→2D (A, B). Dice: dải giá trị, sub-cube (A, B). Cả hai filter (C). Không giống nhau (D sai)."
+    "answers": [
+      "Slice chọn một giá trị duy nhất, Dice chọn dải giá trị (T)",
+      "Slice biến 3D → 2D, Dice tạo sub-cube (T)",
+      "Cả hai đều là filtering operations (T)",
+      "Slice và Dice hoàn toàn giống nhau (F)"
+    ],
+    "explanation": "Slice: một giá trị, 3D→2D (A, B). Dice: dải giá trị, sub-cube (A, B). Cả hai filter . Không giống nhau (D sai)."
   },
-
   {
     "id": "oltp_olap_q18",
     "question": "Pivot operation có mục đích gì?",
-    "answers": {
-      "A": "Thay đổi trình bày, không đổi giá trị",
-      "B": "Tăng số dimensions",
-      "C": "Đổi vị trí rows và columns",
-      "D": "Tính toán aggregations mới"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Pivot: thay đổi view (A), đổi rows/columns (C). Không tăng dimensions (B) hay tính aggregations (D)."
+    "answers": [
+      "Thay đổi trình bày, không đổi giá trị (T)",
+      "Tăng số dimensions (F)",
+      "Đổi vị trí rows và columns (T)",
+      "Tính toán aggregations mới (F)"
+    ],
+    "explanation": "Pivot: thay đổi view , đổi rows/columns . Không tăng dimensions hay tính aggregations ."
   },
-
   {
-    "id":  "oltp_olap_q19",
+    "id": "oltp_olap_q19",
     "question": "Bottom Tier trong 3-tier DW Architecture chứa gì?",
-    "answers": {
-      "A": "Data Warehouse database",
-      "B": "Front-end tools",
-      "C": "ETL processes",
-      "D": "Metadata Repository"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation":  "Bottom Tier: DW database (A), ETL (C), Metadata (D). Front-end tools (B) ở Top Tier."
+    "answers": [
+      "Data Warehouse database (T)",
+      "Front-end tools (F)",
+      "ETL processes (T)",
+      "Metadata Repository (T)"
+    ],
+    "explanation": "Bottom Tier: DW database , ETL , Metadata . Front-end tools ở Top Tier."
   },
-
   {
     "id": "oltp_olap_q20",
     "question": "Middle Tier trong DW Architecture có vai trò gì?",
-    "answers":  {
-      "A": "Chứa warehouse database",
-      "B": "OLAP Server cung cấp multidimensional view",
-      "C": "Trung gian giữa raw warehouse và reporting tools",
-      "D": "Query/Report tools cho end users"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "Middle Tier:  OLAP Server (B), trung gian (C). Warehouse database (A) ở Bottom.  Query tools (D) ở Top."
+    "answers": [
+      "Chứa warehouse database (F)",
+      "OLAP Server cung cấp multidimensional view (T)",
+      "Trung gian giữa raw warehouse và reporting tools (T)",
+      "Query/Report tools cho end users (F)"
+    ],
+    "explanation": "Middle Tier: OLAP Server , trung gian . Warehouse database ở Bottom. Query tools ở Top."
   },
-
   {
     "id": "oltp_olap_q21",
     "question": "Enterprise Warehouse khác Data Mart như thế nào?",
-    "answers": {
-      "A": "Enterprise cover toàn tổ chức, Data Mart cho bộ phận cụ thể",
-      "B": "Data Mart không thể cung cấp dữ liệu cho Warehouse",
-      "C": "Enterprise Warehouse có thể feed Data Mart",
-      "D":  "Data Mart luôn lớn hơn Enterprise Warehouse"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Enterprise:  toàn tổ chức, feed Data Mart (A, C). Data Mart có thể feed Warehouse (B sai). Data Mart nhỏ hơn (D sai)."
+    "answers": [
+      "Enterprise cover toàn tổ chức, Data Mart cho bộ phận cụ thể (T)",
+      "Data Mart không thể cung cấp dữ liệu cho Warehouse (F)",
+      "Enterprise Warehouse có thể feed Data Mart (T)",
+      "Data Mart luôn lớn hơn Enterprise Warehouse (F)"
+    ],
+    "explanation": "Enterprise: toàn tổ chức, feed Data Mart (A, C). Data Mart có thể feed Warehouse (B sai). Data Mart nhỏ hơn (D sai)."
   },
-
   {
-    "id":  "oltp_olap_q22",
+    "id": "oltp_olap_q22",
     "question": "Full Materialization trong Data Cube có đặc điểm gì?",
-    "answers":  {
-      "A": "Tính toán và lưu tất cả cuboids",
-      "B": "Query response tức thì",
-      "C": "Tiết kiệm bộ nhớ nhất",
-      "D": "Tốn nhiều storage"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Full Materialization: lưu tất cả (A), query nhanh (B), tốn storage (D). Không tiết kiệm bộ nhớ (C sai)."
+    "answers": [
+      "Tính toán và lưu tất cả cuboids (T)",
+      "Query response tức thì (T)",
+      "Tiết kiệm bộ nhớ nhất (F)",
+      "Tốn nhiều storage (T)"
+    ],
+    "explanation": "Full Materialization: lưu tất cả , query nhanh , tốn storage . Không tiết kiệm bộ nhớ (C sai)."
   },
-
   {
     "id": "oltp_olap_q23",
     "question": "Partial Materialization có ưu điểm gì?",
-    "answers": {
-      "A": "Lưu tất cả cuboids",
-      "B": "Chỉ lưu cuboids được query thường xuyên",
-      "C": "Cân bằng giữa speed và storage",
-      "D": "Phương pháp phổ biến nhất"
-    },
-    "correctAnswers": ["B", "C", "D"],
-    "explanation":  "Partial:  lưu cuboids thường dùng (B), cân bằng (C), phổ biến nhất (D). Không lưu tất cả (A sai - đó là Full)."
+    "answers": [
+      "Lưu tất cả cuboids (F)",
+      "Chỉ lưu cuboids được query thường xuyên (T)",
+      "Cân bằng giữa speed và storage (T)",
+      "Phương pháp phổ biến nhất (T)"
+    ],
+    "explanation": "Partial: lưu cuboids thường dùng , cân bằng , phổ biến nhất . Không lưu tất cả (A sai - đó là Full)."
   },
-
   {
     "id": "oltp_olap_q24",
     "question": "Bitmap Index phù hợp cho trường hợp nào?",
-    "answers":  {
-      "A": "Low-cardinality dimensions",
-      "B": "High-cardinality dimensions",
-      "C": "Sử dụng bit strings",
-      "D": "Ít giá trị unique"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation":  "Bitmap Index: low-cardinality (A), ít unique values (D), dùng bit strings (C). Không phù hợp high-cardinality (B)."
+    "answers": [
+      "Low-cardinality dimensions (T)",
+      "High-cardinality dimensions (F)",
+      "Sử dụng bit strings (T)",
+      "Ít giá trị unique (T)"
+    ],
+    "explanation": "Bitmap Index: low-cardinality , ít unique values , dùng bit strings . Không phù hợp high-cardinality ."
   },
-
   {
     "id": "oltp_olap_q25",
     "question": "Join Index có tác dụng gì?",
-    "answers": {
-      "A": "Sử dụng bit strings",
-      "B": "Lưu sẵn kết qu��� JOIN",
-      "C": "Tăng tốc query performance",
-      "D": "Giảm số JOINs khi query"
-    },
-    "correctAnswers": ["B", "C", "D"],
-    "explanation":  "Join Index: lưu JOIN results (B), tăng performance (C), giảm JOINs (D). Bit strings (A) là Bitmap Index."
+    "answers": [
+      "Sử dụng bit strings (F)",
+      "Lưu sẵn kết qu��� JOIN (T)",
+      "Tăng tốc query performance (T)",
+      "Giảm số JOINs khi query (T)"
+    ],
+    "explanation": "Join Index: lưu JOIN results , tăng performance , giảm JOINs . Bit strings là Bitmap Index."
   },
-
   {
     "id": "oltp_olap_q26",
     "question": "ROLAP có đặc điểm gì?",
-    "answers":  {
-      "A": "Sử dụng relational database",
-      "B": "Sử dụng multidimensional arrays",
-      "C": "Lưu data trong relational tables",
-      "D": "Kết hợp ROLAP và MOLAP"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "ROLAP: relational database (A), relational tables (C). Multidimensional arrays (B) là MOLAP.  Kết hợp (D) là HOLAP."
+    "answers": [
+      "Sử dụng relational database (T)",
+      "Sử dụng multidimensional arrays (F)",
+      "Lưu data trong relational tables (T)",
+      "Kết hợp ROLAP và MOLAP (F)"
+    ],
+    "explanation": "ROLAP: relational database , relational tables . Multidimensional arrays là MOLAP. Kết hợp là HOLAP."
   },
-
   {
     "id": "oltp_olap_q27",
     "question": "MOLAP khác ROLAP ở điểm nào?",
-    "answers": {
-      "A": "MOLAP dùng multidimensional array structures",
-      "B": "ROLAP dùng relational database",
-      "C": "MOLAP lưu trong relational tables",
-      "D": "Cả hai đều dùng relational database"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "MOLAP: multidimensional arrays (A). ROLAP: relational DB (B). MOLAP không dùng relational tables (C sai). Không cùng loại DB (D sai)."
+    "answers": [
+      "MOLAP dùng multidimensional array structures (T)",
+      "ROLAP dùng relational database (T)",
+      "MOLAP lưu trong relational tables (F)",
+      "Cả hai đều dùng relational database (F)"
+    ],
+    "explanation": "MOLAP: multidimensional arrays . ROLAP: relational DB . MOLAP không dùng relational tables (C sai). Không cùng loại DB (D sai)."
   },
-
   {
     "id": "oltp_olap_q28",
-    "question":  "HOLAP có đặc điểm gì?",
-    "answers": {
-      "A":  "Chỉ dùng relational database",
-      "B": "Kết hợp ROLAP và MOLAP",
-      "C": "ROLAP cho detailed data, MOLAP cho aggregated data",
-      "D":  "Chỉ dùng multidimensional arrays"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "HOLAP: hybrid (B), ROLAP detailed + MOLAP aggregated (C). Không chỉ relational (A) hay chỉ arrays (D)."
+    "question": "HOLAP có đặc điểm gì?",
+    "answers": [
+      "Chỉ dùng relational database (F)",
+      "Kết hợp ROLAP và MOLAP (T)",
+      "ROLAP cho detailed data, MOLAP cho aggregated data (T)",
+      "Chỉ dùng multidimensional arrays (F)"
+    ],
+    "explanation": "HOLAP: hybrid , ROLAP detailed + MOLAP aggregated . Không chỉ relational hay chỉ arrays ."
   },
-
   {
     "id": "oltp_olap_q29",
     "question": "Đặc tính 'Integrated' của DW thể hiện qua:",
-    "answers": {
-      "A": "Unified format về naming, encoding",
-      "B": "Data cleansing trước khi nạp",
-      "C":  "Dữ liệu từ nhiều nguồn về định dạng chung",
-      "D": "Lưu lịch sử dài hạn 5-10 năm"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Integrated: unified format (A), cleansing (B), định dạng chung (C). Lịch sử dài hạn (D) là Time-Variant."
+    "answers": [
+      "Unified format về naming, encoding (T)",
+      "Data cleansing trước khi nạp (T)",
+      "Dữ liệu từ nhiều nguồn về định dạng chung (T)",
+      "Lưu lịch sử dài hạn 5-10 năm (F)"
+    ],
+    "explanation": "Integrated: unified format , cleansing , định dạng chung . Lịch sử dài hạn là Time-Variant."
   },
-
   {
     "id": "oltp_olap_q30",
     "question": "Đặc tính 'Time-Variant' bao gồm:",
-    "answers": {
-      "A":  "Lưu historical data 5-10 năm",
-      "B": "Key structure chứa yếu tố thời gian",
-      "C": "Dữ liệu nạp theo chu kỳ",
-      "D":  "Người dùng chỉ có quyền đọc"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Time-Variant: historical (A), time in key (B), periodic updates (C). Quyền đọc (D) là Non-volatile."
+    "answers": [
+      "Lưu historical data 5-10 năm (T)",
+      "Key structure chứa yếu tố thời gian (T)",
+      "Dữ liệu nạp theo chu kỳ (T)",
+      "Người dùng chỉ có quyền đọc (F)"
+    ],
+    "explanation": "Time-Variant: historical , time in key , periodic updates . Quyền đọc là Non-volatile."
   },
-
   {
     "id": "oltp_olap_q31",
     "question": "Đặc tính 'Non-volatile' có nghĩa là:",
-    "answers": {
-      "A": "Dữ liệu bất biến sau khi nạp",
-      "B": "Chỉ có Loading và Access operations",
-      "C": "Không cần transaction control phức tạp",
-      "D": "Focus vào chủ đề nghiệp vụ"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Non-volatile:  bất biến (A), chỉ Load/Access (B), không cần transaction control (C). Focus chủ đề (D) là Subject-Oriented."
+    "answers": [
+      "Dữ liệu bất biến sau khi nạp (T)",
+      "Chỉ có Loading và Access operations (T)",
+      "Không cần transaction control phức tạp (T)",
+      "Focus vào chủ đề nghiệp vụ (F)"
+    ],
+    "explanation": "Non-volatile: bất biến , chỉ Load/Access , không cần transaction control . Focus chủ đề là Subject-Oriented."
   },
-
   {
     "id": "oltp_olap_q32",
     "question": "ETL quan trọng vì lý do nào?",
-    "answers":  {
-      "A": "Added value - loại bỏ sai sót",
-      "B": "Consolidation - điều chỉnh data từ nhiều nguồn",
-      "C": "Thay thế Data Warehouse",
-      "D": "Reliability - đo lường độ tin cậy"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "ETL quan trọng vì:  added value (A), consolidation (B), reliability (D). Không thay thế DW (C sai)."
+    "answers": [
+      "Added value - loại bỏ sai sót (T)",
+      "Consolidation - điều chỉnh data từ nhiều nguồn (T)",
+      "Thay thế Data Warehouse (F)",
+      "Reliability - đo lường độ tin cậy (T)"
+    ],
+    "explanation": "ETL quan trọng vì: added value , consolidation , reliability . Không thay thế DW (C sai)."
   },
-
   {
     "id": "oltp_olap_q33",
     "question": "Metadata Repository chứa thông tin gì?",
-    "answers":  {
-      "A": "Data lineage - lịch sử transformation",
-      "B": "Schema, dimensions, hierarchies",
-      "C": "Dữ liệu giao dịch từ OLTP",
-      "D":  "Business term definitions"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Metadata:  lineage (A), structure (B), business terms (D). Dữ liệu giao dịch (C) ở Fact tables, không phải metadata."
+    "answers": [
+      "Data lineage - lịch sử transformation (T)",
+      "Schema, dimensions, hierarchies (T)",
+      "Dữ liệu giao dịch từ OLTP (F)",
+      "Business term definitions (T)"
+    ],
+    "explanation": "Metadata: lineage , structure , business terms . Dữ liệu giao dịch ở Fact tables, không phải metadata."
   },
-
   {
     "id": "oltp_olap_q34",
     "question": "OLTP measurement focus vào:",
-    "answers": {
-      "A": "Transactions per second",
-      "B": "Response time",
-      "C":  "Query complexity",
-      "D": "Number of concurrent users"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "OLTP measurement: transactions/second (A). Response time (B) là OLAP.  Query complexity (C) không phải metric chính.  Concurrent users (D) là challenge, không phải measurement."
+    "answers": [
+      "Transactions per second (T)",
+      "Response time (F)",
+      "Query complexity (F)",
+      "Number of concurrent users (F)"
+    ],
+    "explanation": "OLTP measurement: transactions/second . Response time là OLAP. Query complexity không phải metric chính. Concurrent users là challenge, không phải measurement."
   },
-
   {
     "id": "oltp_olap_q35",
     "question": "OLAP measurement focus vào:",
-    "answers":  {
-      "A": "Transactions per second",
-      "B":  "Response time của complex queries",
-      "C": "Data integrity",
-      "D": "Concurrency control"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "OLAP measurement: response time (B). Transactions/second (A), integrity (C), concurrency (D) là OLTP."
+    "answers": [
+      "Transactions per second (F)",
+      "Response time của complex queries (T)",
+      "Data integrity (F)",
+      "Concurrency control (F)"
+    ],
+    "explanation": "OLAP measurement: response time . Transactions/second , integrity , concurrency là OLTP."
   },
-
   {
     "id": "oltp_olap_q36",
     "question": "OLTP data model thường là:",
-    "answers": {
-      "A": "Entity model (3NF)",
-      "B": "Normalized để tránh redundancy",
-      "C": "Multidimensional Star Schema",
-      "D": "Denormalized để giảm JOINs"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "OLTP: Entity model 3NF (A), normalized (B). Star Schema (C) và denormalized (D) là OLAP."
+    "answers": [
+      "Entity model (3NF) (T)",
+      "Normalized để tránh redundancy (T)",
+      "Multidimensional Star Schema (F)",
+      "Denormalized để giảm JOINs (F)"
+    ],
+    "explanation": "OLTP: Entity model 3NF , normalized . Star Schema và denormalized là OLAP."
   },
-
   {
     "id": "oltp_olap_q37",
     "question": "OLAP data model thường là:",
-    "answers": {
-      "A":  "Entity model (3NF)",
-      "B": "Multidimensional schemas",
-      "C": "Star Schema",
-      "D": "Normalized theo hierarchies"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "OLAP: multidimensional (B), Star Schema (C). Entity 3NF (A) là OLTP.  Normalized hierarchies (D) là Snowflake, không phải 'thường'."
+    "answers": [
+      "Entity model (3NF) (F)",
+      "Multidimensional schemas (T)",
+      "Star Schema (T)",
+      "Normalized theo hierarchies (F)"
+    ],
+    "explanation": "OLAP: multidimensional , Star Schema . Entity 3NF là OLTP. Normalized hierarchies là Snowflake, không phải 'thường'."
   },
-
   {
     "id": "oltp_olap_q38",
     "question": "Data Cube có đặc điểm gì?",
-    "answers":  {
-      "A": "Cấu trúc n-dimensional",
-      "B": "Chỉ có 3 dimensions",
-      "C": "Tối ưu cho fast data analysis",
-      "D": "Quan sát data từ nhiều khía cạnh"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Data Cube: n-dimensional (A), fast analysis (C), nhiều khía cạnh (D). Không chỉ 3D (B sai)."
+    "answers": [
+      "Cấu trúc n-dimensional (T)",
+      "Chỉ có 3 dimensions (F)",
+      "Tối ưu cho fast data analysis (T)",
+      "Quan sát data từ nhiều khía cạnh (T)"
+    ],
+    "explanation": "Data Cube: n-dimensional , fast analysis , nhiều khía cạnh . Không chỉ 3D (B sai)."
   },
-
   {
     "id": "oltp_olap_q39",
     "question": "Fact Table có đặc điểm nào?",
-    "answers":  {
-      "A": "Kích thước rất lớn (millions of rows)",
-      "B": "Chứa measures và foreign keys",
-      "C": "Kích thước nhỏ (vài trăm rows)",
-      "D": "Lưu mọi transactions/events"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Fact Table: lớn (A), measures + foreign keys (B), lưu transactions (D). Không nhỏ (C sai)."
+    "answers": [
+      "Kích thước rất lớn (millions of rows) (T)",
+      "Chứa measures và foreign keys (T)",
+      "Kích thước nhỏ (vài trăm rows) (F)",
+      "Lưu mọi transactions/events (T)"
+    ],
+    "explanation": "Fact Table: lớn , measures + foreign keys , lưu transactions . Không nhỏ (C sai)."
   },
-
   {
     "id": "oltp_olap_q40",
     "question": "Dimension Table cung cấp gì?",
-    "answers":  {
-      "A": "Context cho measures",
-      "B": "Descriptive attributes",
-      "C":  "Foreign keys đến Fact table",
-      "D": "Cho phép filter và group by"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Dimension:  context (A), descriptive attributes (B), filter/group (D). Foreign keys (C) nằm trong Fact table, không phải Dimension."
+    "answers": [
+      "Context cho measures (T)",
+      "Descriptive attributes (T)",
+      "Foreign keys đến Fact table (F)",
+      "Cho phép filter và group by (T)"
+    ],
+    "explanation": "Dimension: context , descriptive attributes , filter/group . Foreign keys nằm trong Fact table, không phải Dimension."
   },
-
   {
     "id": "oltp_olap_q41",
     "question": "Star Schema phù hợp khi nào?",
-    "answers":  {
-      "A": "Cần query performance cao",
-      "B": "Ưu tiên dễ hiểu, đơn giản",
-      "C": "Cần tiết kiệm storage tối đa",
-      "D": "Cần nhiều Fact tables"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Star phù hợp: performance cao (A), dễ hiểu (B). Tiết kiệm storage (C) dùng Snowflake. Nhiều Fact (D) là Constellation."
+    "answers": [
+      "Cần query performance cao (T)",
+      "Ưu tiên dễ hiểu, đơn giản (T)",
+      "Cần tiết kiệm storage tối đa (F)",
+      "Cần nhiều Fact tables (F)"
+    ],
+    "explanation": "Star phù hợp: performance cao , dễ hiểu . Tiết kiệm storage dùng Snowflake. Nhiều Fact là Constellation."
   },
-
   {
     "id": "oltp_olap_q42",
     "question": "Snowflake Schema phù hợp khi nào?",
-    "answers": {
-      "A": "Cần query nhanh nhất",
-      "B": "Cần tiết kiệm storage",
-      "C": "Giảm data redundancy",
-      "D":  "Chấp nhận queries phức tạp hơn"
-    },
-    "correctAnswers": ["B", "C", "D"],
-    "explanation":  "Snowflake phù hợp: tiết kiệm storage (B), giảm redundancy (C), phức tạp hơn (D). Query nhanh nhất (A) là Star."
+    "answers": [
+      "Cần query nhanh nhất (F)",
+      "Cần tiết kiệm storage (T)",
+      "Giảm data redundancy (T)",
+      "Chấp nhận queries phức tạp hơn (T)"
+    ],
+    "explanation": "Snowflake phù hợp: tiết kiệm storage , giảm redundancy , phức tạp hơn . Query nhanh nhất là Star."
   },
-
   {
     "id": "oltp_olap_q43",
     "question": "Fact Constellation phù hợp cho:",
-    "answers": {
-      "A": "Hệ thống nhỏ, đơn giản",
-      "B": "Enterprise với multi-subject analysis",
-      "C": "Phân tích phức tạp",
-      "D": "Chỉ 1 Fact table"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "Constellation phù hợp: enterprise (B), phức tạp (C). Không cho hệ thống nhỏ (A) hay 1 Fact (D)."
+    "answers": [
+      "Hệ thống nhỏ, đơn giản (F)",
+      "Enterprise với multi-subject analysis (T)",
+      "Phân tích phức tạp (T)",
+      "Chỉ 1 Fact table (F)"
+    ],
+    "explanation": "Constellation phù hợp: enterprise , phức tạp . Không cho hệ thống nhỏ hay 1 Fact ."
   },
-
   {
     "id": "oltp_olap_q44",
     "question": "Trong Time Hierarchy, level cao nhất là:",
-    "answers": {
-      "A": "Day",
-      "B": "Month",
-      "C": "Quarter",
-      "D": "Year"
-    },
-    "correctAnswers": ["D"],
-    "explanation": "Time Hierarchy từ thấp đến cao: Day → Week → Month → Quarter → Year (D)."
+    "answers": [
+      "Day (F)",
+      "Month (F)",
+      "Quarter (F)",
+      "Year (T)"
+    ],
+    "explanation": "Time Hierarchy từ thấp đến cao: Day → Week → Month → Quarter → Year ."
   },
-
   {
     "id": "oltp_olap_q45",
     "question": "Trong Product Hierarchy, level thấp nhất là:",
-    "answers": {
-      "A": "Industry",
-      "B": "Category",
-      "C": "Product Line",
-      "D": "SKU"
-    },
-    "correctAnswers": ["D"],
-    "explanation": "Product Hierarchy từ thấp đến cao: SKU (D) → Product Line → Category → Industry."
+    "answers": [
+      "Industry (F)",
+      "Category (F)",
+      "Product Line (F)",
+      "SKU (T)"
+    ],
+    "explanation": "Product Hierarchy từ thấp đến cao: SKU → Product Line → Category → Industry."
   },
-
   {
     "id": "oltp_olap_q46",
     "question": "Roll-up từ Month lên Year thực hiện qua levels nào?",
-    "answers":  {
-      "A": "Month → Quarter → Year",
-      "B": "Month → Week → Year",
-      "C": "Month → Year (trực tiếp)",
-      "D": "Month → Day → Year"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Roll-up Month→Year có thể qua Quarter (A) hoặc trực tiếp (C). Không qua Week (B) hay Day (D) vì không đúng hierarchy."
+    "answers": [
+      "Month → Quarter → Year (T)",
+      "Month → Week → Year (F)",
+      "Month → Year (trực tiếp) (T)",
+      "Month → Day → Year (F)"
+    ],
+    "explanation": "Roll-up Month→Year có thể qua Quarter hoặc trực tiếp . Không qua Week hay Day vì không đúng hierarchy."
   },
-
   {
     "id": "oltp_olap_q47",
     "question": "Drill-down từ Country xuống Street Address qua levels nào?",
-    "answers": {
-      "A": "Country → City → District → Ward → Street",
-      "B": "Country → Street (trực tiếp)",
-      "C": "Country → District → City → Street",
-      "D": "Có thể qua các intermediate levels"
-    },
-    "correctAnswers": ["A", "D"],
-    "explanation": "Drill-down Country→Street theo hierarchy đúng (A) hoặc qua các levels (D). Không trực tiếp (B) và không sai thứ tự (C)."
+    "answers": [
+      "Country → City → District → Ward → Street (T)",
+      "Country → Street (trực tiếp) (F)",
+      "Country → District → City → Street (F)",
+      "Có thể qua các intermediate levels (T)"
+    ],
+    "explanation": "Drill-down Country→Street theo hierarchy đúng hoặc qua các levels . Không trực tiếp và không sai thứ tự ."
   },
-
   {
     "id": "oltp_olap_q48",
     "question": "Slice operation thực hiện như thế nào?",
-    "answers": {
-      "A": "Chọn một giá trị duy nhất cho dimension",
-      "B": "Biến 3D cube thành 2D plane",
-      "C": "Chọn dải giá trị",
-      "D": "Tạo sub-cube nhỏ hơn"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Slice:  một giá trị (A), 3D→2D (B). Dải giá trị (C) và sub-cube (D) là Dice."
+    "answers": [
+      "Chọn một giá trị duy nhất cho dimension (T)",
+      "Biến 3D cube thành 2D plane (T)",
+      "Chọn dải giá trị (F)",
+      "Tạo sub-cube nhỏ hơn (F)"
+    ],
+    "explanation": "Slice: một giá trị , 3D→2D . Dải giá trị và sub-cube là Dice."
   },
-
   {
     "id": "oltp_olap_q49",
     "question": "Dice operation thực hiện như thế nào?",
-    "answers": {
-      "A": "Chọn một giá trị duy nhất",
-      "B": "Chọn dải giá trị trên nhiều dimensions",
-      "C":  "Tạo sub-cube",
-      "D": "Biến 3D thành 2D"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "Dice: dải giá trị (B), tạo sub-cube (C). Một giá trị (A) và 3D→2D (D) là Slice."
+    "answers": [
+      "Chọn một giá trị duy nhất (F)",
+      "Chọn dải giá trị trên nhiều dimensions (T)",
+      "Tạo sub-cube (T)",
+      "Biến 3D thành 2D (F)"
+    ],
+    "explanation": "Dice: dải giá trị , tạo sub-cube . Một giá trị và 3D→2D là Slice."
   },
-
   {
     "id": "oltp_olap_q50",
     "question": "Pivot có đặc điểm gì?",
-    "answers": {
-      "A": "Định hướng lại cube",
-      "B": "Đổi vị trí rows và columns",
-      "C": "Thay đổi giá trị data",
-      "D": "Chuyển 3D view thành 2D planes"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Pivot: định hướng lại (A), đổi rows/columns (B), 3D→2D planes (D). Không đổi giá trị (C sai)."
+    "answers": [
+      "Định hướng lại cube (T)",
+      "Đổi vị trí rows và columns (T)",
+      "Thay đổi giá trị data (F)",
+      "Chuyển 3D view thành 2D planes (T)"
+    ],
+    "explanation": "Pivot: định hướng lại , đổi rows/columns , 3D→2D planes . Không đổi giá trị (C sai)."
   },
-
   {
     "id": "oltp_olap_q51",
     "question": "Top Tier trong DW Architecture chứa gì?",
-    "answers": {
-      "A":  "Data Warehouse database",
-      "B": "Query và Report tools",
-      "C": "Analysis tools",
-      "D": "Data Mining tools"
-    },
-    "correctAnswers": ["B", "C", "D"],
-    "explanation":  "Top Tier: Query/Report (B), Analysis (C), Data Mining tools (D). DW database (A) ở Bottom Tier."
+    "answers": [
+      "Data Warehouse database (F)",
+      "Query và Report tools (T)",
+      "Analysis tools (T)",
+      "Data Mining tools (T)"
+    ],
+    "explanation": "Top Tier: Query/Report , Analysis , Data Mining tools . DW database ở Bottom Tier."
   },
-
   {
     "id": "oltp_olap_q52",
     "question": "No Materialization có đặc điểm gì? ",
-    "answers": {
-      "A": "Không lưu cuboids sẵn",
-      "B": "Tính toán khi query",
-      "C": "Tiết kiệm bộ nhớ",
-      "D": "Query response nhanh nhất"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "No Materialization:  không lưu (A), tính khi query (B), tiết kiệm (C). Chậm, không nhanh (D sai)."
+    "answers": [
+      "Không lưu cuboids sẵn (T)",
+      "Tính toán khi query (T)",
+      "Tiết kiệm bộ nhớ (T)",
+      "Query response nhanh nhất (F)"
+    ],
+    "explanation": "No Materialization: không lưu , tính khi query , tiết kiệm . Chậm, không nhanh (D sai)."
   },
-
   {
     "id": "oltp_olap_q53",
     "question": "Thách thức Logical Structures trong Data Integration bao gồm:",
-    "answers": {
-      "A":  "Different data models",
-      "B":  "Schema differences",
-      "C": "Hardware diversity",
-      "D": "Security and privacy"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Logical Structures: data models (A), schema differences (B). Hardware (C) là Physical. Security (D) là Business Organization."
+    "answers": [
+      "Different data models (T)",
+      "Schema differences (T)",
+      "Hardware diversity (F)",
+      "Security and privacy (F)"
+    ],
+    "explanation": "Logical Structures: data models , schema differences . Hardware là Physical. Security là Business Organization."
   },
-
   {
     "id": "oltp_olap_q54",
     "question": "Thách thức Business Organization trong Data Integration bao gồm:",
-    "answers": {
-      "A": "Security and privacy risks",
-      "B": "Business rules khác nhau",
-      "C": "Administrative domains độc lập",
-      "D": "Data format diversity"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Business Organization: security (A), business rules (B), admin domains (C). Data format (D) là Physical Systems."
+    "answers": [
+      "Security and privacy risks (T)",
+      "Business rules khác nhau (T)",
+      "Administrative domains độc lập (T)",
+      "Data format diversity (F)"
+    ],
+    "explanation": "Business Organization: security , business rules , admin domains . Data format là Physical Systems."
   },
-
   {
     "id": "oltp_olap_q55",
     "question": "Data Warehouse Usage bao gồm:",
-    "answers": {
-      "A":  "Information Processing - truy vấn, báo cáo",
-      "B": "Analytical Processing (OLAP)",
-      "C": "Data Mining",
-      "D": "Transaction processing"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "DW Usage: Information Processing (A), OLAP (B), Data Mining (C). Transaction processing (D) là OLTP."
+    "answers": [
+      "Information Processing - truy vấn, báo cáo (T)",
+      "Analytical Processing (OLAP) (T)",
+      "Data Mining (T)",
+      "Transaction processing (F)"
+    ],
+    "explanation": "DW Usage: Information Processing , OLAP , Data Mining . Transaction processing là OLTP."
   },
-
   {
     "id": "oltp_olap_q56",
     "question": "Data Mining trong DW có thể làm gì?",
-    "answers":  {
-      "A": "Tìm quy luật ẩn",
-      "B": "Xây dựng mô hình dự báo",
-      "C": "Trực quan hóa kết quả",
-      "D": "Xử lý giao dịch real-time"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Data Mining:  tìm quy luật (A), dự báo (B), trực quan h��a (C). Real-time transaction (D) là OLTP."
+    "answers": [
+      "Tìm quy luật ẩn (T)",
+      "Xây dựng mô hình dự báo (T)",
+      "Trực quan hóa kết quả (T)",
+      "Xử lý giao dịch real-time (F)"
+    ],
+    "explanation": "Data Mining: tìm quy luật , dự báo , trực quan h��a . Real-time transaction là OLTP."
   },
-
   {
     "id": "oltp_olap_q57",
     "question": "DW giải quyết câu hỏi kinh doanh nào?",
-    "answers":  {
-      "A": "Khách hàng nào có khả năng churn?",
-      "B": "Kênh phân phối nào hiệu quả nhất?",
-      "C":  "Xử lý thanh toán của khách hàng",
-      "D": "Chương trình khuyến mãi nào tác động lớn?"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "DW giải quyết: churn (A), kênh phân phối (B), promotion impact (D). Xử lý thanh toán (C) là OLTP."
+    "answers": [
+      "Khách hàng nào có khả năng churn? (T)",
+      "Kênh phân phối nào hiệu quả nhất? (T)",
+      "Xử lý thanh toán của khách hàng (F)",
+      "Chương trình khuyến mãi nào tác động lớn? (T)"
+    ],
+    "explanation": "DW giải quyết: churn , kênh phân phối , promotion impact . Xử lý thanh toán là OLTP."
   },
-
   {
     "id": "oltp_olap_q58",
     "question": "Extract step trong ETL có chức năng:",
-    "answers": {
-      "A": "Lấy dữ liệu từ source systems",
-      "B": "Tính toán và transform data",
-      "C": "Hiệu quả nhất có thể",
-      "D":  "Đưa data vào warehouse"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "Extract: lấy từ source (A), hiệu quả (C). Transform (B) và Load (D) là các bước khác."
+    "answers": [
+      "Lấy dữ liệu từ source systems (T)",
+      "Tính toán và transform data (F)",
+      "Hiệu quả nhất có thể (T)",
+      "Đưa data vào warehouse (F)"
+    ],
+    "explanation": "Extract: lấy từ source , hiệu quả . Transform và Load là các bước khác."
   },
-
   {
     "id": "oltp_olap_q59",
     "question": "Load step trong ETL có chức năng:",
-    "answers": {
-      "A": "Lấy dữ liệu từ source",
-      "B": "Transform dữ liệu",
-      "C": "Đưa dữ liệu vào target storage",
-      "D": "Nạp vào Data Warehouse"
-    },
-    "correctAnswers": ["C", "D"],
-    "explanation": "Load: đưa vào target (C), nạp DW (D). Extract (A) và Transform (B) là các bước trước."
+    "answers": [
+      "Lấy dữ liệu từ source (F)",
+      "Transform dữ liệu (F)",
+      "Đưa dữ liệu vào target storage (T)",
+      "Nạp vào Data Warehouse (T)"
+    ],
+    "explanation": "Load: đưa vào target , nạp DW . Extract và Transform là các bước trước."
   },
-
   {
     "id": "oltp_olap_q60",
     "question": "Staging Area có chức năng nào?",
-    "answers": {
-      "A": "Alignment - chuẩn hóa reference data",
-      "B": "Conflict reduction",
-      "C": "Independent scheduling",
-      "D": "Thay thế Metadata Repository"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation":  "Staging Area: alignment (A), conflict reduction (B), scheduling (C). Không thay thế Metadata (D)."
+    "answers": [
+      "Alignment - chuẩn hóa reference data (T)",
+      "Conflict reduction (T)",
+      "Independent scheduling (T)",
+      "Thay thế Metadata Repository (F)"
+    ],
+    "explanation": "Staging Area: alignment , conflict reduction , scheduling . Không thay thế Metadata ."
   },
-
   {
     "id": "oltp_olap_q61",
     "question": "Operational Metadata trong Metadata Repository chứa:",
-    "answers": {
-      "A": "Data lineage",
-      "B":  "Usage statistics",
-      "C": "Error logs",
-      "D": "Schema và dimensions"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Operational Metadata: lineage (A), statistics (B), logs (C). Schema/dimensions (D) là DW Structure metadata."
+    "answers": [
+      "Data lineage (T)",
+      "Usage statistics (T)",
+      "Error logs (T)",
+      "Schema và dimensions (F)"
+    ],
+    "explanation": "Operational Metadata: lineage , statistics , logs . Schema/dimensions là DW Structure metadata."
   },
-
   {
     "id": "oltp_olap_q62",
     "question": "OLTP main challenge là gì?",
-    "answers":  {
-      "A": "Concurrency - hàng ngàn users đồng thời",
-      "B": "Fast response time",
-      "C":  "Data consistency",
-      "D": "Complex analytical queries"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "OLTP main challenge: concurrency (A). Fast response (B) và consistency (C) là requirements, không phải challenge chính.  Complex queries (D) là OLAP."
+    "answers": [
+      "Concurrency - hàng ngàn users đồng thời (T)",
+      "Fast response time (F)",
+      "Data consistency (F)",
+      "Complex analytical queries (F)"
+    ],
+    "explanation": "OLTP main challenge: concurrency . Fast response và consistency là requirements, không phải challenge chính. Complex queries là OLAP."
   },
-
   {
     "id": "oltp_olap_q63",
     "question": "OLAP có đặc điểm nào?",
-    "answers": {
-      "A": "Resource intensive queries",
-      "B": "Static data - snapshot tĩnh",
-      "C":  "Real-time data",
-      "D": "Low transaction volume"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "OLAP: resource intensive (A), static snapshot (B), low volume (D). Không real-time (C sai)."
+    "answers": [
+      "Resource intensive queries (T)",
+      "Static data - snapshot tĩnh (T)",
+      "Real-time data (F)",
+      "Low transaction volume (T)"
+    ],
+    "explanation": "OLAP: resource intensive , static snapshot , low volume . Không real-time (C sai)."
   },
-
   {
     "id": "oltp_olap_q64",
     "question": "OLTP design focus vào:",
-    "answers": {
-      "A": "Application-oriented",
-      "B": "Subject-oriented",
-      "C":  "Normalized schema",
-      "D": "Denormalized schema"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "OLTP: application-oriented (A), normalized (C). Subject-oriented (B) và denormalized (D) là OLAP."
+    "answers": [
+      "Application-oriented (T)",
+      "Subject-oriented (F)",
+      "Normalized schema (T)",
+      "Denormalized schema (F)"
+    ],
+    "explanation": "OLTP: application-oriented , normalized . Subject-oriented và denormalized là OLAP."
   },
-
   {
     "id": "oltp_olap_q65",
     "question": "OLAP design focus vào:",
-    "answers": {
-      "A": "Application-oriented",
-      "B":  "Subject-oriented",
-      "C": "Đơn giản, dễ hiểu",
-      "D": "Normalized schema"
-    },
-    "correctAnswers": ["B", "C"],
-    "explanation": "OLAP: subject-oriented (B), đơn giản (C). Application-oriented (A) và normalized (D) là OLTP."
+    "answers": [
+      "Application-oriented (F)",
+      "Subject-oriented (T)",
+      "Đơn giản, dễ hiểu (T)",
+      "Normalized schema (F)"
+    ],
+    "explanation": "OLAP: subject-oriented , đơn giản . Application-oriented và normalized là OLTP."
   },
-
   {
     "id": "oltp_olap_q66",
     "question": "Data Cube pre-compute hỗ trợ thao tác nào?",
-    "answers": {
-      "A": "Roll-up",
-      "B":  "Drill-down",
-      "C": "Slice and Dice",
-      "D": "INSERT và UPDATE"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Data Cube hỗ trợ: Roll-up (A), Drill-down (B), Slice-Dice (C). INSERT/UPDATE (D) là OLTP operations."
+    "answers": [
+      "Roll-up (T)",
+      "Drill-down (T)",
+      "Slice and Dice (T)",
+      "INSERT và UPDATE (F)"
+    ],
+    "explanation": "Data Cube hỗ trợ: Roll-up , Drill-down , Slice-Dice . INSERT/UPDATE là OLTP operations."
   },
-
   {
     "id": "oltp_olap_q67",
     "question": "Concept Hierarchy có vai trò gì?",
-    "answers":  {
-      "A": "Organize multidimensional data",
-      "B": "Flexible aggregation ở các mức granularity",
-      "C":  "Thay thế Fact table",
-      "D": "Support Roll-up và Drill-down"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Concept Hierarchy: organize data (A), flexible aggregation (B), support operations (D). Không thay thế Fact (C)."
+    "answers": [
+      "Organize multidimensional data (T)",
+      "Flexible aggregation ở các mức granularity (T)",
+      "Thay thế Fact table (F)",
+      "Support Roll-up và Drill-down (T)"
+    ],
+    "explanation": "Concept Hierarchy: organize data , flexible aggregation , support operations . Không thay thế Fact ."
   },
-
   {
     "id": "oltp_olap_q68",
     "question": "Star Schema có bao nhiêu Fact table?",
-    "answers": {
-      "A": "0",
-      "B": "1",
-      "C": "Nhiều (N)",
-      "D": "Tùy thiết kế"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Star Schema có 1 Fact table (B). Nhiều Fact tables (C) là Fact Constellation."
+    "answers": [
+      "0 (F)",
+      "1 (T)",
+      "Nhiều (N) (F)",
+      "Tùy thiết kế (F)"
+    ],
+    "explanation": "Star Schema có 1 Fact table . Nhiều Fact tables là Fact Constellation."
   },
-
   {
     "id": "oltp_olap_q69",
     "question": "Snowflake Schema có bao nhiêu Fact table?",
-    "answers": {
-      "A":  "0",
-      "B":  "1",
-      "C":  "Nhiều (N)",
-      "D": "Không giới hạn"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Snowflake Schema có 1 Fact table (B), khác Star ở chỗ dimensions được normalized."
+    "answers": [
+      "0 (F)",
+      "1 (T)",
+      "Nhiều (N) (F)",
+      "Không giới hạn (F)"
+    ],
+    "explanation": "Snowflake Schema có 1 Fact table , khác Star ở chỗ dimensions được normalized."
   },
-
   {
     "id": "oltp_olap_q70",
     "question": "Fact Constellation có bao nhiêu Fact table?",
-    "answers": {
-      "A": "0",
-      "B": "1",
-      "C": "Nhiều (N)",
-      "D": "Chỉ 2"
-    },
-    "correctAnswers": ["C"],
-    "explanation": "Fact Constellation có nhiều Fact tables (C) sharing dimensions. Không phải 1 (B) hay chỉ 2 (D)."
+    "answers": [
+      "0 (F)",
+      "1 (F)",
+      "Nhiều (N) (T)",
+      "Chỉ 2 (F)"
+    ],
+    "explanation": "Fact Constellation có nhiều Fact tables sharing dimensions. Không phải 1 hay chỉ 2 ."
   }
 ]

@@ -2,361 +2,331 @@
   {
     "id": "visual_q1",
     "question": "Hệ thống phân loại dữ liệu của Stevens (1946) gồm mấy cấp độ?",
-    "answers": {
-      "A": "Gồm 3 mức phân cấp chính",
-      "B": "Bao gồm 4 cấp độ đo lường",
-      "C": "Chia thành 5 thang đo khác nhau",
-      "D": "Sử dụng ký hiệu viết tắt là N-O-Q"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Gồm 3 mức phân cấp chính (F)",
+      "Bao gồm 4 cấp độ đo lường (T)",
+      "Chia thành 5 thang đo khác nhau (F)",
+      "Sử dụng ký hiệu viết tắt là N-O-Q (F)"
+    ],
     "explanation": "Stevens phân loại thành 4 cấp độ: Định danh (Nominal), Thứ bậc (Ordinal), Khoảng cách (Interval), Tỷ lệ (Ratio). Phương án D chỉ là cách viết tắt các loại dữ liệu định lượng/định tính nói chung, không trả lời về số lượng cấp độ."
   },
   {
     "id": "visual_q2",
     "question": "Dữ liệu Nominal (Định danh) có đặc điểm gì nổi bật?",
-    "answers": {
-      "A": "Các danh mục thành phần không tồn tại thứ tự ưu tiên",
-      "B": "Các giá trị không mang bản chất định lượng (con số)",
-      "C": "Thực hiện các phép toán (cộng, trừ...) trên dữ liệu này là vô nghĩa",
-      "D": "Dữ liệu có khả năng sắp xếp theo trình tự tăng/giảm dần"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Dữ liệu Nominal chỉ dùng để gọi tên: không có thứ tự (A), không có giá trị số (B), và không thể tính toán toán học (C). Khả năng sắp xếp (D) là đặc trưng của Ordinal trở lên."
+    "answers": [
+      "Các danh mục thành phần không tồn tại thứ tự ưu tiên (T)",
+      "Các giá trị không mang bản chất định lượng (con số) (T)",
+      "Thực hiện các phép toán (cộng, trừ...) trên dữ liệu này là vô nghĩa (T)",
+      "Dữ liệu có khả năng sắp xếp theo trình tự tăng/giảm dần (F)"
+    ],
+    "explanation": "Dữ liệu Nominal chỉ dùng để gọi tên: không có thứ tự , không có giá trị số , và không thể tính toán toán học . Khả năng sắp xếp là đặc trưng của Ordinal trở lên."
   },
   {
     "id": "visual_q3",
     "question": "Tập hợp nào sau đây là ví dụ điển hình của dữ liệu Nominal?",
-    "answers": {
-      "A": "Các loại màu sắc khác nhau",
-      "B": "Phân loại giới tính (Nam/Nữ)",
-      "C": "Thứ hạng của các vận động viên trong một cuộc thi",
-      "D": "Màu mắt của con người"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Nominal bao gồm màu sắc (A), giới tính (B), màu mắt (D) vì chúng không có thứ tự cao thấp. Thứ hạng (C) là dữ liệu Ordinal."
+    "answers": [
+      "Các loại màu sắc khác nhau (T)",
+      "Phân loại giới tính (Nam/Nữ) (T)",
+      "Thứ hạng của các vận động viên trong một cuộc thi (F)",
+      "Màu mắt của con người (T)"
+    ],
+    "explanation": "Nominal bao gồm màu sắc , giới tính , màu mắt vì chúng không có thứ tự cao thấp. Thứ hạng là dữ liệu Ordinal."
   },
   {
     "id": "visual_q4",
     "question": "Đặc điểm nào xác định loại dữ liệu Ordinal (Thứ bậc)?",
-    "answers": {
-      "A": "Tồn tại một trật tự sắp xếp hoặc cấp bậc rõ ràng",
-      "B": "Khoảng cách giữa các bậc luôn bằng nhau tuyệt đối",
-      "C": "Cho phép xác định giá trị này lớn hơn hoặc nhỏ hơn giá trị kia",
-      "D": "Sự chênh lệch giữa các cấp độ không có tính nhất quán"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Dữ liệu Ordinal có thứ tự (A) và so sánh được lớn/nhỏ (C), nhưng khoảng cách giữa các bậc (như Khá và Giỏi) không đo lường được bằng số liệu nhất quán (D). Khoảng cách nhất quán (B) là đặc tính của dữ liệu Interval."
+    "answers": [
+      "Tồn tại một trật tự sắp xếp hoặc cấp bậc rõ ràng (T)",
+      "Khoảng cách giữa các bậc luôn bằng nhau tuyệt đối (F)",
+      "Cho phép xác định giá trị này lớn hơn hoặc nhỏ hơn giá trị kia (T)",
+      "Sự chênh lệch giữa các cấp độ không có tính nhất quán (T)"
+    ],
+    "explanation": "Dữ liệu Ordinal có thứ tự và so sánh được lớn/nhỏ , nhưng khoảng cách giữa các bậc (như Khá và Giỏi) không đo lường được bằng số liệu nhất quán . Khoảng cách nhất quán là đặc tính của dữ liệu Interval."
   },
   {
     "id": "visual_q5",
     "question": "Trường hợp nào sau đây thuộc nhóm dữ liệu Ordinal?",
-    "answers": {
-      "A": "Xếp hạng vị trí (Hạng 1, Hạng 2, Hạng 3)",
-      "B": "Các mức độ hài lòng {Thấp, Trung bình, Cao}",
-      "C": "Thang đo nhiệt độ Fahrenheit (°F)",
-      "D": "Bảng bảng màu sắc trang phục"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Thứ hạng (A) và mức độ (B) có tính thứ tự nên là Ordinal. Nhiệt độ °F (C) là Interval. Màu sắc (D) là Nominal."
+    "answers": [
+      "Xếp hạng vị trí (Hạng 1, Hạng 2, Hạng 3) (T)",
+      "Các mức độ hài lòng {Thấp, Trung bình, Cao} (T)",
+      "Thang đo nhiệt độ Fahrenheit (°F) (F)",
+      "Bảng bảng màu sắc trang phục (F)"
+    ],
+    "explanation": "Thứ hạng và mức độ có tính thứ tự nên là Ordinal. Nhiệt độ °F là Interval. Màu sắc là Nominal."
   },
   {
     "id": "visual_q6",
     "question": "Thang đo Interval (Khoảng cách) được đặc trưng bởi yếu tố nào?",
-    "answers": {
-      "A": "Đơn vị khoảng cách giữa các giá trị là đồng nhất",
-      "B": "Thiếu vắng điểm 0 tuyệt đối (0 không có nghĩa là không có gì)",
-      "C": "Các phép tính cộng và trừ có ý nghĩa thực tế",
-      "D": "Các phép tính nhân và chia mang lại ý nghĩa định lượng"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Interval có khoảng cách đều nhau (A), không có 0 tuyệt đối (B), cộng/trừ được (C). Phép nhân/chia (D) chỉ có ý nghĩa với dữ liệu Ratio."
+    "answers": [
+      "Đơn vị khoảng cách giữa các giá trị là đồng nhất (T)",
+      "Thiếu vắng điểm 0 tuyệt đối (0 không có nghĩa là không có gì) (T)",
+      "Các phép tính cộng và trừ có ý nghĩa thực tế (T)",
+      "Các phép tính nhân và chia mang lại ý nghĩa định lượng (F)"
+    ],
+    "explanation": "Interval có khoảng cách đều nhau , không có 0 tuyệt đối , cộng/trừ được . Phép nhân/chia chỉ có ý nghĩa với dữ liệu Ratio."
   },
   {
     "id": "visual_q7",
     "question": "Tại sao giá trị 0°C không được coi là điểm 0 tuyệt đối?",
-    "answers": {
-      "A": "Vì 0°C không ám chỉ sự vắng mặt hoàn toàn của nhiệt năng",
-      "B": "Bởi vì thực tế vẫn tồn tại các mức nhiệt độ thấp hơn 0°C",
-      "C": "Do 0°C tương đương với 32°F thay vì bằng 0 ở các thang đo khác",
-      "D": "Vì 0°C là mức nhiệt độ thấp nhất mà con người đo được"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Điểm 0 tuyệt đối nghĩa là sự 'vắng mặt hoàn toàn' của đại lượng đó. 0°C chỉ là một điểm quy ước (điểm đóng băng của nước), không phải là không có nhiệt độ (A)."
+    "answers": [
+      "Vì 0°C không ám chỉ sự vắng mặt hoàn toàn của nhiệt năng (T)",
+      "Bởi vì thực tế vẫn tồn tại các mức nhiệt độ thấp hơn 0°C (F)",
+      "Do 0°C tương đương với 32°F thay vì bằng 0 ở các thang đo khác (F)",
+      "Vì 0°C là mức nhiệt độ thấp nhất mà con người đo được (F)"
+    ],
+    "explanation": "Điểm 0 tuyệt đối nghĩa là sự 'vắng mặt hoàn toàn' của đại lượng đó. 0°C chỉ là một điểm quy ước (điểm đóng băng của nước), không phải là không có nhiệt độ ."
   },
   {
     "id": "visual_q8",
     "question": "Dữ liệu Ratio (Tỷ lệ) sở hữu những đặc tính nào?",
-    "answers": {
-      "A": "Bắt đầu từ một điểm 0 tuyệt đối thực sự",
-      "B": "Giá trị bằng 0 đồng nghĩa với sự vắng mặt của đối tượng đo",
-      "C": "Cả phép so sánh hiệu số và tỷ lệ (gấp bao nhiêu lần) đều có nghĩa",
-      "D": "Không tồn tại khái niệm điểm 0 trong thang đo này"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Ratio là cấp độ cao nhất: có 0 tuyệt đối (A), 0 là không có gì (B), thực hiện được mọi phép tính kể cả tỷ lệ (C)."
+    "answers": [
+      "Bắt đầu từ một điểm 0 tuyệt đối thực sự (T)",
+      "Giá trị bằng 0 đồng nghĩa với sự vắng mặt của đối tượng đo (T)",
+      "Cả phép so sánh hiệu số và tỷ lệ (gấp bao nhiêu lần) đều có nghĩa (T)",
+      "Không tồn tại khái niệm điểm 0 trong thang đo này (F)"
+    ],
+    "explanation": "Ratio là cấp độ cao nhất: có 0 tuyệt đối , 0 là không có gì , thực hiện được mọi phép tính kể cả tỷ lệ ."
   },
   {
     "id": "visual_q9",
     "question": "Những ví dụ nào minh họa cho dữ liệu cấp độ Ratio?",
-    "answers": {
-      "A": "Số đo chiều dài của vật thể",
-      "B": "Số lượng cư dân trong một khu vực (Dân số)",
-      "C": "Nhiệt độ đo theo thang Kelvin (K)",
-      "D": "Nhiệt độ đo theo thang Celsius (°C)"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Chiều dài, dân số và Kelvin đều có điểm 0 tuyệt đối (A, B, C). Nhiệt độ Celsius (D) chỉ là Interval."
+    "answers": [
+      "Số đo chiều dài của vật thể (T)",
+      "Số lượng cư dân trong một khu vực (Dân số) (T)",
+      "Nhiệt độ đo theo thang Kelvin (K) (T)",
+      "Nhiệt độ đo theo thang Celsius (°C) (F)"
+    ],
+    "explanation": "Chiều dài, dân số và Kelvin đều có điểm 0 tuyệt đối (A, B, C). Nhiệt độ Celsius chỉ là Interval."
   },
   {
     "id": "visual_q10",
     "question": "Lý do chính khiến thang đo Kelvin được xếp vào loại Ratio là gì?",
-    "answers": {
-      "A": "Mốc 0K chính là độ không tuyệt đối về mặt vật lý",
-      "B": "Trong vũ trụ không tồn tại mức nhiệt độ nào thấp hơn 0K",
-      "C": "Giá trị 0K có thể quy đổi chính xác sang -273.15°C",
-      "D": "Thang đo Kelvin phổ biến và dễ tính toán hơn Celsius"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Kelvin là Ratio vì 0K là điểm dừng nhiệt động lực học (0 tuyệt đối - A), không thể có giá trị âm (B)."
+    "answers": [
+      "Mốc 0K chính là độ không tuyệt đối về mặt vật lý (T)",
+      "Trong vũ trụ không tồn tại mức nhiệt độ nào thấp hơn 0K (T)",
+      "Giá trị 0K có thể quy đổi chính xác sang -273.15°C (F)",
+      "Thang đo Kelvin phổ biến và dễ tính toán hơn Celsius (F)"
+    ],
+    "explanation": "Kelvin là Ratio vì 0K là điểm dừng nhiệt động lực học (0 tuyệt đối - A), không thể có giá trị âm ."
   },
   {
     "id": "visual_q11",
     "question": "Việc hiểu rõ các cấp độ đo lường mang lại lợi ích gì?",
-    "answers": {
-      "A": "Giúp xác định chính xác phương pháp phân tích thống kê cần dùng",
-      "B": "Hỗ trợ lựa chọn kỹ thuật trực quan hóa dữ liệu phù hợp",
-      "C": "Làm tăng độ tin cậy và chính xác của dữ liệu gốc",
-      "D": "Giúp tối ưu hóa và giảm dung lượng lưu trữ của tệp dữ liệu"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "Hiểu cấp độ đo lường là cơ sở để chọn thuật toán thống kê (A) và loại biểu đồ (B). Nó không làm thay đổi bản chất độ chính xác (C) hay dung lượng (D) của dữ liệu."
+    "answers": [
+      "Giúp xác định chính xác phương pháp phân tích thống kê cần dùng (T)",
+      "Hỗ trợ lựa chọn kỹ thuật trực quan hóa dữ liệu phù hợp (T)",
+      "Làm tăng độ tin cậy và chính xác của dữ liệu gốc (F)",
+      "Giúp tối ưu hóa và giảm dung lượng lưu trữ của tệp dữ liệu (F)"
+    ],
+    "explanation": "Hiểu cấp độ đo lường là cơ sở để chọn thuật toán thống kê và loại biểu đồ . Nó không làm thay đổi bản chất độ chính xác hay dung lượng của dữ liệu."
   },
   {
     "id": "visual_q12",
     "question": "Đối với dữ liệu Ordinal, loại biểu đồ nào thường được ưu tiên sử dụng?",
-    "answers": {
-      "A": "Biểu đồ cột (Bar chart)",
-      "B": "Biểu đồ tần suất (Histogram)",
-      "C": "Biểu đồ tròn (Pie chart)",
-      "D": "Biểu đồ phân tán (Scatter plot)"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Bar chart (A) tốt nhất cho Ordinal vì các cột có thể sắp xếp theo thứ tự của dữ liệu. Histogram (B) dành cho dữ liệu liên tục (Interval/Ratio)."
+    "answers": [
+      "Biểu đồ cột (Bar chart) (T)",
+      "Biểu đồ tần suất (Histogram) (F)",
+      "Biểu đồ tròn (Pie chart) (F)",
+      "Biểu đồ phân tán (Scatter plot) (F)"
+    ],
+    "explanation": "Bar chart tốt nhất cho Ordinal vì các cột có thể sắp xếp theo thứ tự của dữ liệu. Histogram dành cho dữ liệu liên tục (Interval/Ratio)."
   },
   {
     "id": "visual_q13",
     "question": "Dữ liệu dạng Interval nên được thể hiện qua loại biểu đồ nào?",
-    "answers": {
-      "A": "Biểu đồ thanh đơn (Bar chart)",
-      "B": "Biểu đồ tần suất (Histogram)",
-      "C": "Biểu đồ đường (Line chart)",
-      "D": "Biểu đồ đám mây điểm (Scatter plot)"
-    },
-    "correctAnswers": ["B"],
-    "explanation": "Histogram (B) phù hợp với Interval/Ratio vì nó mô tả sự phân phối trên các khoảng giá trị liên tục."
+    "answers": [
+      "Biểu đồ thanh đơn (Bar chart) (F)",
+      "Biểu đồ tần suất (Histogram) (T)",
+      "Biểu đồ đường (Line chart) (F)",
+      "Biểu đồ đám mây điểm (Scatter plot) (F)"
+    ],
+    "explanation": "Histogram phù hợp với Interval/Ratio vì nó mô tả sự phân phối trên các khoảng giá trị liên tục."
   },
   {
     "id": "visual_q14",
     "question": "Khái niệm 'Visual Language' (Ngôn ngữ thị giác) được hiểu là:",
-    "answers": {
-      "A": "Một hệ thống các quy ước ký hiệu hình ảnh",
-      "B": "Tập hợp các dấu hiệu (signs) dùng để truyền đạt thông tin",
-      "C": "Quá trình người gửi mã hóa thông điệp và người nhận giải mã hình ảnh",
-      "D": "Hệ thống chỉ tập trung vào việc hiển thị văn bản"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Visual Language là một hệ thống truyền thông hoàn chỉnh dựa trên ký hiệu (A, B) và quy trình mã hóa/giải mã (C)."
+    "answers": [
+      "Một hệ thống các quy ước ký hiệu hình ảnh (T)",
+      "Tập hợp các dấu hiệu (signs) dùng để truyền đạt thông tin (T)",
+      "Quá trình người gửi mã hóa thông điệp và người nhận giải mã hình ảnh (T)",
+      "Hệ thống chỉ tập trung vào việc hiển thị văn bản (F)"
+    ],
+    "explanation": "Visual Language là một hệ thống truyền thông hoàn chỉnh dựa trên ký hiệu (A, B) và quy trình mã hóa/giải mã ."
   },
   {
     "id": "visual_q15",
     "question": "Các thành phần của 'Visual Marks' (Dấu vết thị giác) bao gồm những loại nào?",
-    "answers": {
-      "A": "Các điểm (Points)",
-      "B": "Các đường nét (Lines)",
-      "C": "Các vùng/diện tích (Areas)",
-      "D": "Các thuộc tính màu sắc (Colors)"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Visual Marks là các thực thể hình học: Điểm (A), Đường (B), Vùng (C). Màu sắc (D) là một kênh nhận thức (Channel) dùng để thay đổi đặc điểm của Mark."
+    "answers": [
+      "Các điểm (Points) (T)",
+      "Các đường nét (Lines) (T)",
+      "Các vùng/diện tích (Areas) (T)",
+      "Các thuộc tính màu sắc (Colors) (F)"
+    ],
+    "explanation": "Visual Marks là các thực thể hình học: Điểm , Đường , Vùng . Màu sắc là một kênh nhận thức (Channel) dùng để thay đổi đặc điểm của Mark."
   },
   {
     "id": "visual_q16",
     "question": "Đặc điểm hình học cơ bản của 'Points' (Điểm) là gì?",
-    "answers": {
-      "A": "Xét về mặt khái niệm, chúng không có chiều (0-dimension)",
-      "B": "Chúng được đặc trưng bởi một chiều duy nhất",
-      "C": "Chỉ được sử dụng duy nhất trong biểu đồ Scatter plot",
-      "D": "Đóng vai trò đại diện cho các quan sát đơn lẻ"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Về mặt toán học và đồ họa cơ bản, Điểm là thực thể 0 chiều (A). C và D là cách dùng, không phải đặc điểm hình học cốt lõi."
+    "answers": [
+      "Xét về mặt khái niệm, chúng không có chiều (0-dimension) (T)",
+      "Chúng được đặc trưng bởi một chiều duy nhất (F)",
+      "Chỉ được sử dụng duy nhất trong biểu đồ Scatter plot (F)",
+      "Đóng vai trò đại diện cho các quan sát đơn lẻ (F)"
+    ],
+    "explanation": "Về mặt toán học và đồ họa cơ bản, Điểm là thực thể 0 chiều . C và D là cách dùng, không phải đặc điểm hình học cốt lõi."
   },
   {
     "id": "visual_q17",
     "question": "Đặc điểm nhận dạng của 'Lines' (Đường) trong đồ họa là gì?",
-    "answers": {
-      "A": "Có một chiều duy nhất (chiều dài)",
-      "B": "Cấu thành từ hai chiều không gian",
-      "C": "Được dùng để đại diện cho các liên kết giữa dữ liệu",
-      "D": "Hoàn toàn không có kích thước chiều"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Đường (Lines) là thực thể 1 chiều, đặc trưng bởi độ dài (A). Hai chiều (B) là Areas, không chiều (D) là Points."
+    "answers": [
+      "Có một chiều duy nhất (chiều dài) (T)",
+      "Cấu thành từ hai chiều không gian (F)",
+      "Được dùng để đại diện cho các liên kết giữa dữ liệu (F)",
+      "Hoàn toàn không có kích thước chiều (F)"
+    ],
+    "explanation": "Đường (Lines) là thực thể 1 chiều, đặc trưng bởi độ dài . Hai chiều là Areas, không chiều là Points."
   },
   {
     "id": "visual_q18",
     "question": "Vùng (Areas) có đặc tính hình học như thế nào?",
-    "answers": {
-      "A": "Sở hữu hai chiều không gian (diện tích)",
-      "B": "Chỉ tồn tại một chiều dài đơn nhất",
-      "C": "Là thành phần cấu tạo chính trong biểu đồ cột (Bar chart)",
-      "D": "Là đối tượng không có chiều"
-    },
-    "correctAnswers": ["A"],
-    "explanation": "Areas là thực thể 2 chiều, có diện tích bề mặt (A)."
+    "answers": [
+      "Sở hữu hai chiều không gian (diện tích) (T)",
+      "Chỉ tồn tại một chiều dài đơn nhất (F)",
+      "Là thành phần cấu tạo chính trong biểu đồ cột (Bar chart) (F)",
+      "Là đối tượng không có chiều (F)"
+    ],
+    "explanation": "Areas là thực thể 2 chiều, có diện tích bề mặt ."
   },
   {
     "id": "visual_q19",
     "question": "Khái niệm 'Perceptual Channels' (Kênh nhận thức) ám chỉ điều gì?",
-    "answers": {
-      "A": "Các kênh tiếp nhận thông tin qua thị giác",
-      "B": "Các biến thị giác dùng để biểu đạt dữ liệu",
-      "C": "Phương thức điều khiển diện mạo của các Visual Marks",
-      "D": "Bản thân các đối tượng hình học dùng để biểu diễn"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Perceptual Channels là các thuộc tính như màu sắc, kích thước (A, B) dùng để thay đổi cách hiển thị của các Marks (C)."
+    "answers": [
+      "Các kênh tiếp nhận thông tin qua thị giác (T)",
+      "Các biến thị giác dùng để biểu đạt dữ liệu (T)",
+      "Phương thức điều khiển diện mạo của các Visual Marks (T)",
+      "Bản thân các đối tượng hình học dùng để biểu diễn (F)"
+    ],
+    "explanation": "Perceptual Channels là các thuộc tính như màu sắc, kích thước (A, B) dùng để thay đổi cách hiển thị của các Marks ."
   },
   {
     "id": "visual_q20",
     "question": "Đâu là những ví dụ tiêu biểu của Perceptual Channels?",
-    "answers": {
-      "A": "Kích cỡ/Độ lớn của đối tượng",
-      "B": "Sắc thái màu sắc",
-      "C": "Độ bão hòa hoặc độ đậm nhạt",
-      "D": "Các thực thể Điểm và Đường"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Kích thước (A), màu sắc (B), độ đậm nhạt (C) là các Channels. Points và Lines (D) là Marks."
+    "answers": [
+      "Kích cỡ/Độ lớn của đối tượng (T)",
+      "Sắc thái màu sắc (T)",
+      "Độ bão hòa hoặc độ đậm nhạt (T)",
+      "Các thực thể Điểm và Đường (F)"
+    ],
+    "explanation": "Kích thước , màu sắc , độ đậm nhạt là các Channels. Points và Lines là Marks."
   },
   {
     "id": "visual_q21",
     "question": "Các dấu vết thị giác dùng để biểu diễn các đối tượng (items) bao gồm:",
-    "answers": {
-      "A": "Các điểm chấm trong biểu đồ phân tán (Scatter plot)",
-      "B": "Các hình khối vùng trong biểu đồ cột",
-      "C": "Các biểu tượng (icons) hiển thị trên bản đồ",
-      "D": "Các đường kẻ kết nối trong sơ đồ mạng"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Biểu diễn items (đối tượng đơn lẻ) dùng điểm (A), vùng (B) hoặc icon (C). Đường nối (D) dùng để biểu diễn mối quan hệ (links)."
+    "answers": [
+      "Các điểm chấm trong biểu đồ phân tán (Scatter plot) (T)",
+      "Các hình khối vùng trong biểu đồ cột (T)",
+      "Các biểu tượng (icons) hiển thị trên bản đồ (T)",
+      "Các đường kẻ kết nối trong sơ đồ mạng (F)"
+    ],
+    "explanation": "Biểu diễn items (đối tượng đơn lẻ) dùng điểm , vùng hoặc icon . Đường nối dùng để biểu diễn mối quan hệ (links)."
   },
   {
     "id": "visual_q22",
     "question": "Các dấu vết thị giác dùng để biểu diễn mối liên kết (links) bao gồm:",
-    "answers": {
-      "A": "Các đường nối trong sơ đồ mạng lưới (Network)",
-      "B": "Các mũi tên chỉ hướng trong sơ đồ luồng (Flowchart)",
-      "C": "Các vùng bao quanh để nhóm đối tượng (Enclosure)",
-      "D": "Các điểm tọa độ trong biểu đồ Scatter plot"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Mối quan hệ được biểu diễn bằng đường (A), mũi tên (B) hoặc sự bao bọc (C). Điểm (D) chỉ đại diện cho đối tượng đơn lẻ."
+    "answers": [
+      "Các đường nối trong sơ đồ mạng lưới (Network) (T)",
+      "Các mũi tên chỉ hướng trong sơ đồ luồng (Flowchart) (T)",
+      "Các vùng bao quanh để nhóm đối tượng (Enclosure) (T)",
+      "Các điểm tọa độ trong biểu đồ Scatter plot (F)"
+    ],
+    "explanation": "Mối quan hệ được biểu diễn bằng đường , mũi tên hoặc sự bao bọc . Điểm chỉ đại diện cho đối tượng đơn lẻ."
   },
   {
     "id": "visual_q23",
     "question": "Kênh thị giác hiệu quả nhất để biểu đạt dữ liệu Quantitative (Định lượng) là gì?",
-    "answers": {
-      "A": "Vị trí không gian (Position)",
-      "B": "Độ dài của vật thể (Length)",
-      "C": "Màu sắc (Color)",
-      "D": "Diện tích (Area)"
-    },
-    "correctAnswers": ["A"],
+    "answers": [
+      "Vị trí không gian (Position) (T)",
+      "Độ dài của vật thể (Length) (F)",
+      "Màu sắc (Color) (F)",
+      "Diện tích (Area) (F)"
+    ],
     "explanation": "Vị trí (Position) trên một trục tọa độ chung là kênh mạnh nhất giúp con người nhận biết sự khác biệt về số lượng chính xác nhất."
   },
   {
     "id": "visual_q24",
     "question": "Thứ tự từ mạnh đến yếu về hiệu quả nhận thức cho dữ liệu Quantitative là:",
-    "answers": {
-      "A": "Vị trí > Độ dài > Góc độ",
-      "B": "Độ dài > Vị trí > Diện tích",
-      "C": "Màu sắc > Vị trí > Độ dài",
-      "D": "Diện tích > Độ dài > Vị trí"
-    },
-    "correctAnswers": ["A"],
+    "answers": [
+      "Vị trí > Độ dài > Góc độ (T)",
+      "Độ dài > Vị trí > Diện tích (F)",
+      "Màu sắc > Vị trí > Độ dài (F)",
+      "Diện tích > Độ dài > Vị trí (F)"
+    ],
     "explanation": "Theo nghiên cứu của Cleveland & McGill, thứ tự là: Vị trí (Position) > Độ dài (Length) > Góc (Angle) > Diện tích (Area) > Màu sắc (Color)."
   },
   {
     "id": "visual_q25",
     "question": "Tại sao việc dùng Diện tích (Area) hoặc Thể tích kém hiệu quả hơn cho dữ liệu định lượng?",
-    "answers": {
-      "A": "Càng nhiều chiều không gian thì não bộ càng khó ước lượng chính xác",
-      "B": "Mắt người thường gặp khó khăn khi so sánh tỷ lệ giữa các diện tích",
-      "C": "Biểu diễn 2D và 3D luôn phức tạp hơn các dạng 1D (đường thẳng)",
-      "D": "Bởi vì Area luôn đem lại kết quả đọc chính xác hơn so với Length"
-    },
-    "correctAnswers": ["A", "B", "C"],
+    "answers": [
+      "Càng nhiều chiều không gian thì não bộ càng khó ước lượng chính xác (T)",
+      "Mắt người thường gặp khó khăn khi so sánh tỷ lệ giữa các diện tích (T)",
+      "Biểu diễn 2D và 3D luôn phức tạp hơn các dạng 1D (đường thẳng) (T)",
+      "Bởi vì Area luôn đem lại kết quả đọc chính xác hơn so với Length (F)"
+    ],
     "explanation": "Con người ước lượng độ dài (1D) rất tốt, nhưng khi lên 2D (Area) hoặc 3D (Volume), sai số nhận thức tăng lên đáng kể."
   },
   {
     "id": "visual_q26",
     "question": "Kênh thị giác nào tối ưu nhất cho việc phân loại dữ liệu Nominal (Định danh)?",
-    "answers": {
-      "A": "Phân chia theo vùng không gian (Spatial region)",
-      "B": "Sắc thái màu sắc (Color Hue)",
-      "C": "Vị trí trên trục tọa độ (Position)",
-      "D": "Kích thước độ dài (Length)"
-    },
-    "correctAnswers": ["B"],
+    "answers": [
+      "Phân chia theo vùng không gian (Spatial region) (F)",
+      "Sắc thái màu sắc (Color Hue) (T)",
+      "Vị trí trên trục tọa độ (Position) (F)",
+      "Kích thước độ dài (Length) (F)"
+    ],
     "explanation": "Color Hue (các màu khác nhau như Đỏ, Xanh, Vàng) là kênh tốt nhất để phân biệt các danh mục không có thứ tự."
   },
   {
     "id": "visual_q27",
     "question": "Khi sử dụng màu sắc cho dữ liệu Nominal, nên giới hạn số lượng màu như thế nào?",
-    "answers": {
-      "A": "Nên duy trì ở mức dưới 6-10 sắc thái màu",
-      "B": "Có thể sử dụng không giới hạn số lượng màu",
-      "C": "Chỉ nên sử dụng tối đa là 3 màu khác nhau",
-      "D": "Càng sử dụng nhiều màu thì biểu đồ càng chi tiết"
-    },
-    "correctAnswers": ["A"],
+    "answers": [
+      "Nên duy trì ở mức dưới 6-10 sắc thái màu (T)",
+      "Có thể sử dụng không giới hạn số lượng màu (F)",
+      "Chỉ nên sử dụng tối đa là 3 màu khác nhau (F)",
+      "Càng sử dụng nhiều màu thì biểu đồ càng chi tiết (F)"
+    ],
     "explanation": "Quá nhiều màu (trên 10) sẽ khiến người xem khó phân biệt và ghi nhớ ý nghĩa của từng màu, gây nhiễu thị giác."
   },
   {
     "id": "visual_q28",
     "question": "Tại sao Color Hue (Sắc thái màu) không phù hợp để biểu diễn dữ liệu định lượng?",
-    "answers": {
-      "A": "Người xem không thể xác định màu nào mang giá trị 'lớn hơn'",
-      "B": "Màu sắc tự thân không có một thứ tự ưu tiên tự nhiên",
-      "C": "Khó có thể nói màu Xanh lá 'nhiều hơn' hay 'ít hơn' màu Tím",
-      "D": "Thực tế Color Hue là kênh hiệu quả nhất cho dữ liệu Quantitative"
-    },
-    "correctAnswers": ["A", "B", "C"],
+    "answers": [
+      "Người xem không thể xác định màu nào mang giá trị 'lớn hơn' (T)",
+      "Màu sắc tự thân không có một thứ tự ưu tiên tự nhiên (T)",
+      "Khó có thể nói màu Xanh lá 'nhiều hơn' hay 'ít hơn' màu Tím (T)",
+      "Thực tế Color Hue là kênh hiệu quả nhất cho dữ liệu Quantitative (F)"
+    ],
     "explanation": "Vì Color Hue không có tính thứ tự (Ordinal) hay độ lớn (Quantitative), não người không thể tự sắp xếp chúng theo thang đo số lượng."
   },
   {
     "id": "visual_q29",
     "question": "Khái niệm 'Visual Encoding' (Mã hóa thị giác) có nghĩa là gì?",
-    "answers": {
-      "A": "Quá trình chuyển đổi dữ liệu thô thành các yếu tố hình ảnh",
-      "B": "Biến đổi các con số thành hình dạng, màu sắc và vị trí",
-      "C": "Được coi là ngôn ngữ cốt lõi trong lĩnh vực trực quan hóa",
-      "D": "Kỹ thuật chỉ sử dụng duy nhất màu sắc để trình bày"
-    },
-    "correctAnswers": ["A", "B", "C"],
+    "answers": [
+      "Quá trình chuyển đổi dữ liệu thô thành các yếu tố hình ảnh (T)",
+      "Biến đổi các con số thành hình dạng, màu sắc và vị trí (T)",
+      "Được coi là ngôn ngữ cốt lõi trong lĩnh vực trực quan hóa (T)",
+      "Kỹ thuật chỉ sử dụng duy nhất màu sắc để trình bày (F)"
+    ],
     "explanation": "Visual Encoding là bước then chốt: lấy dữ liệu (data) ánh xạ vào các thuộc tính thị giác (visual properties) để tạo ra biểu đồ."
   },
   {
     "id": "visual_q30",
     "question": "Nguyên tắc 'Expressiveness' (Tính diễn đạt) trong trực quan hóa yêu cầu điều gì?",
-    "answers": {
-      "A": "Phải thể hiện trung thực và đúng đắn các mối quan hệ trong dữ liệu",
-      "B": "Thông tin trình bày phải vừa đủ, không dư thừa cũng không thiếu sót",
-      "C": "Tuyệt đối không gợi ý về những mối quan hệ thực tế không tồn tại",
-      "D": "Tập trung tối đa vào việc làm cho biểu đồ trở nên nghệ thuật và đẹp mắt"
-    },
-    "correctAnswers": ["A", "B", "C"],
+    "answers": [
+      "Phải thể hiện trung thực và đúng đắn các mối quan hệ trong dữ liệu (T)",
+      "Thông tin trình bày phải vừa đủ, không dư thừa cũng không thiếu sót (T)",
+      "Tuyệt đối không gợi ý về những mối quan hệ thực tế không tồn tại (T)",
+      "Tập trung tối đa vào việc làm cho biểu đồ trở nên nghệ thuật và đẹp mắt (F)"
+    ],
     "explanation": "Tính diễn đạt (Expressiveness) nhấn mạnh vào sự thật: chỉ diễn đạt những gì có trong dữ liệu và không làm người xem hiểu lầm về các mối quan hệ ảo."
   }
 ]

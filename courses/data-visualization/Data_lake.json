@@ -1,602 +1,552 @@
 [
   {
-    "id":  "lake_q1",
+    "id": "lake_q1",
     "question": "Tư duy Big Data mới có đặc điểm gì?",
-    "answers": {
-      "A": "Mọi dữ liệu đều có giá trị tiềm năng",
-      "B": "Lưu trữ ở native format",
-      "C": "Schema-on-write trước khi lưu",
-      "D": "Schema-on-read khi truy vấn"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Big Data mới:  mọi data có value (A), lưu native format (B), schema-on-read (D). Schema-on-write là approach cũ của DW, không phải Big Data thinking."
+    "answers": [
+      "Mọi dữ liệu đều có giá trị tiềm năng (T)",
+      "Lưu trữ ở native format (T)",
+      "Schema-on-write trước khi lưu (F)",
+      "Schema-on-read khi truy vấn (T)"
+    ],
+    "explanation": "Big Data mới: mọi data có value , lưu native format , schema-on-read . Schema-on-write là approach cũ của DW, không phải Big Data thinking."
   },
   {
     "id": "lake_q2",
     "question": "Schema-on-read có lợi ích gì?",
-    "answers": {
-      "A": "Linh hoạt trong cách giải thích dữ liệu",
-      "B": "Người dùng tự định nghĩa structure khi query",
-      "C": "Đảm bảo consistency tuyệt đối",
-      "D": "Không cần define schema khi load"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Schema-on-read cho phép flexibility (A), users tự define khi query (B), không cần schema trước (D). Consistency tuyệt đối là của schema-on-write."
+    "answers": [
+      "Linh hoạt trong cách giải thích dữ liệu (T)",
+      "Người dùng tự định nghĩa structure khi query (T)",
+      "Đảm bảo consistency tuyệt đối (F)",
+      "Không cần define schema khi load (T)"
+    ],
+    "explanation": "Schema-on-read cho phép flexibility , users tự define khi query , không cần schema trước . Consistency tuyệt đối là của schema-on-write."
   },
   {
     "id": "lake_q3",
     "question": "Data Lake có đặc điểm gì? ",
-    "answers": {
-      "A": "Lưu trữ tập trung cho mọi loại dữ liệu",
-      "B": "Chỉ structured data",
-      "C": "Bất kỳ quy mô nào",
-      "D": "Dữ liệu dưới dạng gần như/hoàn toàn native"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Data Lake: centralized storage (A), bất kỳ scale (C), native format (D). Nó lưu MỌI loại data, không chỉ structured."
+    "answers": [
+      "Lưu trữ tập trung cho mọi loại dữ liệu (T)",
+      "Chỉ structured data (F)",
+      "Bất kỳ quy mô nào (T)",
+      "Dữ liệu dưới dạng gần như/hoàn toàn native (T)"
+    ],
+    "explanation": "Data Lake: centralized storage , bất kỳ scale , native format . Nó lưu MỌI loại data, không chỉ structured."
   },
   {
-    "id":  "lake_q4",
+    "id": "lake_q4",
     "question": "Data Warehouse approach (Top-down) bao gồm bước nào?",
-    "answers":  {
-      "A": "Understand strategy & gather requirements",
-      "B": "Ingest all data trước",
-      "C": "Design reports và dimensional modeling",
-      "D": "Design ETL và setup infrastructure"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "DW top-down:  requirements first (A), design reports/modeling (C), ETL/infrastructure (D). Ingest all data trước là bottom-up approach của Lake."
+    "answers": [
+      "Understand strategy & gather requirements (T)",
+      "Ingest all data trước (F)",
+      "Design reports và dimensional modeling (T)",
+      "Design ETL và setup infrastructure (T)"
+    ],
+    "explanation": "DW top-down: requirements first , design reports/modeling , ETL/infrastructure . Ingest all data trước là bottom-up approach của Lake."
   },
   {
     "id": "lake_q5",
     "question": "Data Lake approach (Bottom-up) thực hiện như thế nào?",
-    "answers": {
-      "A": "Ingest all data bất kể requirements",
-      "B": "Store ở native format",
-      "C": "Define schema trước khi load",
-      "D": "Do analysis sau khi đã có data"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Lake bottom-up: ingest all (A), native format (B), analyze sau (D). Define schema trước là top-down DW approach."
+    "answers": [
+      "Ingest all data bất kể requirements (T)",
+      "Store ở native format (T)",
+      "Define schema trước khi load (F)",
+      "Do analysis sau khi đã có data (T)"
+    ],
+    "explanation": "Lake bottom-up: ingest all , native format , analyze sau . Define schema trước là top-down DW approach."
   },
   {
     "id": "lake_q6",
     "question": "So sánh Data Warehouse và Data Lake về dữ liệu? ",
-    "answers": {
-      "A": "DW:  cleaned, aggregated, structured",
-      "B": "Lake:  raw, native, mọi format",
-      "C":  "DW: raw và unstructured",
-      "D":  "Lake: chỉ structured data"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "DW có cleaned/structured data (A), Lake có raw/mọi format (B). DW KHÔNG raw, Lake KHÔNG chỉ structured."
+    "answers": [
+      "DW:  cleaned, aggregated, structured (T)",
+      "Lake:  raw, native, mọi format (T)",
+      "DW: raw và unstructured (F)",
+      "Lake: chỉ structured data (F)"
+    ],
+    "explanation": "DW có cleaned/structured data , Lake có raw/mọi format . DW KHÔNG raw, Lake KHÔNG chỉ structured."
   },
   {
-    "id":  "lake_q7",
+    "id": "lake_q7",
     "question": "So sánh về Schema giữa DW và Lake? ",
-    "answers": {
-      "A": "DW:  Schema-on-write",
-      "B": "Lake:  Schema-on-read",
-      "C": "DW: Schema-on-read",
-      "D": "Lake:  Không cần schema"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "DW dùng schema-on-write (A), Lake dùng schema-on-read (B). Lake VẪN cần schema nhưng define khi read, không phải không cần."
+    "answers": [
+      "DW:  Schema-on-write (T)",
+      "Lake:  Schema-on-read (T)",
+      "DW: Schema-on-read (F)",
+      "Lake:  Không cần schema (F)"
+    ],
+    "explanation": "DW dùng schema-on-write , Lake dùng schema-on-read . Lake VẪN cần schema nhưng define khi read, không phải không cần."
   },
   {
     "id": "lake_q8",
     "question": "Users của Data Warehouse và Data Lake khác nhau như thế nào?",
-    "answers": {
-      "A": "DW: Business managers, analysts",
-      "B": "Lake: Data scientists, advanced analysts",
-      "C": "DW: Data scientists chủ yếu",
-      "D":  "Lake: Non-technical users"
-    },
-    "correctAnswers": ["A", "B"],
-    "explanation": "DW cho business users/analysts (A), Lake cho data scientists (B). DW KHÔNG chủ yếu data scientists, Lake KHÔNG cho non-technical users."
+    "answers": [
+      "DW: Business managers, analysts (T)",
+      "Lake: Data scientists, advanced analysts (T)",
+      "DW: Data scientists chủ yếu (F)",
+      "Lake: Non-technical users (F)"
+    ],
+    "explanation": "DW cho business users/analysts , Lake cho data scientists . DW KHÔNG chủ yếu data scientists, Lake KHÔNG cho non-technical users."
   },
   {
-    "id":  "lake_q9",
+    "id": "lake_q9",
     "question": "Azure HDInsight có đặc điểm gì? ",
-    "answers": {
-      "A": "Fully managed Hadoop và Spark",
-      "B":  "100% Open source",
-      "C": "Proprietary Microsoft technology",
-      "D": "Deploy trong vài phút"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "HDInsight: fully managed (A), 100% open source - Hortonworks (B), fast deploy (D). Nó KHÔNG phải proprietary mà dựa open source."
+    "answers": [
+      "Fully managed Hadoop và Spark (T)",
+      "100% Open source (T)",
+      "Proprietary Microsoft technology (F)",
+      "Deploy trong vài phút (T)"
+    ],
+    "explanation": "HDInsight: fully managed , 100% open source - Hortonworks , fast deploy . Nó KHÔNG phải proprietary mà dựa open source."
   },
   {
     "id": "lake_q10",
-    "question":  "Azure Data Lake Store (ADLS) có tính năng gì?",
-    "answers": {
-      "A": "HDFS for cloud",
-      "B": "Unlimited scale",
-      "C": "Giới hạn 100TB storage",
-      "D": "Native format support"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "ADLS:  HDFS cloud (A), unlimited scale (B), native format (D). Nó KHÔNG giới hạn 100TB mà unlimited."
+    "question": "Azure Data Lake Store (ADLS) có tính năng gì?",
+    "answers": [
+      "HDFS for cloud (T)",
+      "Unlimited scale (T)",
+      "Giới hạn 100TB storage (F)",
+      "Native format support (T)"
+    ],
+    "explanation": "ADLS: HDFS cloud , unlimited scale , native format . Nó KHÔNG giới hạn 100TB mà unlimited."
   },
   {
     "id": "lake_q11",
     "question": "Azure Data Lake Analytics (ADLA) đặc điểm? ",
-    "answers": {
-      "A": "Built on Apache YARN",
-      "B": "U-SQL language (SQL + C#)",
-      "C": "Chỉ hỗ trợ SQL thuần",
-      "D": "Per-query scaling"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation":  "ADLA: built on YARN (A), U-SQL hybrid (B), per-query scaling (D). Nó KHÔNG chỉ SQL thuần mà SQL + C# expressive power."
+    "answers": [
+      "Built on Apache YARN (T)",
+      "U-SQL language (SQL + C#) (T)",
+      "Chỉ hỗ trợ SQL thuần (F)",
+      "Per-query scaling (T)"
+    ],
+    "explanation": "ADLA: built on YARN , U-SQL hybrid , per-query scaling . Nó KHÔNG chỉ SQL thuần mà SQL + C# expressive power."
   },
   {
     "id": "lake_q12",
     "question": "U-SQL language có ưu điểm gì?",
-    "answers": {
-      "A": "Kết hợp SQL declarative",
-      "B": "Kết hợp C# expressive power",
-      "C": "Chỉ dùng được với Azure",
-      "D": "Familiar cho SQL developers"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "U-SQL: SQL declarative (A), C# power (B), familiar cho SQL devs (D). Về mặt kỹ thuật nó Azure-specific nhưng không phải là 'ưu điểm'."
+    "answers": [
+      "Kết hợp SQL declarative (T)",
+      "Kết hợp C# expressive power (T)",
+      "Chỉ dùng được với Azure (F)",
+      "Familiar cho SQL developers (T)"
+    ],
+    "explanation": "U-SQL: SQL declarative , C# power , familiar cho SQL devs . Về mặt kỹ thuật nó Azure-specific nhưng không phải là 'ưu điểm'."
   },
   {
     "id": "lake_q13",
     "question": "Data Lakehouse là gì?",
-    "answers": {
-      "A": "Kết hợp DW và Lake trên cùng platform",
-      "B": "Chỉ là tên khác của Data Lake",
-      "C": "Xuất hiện phổ biến từ ~2020",
-      "D":  "Best of both worlds"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Lakehouse: kết hợp DW+Lake (A), từ 2020 (C), best of both (D). Nó KHÔNG phải tên khác của Lake mà là architecture mới."
+    "answers": [
+      "Kết hợp DW và Lake trên cùng platform (T)",
+      "Chỉ là tên khác của Data Lake (F)",
+      "Xuất hiện phổ biến từ ~2020 (T)",
+      "Best of both worlds (T)"
+    ],
+    "explanation": "Lakehouse: kết hợp DW+Lake , từ 2020 , best of both . Nó KHÔNG phải tên khác của Lake mà là architecture mới."
   },
   {
     "id": "lake_q14",
-    "question":  "5 core capabilities của Data Lakehouse? ",
-    "answers": {
-      "A": "Audit history",
-      "B": "Data versioning",
-      "C": "Real-time transactions chỉ",
-      "D":  "ACID transactions và Schema evolution"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "5 capabilities:  Audit history (A), Versioning (B), ACID + Schema evolution (D), plus Distributed compute/storage.  Không phải chỉ real-time."
+    "question": "5 core capabilities của Data Lakehouse? ",
+    "answers": [
+      "Audit history (T)",
+      "Data versioning (T)",
+      "Real-time transactions chỉ (F)",
+      "ACID transactions và Schema evolution (T)"
+    ],
+    "explanation": "5 capabilities: Audit history , Versioning , ACID + Schema evolution , plus Distributed compute/storage. Không phải chỉ real-time."
   },
   {
     "id": "lake_q15",
     "question": "Audit History trong Lakehouse có tác dụng gì?",
-    "answers": {
-      "A": "Theo dõi mọi thay đổi dữ liệu",
-      "B": "Biết ai làm gì, khi nào",
-      "C": "Tăng storage cost",
-      "D": "Compliance và governance"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation":  "Audit history:  track changes (A), who/when (B), compliance (D). Nó có thể tăng storage nhưng không phải 'tác dụng' mà là trade-off."
+    "answers": [
+      "Theo dõi mọi thay đổi dữ liệu (T)",
+      "Biết ai làm gì, khi nào (T)",
+      "Tăng storage cost (F)",
+      "Compliance và governance (T)"
+    ],
+    "explanation": "Audit history: track changes , who/when , compliance . Nó có thể tăng storage nhưng không phải 'tác dụng' mà là trade-off."
   },
   {
     "id": "lake_q16",
     "question": "Data Versioning trong Lakehouse cho phép gì?",
-    "answers":  {
-      "A": "Quay lại phiên bản cũ (time travel)",
-      "B": "Khôi phục sau sai sót",
-      "C": "Xóa vĩnh viễn data cũ",
-      "D":  "So sánh kết quả giữa các thời điểm"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Versioning: time travel (A), recovery (B), comparison (D). Nó GIỮ data versions, không xóa vĩnh viễn."
+    "answers": [
+      "Quay lại phiên bản cũ (time travel) (T)",
+      "Khôi phục sau sai sót (T)",
+      "Xóa vĩnh viễn data cũ (F)",
+      "So sánh kết quả giữa các thời điểm (T)"
+    ],
+    "explanation": "Versioning: time travel , recovery , comparison . Nó GIỮ data versions, không xóa vĩnh viễn."
   },
   {
     "id": "lake_q17",
     "question": "ACID transactions trong Lakehouse đảm bảo gì?",
-    "answers": {
-      "A": "Atomicity - All or nothing",
-      "B":  "Consistency - dữ liệu nhất quán",
-      "C": "Eventual consistency only",
-      "D": "Isolation và Durability"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "ACID:  Atomicity (A), Consistency (B), Isolation và Durability (D). Nó đảm bảo STRONG consistency, không phải eventual."
+    "answers": [
+      "Atomicity - All or nothing (T)",
+      "Consistency - dữ liệu nhất quán (T)",
+      "Eventual consistency only (F)",
+      "Isolation và Durability (T)"
+    ],
+    "explanation": "ACID: Atomicity , Consistency , Isolation và Durability . Nó đảm bảo STRONG consistency, không phải eventual."
   },
   {
     "id": "lake_q18",
     "question": "Schema Evolution trong Lakehouse có lợi ích gì?",
-    "answers": {
-      "A": "Thêm/bớt columns linh hoạt",
-      "B": "Không làm hỏng processes hiện có",
-      "C": "Phải rebuild toàn bộ data",
-      "D": "Backward/forward compatibility"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Schema evolution: flexible columns (A), không break processes (B), compatibility (D). Nó KHÔNG cần rebuild toàn bộ data."
+    "answers": [
+      "Thêm/bớt columns linh hoạt (T)",
+      "Không làm hỏng processes hiện có (T)",
+      "Phải rebuild toàn bộ data (F)",
+      "Backward/forward compatibility (T)"
+    ],
+    "explanation": "Schema evolution: flexible columns , không break processes , compatibility . Nó KHÔNG cần rebuild toàn bộ data."
   },
   {
     "id": "lake_q19",
     "question": "Evolution của data platforms theo timeline?",
-    "answers": {
-      "A": "1980s: Data Warehouse",
-      "B": "2011: Data Lake",
-      "C": "2000:  Data Lakehouse",
-      "D": "2020: Data Lakehouse"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Timeline: 1980s DW (A), 2011 Lake (B), 2020 Lakehouse (D). Lakehouse xuất hiện 2020, không phải 2000."
+    "answers": [
+      "1980s: Data Warehouse (T)",
+      "2011: Data Lake (T)",
+      "2000:  Data Lakehouse (F)",
+      "2020: Data Lakehouse (T)"
+    ],
+    "explanation": "Timeline: 1980s DW , 2011 Lake , 2020 Lakehouse . Lakehouse xuất hiện 2020, không phải 2000."
   },
   {
     "id": "lake_q20",
     "question": "Data Warehouse (1980s) có limitations gì?",
-    "answers": {
-      "A": "Khó xử lý unstructured data",
-      "B": "Chi phí cao",
-      "C": "Quá linh hoạt",
-      "D": "Rigid schema"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "DW limitations: không handle unstructured (A), expensive (B), rigid (D). DW KHÔNG quá flexible mà quá rigid."
+    "answers": [
+      "Khó xử lý unstructured data (T)",
+      "Chi phí cao (T)",
+      "Quá linh hoạt (F)",
+      "Rigid schema (T)"
+    ],
+    "explanation": "DW limitations: không handle unstructured , expensive , rigid . DW KHÔNG quá flexible mà quá rigid."
   },
   {
     "id": "lake_q21",
     "question": "Data Lake (2011) có limitations gì?",
-    "answers": {
-      "A": "Thiếu governance chặt chẽ",
-      "B": "Dễ trở thành Data Swamp",
-      "C": "Chi phí quá cao",
-      "D": "Không có ACID guarantees"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Lake limitations: weak governance (A), swamp risk (B), no ACID (D). Chi phí của Lake THẤP, không phải cao."
+    "answers": [
+      "Thiếu governance chặt chẽ (T)",
+      "Dễ trở thành Data Swamp (T)",
+      "Chi phí quá cao (F)",
+      "Không có ACID guarantees (T)"
+    ],
+    "explanation": "Lake limitations: weak governance , swamp risk , no ACID . Chi phí của Lake THẤP, không phải cao."
   },
   {
     "id": "lake_q22",
     "question": "Data Lake zones thường bao gồm?",
-    "answers": {
-      "A": "Staging - vùng đệm tạm",
-      "B": "Raw - lưu gốc mãi mãi",
-      "C":  "Production - xử lý real-time",
-      "D":  "Curated - đã tinh chế sẵn sàng"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Common zones:  Staging (A), Raw permanent (B), Curated ready (D). 'Production' không phải zone terminology chuẩn trong Lake."
+    "answers": [
+      "Staging - vùng đệm tạm (T)",
+      "Raw - lưu gốc mãi mãi (T)",
+      "Production - xử lý real-time (F)",
+      "Curated - đã tinh chế sẵn sàng (T)"
+    ],
+    "explanation": "Common zones: Staging , Raw permanent , Curated ready . 'Production' không phải zone terminology chuẩn trong Lake."
   },
   {
     "id": "lake_q23",
     "question": "Sandbox zone trong Data Lake có đặc điểm gì? ",
-    "answers": {
-      "A": "Không gian tự do cho data scientists",
-      "B": "Strict governance controls",
-      "C": "Exploration và experimentation",
-      "D": "Relaxed governance"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Sandbox: free space cho scientists (A), exploration (C), relaxed governance (D). Nó KHÔNG có strict controls mà relaxed."
+    "answers": [
+      "Không gian tự do cho data scientists (T)",
+      "Strict governance controls (F)",
+      "Exploration và experimentation (T)",
+      "Relaxed governance (T)"
+    ],
+    "explanation": "Sandbox: free space cho scientists , exploration , relaxed governance . Nó KHÔNG có strict controls mà relaxed."
   },
   {
     "id": "lake_q24",
-    "question":  "Repository Layering trong Data Lake?",
-    "answers": {
-      "A":  "Raw layer - restricted access",
-      "B": "Cleansed layer - consumer access",
-      "C": "Sandbox - data experts only",
-      "D": "Tất cả layers đều public access"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Layering: Raw restricted (A), Cleansed consumers (B), Sandbox experts (C). KHÔNG phải tất cả public - có access control khác nhau."
+    "question": "Repository Layering trong Data Lake?",
+    "answers": [
+      "Raw layer - restricted access (T)",
+      "Cleansed layer - consumer access (T)",
+      "Sandbox - data experts only (T)",
+      "Tất cả layers đều public access (F)"
+    ],
+    "explanation": "Layering: Raw restricted , Cleansed consumers , Sandbox experts . KHÔNG phải tất cả public - có access control khác nhau."
   },
   {
     "id": "lake_q25",
-    "question":  "Raw Files layer có đặc điểm gì? ",
-    "answers": {
-      "A": "Landing zone đầu tiên",
-      "B": "Structure:  /year/month/day/hour/minute",
-      "C": "Compression:  Snappy",
-      "D": "Format: As-is, Gzip compression"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Raw Files: landing zone (A), granular structure (B), As-is + Gzip (D). Snappy dùng ở Raw Data layer, không phải Raw Files."
+    "question": "Raw Files layer có đặc điểm gì? ",
+    "answers": [
+      "Landing zone đầu tiên (T)",
+      "Structure:  /year/month/day/hour/minute (T)",
+      "Compression:  Snappy (F)",
+      "Format: As-is, Gzip compression (T)"
+    ],
+    "explanation": "Raw Files: landing zone , granular structure , As-is + Gzip . Snappy dùng ở Raw Data layer, không phải Raw Files."
   },
   {
     "id": "lake_q26",
     "question": "Tại sao Raw Files layer dùng Gzip?",
-    "answers":  {
-      "A": "Best compression ratio",
-      "B": "Tiết kiệm storage space",
-      "C": "Fastest decompression",
-      "D":  "Fast ingestion speed"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Gzip: best compression (A), save space (B), fast ingestion (D). Gzip KHÔNG fastest decompression - Snappy mới nhanh."
+    "answers": [
+      "Best compression ratio (T)",
+      "Tiết kiệm storage space (T)",
+      "Fastest decompression (F)",
+      "Fast ingestion speed (T)"
+    ],
+    "explanation": "Gzip: best compression , save space , fast ingestion . Gzip KHÔNG fastest decompression - Snappy mới nhanh."
   },
   {
     "id": "lake_q27",
     "question": "Raw Data layer khác Raw Files layer như thế nào?",
-    "answers": {
-      "A": "Dữ liệu queryable",
-      "B": "Sequence Files format",
-      "C": "Text format as-is",
-      "D":  "Snappy compression"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Raw Data: queryable (A), Sequence Files (B), Snappy (D). Text as-is là Raw Files layer, không phải Raw Data."
+    "answers": [
+      "Dữ liệu queryable (T)",
+      "Sequence Files format (T)",
+      "Text format as-is (F)",
+      "Snappy compression (T)"
+    ],
+    "explanation": "Raw Data: queryable , Sequence Files , Snappy . Text as-is là Raw Files layer, không phải Raw Data."
   },
   {
     "id": "lake_q28",
     "question": "Tại sao Raw Data layer dùng Snappy compression?",
-    "answers": {
-      "A": "Tốc độ nén/giải nén cực nhanh",
-      "B":  "Best compression ratio",
-      "C":  "Phù hợp parallel processing",
-      "D": "Splittable"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Snappy: fast compression/decompression (A), parallel processing (C), splittable (D). Nó KHÔNG có best ratio mà trade-off cho speed."
+    "answers": [
+      "Tốc độ nén/giải nén cực nhanh (T)",
+      "Best compression ratio (F)",
+      "Phù hợp parallel processing (T)",
+      "Splittable (T)"
+    ],
+    "explanation": "Snappy: fast compression/decompression , parallel processing , splittable . Nó KHÔNG có best ratio mà trade-off cho speed."
   },
   {
     "id": "lake_q29",
     "question": "Business Data layer có đặc điểm gì?",
-    "answers": {
-      "A": "Parquet Files format",
-      "B": "Columnar storage",
-      "C":  "Row-based storage",
-      "D": "Sẵn sàng cho analytics"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Business Data: Parquet (A), columnar (B), analytics-ready (D). Parquet là COLUMNAR, không phải row-based."
+    "answers": [
+      "Parquet Files format (T)",
+      "Columnar storage (T)",
+      "Row-based storage (F)",
+      "Sẵn sàng cho analytics (T)"
+    ],
+    "explanation": "Business Data: Parquet , columnar , analytics-ready . Parquet là COLUMNAR, không phải row-based."
   },
   {
     "id": "lake_q30",
     "question": "Tại sao Business Data layer dùng Parquet?",
-    "answers": {
-      "A":  "Columnar format - chỉ đọc cần columns",
-      "B": "Tối ưu cho Presto, Impala, Synapse",
-      "C": "Best cho small files",
-      "D": "Fast query performance"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Parquet: columnar reading (A), optimized cho query engines (B), fast performance (D). Nó tốt cho LARGE files, không phải small."
+    "answers": [
+      "Columnar format - chỉ đọc cần columns (T)",
+      "Tối ưu cho Presto, Impala, Synapse (T)",
+      "Best cho small files (F)",
+      "Fast query performance (T)"
+    ],
+    "explanation": "Parquet: columnar reading , optimized cho query engines , fast performance . Nó tốt cho LARGE files, không phải small."
   },
   {
     "id": "lake_q31",
     "question": "Compression strategy evolution trong Lake layers?",
-    "answers": {
-      "A": "Gzip (size priority) → Snappy (speed priority)",
-      "B": "Snappy → Gzip",
-      "C": "No compression → Gzip",
-      "D": "Focus thay đổi từ storage sang processing speed"
-    },
-    "correctAnswers": ["A", "D"],
-    "explanation": "Evolution: Gzip→Snappy (A), storage priority→speed priority (D). Direction là Gzip→Snappy, không phải ngược lại."
+    "answers": [
+      "Gzip (size priority) → Snappy (speed priority) (T)",
+      "Snappy → Gzip (F)",
+      "No compression → Gzip (F)",
+      "Focus thay đổi từ storage sang processing speed (T)"
+    ],
+    "explanation": "Evolution: Gzip→Snappy , storage priority→speed priority . Direction là Gzip→Snappy, không phải ngược lại."
   },
   {
     "id": "lake_q32",
-    "question":  "Storage format evolution trong Lake layers?",
-    "answers": {
-      "A": "Text/Native → Sequence → Parquet",
-      "B": "Parquet → Sequence → Text",
-      "C": "Progressive optimization cho Big Data",
-      "D": "Từ general-purpose đến specialized"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Format evolution: Text→Sequence→Parquet (A), progressive optimization (C), general→specialized (D). Direction là forward, không backward."
+    "question": "Storage format evolution trong Lake layers?",
+    "answers": [
+      "Text/Native → Sequence → Parquet (T)",
+      "Parquet → Sequence → Text (F)",
+      "Progressive optimization cho Big Data (T)",
+      "Từ general-purpose đến specialized (T)"
+    ],
+    "explanation": "Format evolution: Text→Sequence→Parquet , progressive optimization , general→specialized . Direction là forward, không backward."
   },
   {
     "id": "lake_q33",
     "question": "Gartner 5-Step process bước 1 (Prework) bao gồm?",
-    "answers": {
-      "A":  "Identify Lake Architect",
-      "B": "Assemble team",
-      "C": "Implement infrastructure ngay",
-      "D": "Determine strategy và track risks"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Prework: architect (A), team (B), strategy/risks (D). Infrastructure implementation là bước sau, không phải prework."
+    "answers": [
+      "Identify Lake Architect (T)",
+      "Assemble team (T)",
+      "Implement infrastructure ngay (F)",
+      "Determine strategy và track risks (T)"
+    ],
+    "explanation": "Prework: architect , team , strategy/risks . Infrastructure implementation là bước sau, không phải prework."
   },
   {
     "id": "lake_q34",
     "question": "Gartner Step 2 (Macro Architecture) xác định gì?",
-    "answers":  {
-      "A": "Inbound/Outbound data flows",
-      "B": "Data Lab environment",
-      "C": "Detailed security policies",
-      "D": "Platform choice (Cloud/On-premise)"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Macro: data flows (A), lab (B), platform choice (D). Detailed security policies ở Micro level (Step 4), không phải Macro."
+    "answers": [
+      "Inbound/Outbound data flows (T)",
+      "Data Lab environment (T)",
+      "Detailed security policies (F)",
+      "Platform choice (Cloud/On-premise) (T)"
+    ],
+    "explanation": "Macro: data flows , lab , platform choice . Detailed security policies ở Micro level (Step 4), không phải Macro."
   },
   {
     "id": "lake_q35",
     "question": "Gartner Step 3 (Medium-Level/Zones) quan trọng vì sao?",
-    "answers":  {
-      "A": "Bước quan trọng nhất",
-      "B": "Tránh Data Swamp",
-      "C": "Define zones (Raw, Cleansed, Curated)",
-      "D": "Bước ít quan trọng nhất"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Step 3: most critical (A), avoid swamp (B), define zones (C). Đây là bước QUAN TRỌNG NHẤT, không phải ít quan trọng."
+    "answers": [
+      "Bước quan trọng nhất (T)",
+      "Tránh Data Swamp (T)",
+      "Define zones (Raw, Cleansed, Curated) (T)",
+      "Bước ít quan trọng nhất (F)"
+    ],
+    "explanation": "Step 3: most critical , avoid swamp , define zones . Đây là bước QUAN TRỌNG NHẤT, không phải ít quan trọng."
   },
   {
     "id": "lake_q36",
     "question": "Gartner Step 4 (Micro-Level) chi tiết hóa gì?",
-    "answers":  {
-      "A": "Security mechanisms (encryption, access control)",
-      "B": "Metadata catalog",
-      "C": "Business strategy",
-      "D": "Tools & platforms, performance optimization"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Micro: security details (A), metadata (B), tools/performance (D). Business strategy ở Step 1 (Prework), không phải Micro."
+    "answers": [
+      "Security mechanisms (encryption, access control) (T)",
+      "Metadata catalog (T)",
+      "Business strategy (F)",
+      "Tools & platforms, performance optimization (T)"
+    ],
+    "explanation": "Micro: security details , metadata , tools/performance . Business strategy ở Step 1 (Prework), không phải Micro."
   },
   {
     "id": "lake_q37",
     "question": "Gartner Step 5 (Follow-Up) bao gồm activities nào?",
-    "answers":  {
-      "A": "Continuous improvement",
-      "B": "One-time setup xong",
-      "C": "Service quality monitoring",
-      "D": "System maintenance"
-    },
-    "correctAnswers": ["A", "C", "D"],
-    "explanation": "Follow-up: continuous improvement (A), quality monitoring (C), maintenance (D). Lake architecture KHÔNG phải one-time mà continuous."
+    "answers": [
+      "Continuous improvement (T)",
+      "One-time setup xong (F)",
+      "Service quality monitoring (T)",
+      "System maintenance (T)"
+    ],
+    "explanation": "Follow-up: continuous improvement , quality monitoring , maintenance . Lake architecture KHÔNG phải one-time mà continuous."
   },
   {
     "id": "lake_q38",
     "question": "Data Lake benefits bao gồm?",
-    "answers": {
-      "A": "Productionizing advanced analytics",
-      "B": "Exploit value từ mọi loại dữ liệu",
-      "C": "Chỉ hỗ trợ structured data",
-      "D": "Reduce TCO"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Benefits: advanced analytics (A), mọi data types (B), reduce TCO (D). Lake hỗ trợ MỌI loại, không chỉ structured."
+    "answers": [
+      "Productionizing advanced analytics (T)",
+      "Exploit value từ mọi loại dữ liệu (T)",
+      "Chỉ hỗ trợ structured data (F)",
+      "Reduce TCO (T)"
+    ],
+    "explanation": "Benefits: advanced analytics , mọi data types , reduce TCO . Lake hỗ trợ MỌI loại, không chỉ structured."
   },
   {
-    "id":  "lake_q39",
+    "id": "lake_q39",
     "question": "Tại sao Data Lake reduce TCO?",
-    "answers": {
-      "A": "Open-source software",
-      "B": "Commodity hardware / Cloud storage",
-      "C": "Expensive proprietary systems",
-      "D": "Chi phí/TB thấp hơn traditional DB"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Reduce TCO: open-source (A), commodity/cloud (B), low cost/TB (D). Lake TRÁNH expensive proprietary, không dùng chúng."
+    "answers": [
+      "Open-source software (T)",
+      "Commodity hardware / Cloud storage (T)",
+      "Expensive proprietary systems (F)",
+      "Chi phí/TB thấp hơn traditional DB (T)"
+    ],
+    "explanation": "Reduce TCO: open-source , commodity/cloud , low cost/TB . Lake TRÁNH expensive proprietary, không dùng chúng."
   },
   {
     "id": "lake_q40",
-    "question":  "Data Lake strategic risks? ",
-    "answers": {
-      "A": "Loss of trust từ poor data quality",
-      "B": "Loss of alignment và motivation",
-      "C": "Guaranteed success",
-      "D": "Increased security risk"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Strategic risks: loss of trust (A), alignment (B), security (D). Lake KHÔNG guarantee success mà có nhiều risks."
+    "question": "Data Lake strategic risks? ",
+    "answers": [
+      "Loss of trust từ poor data quality (T)",
+      "Loss of alignment và motivation (T)",
+      "Guaranteed success (F)",
+      "Increased security risk (T)"
+    ],
+    "explanation": "Strategic risks: loss of trust , alignment , security . Lake KHÔNG guarantee success mà có nhiều risks."
   },
   {
     "id": "lake_q41",
     "question": "Data Lake technical risks (Hadoop)?",
-    "answers": {
-      "A": "Pure Hadoop complex to operate",
-      "B": "Poor query performance vs RDBMS",
-      "C":  "Fastest query performance",
-      "D": "Limited complex query support"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Technical risks: complex operation (A), poor performance (B), limited queries (D). Lake KHÔNG fastest performance mà slower than RDBMS."
+    "answers": [
+      "Pure Hadoop complex to operate (T)",
+      "Poor query performance vs RDBMS (T)",
+      "Fastest query performance (F)",
+      "Limited complex query support (T)"
+    ],
+    "explanation": "Technical risks: complex operation , poor performance , limited queries . Lake KHÔNG fastest performance mà slower than RDBMS."
   },
   {
     "id": "lake_q42",
     "question": "Data Swamp là gì và cách tránh?",
-    "answers": {
-      "A": "Data đi vào nhưng không lấy ra được value",
-      "B": "Strong governance từ đầu",
-      "C":  "Không cần metadata management",
-      "D": "Data quality checks automated"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Data Swamp: no value extracted (A). Avoid:  strong governance (B), quality checks (D). Metadata management BẮT BUỘC, không phải không cần."
+    "answers": [
+      "Data đi vào nhưng không lấy ra được value (T)",
+      "Strong governance từ đầu (T)",
+      "Không cần metadata management (F)",
+      "Data quality checks automated (T)"
+    ],
+    "explanation": "Data Swamp: no value extracted . Avoid: strong governance , quality checks . Metadata management BẮT BUỘC, không phải không cần."
   },
   {
     "id": "lake_q43",
     "question": "Data Lake key components cần có?",
-    "answers": {
-      "A": "Security",
-      "B": "Orchestration & ELT",
-      "C":  "Không cần Governance",
-      "D": "Metadata & Analytics tools"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Key components: Security (A), Orchestration/ELT (B), Metadata/Analytics (D), VÀ Governance.  Governance là CRITICAL, không phải không cần."
+    "answers": [
+      "Security (T)",
+      "Orchestration & ELT (T)",
+      "Không cần Governance (F)",
+      "Metadata & Analytics tools (T)"
+    ],
+    "explanation": "Key components: Security , Orchestration/ELT , Metadata/Analytics , VÀ Governance. Governance là CRITICAL, không phải không cần."
   },
   {
     "id": "lake_q44",
     "question": "Lakehouse so với DW và Lake riêng lẻ?",
-    "answers": {
-      "A":  "Unified platform - không cần 2 systems",
-      "B": "Giảm data duplication",
-      "C":  "Tăng data replication",
-      "D": "DW reliability + Lake flexibility"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Lakehouse advantages: unified (A), giảm duplication (B), best of both (D). Nó GIẢM replication, không tăng."
+    "answers": [
+      "Unified platform - không cần 2 systems (T)",
+      "Giảm data duplication (T)",
+      "Tăng data replication (F)",
+      "DW reliability + Lake flexibility (T)"
+    ],
+    "explanation": "Lakehouse advantages: unified , giảm duplication , best of both . Nó GIẢM replication, không tăng."
   },
   {
     "id": "lake_q45",
     "question": "Distributed Computing & Storage trong Lakehouse?",
-    "answers": {
-      "A": "Mở rộng trên nhiều servers",
-      "B": "Xử lý khối lượng khổng lồ",
-      "C": "Single server architecture",
-      "D": "Horizontal scalability"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Distributed: multiple servers (A), large volumes (B), horizontal scale (D). Lakehouse KHÔNG single server mà distributed."
+    "answers": [
+      "Mở rộng trên nhiều servers (T)",
+      "Xử lý khối lượng khổng lồ (T)",
+      "Single server architecture (F)",
+      "Horizontal scalability (T)"
+    ],
+    "explanation": "Distributed: multiple servers , large volumes , horizontal scale . Lakehouse KHÔNG single server mà distributed."
   },
   {
     "id": "lake_q46",
     "question": "HDInsight TCO thấp hơn on-premises bao nhiêu?",
-    "answers": {
-      "A": "63%",
-      "B": "30%",
-      "C": "Managed service giảm operational cost",
-      "D": "100%"
-    },
-    "correctAnswers": ["A", "C"],
-    "explanation": "HDInsight: TCO thấp hơn 63% (A) do managed service (C). Không phải 30% hay 100%."
+    "answers": [
+      "63% (T)",
+      "30% (F)",
+      "Managed service giảm operational cost (T)",
+      "100% (F)"
+    ],
+    "explanation": "HDInsight: TCO thấp hơn 63% do managed service . Không phải 30% hay 100%."
   },
   {
     "id": "lake_q47",
     "question": "Azure Deployment Models ease of use ranking?",
-    "answers": {
-      "A": "IaaS Hadoop (lowest ease)",
-      "B": "Managed Hadoop/HDInsight (medium)",
-      "C": "Big Data as-a-Service/ADLA (highest ease)",
-      "D": "IaaS Hadoop (highest ease)"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Ease ranking: IaaS lowest (A), HDInsight medium (B), ADLA highest (C). IaaS KHÔNG highest mà lowest ease."
+    "answers": [
+      "IaaS Hadoop (lowest ease) (T)",
+      "Managed Hadoop/HDInsight (medium) (T)",
+      "Big Data as-a-Service/ADLA (highest ease) (T)",
+      "IaaS Hadoop (highest ease) (F)"
+    ],
+    "explanation": "Ease ranking: IaaS lowest , HDInsight medium , ADLA highest . IaaS KHÔNG highest mà lowest ease."
   },
   {
     "id": "lake_q48",
     "question": "File format comparison - Parquet vs ORC? ",
-    "answers": {
-      "A": "Cả hai đều columnar",
-      "B": "Cả hai đều splittable",
-      "C":  "Parquet row-based",
-      "D":  "Cả hai hỗ trợ compression"
-    },
-    "correctAnswers": ["A", "B", "D"],
-    "explanation": "Parquet và ORC: đều columnar (A), splittable (B), compression (D). Parquet KHÔNG row-based mà columnar."
+    "answers": [
+      "Cả hai đều columnar (T)",
+      "Cả hai đều splittable (T)",
+      "Parquet row-based (F)",
+      "Cả hai hỗ trợ compression (T)"
+    ],
+    "explanation": "Parquet và ORC: đều columnar , splittable , compression . Parquet KHÔNG row-based mà columnar."
   },
   {
     "id": "lake_q49",
     "question": "Volume progression qua Lake layers?",
-    "answers": {
-      "A": "Raw Files:  Terabytes/day",
-      "B": "Raw Data: Gigabytes/day",
-      "C": "Business Data: Megabytes/day",
-      "D": "Volume tăng dần qua layers"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Volume progression: TB (A) → GB (B) → MB (C). Volume GIẢM dần qua layers khi data được refined, không tăng."
+    "answers": [
+      "Raw Files:  Terabytes/day (T)",
+      "Raw Data: Gigabytes/day (T)",
+      "Business Data: Megabytes/day (T)",
+      "Volume tăng dần qua layers (F)"
+    ],
+    "explanation": "Volume progression: TB → GB → MB . Volume GIẢM dần qua layers khi data được refined, không tăng."
   },
   {
     "id": "lake_q50",
     "question": "Modern Lakehouse platforms examples?",
-    "answers": {
-      "A": "Databricks",
-      "B": "Snowflake",
-      "C":  "Managed services giảm operational complexity",
-      "D": "Pure Hadoop only"
-    },
-    "correctAnswers": ["A", "B", "C"],
-    "explanation": "Modern platforms: Databricks (A), Snowflake (B), managed services (C). Modern trend TRÁNH pure Hadoop, không phải chỉ dùng Hadoop."
+    "answers": [
+      "Databricks (T)",
+      "Snowflake (T)",
+      "Managed services giảm operational complexity (T)",
+      "Pure Hadoop only (F)"
+    ],
+    "explanation": "Modern platforms: Databricks , Snowflake , managed services . Modern trend TRÁNH pure Hadoop, không phải chỉ dùng Hadoop."
   }
 ]
