@@ -329,6 +329,14 @@ const app = {
         });
     },
 
+    // Show a page
+    showPage: function(pageId) {
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(pageId).classList.add('active');
+    },    
+
     submitQuiz: function() {
         this.displayResults(this.calculateResults());
         localStorage.removeItem(`progress_${this.currentCourse.path}_${this.currentQuiz}`);
@@ -341,6 +349,16 @@ const app = {
         this.checkedQuestions = {};
         this.displayQuestion();
         this.showPage('quiz-page');
+    },
+
+    // Show course selection
+    showCourseSelection: function() {
+        this.showPage('course-selection');
+    },
+
+    // Show course detail
+    showCourseDetail: function() {
+        this.showPage('course-detail');
     },
 
     showPage: function(id) {
