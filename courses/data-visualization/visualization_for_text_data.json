@@ -1,0 +1,772 @@
+[
+  {
+    "id": "text_v2_01",
+    "question": "Mục tiêu 'Hiểu' (Understanding) và 'Nhóm' (Grouping) trong trực quan hóa văn bản khác nhau như thế nào?",
+    "answers": [
+      "Hiểu tập trung vào việc nắm bắt ý chính của một tài liệu đơn lẻ (T)",
+      "Nhóm tập trung vào việc phân cụm để có cái nhìn tổng quan về bộ sưu tập (T)",
+      "Cả hai đều chỉ áp dụng cho bộ sưu tập tài liệu (F)",
+      "Nhóm luôn yêu cầu phải so sánh sự phát triển theo thời gian (F)"
+    ],
+    "explanation": "Hiểu giúp nắm ý chính tài liệu đơn. Nhóm giúp phân loại/phân cụm bộ sưu tập tài liệu."
+  },
+  {
+    "id": "text_v2_02",
+    "question": "Những đối tượng nào sau đây được coi là dữ liệu văn bản dạng 'Bộ sưu tập' (Collections)?",
+    "answers": [
+      "Một cuốn tiểu thuyết kinh điển (F)",
+      "Hệ thống hồ sơ cá nhân trên mạng xã hội (T)",
+      "Danh sách các tag và bình luận của người dùng (T)",
+      "Một file log máy tính đơn nhất (F)"
+    ],
+    "explanation": "Collections gồm nhiều thông điệp, hồ sơ cá nhân hoặc các bài báo học thuật cộng tác."
+  },
+  {
+    "id": "text_v2_03",
+    "question": "Trong so sánh bài phát biểu y tế, Tag Cloud của Obama năm 2009 nổi bật hơn Clinton ở những từ nào?",
+    "answers": [
+      "Insurance (T)",
+      "System (F)",
+      "Reform (T)",
+      "Coverage (F)"
+    ],
+    "explanation": "Obama tập trung vào bảo hiểm (insurance) và cải cách (reform), trong khi Clinton tập trung vào hệ thống (system)."
+  },
+  {
+    "id": "text_v2_04",
+    "question": "Tại sao nói trực quan hóa văn bản thường có 'Khoảng cách đánh giá' (Gulfs of Evaluation)?",
+    "answers": [
+      "Vì nó không thể hiện trực tiếp văn bản mà thể hiện kết quả mô hình (T)",
+      "Vì dữ liệu văn bản quá ít để tạo ra mô hình chính xác (F)",
+      "Vì người xem có thể không tin tưởng hoặc không hiểu mô hình thống kê (T)",
+      "Vì văn bản luôn bị biến đổi thành hình ảnh vector (F)"
+    ],
+    "explanation": "Trực quan hóa văn bản là kết quả của mô hình (đếm từ, thống kê), dẫn đến việc người dùng phải suy luận thông qua mô hình đó."
+  },
+  {
+    "id": "text_v2_05",
+    "question": "Hai thách thức lớn nhất liên quan đến bản chất của văn bản khi trực quan hóa là gì?",
+    "answers": [
+      "Số chiều cực cao (mỗi từ là một chiều) (T)",
+      "Văn bản không thể chuyển đổi thành dạng số (F)",
+      "Ngữ cảnh và ngữ nghĩa phức tạp (một từ nhiều nghĩa) (T)",
+      "Dữ liệu văn bản không bao giờ thay đổi theo thời gian (F)"
+    ],
+    "explanation": "High Dimensionality và Context/Semantics là những thách thức cốt lõi."
+  },
+  {
+    "id": "text_v2_06",
+    "question": "Quá trình Tokenization trong xử lý văn bản đối mặt với những quyết định quan trọng nào?",
+    "answers": [
+      "Loại bỏ hay giữ lại các stop words (a, an, the...) (T)",
+      "Xử lý các thực thể như 'San Francisco' là một hay hai từ (T)",
+      "Xác định trọng số vector của tài liệu (F)",
+      "Tính toán khoảng cách cosine giữa các từ (F)"
+    ],
+    "explanation": "Tokenization là chia nhỏ văn bản và quyết định cách xử lý stop words, thực thể, ký hiệu."
+  },
+  {
+    "id": "text_v2_07",
+    "question": "Sự khác biệt giữa Stemming và Lemmatization là gì?",
+    "answers": [
+      "Stemming thường dùng các quy tắc cắt bỏ đuôi từ (T)",
+      "Lemmatization chuyển từ về dạng gốc (go, went -> go) một cách thông minh (T)",
+      "Stemming luôn cho ra kết quả là một từ có nghĩa trong từ điển (F)",
+      "Lemmatization chỉ đơn giản là loại bỏ stop words (F)"
+    ],
+    "explanation": "Stemming dùng quy tắc thô (visualize -> visual), Lemmatization dùng từ điển và ngữ pháp để đưa về từ gốc thực."
+  },
+  {
+    "id": "text_v2_08",
+    "question": "Mô hình 'Túi từ' (Bag of Words) có những đặc điểm nào sau đây?",
+    "answers": [
+      "Bỏ qua thứ tự xuất hiện của các từ (T)",
+      "Giữ lại cấu trúc ngữ pháp của câu (F)",
+      "Mỗi tài liệu được đại diện bằng một vector trọng số (T)",
+      "Luôn hiển thị văn bản dưới dạng cây (F)"
+    ],
+    "explanation": "BoW bỏ qua thứ tự từ, coi tài liệu là một tập hợp các từ với tần suất nhất định."
+  },
+  {
+    "id": "text_v2_09",
+    "question": "Trong Ma trận Tài liệu-Từ (Document-Term Matrix), các thành phần được sắp xếp như thế nào?",
+    "answers": [
+      "Mỗi cột đại diện cho một tài liệu (T)",
+      "Mỗi hàng đại diện cho một từ (T)",
+      "Giá trị trong ô là độ dài của tài liệu (F)",
+      "Giá trị trong ô đại diện cho thứ tự từ trong câu (F)"
+    ],
+    "explanation": "Hàng là từ, cột là tài liệu, giá trị thường là tần suất từ xuất hiện trong tài liệu đó."
+  },
+  {
+    "id": "text_v2_10",
+    "question": "Mô hình 'Nhúng từ' (Word Embeddings) giải quyết vấn đề gì mà Bag of Words bỏ qua?",
+    "answers": [
+      "Mối quan hệ ý nghĩa giữa các từ (Tương quan, đồng nghĩa) (T)",
+      "Vị trí của từ trong không gian vector (T)",
+      "Loại bỏ hoàn toàn nhu cầu về tiền xử lý văn bản (F)",
+      "Giảm số lượng từ trong một tài liệu (F)"
+    ],
+    "explanation": "Word Embeddings ánh xạ từ vào không gian vector để thể hiện ý nghĩa và quan hệ giữa các từ."
+  },
+  {
+    "id": "text_v2_11",
+    "question": "Những nhận xét nào sau đây là ĐÚNG về kỹ thuật Tag Cloud?",
+    "answers": [
+      "Kích thước từ tỷ lệ thuận với tần suất xuất hiện (T)",
+      "Nó rất chính xác trong việc so sánh tỷ lệ giữa các từ (F)",
+      "Nó thường làm mất ngữ cảnh của từ (T)",
+      "Nó luôn hiển thị mối quan hệ giữa các thực thể (F)"
+    ],
+    "explanation": "Tag Cloud mạnh về thị giác nhưng yếu về độ chính xác và mất ngữ cảnh."
+  },
+  {
+    "id": "text_v2_12",
+    "question": "Kỹ thuật WordTree của Wattenberg & Viégas (2008) có ưu điểm gì?",
+    "answers": [
+      "Giúp khám phá các cụm từ phổ biến và ngữ cảnh của từ gốc (T)",
+      "Hiển thị được sự thay đổi cảm xúc theo thời gian (F)",
+      "Sử dụng độ dày nhánh để biểu thị tần suất (T)",
+      "Tốt cho việc so sánh hàng triệu tài liệu cùng lúc (F)"
+    ],
+    "explanation": "WordTree hiển thị cây ngữ cảnh của một từ gốc với độ dày nhánh tỷ lệ với tần suất."
+  },
+  {
+    "id": "text_v2_13",
+    "question": "PhraseNet và Arc Diagram có điểm chung nào trong trực quan hóa văn bản?",
+    "answers": [
+      "Cả hai đều tập trung vào việc hiển thị mối liên kết/quan hệ giữa các phần tử (T)",
+      "Cả hai đều sử dụng mô hình Bag of Words thuần túy (F)",
+      "Chúng giúp nhận diện cấu trúc lặp lại hoặc mẫu cụm từ (X and Y) (T)",
+      "Chúng đều biểu diễn dữ liệu dưới dạng dòng sông (F)"
+    ],
+    "explanation": "PhraseNet nối từ theo mẫu, Arc Diagram nối các lần xuất hiện lặp lại."
+  },
+  {
+    "id": "text_v2_14",
+    "question": "Kỹ thuật ThemeRiver sử dụng các trục tọa độ như thế nào?",
+    "answers": [
+      "Trục ngang đại diện cho thời gian (T)",
+      "Trục dọc đại diện cho số lượng tài liệu/tần suất chủ đề (T)",
+      "Trục ngang đại diện cho danh mục thực thể (F)",
+      "Trục dọc đại diện cho cảm xúc tích cực/tiêu cực (F)"
+    ],
+    "explanation": "ThemeRiver là biểu đồ dòng chảy theo thời gian, độ rộng dòng sông là số lượng."
+  },
+  {
+    "id": "text_v2_15",
+    "question": "Trong công cụ Termite, độ nổi bật (Saliency) của một từ được tính dựa trên những yếu tố nào?",
+    "answers": [
+      "Tần suất xuất hiện của từ (Frequency) (T)",
+      "Tính đặc trưng của từ đối với chủ đề (Distinctiveness) (T)",
+      "Độ dài của từ (F)",
+      "Vị trí của từ trong tài liệu (F)"
+    ],
+    "explanation": "Saliency = Frequency * Distinctiveness. Một từ nổi bật phải vừa xuất hiện nhiều vừa đặc trưng."
+  },
+  {
+    "id": "text_v2_16",
+    "question": "Mô hình Latent Dirichlet Allocation (LDA) hoạt động dựa trên giả định nào?",
+    "answers": [
+      "Mỗi tài liệu là sự hỗn hợp của nhiều chủ đề khác nhau (T)",
+      "Mỗi từ chỉ có thể thuộc về duy nhất một chủ đề (F)",
+      "Các từ thường xuyên xuất hiện cùng nhau sẽ tạo thành một chủ đề tiềm ẩn (T)",
+      "Thứ tự các câu trong tài liệu quyết định chủ đề (F)"
+    ],
+    "explanation": "LDA coi tài liệu là hỗn hợp chủ đề và tìm các nhóm từ hay đi cùng nhau."
+  },
+  {
+    "id": "text_v2_17",
+    "question": "StoryFlow được thiết kế đặc biệt để trực quan hóa điều gì?",
+    "answers": [
+      "Tương tác giữa các nhân vật trong tiểu thuyết hoặc phim (T)",
+      "Sự phát triển của câu chuyện theo thời gian (T)",
+      "Tần suất các từ khóa kỹ thuật trong báo cáo khoa học (F)",
+      "Bản đồ phân cụm các tài liệu pháp lý (F)"
+    ],
+    "explanation": "StoryFlow theo dõi dòng hành trình và sự tương tác của các nhân vật."
+  },
+  {
+    "id": "text_v2_18",
+    "question": "EmotionWatch giúp nhà phân tích nắm bắt thông tin gì từ các mạng xã hội?",
+    "answers": [
+      "Sự thay đổi cảm xúc chi tiết (vui, buồn, giận...) theo thời gian (T)",
+      "Mối liên kết giữa cảm xúc và các sự kiện cụ thể (T)",
+      "Số lượng tài liệu trong một chủ đề ẩn (F)",
+      "Cấu trúc cây của các cụm từ (F)"
+    ],
+    "explanation": "EmotionWatch phân tích sentiment chi tiết liên quan đến sự kiện."
+  },
+  {
+    "id": "text_v2_19",
+    "question": "Kỹ thuật 'Document Card' (Strobelt et al. 2009) phù hợp cho những nhiệm vụ nào?",
+    "answers": [
+      "So sánh nhanh các thuộc tính của nhiều tài liệu (T)",
+      "Khám phá bộ sưu tập và tìm tài liệu tương tự (T)",
+      "Phân tích cấu trúc n-gram của một câu đơn lẻ (F)",
+      "Trực quan hóa sự phân cực chính trị toàn cầu (F)"
+    ],
+    "explanation": "Document Card như thẻ thông tin tài liệu, giúp so sánh và tìm kiếm nhanh."
+  },
+  {
+    "id": "text_v2_20",
+    "question": "Theo bảng so sánh các kỹ thuật, khi nào bạn nên chọn WordTree thay vì Word Cloud?",
+    "answers": [
+      "Khi cần phân tích ngữ cảnh sử dụng của một từ cụ thể (T)",
+      "Khi muốn có cái nhìn bắt mắt về toàn bộ nội dung tài liệu (F)",
+      "Khi muốn phân tích các từ theo sau hoặc đứng trước một từ gốc (T)",
+      "Khi cần theo dõi xu hướng chủ đề qua 10 năm (F)"
+    ],
+    "explanation": "WordTree mạnh về ngữ cảnh và cấu trúc câu quanh một từ gốc."
+  },
+  {
+    "id": "text_v2_21",
+    "question": "Những sai lầm cần tránh khi trực quan hóa văn bản (Lưu ý quan trọng) là gì?",
+    "answers": [
+      "Quá đơn giản hóa (Over-simplification) làm mất ngữ cảnh (T)",
+      "Bỏ qua thiên kiến của mô hình (Model bias) (T)",
+      "Luôn hiển thị toàn bộ văn bản gốc trên màn hình chính (F)",
+      "Sử dụng quá nhiều stop words trong mô hình thống kê (F)"
+    ],
+    "explanation": "Cần cẩn thận với sự đơn giản hóa thái quá và thiên kiến của AI/Mô hình."
+  },
+  {
+    "id": "text_v2_22",
+    "question": "Tại sao 'Tính đặc trưng' (Distinctiveness) lại quan trọng trong việc lọc từ cho chủ đề?",
+    "answers": [
+      "Để loại bỏ các từ phổ biến nhưng vô nghĩa như 'the', 'and' (T)",
+      "Để tìm ra các từ mang tính nhận diện cao cho một chủ đề cụ thể (T)",
+      "Để đếm tổng số từ trong toàn bộ bộ sưu tập (F)",
+      "Để xác định độ dài trung bình của các câu (F)"
+    ],
+    "explanation": "Từ đặc trưng giúp phân biệt chủ đề này với chủ đề khác."
+  },
+  {
+    "id": "text_v2_23",
+    "question": "Trong PhraseNet, mối quan hệ giữa các từ có thể được xác định bằng các mẫu nào?",
+    "answers": [
+      "X and Y (T)",
+      "X is Y (T)",
+      "Mọi từ đứng cách nhau 10 ký tự (F)",
+      "Chỉ các từ viết hoa (F)"
+    ],
+    "explanation": "PhraseNet dựa trên các pattern ngôn ngữ để nối từ."
+  },
+  {
+    "id": "text_v2_24",
+    "question": "Ứng dụng của trực quan hóa văn bản trong lĩnh vực Pháp lý (Legal) bao gồm gì?",
+    "answers": [
+      "Phân loại tài liệu và phân tích hợp đồng (T)",
+      "Tìm kiếm các tiền lệ pháp lý trong bộ sưu tập lớn (T)",
+      "Tự động bào chữa cho bị cáo (F)",
+      "Trực quan hóa cảm xúc của bồi thẩm đoàn (F)"
+    ],
+    "explanation": "Pháp lý dùng để phân tích hợp đồng và tìm kiếm tiền lệ."
+  },
+  {
+    "id": "text_v2_25",
+    "question": "Một quy trình làm việc (Pipeline) thực tế bắt đầu bằng bước nào?",
+    "answers": [
+      "Xác định mục tiêu phân tích (Hiểu, Nhóm, hay So sánh) (T)",
+      "Tiền xử lý dữ liệu (Tokenization, loại bỏ stop words) (T)",
+      "Vẽ ngay biểu đồ ThemeRiver (F)",
+      "Mua bản quyền mô hình LDA (F)"
+    ],
+    "explanation": "Phải xác định mục tiêu và tiền xử lý trước khi chọn mô hình/kỹ thuật."
+  },
+  {
+    "id": "text_v2_26",
+    "question": "Tại sao 'Ngữ cảnh' (Context) lại là thách thức lớn đối với mô hình Bag of Words?",
+    "answers": [
+      "Vì BoW vứt bỏ thứ tự của từ (T)",
+      "Vì một từ có thể mang ý nghĩa khác nhau tùy vào từ đứng trước nó (T)",
+      "Vì BoW tốn quá nhiều bộ nhớ để lưu trữ ngữ cảnh (F)",
+      "Vì BoW chỉ xử lý được các từ ngắn (F)"
+    ],
+    "explanation": "BoW không quan tâm thứ tự, dẫn đến mất ngữ cảnh (ví dụ: 'không tốt' vs 'tốt')."
+  },
+  {
+    "id": "text_v2_27",
+    "question": "Đặc điểm của kỹ thuật Arc Diagram là gì?",
+    "answers": [
+      "Các vòng cung nối các lần xuất hiện của cùng một từ (T)",
+      "Thể hiện cấu trúc và sự lặp lại trong văn bản (T)",
+      "Biểu diễn sự tương tác của các nhân vật bằng các dòng chảy (F)",
+      "Sử dụng kích thước chữ để đại diện cho độ dài tài liệu (F)"
+    ],
+    "explanation": "Arc Diagram nối các phần tử lặp lại bằng vòng cung trên một trục."
+  },
+  {
+    "id": "text_v2_28",
+    "question": "Mô hình N-gram Cloud cải tiến Word Cloud ở điểm nào?",
+    "answers": [
+      "Giữ được nhiều ngữ cảnh hơn bằng cách hiển thị các chuỗi từ liên tiếp (T)",
+      "Ví dụ có thể hiển thị cụm 'health care' thay vì tách rời 'health' và 'care' (T)",
+      "Loại bỏ hoàn toàn stop words tự động (F)",
+      "Cho phép so sánh 1 triệu tài liệu trên cùng một hình ảnh (F)"
+    ],
+    "explanation": "N-gram giữ các cụm từ đi cùng nhau, giúp rõ nghĩa hơn đơn từ."
+  },
+  {
+    "id": "text_v2_29",
+    "question": "Mục tiêu 'Tương quan' (Correlation) trong trực quan hóa văn bản nhằm tìm kiếm điều gì?",
+    "answers": [
+      "Sự liên hệ giữa mẫu văn bản và dữ liệu ngoại vi khác (T)",
+      "Ví dụ tương quan nội dung tweet với mạng xã hội của người đăng (T)",
+      "Cách sắp xếp các từ theo bảng chữ cái (F)",
+      "Tổng số lần xuất hiện của một từ trong toàn bộ lịch sử (F)"
+    ],
+    "explanation": "Tương quan giúp tìm mối liên hệ giữa văn bản và dữ liệu khác (như địa điểm, mạng lưới)."
+  },
+  {
+    "id": "text_v2_30",
+    "question": "Trong thực tế, để đánh giá một trực quan hóa văn bản tốt, bạn cần đặt ra câu hỏi nào?",
+    "answers": [
+      "Mô hình có giúp chúng ta suy luận đúng về văn bản không? (T)",
+      "Mô hình có truyền tải tốt các thuộc tính thống kê không? (T)",
+      "Biểu đồ có sử dụng quá 10 màu sắc không? (F)",
+      "Tài liệu có được viết bằng tiếng Anh không? (F)"
+    ],
+    "explanation": "Đánh giá dựa trên khả năng suy luận và sự truyền tải chính xác mô hình."
+  },
+  {
+    "id": "text_v2_31",
+    "question": "Kỹ thuật nào được coi là 'Động' (Dynamic) trong trực quan hóa chủ đề?",
+    "answers": [
+      "ThemeRiver (T)",
+      "RoseRiver (T)",
+      "IN-SPIRE (F)",
+      "ContentTour (F)"
+    ],
+    "explanation": "ThemeRiver và RoseRiver là các kỹ thuật động, theo dõi sự thay đổi theo thời gian."
+  },
+  {
+    "id": "text_v2_32",
+    "question": "Vấn đề 'Scale issues' (vấn đề quy mô) trong trực quan hóa văn bản nghĩa là gì?",
+    "answers": [
+      "Kỹ thuật hiệu quả cho 100 tài liệu có thể không còn tốt cho 1 triệu tài liệu (T)",
+      "Lượng dữ liệu lớn có thể gây quá tải cho việc hiển thị (T)",
+      "Số lượng từ trong từ điển luôn tăng theo thời gian (F)",
+      "Tỷ lệ kích thước chữ trong word cloud không thể thay đổi (F)"
+    ],
+    "explanation": "Quy mô ảnh hưởng đến hiệu quả của kỹ thuật và khả năng xử lý."
+  },
+  {
+    "id": "text_v2_33",
+    "question": "Best Practices (Thực hành tốt nhất) khi thiết kế hệ thống trực quan hóa văn bản là gì?",
+    "answers": [
+      "Luôn cho phép người dùng truy cập lại văn bản gốc từ hình ảnh (T)",
+      "Kết hợp nhiều kỹ thuật trực quan hóa khác nhau (T)",
+      "Chỉ sử dụng duy nhất một mô hình Bag of Words cho mọi bài toán (F)",
+      "Loại bỏ hoàn toàn mọi stop words mà không cần xem xét ngữ cảnh (F)"
+    ],
+    "explanation": "Cần cung cấp văn bản gốc và kết hợp nhiều cách nhìn để tránh sai sót."
+  },
+  {
+    "id": "text_v2_34",
+    "question": "Ví dụ 'King - Man + Woman ≈ Queen' minh họa cho khả năng nào của Word Embeddings?",
+    "answers": [
+      "Khả năng tính toán số học trên ý nghĩa của từ (T)",
+      "Mối quan hệ tương đương về mặt khái niệm trong không gian vector (T)",
+      "Việc loại bỏ các stop words tự động (F)",
+      "Sắp xếp các từ theo tần suất giảm dần (F)"
+    ],
+    "explanation": "Word Embeddings cho phép thực hiện các phép toán vector dựa trên ngữ nghĩa."
+  },
+  {
+    "id": "text_v2_35",
+    "question": "Lợi ích của việc nhóm từ (Grouping/Clustering) là gì?",
+    "answers": [
+      "Có được cái nhìn tổng quan về các chủ đề chính trong bộ sưu tập (T)",
+      "Hỗ trợ phân loại tài liệu vào các chuyên mục tự động (T)",
+      "Giúp đọc toàn bộ 100% nội dung tài liệu nhanh hơn (F)",
+      "Làm giảm số lượng từ khóa trong một câu (F)"
+    ],
+    "explanation": "Grouping giúp tổng quan và phân loại tập dữ liệu lớn."
+  },
+  {
+    "id": "text_v2_36",
+    "question": "Kỹ thuật ThemeRiver có thể giúp phát hiện điều gì?",
+    "answers": [
+      "Sự kiện quan trọng làm một chủ đề bùng nổ (dòng sông phình to) (T)",
+      "Sự biến mất của một chủ đề theo thời gian (T)",
+      "Nghĩa chính xác của từ 'Bank' trong câu (F)",
+      "Tên của tác giả viết bài báo (F)"
+    ],
+    "explanation": "ThemeRiver theo dõi sự lên xuống của các chủ đề qua thời gian."
+  },
+  {
+    "id": "text_v2_37",
+    "question": "Tại sao 'Saliency' lại tốt hơn 'Frequency' đơn thuần trong việc sắp xếp từ cho chủ đề?",
+    "answers": [
+      "Vì nó ưu tiên các từ mang tính đại diện cao cho chủ đề đó (T)",
+      "Vì nó giúp loại bỏ các từ phổ biến ở mọi chủ đề (T)",
+      "Vì nó tính toán được tốc độ đọc của con người (F)",
+      "Vì nó tự động dịch văn bản sang ngôn ngữ khác (F)"
+    ],
+    "explanation": "Saliency lọc bỏ các từ chung chung và lấy các từ thực sự mô tả chủ đề."
+  },
+  {
+    "id": "text_v2_38",
+    "question": "Những thuộc tính nào có thể hiển thị trên một 'Document Card'?",
+    "answers": [
+      "Tác giả, năm xuất bản và độ dài tài liệu (T)",
+      "Các từ khóa quan trọng và chủ đề chính (T)",
+      "Toàn bộ mã nguồn của mô hình LDA (F)",
+      "Lịch sử duyệt web của người đọc (F)"
+    ],
+    "explanation": "Document Card chứa các metadata và đặc trưng chính của tài liệu."
+  },
+  {
+    "id": "text_v2_39",
+    "question": "Trong StoryFlow, các dòng nhân vật nằm gần nhau hoặc xa nhau thể hiện điều gì?",
+    "answers": [
+      "Gần nhau: Các nhân vật đang tương tác hoặc ở cùng vị trí (T)",
+      "Xa nhau: Các nhân vật đang ở các địa điểm khác nhau hoặc không tương tác (T)",
+      "Gần nhau: Hai nhân vật có cùng độ tuổi (F)",
+      "Xa nhau: Hai nhân vật là kẻ thù của nhau (F)"
+    ],
+    "explanation": "Khoảng cách giữa các dòng trong StoryFlow đại diện cho sự tương tác/vị trí địa lý trong truyện."
+  },
+  {
+    "id": "text_v2_40",
+    "question": "Ứng dụng trực quan hóa văn bản trong Kinh doanh (Business) giúp gì?",
+    "answers": [
+      "Phân tích phản hồi khách hàng và nghiên cứu thị trường (T)",
+      "Giám sát thương hiệu trên mạng xã hội (T)",
+      "Tự động ký kết các hợp đồng kinh tế (F)",
+      "Tính toán bảng lương cho nhân viên (F)"
+    ],
+    "explanation": "Kinh doanh dùng để hiểu feedback khách hàng và xu hướng thị trường."
+  },
+  {
+    "id": "text_v2_41",
+    "question": "Tại sao việc xử lý số và ký hiệu lại là một quyết định quan trọng trong tiền xử lý?",
+    "answers": [
+      "Vì trong một số ngữ cảnh (như Twitter), ký hiệu @ hoặc # mang ý nghĩa rất lớn (T)",
+      "Vì ký hiệu có thể làm nhiễu mô hình thống kê nếu không có mục đích sử dụng (T)",
+      "Vì ký hiệu luôn chiếm nhiều dung lượng hơn chữ cái (F)",
+      "Vì số lượng ký hiệu xác định độ dài của vector nhúng (F)"
+    ],
+    "explanation": "Tùy bài toán (như phân tích hashtag) mà ta quyết định giữ hay bỏ ký hiệu."
+  },
+  {
+    "id": "text_v2_42",
+    "question": "Điểm yếu lớn nhất của Word Cloud là gì?",
+    "answers": [
+      "Dễ gây hiểu lầm về tầm quan trọng của các từ dài (vì chúng chiếm diện tích lớn hơn) (T)",
+      "Bỏ qua hoàn toàn mối quan hệ ngữ cảnh giữa các từ (T)",
+      "Không thể hiển thị quá 10 từ cùng lúc (F)",
+      "Luôn yêu cầu máy tính có cấu hình cực cao để hiển thị (F)"
+    ],
+    "explanation": "Word cloud thiên vị các từ dài và hoàn toàn mất ngữ cảnh."
+  },
+  {
+    "id": "text_v2_43",
+    "question": "Mô hình LDA (Latent Dirichlet Allocation) giúp chúng ta tìm ra điều gì?",
+    "answers": [
+      "Các nhóm từ thường xuyên xuất hiện cùng nhau (T)",
+      "Tỷ lệ phân bổ các chủ đề trong một tài liệu (T)",
+      "Sửa lỗi chính tả trong văn bản (F)",
+      "Tên của người đã viết tài liệu đó (F)"
+    ],
+    "explanation": "LDA tìm ra các cụm từ đi cùng nhau (chủ đề) và tỷ lệ chủ đề trong doc."
+  },
+  {
+    "id": "text_v2_44",
+    "question": "PhraseNet có thể được sử dụng để phân tích loại văn bản nào?",
+    "answers": [
+      "Các tác phẩm văn học như 'Romeo and Juliet' (T)",
+      "Các câu trích dẫn nổi tiếng có cấu trúc lặp lại (T)",
+      "Dữ liệu số về chứng khoán (F)",
+      "Các file ảnh không chứa văn bản (F)"
+    ],
+    "explanation": "PhraseNet mạnh trong việc nối các khái niệm trong văn bản có cấu trúc ngôn ngữ rõ ràng."
+  },
+  {
+    "id": "text_v2_45",
+    "question": "Mục đích của việc 'Rút gọn từ' (Stemming) là gì?",
+    "answers": [
+      "Nhóm các biến thể của cùng một từ về một gốc chung (T)",
+      "Giảm bớt số lượng chiều (dimension) trong mô hình vector (T)",
+      "Tăng độ dài của văn bản (F)",
+      "Chuyển văn bản sang dạng phủ định (F)"
+    ],
+    "explanation": "Stemming giúp thu gọn từ điển, gom các từ cùng gốc lại để thống kê chính xác hơn."
+  },
+  {
+    "id": "text_v2_46",
+    "question": "Trực quan hóa văn bản khác với trực quan hóa dữ liệu số truyền thống ở điểm nào?",
+    "answers": [
+      "Văn bản có tính trừu tượng và không có cấu trúc tự nhiên như con số (T)",
+      "Văn bản đòi hỏi các bước tiền xử lý ngôn ngữ phức tạp (T)",
+      "Văn bản chỉ có thể hiển thị bằng màu đen trắng (F)",
+      "Văn bản không thể áp dụng các mô hình thống kê (F)"
+    ],
+    "explanation": "Văn bản là dữ liệu phi cấu trúc, cần NLP để chuyển sang dạng có thể vẽ."
+  },
+  {
+    "id": "text_v2_47",
+    "question": "Stop words thường bao gồm những loại từ nào?",
+    "answers": [
+      "Các mạo từ và giới từ phổ biến (a, an, the, in, at) (T)",
+      "Các từ nối (and, but, or) (T)",
+      "Các thực thể tên riêng như 'Hanoi' (F)",
+      "Các động từ mang ý nghĩa quan trọng nhất của câu (F)"
+    ],
+    "explanation": "Stop words là các từ chức năng, xuất hiện nhiều nhưng ít mang ý nghĩa đặc trưng."
+  },
+  {
+    "id": "text_v2_48",
+    "question": "Trong công cụ IN-SPIRE, các tài liệu được hiển thị như thế nào?",
+    "answers": [
+      "Dưới dạng các điểm trên một bản đồ (T)",
+      "Tài liệu có nội dung giống nhau nằm gần nhau (T)",
+      "Dưới dạng một dòng sông chảy qua các năm (F)",
+      "Dưới dạng một mạng lưới các nhân vật (F)"
+    ],
+    "explanation": "IN-SPIRE là kỹ thuật tĩnh, hiển thị tài liệu dưới dạng các cụm trên bản đồ dựa trên độ tương đồng."
+  },
+  {
+    "id": "text_v2_49",
+    "question": "Quy tắc 'King - Man + Woman = Queen' là kết quả của việc xử lý nào?",
+    "answers": [
+      "Tính toán trên vector nhúng từ (Word Embeddings) (T)",
+      "Kỹ thuật này cho phép tìm các mối quan hệ tương tự (analogy) (T)",
+      "Kỹ thuật đếm từ trong mô hình Bag of Words (F)",
+      "Xây dựng cây từ WordTree (F)"
+    ],
+    "explanation": "Đây là ví dụ kinh điển về tính toán ngữ nghĩa trong Word Embeddings."
+  },
+  {
+    "id": "text_v2_50",
+    "question": "Tác dụng của việc sử dụng N-gram thay vì Unigram (đơn từ) là gì?",
+    "answers": [
+      "Ghi lại được các cụm từ có ý nghĩa đi liền nhau (T)",
+      "Giảm thiểu sai số do các từ đa nghĩa gây ra (T)",
+      "Làm giảm 50% dung lượng lưu trữ (F)",
+      "Tăng tốc độ hiển thị của Tag Cloud (F)"
+    ],
+    "explanation": "N-gram giúp giữ lại nghĩa của các cụm từ (ví dụ: 'không thích' khác 'thích')."
+  },
+  {
+    "id": "text_v2_51",
+    "question": "Tại sao việc hiển thị văn bản gốc lại là một 'Best Practice'?",
+    "answers": [
+      "Để người dùng kiểm chứng lại kết quả của mô hình trực quan (T)",
+      "Để cung cấp đầy đủ ngữ cảnh cho những gì mô hình đã tóm tắt (T)",
+      "Để tăng độ phức tạp cho giao diện người dùng (F)",
+      "Vì người dùng luôn muốn đọc hết toàn bộ văn bản (F)"
+    ],
+    "explanation": "Văn bản gốc là căn cứ cuối cùng để người dùng tin tưởng vào trực quan hóa."
+  },
+  {
+    "id": "text_v2_52",
+    "question": "Sơ đồ ThemeRiver KHÔNG phù hợp cho loại dữ liệu nào?",
+    "answers": [
+      "Một tài liệu đơn lẻ duy nhất (T)",
+      "Dữ liệu văn bản không có thông tin về thời gian (T)",
+      "Hàng triệu bài báo được xuất bản trong 20 năm (F)",
+      "Dòng trạng thái Twitter trong suốt một tuần sự kiện (F)"
+    ],
+    "explanation": "ThemeRiver cần dữ liệu theo chuỗi thời gian và thường dùng cho bộ sưu tập lớn."
+  },
+  {
+    "id": "text_v2_53",
+    "question": "Khi trực quan hóa cảm xúc (Emotion), những loại cảm xúc nào thường được phân loại?",
+    "answers": [
+      "Vui, buồn, giận dữ, sợ hãi (T)",
+      "Ngạc nhiên, ghê tởm (T)",
+      "Danh từ, động từ (F)",
+      "Dài, ngắn, phức tạp (F)"
+    ],
+    "explanation": "Sentiment/Emotion analysis phân loại theo các trạng thái tâm lý."
+  },
+  {
+    "id": "text_v2_54",
+    "question": "Vấn đề 'Model bias' (thiên kiến mô hình) có thể xuất phát từ đâu?",
+    "answers": [
+      "Dữ liệu huấn luyện mô hình không đại diện (T)",
+      "Các thuật toán NLP có các giả định sai lầm về ngôn ngữ (T)",
+      "Màu sắc của biểu đồ quá rực rỡ (F)",
+      "Người dùng không biết sử dụng chuột máy tính (F)"
+    ],
+    "explanation": "Bias đến từ dữ liệu input hoặc thuật toán thiết kế mô hình."
+  },
+  {
+    "id": "text_v2_55",
+    "question": "Câu hỏi 'Bạn có tin tưởng mô hình không?' liên quan đến bước nào trong Gulfs of Evaluation?",
+    "answers": [
+      "Đánh giá độ chính xác và độ tin cậy của mô hình thống kê (T)",
+      "Xác định xem mô hình có thực sự phản ánh đúng văn bản gốc không (T)",
+      "Đếm số lượng từ trong word cloud (F)",
+      "Lựa chọn màu sắc cho dòng sông chủ đề (F)"
+    ],
+    "explanation": "Tin tưởng mô hình là yếu tố then chốt để người dùng chấp nhận kết quả trực quan."
+  },
+  {
+    "id": "text_v2_56",
+    "question": "Trong ví dụ về Shakespeare, Ma trận Tài liệu-Từ cho thấy điều gì?",
+    "answers": [
+      "Tần suất xuất hiện của các nhân vật (như Caesar) trong các vở kịch khác nhau (T)",
+      "Sự khác biệt về từ vựng giữa các tác phẩm (T)",
+      "Thứ tự các cảnh quay trong vở kịch (F)",
+      "Mối quan hệ yêu đương giữa các nhân vật (F)"
+    ],
+    "explanation": "Ma trận thống kê tần suất từ, giúp thấy trọng tâm từ vựng của từng doc."
+  },
+  {
+    "id": "text_v2_101",
+    "question": "Các mô hình Word Embeddings thường sắp xếp các từ có nghĩa gần nhau như thế nào?",
+    "answers": [
+      "Chúng nằm gần nhau trong không gian vector đa chiều (T)",
+      "Khoảng cách giữa chúng nhỏ hơn các từ không liên quan (T)",
+      "Chúng được nối với nhau bằng các vòng cung Arc Diagram (F)",
+      "Chúng luôn có cùng một độ dài từ (F)"
+    ],
+    "explanation": "Word Embeddings ánh xạ nghĩa vào khoảng cách vector."
+  },
+  {
+    "id": "text_v2_102",
+    "question": "Thành phần 'Distinctiveness' (Tính đặc trưng) giúp ích gì trong việc so sánh Obama và Clinton?",
+    "answers": [
+      "Tìm ra các từ chỉ xuất hiện nhiều ở một người mà không có ở người kia (T)",
+      "Làm nổi bật sự khác biệt trong trọng tâm chính sách của mỗi người (T)",
+      "Tính tổng số lượng bài phát biểu của cả hai người (F)",
+      "Định dạng lại font chữ cho các bài báo (F)"
+    ],
+    "explanation": "Tính đặc trưng giúp tách biệt các keyword riêng của từng người."
+  },
+  {
+    "id": "text_v2_103",
+    "question": "Kỹ thuật nào sau đây hỗ trợ tốt nhất cho việc khám phá 'Chủ đề tiềm ẩn'?",
+    "answers": [
+      "LDA (Latent Dirichlet Allocation) (T)",
+      "Termite (T)",
+      "WordTree (F)",
+      "Arc Diagram (F)"
+    ],
+    "explanation": "LDA là mô hình thuật toán, Termite là công cụ trực quan hóa cho mô hình đó."
+  },
+  {
+    "id": "text_v2_104",
+    "question": "Quy trình tiền xử lý 'Lemmatization' thường được coi là tốt hơn 'Stemming' vì sao?",
+    "answers": [
+      "Nó dựa trên từ điển và phân tích hình thái từ để trả về từ có nghĩa (T)",
+      "Nó xử lý được các biến thể bất quy tắc (như went -> go) (T)",
+      "Nó nhanh hơn Stemming rất nhiều (F)",
+      "Nó không cần sử dụng bất kỳ tài nguyên ngôn ngữ nào (F)"
+    ],
+    "explanation": "Lemmatization thông minh và chính xác hơn Stemming cơ bản."
+  },
+  {
+    "id": "text_v2_105",
+    "question": "Tại sao 'Interpretation' (việc diễn giải) lại là một lưu ý quan trọng?",
+    "answers": [
+      "Vì người xem có thể hiểu sai ý nghĩa của các hình ảnh trừu tượng (T)",
+      "Cần có giải thích rõ ràng đi kèm để người xem hiểu đúng mô hình (T)",
+      "Vì văn bản luôn tự nó giải thích tất cả (F)",
+      "Vì màu sắc luôn được mọi người hiểu giống nhau (F)"
+    ],
+    "explanation": "Diễn giải giúp cầu nối giữa mô hình thống kê phức tạp và nhận thức người dùng."
+  },
+  {
+    "id": "text_v2_106",
+    "question": "Document-Term Matrix thường có đặc điểm gì về mật độ dữ liệu?",
+    "answers": [
+      "Nó thường là ma trận thưa (Sparse matrix) với rất nhiều ô bằng 0 (T)",
+      "Hầu hết các từ không xuất hiện trong hầu hết các tài liệu (T)",
+      "Ma trận luôn được lấp đầy 100% các ô (F)",
+      "Các giá trị trong ma trận chỉ có thể là 0 hoặc 1 (F)"
+    ],
+    "explanation": "Vì một doc chỉ chứa một phần nhỏ từ điển, nên ma trận chủ yếu là số 0."
+  },
+  {
+    "id": "text_v2_107",
+    "question": "Phân tích 'Mạng cụm từ' (PhraseNet) hữu ích nhất khi nào?",
+    "answers": [
+      "Muốn thấy các khái niệm nào thường được nối với nhau bởi các từ liên kết (T)",
+      "Khám phá các quan hệ thực thể trong văn bản (T)",
+      "Khi cần đếm tổng số trang của một cuốn sách (F)",
+      "Khi muốn thay đổi font chữ của tài liệu (F)"
+    ],
+    "explanation": "PhraseNet nối các node dựa trên quan hệ ngôn ngữ (and, is, of...)."
+  },
+  {
+    "id": "text_v2_108",
+    "question": "Điểm khác biệt chính giữa WordTree và PhraseNet là gì?",
+    "answers": [
+      "WordTree có cấu trúc phân nhánh từ một từ gốc cố định (T)",
+      "PhraseNet hiển thị một mạng lưới các quan hệ tự do hơn (T)",
+      "WordTree chỉ hiển thị màu xanh, PhraseNet chỉ hiển thị màu đỏ (F)",
+      "WordTree dùng mô hình LDA, PhraseNet dùng BoW (F)"
+    ],
+    "explanation": "WordTree là cây phân cấp, PhraseNet là đồ thị mạng lưới."
+  },
+  {
+    "id": "text_v2_109",
+    "question": "Những loại văn bản nào sau đây có thể dùng cho trực quan hóa 'Tài liệu đơn lẻ'?",
+    "answers": [
+      "Một chương trình máy tính hoặc log file (T)",
+      "Một cuốn sách hoặc bài báo dài (T)",
+      "Toàn bộ Internet (F)",
+      "Một thư viện chứa 1 triệu đầu sách (F)"
+    ],
+    "explanation": "Tài liệu đơn lẻ tập trung vào chiều sâu của một thực thể văn bản duy nhất."
+  },
+  {
+    "id": "text_v2_110",
+    "question": "Hệ thống EmotionWatch phân loại tweet dựa trên yếu tố nào?",
+    "answers": [
+      "Từ vựng mang sắc thái cảm xúc (T)",
+      "Sự thay đổi tâm trạng liên quan đến dòng thời gian sự kiện (T)",
+      "Địa chỉ IP của người đăng (F)",
+      "Tốc độ gõ phím của người dùng (F)"
+    ],
+    "explanation": "EmotionWatch kết hợp sentiment analysis và timeline sự kiện."
+  },
+  {
+    "id": "text_v2_111",
+    "question": "Khi trực quan hóa 'Chủ đề động' (Dynamic Topics), ThemeRiver giải quyết vấn đề gì?",
+    "answers": [
+      "Theo dõi sự trồi sụt của các chủ đề theo thời gian thực hoặc định kỳ (T)",
+      "Giúp so sánh quy mô của nhiều chủ đề cùng lúc một cách trực quan (T)",
+      "Tìm ra lỗi ngữ pháp trong các bài báo (F)",
+      "Tự động tóm tắt tài liệu thành một câu duy nhất (F)"
+    ],
+    "explanation": "ThemeRiver mạnh về so sánh quy mô và diễn biến theo thời gian."
+  },
+  {
+    "id": "text_v2_112",
+    "question": "Mô hình 'Nhúng từ' (Word Embeddings) có thể nhận diện các nhóm từ nào?",
+    "answers": [
+      "Các từ có quan hệ thành viên (như các môn thể thao: Tennis, Swimming) (T)",
+      "Các từ có quan hệ thứ tự (như các tháng trong năm) (T)",
+      "Tất cả các từ bắt đầu bằng chữ 'A' (F)",
+      "Chỉ những từ có độ dài trên 10 ký tự (F)"
+    ],
+    "explanation": "Embeddings nhận diện quan hệ ý nghĩa phức tạp giữa các từ."
+  },
+  {
+    "id": "text_v2_113",
+    "question": "Tại sao việc loại bỏ Stop words lại giúp ích cho trực quan hóa?",
+    "answers": [
+      "Làm giảm nhiễu, giúp các từ mang ý nghĩa thực sự nổi bật lên (T)",
+      "Tiết kiệm diện tích hiển thị cho các biểu đồ như Tag Cloud (T)",
+      "Làm mô hình luôn chính xác 100% trong mọi trường hợp (F)",
+      "Vì stop words không bao giờ xuất hiện trong văn bản gốc (F)"
+    ],
+    "explanation": "Stop words xuất hiện quá nhiều sẽ che lấp các từ quan trọng (keywords)."
+  },
+  {
+    "id": "text_v2_114",
+    "question": "Câu hỏi cuối cùng của quy trình làm việc (Đánh giá) là gì?",
+    "answers": [
+      "Trực quan hóa có trả lời được câu hỏi phân tích ban đầu không? (T)",
+      "Có bị mất thông tin quan trọng nào trong quá trình trừu tượng hóa không? (T)",
+      "Người dùng có thích màu sắc của biểu đồ không? (F)",
+      "Biểu đồ có thể in ra giấy khổ A0 không? (F)"
+    ],
+    "explanation": "Bước cuối là kiểm tra tính hiệu quả và sự toàn vẹn của thông tin."
+  }
+]
