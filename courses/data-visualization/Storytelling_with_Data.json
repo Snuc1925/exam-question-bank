@@ -1,0 +1,772 @@
+[
+  {
+    "id":  "storytelling_q1",
+    "question": "Sự khác biệt chính giữa Exploratory và Communication visualization là gì?",
+    "answers": [
+      "Exploratory tập trung vào data, Communication tập trung vào human (T)",
+      "Exploratory cho domain experts, Communication cho general audience (T)",
+      "Exploratory dùng desktop, Communication dùng off-desktop (T)",
+      "Exploratory có màu sắc, Communication không có màu (F)"
+    ],
+    "explanation": "Exploratory (khám phá) tập trung data-centered cho experts dùng desktop.  Communication (truyền đạt) tập trung human-centered cho công chúng, off-desktop.  Cả hai đều dùng màu."
+  },
+  {
+    "id": "storytelling_q2",
+    "question": "Tại sao câu chuyện (stories) mạnh mẽ hơn thống kê thuần túy?",
+    "answers":  [
+      "Kích hoạt nhiều vùng não cùng lúc (T)",
+      "Được nhớ gấp 22 lần so với facts (T)",
+      "Chỉ kích hoạt vùng ngôn ngữ (F)",
+      "Kích thích hormone oxytocin, dopamine, cortisol (T)"
+    ],
+    "explanation": "Stories kích hoạt đồng thời language, sensory, motor, emotional areas. Nhớ gấp 22x.  Kích thích nhiều hormone quan trọng, không chỉ vùng ngôn ngữ."
+  },
+  {
+    "id": "storytelling_q3",
+    "question":  "Con người nhớ bao nhiêu phần trăm thông tin qua các phương thức? ",
+    "answers": [
+      "10% statistics, 65-70% stories (T)",
+      "95% khi có emotion (T)",
+      "100% statistics nếu có visualization (F)",
+      "50% statistics, 50% stories (F)"
+    ],
+    "explanation": "Con người chỉ nhớ 10% statistics, 65-70% stories, và 95% khi trải nghiệm cảm xúc. Visualization giúp ích nhưng không đảm bảo 100%."
+  },
+  {
+    "id": "storytelling_q4",
+    "question":  "Ba trụ cột của Data Storytelling là gì?",
+    "answers": [
+      "Data (foundation), Visualization (lens), Narrative (connection) (T)",
+      "Color, Chart, Text (F)",
+      "Analysis, Design, Presentation (F)",
+      "Facts, Visual representation, Story structure (T)"
+    ],
+    "explanation": "Ba trụ cột: Data (nền tảng/sự thật), Visualization (ống kính/biểu diễn), Narrative (kết nối/câu chuyện). Cả ba phải hòa quyện."
+  },
+  {
+    "id": "storytelling_q5",
+    "question":  "Data Foundation cần đảm bảo những tiêu chí nào?",
+    "answers": [
+      "Accuracy (chính xác) (T)",
+      "Relevance (liên quan) và Timeliness (kịp thời) (T)",
+      "Completeness (đầy đủ) (T)",
+      "Nhiều màu sắc (F)"
+    ],
+    "explanation": "4 tiêu chí chất lượng data:  Accuracy, Relevance, Timeliness, Completeness.  Màu sắc thuộc về visualization."
+  },
+  {
+    "id": "storytelling_q6",
+    "question":  "Sai lầm phổ biến khi làm việc với data là gì?",
+    "answers": [
+      "Cherry-picking data (chọn lọc dữ liệu) (T)",
+      "Misleading correlations (tương quan sai lệch) (T)",
+      "Hiển thị toàn bộ dữ liệu có sẵn (F)",
+      "Missing context và outdated information (T)"
+    ],
+    "explanation": "Các sai lầm:  cherry-picking, misleading correlations, missing context, outdated info. Hiển thị toàn bộ data có thể gây nhiễu."
+  },
+  {
+    "id": "storytelling_q7",
+    "question":  "Khi nào nên dùng Simple Text thay vì biểu đồ?",
+    "answers": [
+      "Khi chỉ có 1-2 con số để chia sẻ (T)",
+      "Khi số liệu nổi bật hơn biểu đồ (T)",
+      "Khi có nhiều categories để so sánh (F)",
+      "Khi muốn làm nổi bật một metric duy nhất (T)"
+    ],
+    "explanation": "Simple text tốt khi có ít số (1-2), số tự nó đã đủ mạnh. Nhiều categories cần biểu đồ để so sánh."
+  },
+  {
+    "id": "storytelling_q8",
+    "question": "Heatmap có đặc điểm gì? ",
+    "answers": [
+      "Dùng màu để thể hiện magnitude (T)",
+      "Tốt cho pattern recognition (T)",
+      "Dễ đọc giá trị chính xác (F)",
+      "Hiệu quả với dữ liệu dạng bảng (T)"
+    ],
+    "explanation": "Heatmap dùng màu cho magnitude, tốt cho pattern và data dạng bảng. Nhược điểm là khó đọc giá trị chính xác."
+  },
+  {
+    "id": "storytelling_q9",
+    "question": "Slopegraph được dùng để làm gì?",
+    "answers": [
+      "Hiển thị sự thay đổi giữa 2 thời điểm (T)",
+      "So sánh nhiều categories cùng lúc (T)",
+      "Hiển thị trend liên tục qua nhiều năm (F)",
+      "Cho thấy cả giá trị tuyệt đối và rate of change (T)"
+    ],
+    "explanation": "Slopegraph tốt cho 2 time points, nhiều categories, thấy cả absolute value và change rate. Trend liên tục nên dùng line chart."
+  },
+  {
+    "id": "storytelling_q10",
+    "question": "Quy tắc vàng khi dùng Bar chart là gì?",
+    "answers": [
+      "Phải bắt đầu từ 0 (T)",
+      "Có thể bắt đầu từ bất kỳ giá trị nào (F)",
+      "Sắp xếp theo giá trị nếu không có natural order (T)",
+      "Luôn dùng 3D để nổi bật (F)"
+    ],
+    "explanation": "Bar chart BẮT BUỘC bắt đầu từ 0, sắp xếp theo value nếu không có thứ tự tự nhiên.  Không dùng 3D vì làm méo mó."
+  },
+  {
+    "id": "storytelling_q11",
+    "question":  "Redundant Encoding là gì?",
+    "answers": [
+      "Mã hóa cùng thông tin qua nhiều kênh visual (T)",
+      "Lặp lại dữ liệu không cần thiết (F)",
+      "Tăng khả năng hiểu và nhớ (T)",
+      "Dùng cả số, màu, và visual cues cho cùng data (T)"
+    ],
+    "explanation": "Redundant encoding = encode cùng info bằng nhiều visual channels (số, màu, size) để tăng hiểu biết. Không phải lặp lại vô ích."
+  },
+  {
+    "id": "storytelling_q12",
+    "question": "Data Redundancy bao gồm kỹ thuật nào?",
+    "answers":  [
+      "Data labels trên biểu đồ (T)",
+      "Lightness/darkness theo giá trị (T)",
+      "Percent bins (T)",
+      "Thay đổi font chữ (F)"
+    ],
+    "explanation": "Data redundancy:  labels (số), lightness (màu đậm/nhạt), percent bins.  Font chữ thuộc design aesthetic."
+  },
+  {
+    "id": "storytelling_q13",
+    "question":  "Message Redundancy sử dụng yếu tố nào?",
+    "answers":  [
+      "Annotation (chú thích, mũi tên) (T)",
+      "Human recognizable objects (icon, pictogram) (T)",
+      "Message text rõ ràng (going up!, China leads) (T)",
+      "Grid lines đậm (F)"
+    ],
+    "explanation": "Message redundancy: annotations, icons quen thuộc, message text.  Grid lines đậm là clutter cần tránh."
+  },
+  {
+    "id": "storytelling_q14",
+    "question": "Trong ví dụ Gender Equality, cải tiến nào được thực hiện?",
+    "answers": [
+      "Thêm số cụ thể lên mỗi cột (T)",
+      "Dùng màu phản ánh giá trị (T)",
+      "Thêm tiêu đề có thông điệp rõ ràng (T)",
+      "Loại bỏ tên quốc gia (F)"
+    ],
+    "explanation": "Cải tiến: thêm số, dùng màu meaningful, tiêu đề có message.  Tên quốc gia cần giữ để biết data là gì."
+  },
+  {
+    "id": "storytelling_q15",
+    "question": "Tại sao dùng pictogram (👨👩) trong ví dụ Women in CS?",
+    "answers": [
+      "Tăng tác động cảm xúc (T)",
+      "Dễ liên hệ với thực tế (T)",
+      "Tăng độ chính xác của số liệu (F)",
+      "Nhớ lâu hơn (T)"
+    ],
+    "explanation": "Pictogram tăng emotional impact, dễ relate, nhớ lâu hơn. Không làm tăng độ chính xác số (vẫn là cùng data)."
+  },
+  {
+    "id": "storytelling_q16",
+    "question": "Nguyên tắc Eliminate Clutter là gì?",
+    "answers": [
+      "Mỗi pixel phải có mục đích (T)",
+      "Thêm nhiều màu để đẹp (F)",
+      "Giảm cognitive load (T)",
+      "Loại bỏ elements không cần thiết (T)"
+    ],
+    "explanation": "Clutter elimination: mỗi pixel có purpose, giảm cognitive load, bỏ unnecessary elements. Màu nhiều = clutter."
+  },
+  {
+    "id": "storytelling_q17",
+    "question": "Các loại clutter phổ biến cần tránh là gì?",
+    "answers": [
+      "Grid lines quá đậm (T)",
+      "3D effects và shadows (T)",
+      "Quá nhiều decimal places (T)",
+      "Tiêu đề rõ ràng (F)"
+    ],
+    "explanation": "Clutter: grid đậm, 3D, shadows, nhiều decimals. Tiêu đề rõ ràng là cần thiết, không phải clutter."
+  },
+  {
+    "id": "storytelling_q18",
+    "question": "Use Contrast Strategically nghĩa là gì?",
+    "answers": [
+      "Dùng màu nổi bật cho data quan trọng (T)",
+      "Dùng gray cho background/competitors (T)",
+      "Mọi element đều bright colors (F)",
+      "Tạo visual hierarchy (T)"
+    ],
+    "explanation": "Strategic contrast: bright color cho important, gray cho background, tạo hierarchy. Mọi thứ bright = không có contrast."
+  },
+  {
+    "id": "storytelling_q19",
+    "question": "Preattentive Attributes là gì?",
+    "answers": [
+      "Thuộc tính visual nhận thấy ngay lập tức (T)",
+      "Không cần suy nghĩ có ý thức (T)",
+      "Bao gồm color, size, shape, position, motion (T)",
+      "Cần training để nhận biết (F)"
+    ],
+    "explanation": "Preattentive = não nhận thấy tức thì không cần suy nghĩ:  color, size, shape, position, motion. Không cần training."
+  },
+  {
+    "id": "storytelling_q20",
+    "question": "Ứng dụng của preattentive attributes là gì? ",
+    "answers": [
+      "Dùng màu để draw attention (T)",
+      "Tạo visual hierarchy (T)",
+      "Audience thấy điều quan trọng ngay (T)",
+      "Làm biểu đồ phức tạp hơn (F)"
+    ],
+    "explanation": "Preattentive giúp draw attention, tạo hierarchy, audience thấy ngay điều quan trọng. Mục đích là simplify, không phải complicate."
+  },
+  {
+    "id": "storytelling_q21",
+    "question": "Nguyên tắc 'Use Color Sparingly' là gì? ",
+    "answers": [
+      "Nếu mọi thứ đều nổi bật, không có gì nổi bật (T)",
+      "Chỉ dùng 1-2 màu nổi bật (T)",
+      "Phần lớn elements dùng gray (T)",
+      "Càng nhiều màu càng tốt (F)"
+    ],
+    "explanation": "Color sparingly: chỉ 1-2 màu nổi bật cho important, còn lại gray. Nhiều màu = mất focus."
+  },
+  {
+    "id": "storytelling_q22",
+    "question":  "Tại sao Aesthetic Design quan trọng?",
+    "answers": [
+      "Thiết kế đẹp tăng trust (T)",
+      "Thiết kế đẹp cảm giác dễ hiểu hơn (T)",
+      "Thiết kế đẹp dễ nhớ hơn (T)",
+      "Thiết kế đẹp thay thế data chính xác (F)"
+    ],
+    "explanation": "Aesthetic tăng trust, perceived ease, và memory. Nhưng không thể thay thế accuracy của data."
+  },
+  {
+    "id": "storytelling_q23",
+    "question": "Nguyên tắc Aesthetic Design bao gồm gì?",
+    "answers":  [
+      "Alignment (căn chỉnh thẳng hàng) (T)",
+      "White space (khoảng trống) (T)",
+      "Typography rõ ràng và Consistency (T)",
+      "Càng nhiều border càng tốt (F)"
+    ],
+    "explanation": "Aesthetic:  alignment, white space, good typography, consistency. Border nhiều = clutter."
+  },
+  {
+    "id":  "storytelling_q24",
+    "question": "Tại sao cần Add Explanations vào visualization?",
+    "answers": [
+      "Data tự nó không tự giải thích (T)",
+      "Người xem có thể hiểu sai (T)",
+      "Cung cấp context và guidance (T)",
+      "Thay thế hoàn toàn visualization (F)"
+    ],
+    "explanation": "Explanations cần vì data không tự giải thích, dễ hiểu sai. Cung cấp context.  Không thay thế mà bổ sung cho viz."
+  },
+  {
+    "id": "storytelling_q25",
+    "question":  "Kỹ thuật annotation hiệu quả là gì? ",
+    "answers": [
+      "Đánh dấu important points trực tiếp trên chart (T)",
+      "Dùng arrows + text box (T)",
+      "Giải thích 'Tại sao' không chỉ 'Cái gì' (T)",
+      "Viết toàn bộ analysis vào chart (F)"
+    ],
+    "explanation": "Annotation tốt: mark trên chart, dùng arrows/text, giải thích why. Không viết hết analysis lên chart = clutter."
+  },
+  {
+    "id": "storytelling_q26",
+    "question": "Sự khác biệt giữa Bad Title và Good Title?",
+    "answers": [
+      "Bad:  chỉ mô tả data, Good: có thông điệp (T)",
+      "Bad: nhàm chán, Good: thu hút chú ý (T)",
+      "Good title nêu insight chính (T)",
+      "Bad title luôn ngắn hơn (F)"
+    ],
+    "explanation": "Bad title chỉ describe, nhàm.  Good title có message, insight, attractive. Độ dài không phải tiêu chí chính."
+  },
+  {
+    "id":  "storytelling_q27",
+    "question": "Ví dụ về Good Title là gì?",
+    "answers": [
+      "America's Uninsured Rate Dips Below 10% (T)",
+      "China Leads in Female Labor Force Participation (T)",
+      "% of uninsured people in the U.S. (F)",
+      "Very Few Women Are Studying Computer Science (T)"
+    ],
+    "explanation": "'% of uninsured' chỉ mô tả = bad.  Các title kia có message rõ ràng = good."
+  },
+  {
+    "id": "storytelling_q28",
+    "question": "Narrative (Tường thuật) bao gồm yếu tố nào?",
+    "answers":  [
+      "Context and background (T)",
+      "Flow and structure (T)",
+      "Emotional connection và Clear message (T)",
+      "Chỉ có data numbers (F)"
+    ],
+    "explanation": "Narrative: context, flow, emotion, message. Chỉ có numbers là data foundation, chưa phải narrative."
+  },
+  {
+    "id": "storytelling_q29",
+    "question":  "Understand the Context cần xác định gì?",
+    "answers":  [
+      "Clear Purpose:  message là gì, tại sao quan trọng (T)",
+      "Know Your Audience: họ là ai, quan tâm gì (T)",
+      "Data literacy level và decisions cần đưa ra (T)",
+      "Số lượng slides (F)"
+    ],
+    "explanation": "Context: purpose, audience (who, care about, literacy, decisions). Số slides là tactical detail."
+  },
+  {
+    "id": "storytelling_q30",
+    "question": "Framework 5W1H trong Explanatory Analysis là gì?",
+    "answers": [
+      "WHO (ai), WHAT (gì), HOW (data nào) (T)",
+      "MECHANISM (cách thức), TONE (giọng điệu) (T)",
+      "WHERE (địa điểm vật lý) (F)",
+      "Xác định audience, goal, data, method, tone (T)"
+    ],
+    "explanation": "5W1H: Who (audience), What (goal), Mechanism (method), Tone, How (data). WHERE địa lý không phải focus chính."
+  },
+  {
+    "id": "storytelling_q31",
+    "question": "WHO (Audience) cần xác định điều gì?",
+    "answers": [
+      "Vai trò (CEO, Manager, Technical) (T)",
+      "Kiến thức nền (Expert hay beginner) (T)",
+      "Quan tâm về gì (cost, quality, time) (T)",
+      "Tuổi và giới tính (F)"
+    ],
+    "explanation": "WHO: role, knowledge level, interests. Demographics (tuổi, giới tính) ít quan trọng hơn trong context này."
+  },
+  {
+    "id": "storytelling_q32",
+    "question":  "WHAT (Goal) cần rõ ràng về điều gì?",
+    "answers": [
+      "Hành động cụ thể audience cần làm (T)",
+      "Quyết định cụ thể cần đưa ra (T)",
+      "Thay đổi cụ thể mong muốn (T)",
+      "Loại font chữ sẽ dùng (F)"
+    ],
+    "explanation": "WHAT: action, decision, change cụ thể. Font chữ là design detail, không phải goal."
+  },
+  {
+    "id": "storytelling_q33",
+    "question":  "MECHANISM (Cách thức) ảnh hưởng như thế nào?",
+    "answers": [
+      "Email → ngắn gọn, tĩnh (T)",
+      "Presentation → tương tác, build-up (T)",
+      "Dashboard → real-time, tự khám phá (T)",
+      "Mechanism không ảnh hưởng content (F)"
+    ],
+    "explanation": "Mechanism ảnh hưởng lớn:  email cần concise, presentation có thể elaborate, dashboard interactive.  Nó shape content."
+  },
+  {
+    "id": "storytelling_q34",
+    "question": "TONE (Giọng điệu) có các loại nào?",
+    "answers":  [
+      "Formal (trang trọng) cho board meeting (T)",
+      "Casual (thân mật) cho team meeting (T)",
+      "Urgent (khẩn cấp) cho crisis, Celebratory cho success (T)",
+      "Tone luôn phải nghiêm túc (F)"
+    ],
+    "explanation": "Tone:  formal, casual, urgent, celebratory tùy context. Không phải luôn serious."
+  },
+  {
+    "id": "storytelling_q35",
+    "question":  "Story Structure - Three-Act gồm những gì?",
+    "answers": [
+      "Beginning (Hook): compelling opening, present problem (T)",
+      "Middle (Analysis): key findings, evidence, build tension (T)",
+      "End (Resolution): conclusions, recommendations, call to action (T)",
+      "Chỉ cần Middle với data (F)"
+    ],
+    "explanation": "3-Act: Beginning (hook), Middle (analysis), End (resolution). Cả 3 đều quan trọng, không chỉ middle."
+  },
+  {
+    "id": "storytelling_q36",
+    "question":  "Beginning (Hook) cần có yếu tố gì?",
+    "answers":  [
+      "Compelling opening (câu hỏi, số liệu sốc) (T)",
+      "Set context và present problem (T)",
+      "Why should audience care (WIIFM) (T)",
+      "Kết luận cuối cùng (F)"
+    ],
+    "explanation": "Beginning: compelling opening, context, problem, why care. Kết luận thuộc End."
+  },
+  {
+    "id": "storytelling_q37",
+    "question":  "Middle (Analysis) làm gì? ",
+    "answers": [
+      "Present key findings (T)",
+      "Support with evidence (data viz, examples) (T)",
+      "Build tension và show insights (T)",
+      "Kêu gọi hành động ngay (F)"
+    ],
+    "explanation": "Middle: findings, evidence, tension, insights. Call to action thuộc End."
+  },
+  {
+    "id": "storytelling_q38",
+    "question": "End (Resolution) bao gồm gì?",
+    "answers": [
+      "Clear conclusions (T)",
+      "Specific recommendations (who, what, when) (T)",
+      "Call to action và next steps (T)",
+      "Giới thiệu vấn đề mới (F)"
+    ],
+    "explanation": "End: conclusions, specific recommendations, CTA, next steps. Vấn đề mới thuộc Beginning của story khác."
+  },
+  {
+    "id": "storytelling_q39",
+    "question": "Storytelling Methods bao gồm cách nào?",
+    "answers": [
+      "Problem-Solution format (T)",
+      "Journey structure (từ đâu → qua gì → học gì → ở đâu) (T)",
+      "Contrast and Comparison (before/after, A vs B) (T)",
+      "Random presentation (F)"
+    ],
+    "explanation": "Methods: problem-solution, journey, contrast/comparison. Random không phải storytelling method."
+  },
+  {
+    "id": "storytelling_q40",
+    "question":  "Engagement Tools hiệu quả là gì?",
+    "answers": [
+      "Real examples (ví dụ thực tế cụ thể) (T)",
+      "Analogies và metaphors (T)",
+      "Personal connections (T)",
+      "Technical jargon (F)"
+    ],
+    "explanation": "Engagement:  real examples, analogies, metaphors, personal connections. Jargon làm mất engagement."
+  },
+  {
+    "id": "storytelling_q41",
+    "question":  "Language Use trong storytelling nên như thế nào?",
+    "answers": [
+      "Clear and concise (rõ ràng, ngắn gọn) (T)",
+      "Active voice (thể chủ động) (T)",
+      "Simple terms và meaningful labels (T)",
+      "Passive voice và complex terms (F)"
+    ],
+    "explanation": "Good language: clear, concise, active, simple, meaningful. Passive và complex làm khó hiểu."
+  },
+  {
+    "id": "storytelling_q42",
+    "question": "Sự khác biệt Author-Driven vs Reader-Driven?",
+    "answers": [
+      "Author:  strict order, no interactivity (T)",
+      "Reader: no prescribed order, free interactivity (T)",
+      "Author: heavy messaging, Reader: no messaging (T)",
+      "Reader tốt hơn Author trong mọi trường hợp (F)"
+    ],
+    "explanation": "Author:  controlled, strict, messaging. Reader: free, interactive, explore.  Mỗi loại phù hợp contexts khác nhau."
+  },
+  {
+    "id": "storytelling_q43",
+    "question": "Khi nào dùng Author-Driven approach?",
+    "answers": [
+      "Presentation cho lãnh đạo (T)",
+      "Báo cáo chính thức (T)",
+      "Khi thông điệp phải nhất quán (T)",
+      "Khi audience là data analysts (F)"
+    ],
+    "explanation": "Author-driven: presentations, formal reports, consistent message. Analysts thường cần reader-driven để explore."
+  },
+  {
+    "id": "storytelling_q44",
+    "question":  "Khi nào dùng Reader-Driven approach?",
+    "answers": [
+      "Dashboard cho analysts (T)",
+      "Exploratory analysis tools (T)",
+      "Khi muốn user tự khám phá (T)",
+      "Crisis communication (F)"
+    ],
+    "explanation": "Reader-driven:  dashboards, exploratory tools, self-discovery. Crisis cần author-driven để control message."
+  },
+  {
+    "id": "storytelling_q45",
+    "question":  "Hybrid Approach kết hợp như thế nào?",
+    "answers": [
+      "Start with guided tour (author-driven) (T)",
+      "Then allow exploration (reader-driven) (T)",
+      "Annotations guide + filters customize (T)",
+      "Chỉ dùng một approach duy nhất (F)"
+    ],
+    "explanation": "Hybrid: bắt đầu guided (author), sau đó explore (reader). Kết hợp cả hai, không chỉ một."
+  },
+  {
+    "id": "storytelling_q46",
+    "question": "Genres of Data Stories theo Bach & Segel gồm gì?",
+    "answers":  [
+      "Magazine Style, Annotated Chart (T)",
+      "Partitioned Poster, Flow Chart (T)",
+      "Comic Strip, Slide Show, Video (T)",
+      "Chỉ có PowerPoint (F)"
+    ],
+    "explanation": "Nhiều genres: Magazine, Annotated, Poster, Flow, Comic, Slideshow, Video. PowerPoint chỉ là một tool."
+  },
+  {
+    "id": "storytelling_q47",
+    "question":  "Tại sao Use Multiple Charts? ",
+    "answers": [
+      "Break down complexity (chia nhỏ phức tạp) (T)",
+      "Progressive revelation (tiết lộ dần) (T)",
+      "Show different facets (nhiều khía cạnh) (T)",
+      "Làm presentation dài hơn (F)"
+    ],
+    "explanation": "Multiple charts:  break complexity, progressive reveal, different facets. Không phải để kéo dài."
+  },
+  {
+    "id": "storytelling_q48",
+    "question": "Kỹ thuật Multiple Charts bao gồm gì? ",
+    "answers": [
+      "Small Multiples (nhiều chart nhỏ cùng format) (T)",
+      "Layered Progression (overview → detail → solution) (T)",
+      "Before-After Comparison (T)",
+      "Một chart phức tạp thay vì nhiều chart đơn giản (F)"
+    ],
+    "explanation": "Techniques: small multiples, layered progression, before-after.  Multiple simple beats one complex."
+  },
+  {
+    "id": "storytelling_q49",
+    "question": "Presentation Flow cần có gì?",
+    "answers": [
+      "Logical progression (tiến triển logic) (T)",
+      "Smooth transitions giữa các slides (T)",
+      "Building complexity (simple → complex) (T)",
+      "Nhảy topics đột ngột (F)"
+    ],
+    "explanation": "Flow: logical, smooth transitions, building complexity. Nhảy topic đột ngột breaks flow."
+  },
+  {
+    "id": "storytelling_q50",
+    "question":  "Pacing (Nhịp độ) presentation cần làm gì?",
+    "answers":  [
+      "Allocate time theo importance (T)",
+      "Pause after key points (T)",
+      "Plan discussion breaks (T)",
+      "Nói nhanh qua tất cả slides (F)"
+    ],
+    "explanation": "Good pacing: time by importance, pause for impact, plan breaks. Rush qua = mất message."
+  },
+  {
+    "id": "storytelling_q51",
+    "question":  "Engagement trong presentation dùng gì?",
+    "answers": [
+      "Questions (rhetorical, direct, poll) (T)",
+      "Interactions (live demo, examples) (T)",
+      "Audience participation (vote, share, predict) (T)",
+      "Chỉ đọc slides (F)"
+    ],
+    "explanation": "Engagement: questions, interactions, participation.  Chỉ đọc slides = boring, no engagement."
+  },
+  {
+    "id": "storytelling_q52",
+    "question":  "Storytelling là 'Double-Edged Sword' vì sao?",
+    "answers":  [
+      "Có thể bị lạm dụng để mislead (T)",
+      "Cùng data có thể kể nhiều stories khác nhau (T)",
+      "Kỹ thuật có thể manipulate perception (T)",
+      "Storytelling luôn là xấu (F)"
+    ],
+    "explanation": "Double-edged: có thể mislead, same data different stories, manipulate.  Storytelling không xấu nếu dùng đúng."
+  },
+  {
+    "id": "storytelling_q53",
+    "question": "Ví dụ South China Morning Post cho thấy gì?",
+    "answers":  [
+      "Cùng data, lật ngược chart cho message ngược lại (T)",
+      "Approval going up vs going down (T)",
+      "Visualization có thể manipulate perception (T)",
+      "Data luôn nói lên sự thật khách quan (F)"
+    ],
+    "explanation": "SCMP example: flip chart = flip message dù same data. Viz có thể manipulate.  Data cần context để interpret."
+  },
+  {
+    "id": "storytelling_q54",
+    "question":  "Axis Manipulation bao gồm tricks nào?",
+    "answers": [
+      "Truncated Y-axis (cắt trục không bắt đầu từ 0) (T)",
+      "Làm small change trông như huge increase (T)",
+      "Cherry-picking time frame (T)",
+      "Luôn bắt đầu từ 0 (F)"
+    ],
+    "explanation": "Manipulation: truncated axis, exaggerate change, cherry-pick time. Bắt đầu từ 0 là ethical practice."
+  },
+  {
+    "id": "storytelling_q55",
+    "question":  "Misleading Visuals bao gồm gì?",
+    "answers": [
+      "Dùng 3D để phóng đại (T)",
+      "Perspective làm volume trông lớn hơn thực tế (T)",
+      "Area vs length confusion (T)",
+      "Dùng 2D bar chart (F)"
+    ],
+    "explanation": "Misleading: 3D exaggeration, perspective tricks, area/length confusion. 2D bar chart là honest."
+  },
+  {
+    "id": "storytelling_q56",
+    "question":  "Ethical Guidelines - DO (nên làm) bao gồm gì?",
+    "answers": [
+      "Show full context (T)",
+      "Use appropriate scales (T)",
+      "Acknowledge limitations và cite sources (T)",
+      "Manipulate axes without disclosure (F)"
+    ],
+    "explanation": "DO: full context, appropriate scales, acknowledge limits, cite sources. Manipulate without disclosure = unethical."
+  },
+  {
+    "id": "storytelling_q57",
+    "question": "Ethical Guidelines - DON'T (không nên) bao gồm gì? ",
+    "answers": [
+      "Cherry-pick data (T)",
+      "Manipulate axes without disclosure (T)",
+      "Hide contradictory evidence (T)",
+      "Show uncertainty (F)"
+    ],
+    "explanation": "DON'T: cherry-pick, manipulate, hide evidence.  Show uncertainty là ethical practice."
+  },
+  {
+    "id": "storytelling_q58",
+    "question":  "Questions to Ask Yourself trước khi publish? ",
+    "answers": [
+      "Am I being truthful? (T)",
+      "Would I show this if it hurt my argument? (T)",
+      "Can I defend this choice? (T)",
+      "Sẽ có nhiều views không? (F)"
+    ],
+    "explanation": "Self-check: truthful, show even if hurts argument, defend choice. Views count không phải ethical criterion."
+  },
+  {
+    "id": "storytelling_q59",
+    "question":  "The Golden Rule of Ethical Visualization là gì?",
+    "answers": [
+      "Visualize data as you would want it visualized for you (T)",
+      "Honestly and clearly (T)",
+      "Treat audience với respect (T)",
+      "Make data look impressive bằng mọi giá (F)"
+    ],
+    "explanation": "Golden Rule: viz như bạn muốn được viz cho mình - honestly, clearly, respectfully. Không phải impressive at all cost."
+  },
+  {
+    "id": "storytelling_q60",
+    "question":  "Saliency trong topic modeling tính như thế nào?",
+    "answers": [
+      "saliency(w) = frequency(w) × distinctiveness(w) (T)",
+      "Từ phải vừa xuất hiện nhiều vừa đặc trưng (T)",
+      "Từ 'the' có saliency cao (F)",
+      "Từ chỉ trong một topic có distinctiveness cao (T)"
+    ],
+    "explanation": "Saliency = frequency × distinctiveness. Từ 'the' tần suất cao nhưng distinctiveness thấp → saliency thấp."
+  },
+  {
+    "id": "storytelling_q61",
+    "question": "Trong data storytelling, vai trò của color là gì?",
+    "answers": [
+      "Phân biệt categories (T)",
+      "Highlight điểm quan trọng (T)",
+      "Biểu diễn giá trị (sequential, diverging) (T)",
+      "Làm đẹp mà không cần purpose (F)"
+    ],
+    "explanation": "Color roles: distinguish, highlight, represent values. Mỗi màu phải có purpose, không chỉ decoration."
+  },
+  {
+    "id": "storytelling_q62",
+    "question":  "Khi present cho CEO vs Technical team, khác biệt gì?",
+    "answers": [
+      "CEO: high-level summary, business impact (T)",
+      "Technical: chi tiết kỹ thuật, methodology (T)",
+      "CEO: executive summary, recommendations (T)",
+      "Cùng một presentation cho cả hai (F)"
+    ],
+    "explanation": "CEO cần high-level, impact, recommendations. Technical cần details, methods.  Phải customize theo audience."
+  },
+  {
+    "id": "storytelling_q63",
+    "question":  "Active voice vs Passive voice trong storytelling?",
+    "answers": [
+      "Active:  'We increased sales' - clear, direct (T)",
+      "Passive: 'Sales were increased' - vague, weak (T)",
+      "Active voice tốt hơn cho storytelling (T)",
+      "Passive voice luôn tốt hơn (F)"
+    ],
+    "explanation": "Active voice: clear, strong, engaging. Passive: vague, weak.  Active tốt hơn cho storytelling."
+  },
+  {
+    "id": "storytelling_q64",
+    "question": "Annotations trên chart nên như thế nào?",
+    "answers": [
+      "Giải thích 'why' không chỉ 'what' (T)",
+      "Đặt trực tiếp tại điểm quan trọng (T)",
+      "Concise và actionable (T)",
+      "Viết paragraph dài (F)"
+    ],
+    "explanation": "Good annotations: why not just what, tại điểm quan trọng, concise. Paragraph dài = clutter."
+  },
+  {
+    "id": "storytelling_q65",
+    "question": "Trong ví dụ Uninsured Americans, cải tiến gì?",
+    "answers": [
+      "Title từ '% of uninsured' → 'Rate Dips Below 10%' (T)",
+      "Thêm data labels lên chart (T)",
+      "Message rõ ràng hơn (T)",
+      "Thêm nhiều colors (F)"
+    ],
+    "explanation": "Improvements: actionable title, data labels, clear message. Không phải nhiều màu."
+  },
+  {
+    "id": "storytelling_q66",
+    "question": "Small Multiples technique là gì?",
+    "answers": [
+      "Nhiều charts nhỏ cùng format (T)",
+      "Dễ so sánh across categories (T)",
+      "Cùng scale để fair comparison (T)",
+      "Mỗi chart khác format hoàn toàn (F)"
+    ],
+    "explanation": "Small multiples: cùng format, dễ compare, same scale. Khác format = khó compare."
+  },
+  {
+    "id": "storytelling_q67",
+    "question": "Call to Action (CTA) hiệu quả cần gì?",
+    "answers": [
+      "Specific (cụ thể) (T)",
+      "Actionable (có thể hành động) (T)",
+      "Clear next steps (who, what, when) (T)",
+      "Chung chung 'hãy cân nhắc' (F)"
+    ],
+    "explanation": "Good CTA: specific, actionable, clear steps. 'Hãy cân nhắc' = vague, weak CTA."
+  },
+  {
+    "id": "storytelling_q68",
+    "question": "Contrast and Comparison structure dùng khi nào?",
+    "answers": [
+      "Decision making (chọn option A vs B) (T)",
+      "Performance reviews (before vs after) (T)",
+      "Benchmarking (us vs competitors) (T)",
+      "Khi chỉ có một option (F)"
+    ],
+    "explanation": "Contrast structure: decisions, reviews, benchmarking. Cần ít nhất 2 things để compare."
+  },
+  {
+    "id": "storytelling_q69",
+    "question": "White space trong design có vai trò gì?",
+    "answers": [
+      "Giúp thông tin 'thở', dễ đọc (T)",
+      "Tạo visual hierarchy (T)",
+      "Không phải wasted space (T)",
+      "Cần fill hết bằng content (F)"
+    ],
+    "explanation": "White space: breathing room, hierarchy, valuable. Không phải waste cần fill."
+  },
+  {
+    "id": "storytelling_q70",
+    "question": "Khi data shows negative results, nên làm gì?",
+    "answers": [
+      "Present honestly (T)",
+      "Show full context (T)",
+      "Explain causes và propose solutions (T)",
+      "Hide hoặc manipulate data (F)"
+    ],
+    "explanation": "Negative results: present honestly, full context, explain + solutions. Không hide/manipulate = unethical."
+  }
+]
