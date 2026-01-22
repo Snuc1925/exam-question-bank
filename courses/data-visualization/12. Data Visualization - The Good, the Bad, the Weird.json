@@ -1,0 +1,772 @@
+[
+  {
+    "id": "vis_chap12_01",
+    "question": "Trong nguyên tắc thiết kế của Tufte, tại sao biểu đồ cột BẮT BUỘC phải có đường cơ sở bằng 0?",
+    "answers": [
+      "Vì người xem so sánh độ dài của các cột (T)",
+      "Vì người xem so sánh vị trí từ đường cơ sở (T)",
+      "Vì biểu đồ cột luôn biểu diễn dữ liệu phân loại (F)",
+      "Vì quy tắc banking đến 45 độ yêu cầu như vậy (F)"
+    ],
+    "explanation": "Biểu đồ cột yêu cầu đường cơ sở bằng 0 vì người xem so sánh độ dài cột và vị trí từ baseline, không liên quan đến banking 45°."
+  },
+  {
+    "id": "vis_chap12_02",
+    "question": "Biểu đồ đường có thể không cần đường cơ sở bằng 0 vì lý do nào?",
+    "answers":  [
+      "Người xem so sánh góc độ dốc thay vì độ dài (T)",
+      "Quy tắc banking đến 45° quan trọng hơn việc bắt đầu từ 0 (T)",
+      "Biểu đồ đường không bao giờ cần đường cơ sở (F)",
+      "Độ dài đường không ảnh hưởng đến nhận thức (F)"
+    ],
+    "explanation": "Biểu đồ đường tập trung vào góc/độ dốc, và banking 45° giúp đánh giá chính xác hơn việc bắt đầu từ 0."
+  },
+  {
+    "id": "vis_chap12_03",
+    "question":  "Hệ số lừa dối (Lie Factor) được tính như thế nào?",
+    "answers": [
+      "Kích thước hiệu ứng trong đồ họa chia cho kích thước hiệu ứng trong dữ liệu (T)",
+      "Hệ số lừa dối tốt nên gần 1.0 (T)",
+      "Kích thước hiệu ứng trong dữ liệu chia cho kích thước hiệu ứng trong đồ họa (F)",
+      "Hệ số lừa dối càng cao càng tốt (F)"
+    ],
+    "explanation": "Lie Factor = (hiệu ứng đồ họa)/(hiệu ứng dữ liệu), nên gần 1.0 để trung thực."
+  },
+  {
+    "id": "vis_chap12_04",
+    "question": "Trong ví dụ về tiêu chuẩn tiết kiệm nhiên liệu, tại sao Hệ số lừa dối lại là 14. 8?",
+    "answers": [
+      "Độ tăng trưởng đồ họa (783%) lớn hơn nhiều so với độ tăng dữ liệu (53%) (T)",
+      "Sự khác biệt giữa 5. 3 inches và 0.6 inches quá lớn so với sự thay đổi thực (T)",
+      "Vì đồ họa sử dụng biểu đồ 3D (F)",
+      "Vì trục Y không bắt đầu từ 0 (F)"
+    ],
+    "explanation": "Lie Factor = (5.3-0.6)/0.6 chia cho (27.5-18)/18 = 14.8, do tăng trưởng hình ảnh quá lớn so với dữ liệu."
+  },
+  {
+    "id":  "vis_chap12_05",
+    "question": "Vấn đề chính của biểu đồ bong bóng khi sử dụng bán kính để mã hóa dữ liệu là gì?",
+    "answers":  [
+      "Tăng gấp đôi bán kính làm diện tích tăng gấp bốn lần (T)",
+      "Hệ số lừa dối sẽ là 3 thay vì 1 (T)",
+      "Bong bóng luôn che khuất nhau (F)",
+      "Màu sắc của bong bóng gây nhầm lẫn (F)"
+    ],
+    "explanation": "Khi bán kính tăng gấp đôi, diện tích (π×r²) tăng gấp 4, tạo Lie Factor = 3."
+  },
+  {
+    "id": "vis_chap12_06",
+    "question": "Nguyên tắc 'Tối đa hóa tỷ lệ mực-dữ liệu' có nghĩa là gì?",
+    "answers": [
+      "Sử dụng ít mực nhất để thể hiện lượng thông tin lớn nhất (T)",
+      "Thể hiện thông tin trong không gian nhỏ nhất có thể (T)",
+      "Sử dụng càng nhiều màu sắc càng tốt (F)",
+      "Thêm nhiều đường lưới để dễ đọc hơn (F)"
+    ],
+    "explanation": "Nguyên tắc này của Tufte khuyến khích loại bỏ mọi yếu tố không cần thiết, tối đa hóa tỷ lệ dữ liệu/mực."
+  },
+  {
+    "id": "vis_chap12_07",
+    "question": "Trong biểu đồ thất nghiệp gây hiểu lầm được đề cập, các vấn đề nào được xác định?",
+    "answers": [
+      "Chọn quý ngẫu nhiên không đại diện cho xu hướng (T)",
+      "Thang đo trục Y không nhất quán (T)",
+      "Biểu đồ sử dụng quá nhiều màu sắc (F)",
+      "Biểu đồ là dạng 3D (F)"
+    ],
+    "explanation": "Vấn đề chính là cherry-picking data (chọn quý ngẫu nhiên) và tỷ lệ pixel không nhất quán trên trục Y."
+  },
+  {
+    "id": "vis_chap12_08",
+    "question": "Tiêu đề 'MẤT 15 TRIỆU VIỆC LÀM?' trong ví dụ gây hiểu lầm vì sao?",
+    "answers": [
+      "Biểu đồ thực tế hiển thị số người THẤT NGHIỆP, không phải mất việc làm (T)",
+      "Số liệu ổn định sau 2009, không tăng như tiêu đề gợi ý (T)",
+      "Con số 15 triệu hoàn toàn sai (F)",
+      "Tiêu đề thiếu nguồn tham khảo (F)"
+    ],
+    "explanation": "Tiêu đề nhầm lẫn giữa 'unemployment' (thất nghiệp - trạng thái) và 'job loss' (mất việc - hành động)."
+  },
+  {
+    "id": "vis_chap12_09",
+    "question": "Trong biểu đồ biến đổi khí hậu, 'chọn dữ liệu một phần' gây vấn đề gì?",
+    "answers":  [
+      "Có thể làm méo mó xu hướng thực tế (T)",
+      "Thiếu bối cảnh đầy đủ để hiểu dữ liệu (T)",
+      "Luôn tạo ra Hệ số lừa dối cao (F)",
+      "Làm tăng kích thước file biểu đồ (F)"
+    ],
+    "explanation":  "Cherry-picking (chọn lọc) khoảng thời gian có thể che giấu xu hướng dài hạn và thiếu ngữ cảnh."
+  },
+  {
+    "id": "vis_chap12_10",
+    "question": "Quy tắc 'Banking đến 45 độ' có ý nghĩa gì? ",
+    "answers": [
+      "Độ dốc trung bình trong biểu đồ đường nên là 45° (T)",
+      "Giảm thiểu sai số trong đánh giá trực quan về tỷ lệ độ dốc (T)",
+      "Tất cả các đường trong biểu đồ phải có góc 45° (F)",
+      "Chỉ áp dụng cho biểu đồ cột, không phải biểu đồ đường (F)"
+    ],
+    "explanation": "Banking 45° là kỹ thuật điều chỉnh tỷ lệ khung hình để độ dốc trung bình ≈45°, giúp đánh giá xu hướng chính xác hơn."
+  },
+  {
+    "id": "vis_chap12_11",
+    "question": "Rác đồ họa (Chart Junk) được định nghĩa như thế nào?",
+    "answers":  [
+      "Các yếu tố hình ảnh không cần thiết làm phân tâm người xem (T)",
+      "Các yếu tố không đóng góp vào việc truyền đạt thông tin (T)",
+      "Mọi yếu tố trang trí đều là rác đồ họa có hại (F)",
+      "Đường lưới luôn được coi là rác đồ họa (F)"
+    ],
+    "explanation": "Chart junk là yếu tố không cần thiết, nhưng nghiên cứu CHI'10 cho thấy một số có thể hữu ích (hấp dẫn, dễ nhớ)."
+  },
+  {
+    "id": "vis_chap12_12",
+    "question": "Nghiên cứu về 'Useful Junk' (CHI'10) cho thấy điều gì?",
+    "answers":  [
+      "Một số rác đồ họa không có hại cho khả năng hiểu (T)",
+      "Có thể làm biểu đồ hấp dẫn hơn và dễ nhớ hơn (T)",
+      "Mọi rác đồ họa đều cải thiện hiệu suất đọc biểu đồ (F)",
+      "Nên luôn thêm nhiều trang trí vào biểu đồ (F)"
+    ],
+    "explanation": "Nghiên cứu chỉ ra rằng KHÔNG PHẢI tất cả chart junk đều giống nhau - một số có thể có lợi."
+  },
+  {
+    "id": "vis_chap12_13",
+    "question": "Vấn đề chính của biểu đồ tròn là gì?",
+    "answers": [
+      "Con người kém trong việc so sánh góc và diện tích (T)",
+      "Quá nhiều phần làm cho biểu đồ khó đọc (T)",
+      "Biểu đồ tròn không thể hiện được dữ liệu định lượng (F)",
+      "Biểu đồ tròn luôn có Hệ số lừa dối cao (F)"
+    ],
+    "explanation": "Thử thách Schutz 2007 cho thấy khó khăn trong việc so sánh các phần, đặc biệt khi có nhiều phần."
+  },
+  {
+    "id": "vis_chap12_14",
+    "question": "Quy tắc thực hành nào đúng khi sử dụng biểu đồ tròn? ",
+    "answers": [
+      "Có số lượng phần nhỏ (ít phần) (T)",
+      "Bắt đầu từ vị trí 12 giờ (T)",
+      "Sử dụng càng nhiều màu khác nhau càng tốt (F)",
+      "Không cần sắp xếp các giá trị (F)"
+    ],
+    "explanation": "Best practices: ít phần, sắp xếp giá trị, bắt đầu 12h, cân nhắc phương án thay thế."
+  },
+  {
+    "id": "vis_chap12_15",
+    "question": "Vấn đề của ví dụ 'Chia Sẻ Phủ Sóng Theo Chủ Đề trên TechCrunch' là gì?",
+    "answers": [
+      "Quá nhiều phần và quá nhiều màu (T)",
+      "Độ tương phản màu kém (T)",
+      "Sử dụng biểu đồ đường thay vì biểu đồ tròn (F)",
+      "Thiếu tiêu đề (F)"
+    ],
+    "explanation": "Ví dụ này vi phạm nhiều quy tắc:  quá nhiều phần, quá nhiều màu, tương phản kém."
+  },
+  {
+    "id": "vis_chap12_16",
+    "question": "Tại sao bản đồ màu cầu vồng (Rainbow Colormap) gây vấn đề?",
+    "answers": [
+      "Thiếu thứ tự cảm nhận rõ ràng (T)",
+      "Độ sáng (Luminance) không nhất quán (T)",
+      "Sử dụng quá ít màu sắc (F)",
+      "Chỉ phù hợp cho dữ liệu phân loại (F)"
+    ],
+    "explanation": "Rainbow colormap không có thứ tự cảm nhận rõ ràng và luminance không đồng đều (Kosara 2013)."
+  },
+  {
+    "id": "vis_chap12_17",
+    "question": "Khi nào nên sử dụng lược đồ màu Sequential (Tuần tự)?",
+    "answers": [
+      "Cho các danh mục có thứ tự (T)",
+      "Cho dữ liệu số (T)",
+      "Cho dữ liệu phân loại không có thứ tự (F)",
+      "Khi cần nhấn mạnh điểm giữa (F)"
+    ],
+    "explanation": "Sequential colormap phù hợp cho dữ liệu có thứ tự hoặc số, với độ sáng tăng/giảm đều."
+  },
+  {
+    "id": "vis_chap12_18",
+    "question": "Lược đồ màu Diverging (Phân kỳ) được sử dụng khi nào?",
+    "answers": [
+      "Dữ liệu số có điểm giữa có ý nghĩa (T)",
+      "Khi cần nhấn mạnh giá trị dương và âm (T)",
+      "Cho dữ liệu phân loại không có thứ tự (F)",
+      "Khi chỉ có hai danh mục (F)"
+    ],
+    "explanation": "Diverging colormap dùng cho dữ liệu có điểm giữa quan trọng (vd: 0, trung bình)."
+  },
+  {
+    "id": "vis_chap12_19",
+    "question": "Vấn đề của biểu đồ 3D là gì?",
+    "answers": [
+      "Phối cảnh làm méo thông tin (T)",
+      "Che khuất ẩn thông tin (T)",
+      "Tạo hiệu ứng màu sắc đẹp hơn (F)",
+      "Tăng tính chính xác của dữ liệu (F)"
+    ],
+    "explanation":  "3D gây méo mó do phối cảnh và che khuất, mặc dù có thể 'đẹp' nhưng giảm độ chính xác."
+  },
+  {
+    "id": "vis_chap12_20",
+    "question": "Tại sao văn bản nghiêng trong biểu đồ 3D là vấn đề?",
+    "answers": [
+      "Không dễ đọc như văn bản thẳng (T)",
+      "Nghiên cứu CHI 2007 chứng minh độ đọc kém (T)",
+      "Văn bản nghiêng luôn gây Hệ số lừa dối cao (F)",
+      "Không thể in được trên giấy (F)"
+    ],
+    "explanation": "Văn bản nghiêng trong volumetric displays kém đọc hơn, theo nghiên cứu CHI 2007."
+  },
+  {
+    "id": "vis_chap12_21",
+    "question": "Con người có xu hướng như thế nào khi đánh giá độ sâu? ",
+    "answers": [
+      "Đánh giá thấp độ sâu (T)",
+      "Thay đổi cường độ thực tế khác với cảm giác cảm nhận (T)",
+      "Luôn đánh giá chính xác độ sâu (F)",
+      "Đánh giá cao độ sâu (F)"
+    ],
+    "explanation": "Con người có xu hướng UNDERestimate (đánh giá thấp) độ sâu trong biểu đồ 3D."
+  },
+  {
+    "id": "vis_chap12_22",
+    "question": "'Mắt thắng Trí nhớ' có nghĩa là gì?",
+    "answers": [
+      "Nhận thức bên ngoài (di chuyển mắt) hiệu quả hơn nhận thức bên trong (trí nhớ) (T)",
+      "So sánh bằng mắt dễ hơn so sánh bằng nhớ (T)",
+      "Trí nhớ luôn chính xác hơn mắt (F)",
+      "Hoạt hình tốt hơn Small Multiples (F)"
+    ],
+    "explanation": "External cognition (nhìn đồng thời) > Internal cognition (nhớ từng frame animation)."
+  },
+  {
+    "id": "vis_chap12_23",
+    "question": "Tại sao Small Multiples tốt hơn Animation? ",
+    "answers": [
+      "Dễ dàng so sánh bằng cách di chuyển mắt giữa các chế độ xem (T)",
+      "Sử dụng nhận thức bên ngoài thay vì bên trong (T)",
+      "Animation không thể hiện được dữ liệu thời gian (F)",
+      "Small Multiples chiếm ít không gian hơn (F)"
+    ],
+    "explanation": "Small multiples cho phép so sánh trực tiếp bằng mắt, không cần nhớ frame trước."
+  },
+  {
+    "id": "vis_chap12_24",
+    "question": "Các chiều kích chủ quan trong trực quan hóa bao gồm gì?",
+    "answers":  [
+      "Thẩm mỹ (Aesthetics) - những thứ đẹp được coi là hữu ích hơn (T)",
+      "Tính vui tươi (Playfulness) - khuyến khích thử nghiệm (T)",
+      "Độ chính xác tuyệt đối của dữ liệu (F)",
+      "Kích thước file biểu đồ (F)"
+    ],
+    "explanation": "Các chiều chủ quan:  thẩm mỹ, phong cách, tính vui tươi, tính sinh động - đều ảnh hưởng cảm nhận người dùng."
+  },
+  {
+    "id": "vis_chap12_25",
+    "question": "Tính sinh động (Vividness) trong trực quan hóa có tác dụng gì?",
+    "answers":  [
+      "Có thể làm cho trực quan hóa dễ nhớ hơn (T)",
+      "Tăng tính hấp dẫn và engagement (T)",
+      "Luôn làm giảm độ chính xác (F)",
+      "Chỉ áp dụng cho biểu đồ 3D (F)"
+    ],
+    "explanation": "Vividness (sinh động) có thể cải thiện memorability và engagement mà không nhất thiết giảm accuracy."
+  },
+  {
+    "id": "vis_chap14_26",
+    "question": "Dữ liệu đồ thị G(V,E) bao gồm những thành phần nào?",
+    "answers":  [
+      "Tập đỉnh V (vertices/nodes) (T)",
+      "Tập cạnh E (edges/links) (T)",
+      "Tập màu sắc C (colors) (F)",
+      "Tập trọng số W (weights) - là thuộc tính của E (F)"
+    ],
+    "explanation": "Đồ thị G(V,E) định nghĩa bởi tập đỉnh V và tập cạnh E.  Trọng số là thuộc tính của cạnh, không phải thành phần cơ bản."
+  },
+  {
+    "id": "vis_chap14_27",
+    "question": "Tính thưa thớt (Sparsity) trong đồ thị có nghĩa là gì?",
+    "answers": [
+      "Không phải tất cả các nút đều được nối với nhau (T)",
+      "Số lượng cạnh ít hơn nhiều so với số kết nối có thể có (T)",
+      "Đồ thị không có cạnh nào (F)",
+      "Mọi nút đều có bậc bằng 1 (F)"
+    ],
+    "explanation": "Sparsity nghĩa là |E| << |V|×(|V|-1)/2 (cho đồ thị vô hướng), không có nghĩa là không có cạnh."
+  },
+  {
+    "id":  "vis_chap14_28",
+    "question": "Cạnh có hướng và vô hướng khác nhau như thế nào?",
+    "answers": [
+      "Có hướng thể hiện mối quan hệ một chiều (ví dụ: theo dõi Twitter) (T)",
+      "Vô hướng thể hiện mối quan hệ hai chiều (ví dụ: kết bạn Facebook) (T)",
+      "Có hướng luôn có trọng số, vô hướng thì không (F)",
+      "Vô hướng không thể biểu diễn bằng ma trận kề (F)"
+    ],
+    "explanation": "Directed edges có hướng (A→B ≠ B→A), undirected không (A-B = B-A). Cả hai đều có thể có trọng số và biểu diễn bằng ma trận."
+  },
+  {
+    "id": "vis_chap14_29",
+    "question": "Trọng số (Weights) trong đồ thị dùng để biểu diễn điều gì?",
+    "answers":  [
+      "Cường độ hoặc tầm quan trọng của mối quan hệ (T)",
+      "Có thể là khoảng cách, thời gian, hoặc các đại lượng khác (T)",
+      "Số lượng đỉnh trong đồ thị (F)",
+      "Màu sắc của cạnh (F)"
+    ],
+    "explanation": "Trọng số biểu diễn strength/importance của edge, không phải số lượng nodes hay màu."
+  },
+  {
+    "id": "vis_chap14_30",
+    "question": "Tập Độc Lập (Independent Set) có đặc điểm gì?",
+    "answers": [
+      "Không có hai đỉnh nào kề nhau (T)",
+      "Còn gọi là stable set hoặc anticlique (T)",
+      "Tất cả các đỉnh đều kề nhau (F)",
+      "Bằng với khái niệm Clique (F)"
+    ],
+    "explanation": "Independent set là tập đỉnh mà KHÔNG có cạnh nào nối chúng, ngược với Clique."
+  },
+  {
+    "id": "vis_chap14_31",
+    "question": "Clique trong đồ thị được định nghĩa như thế nào?",
+    "answers":  [
+      "Tập con các đỉnh mà mọi cặp đỉnh phân biệt đều kề nhau (T)",
+      "Tạo thành đồ thị con đầy đủ (complete subgraph) (T)",
+      "Tập các đỉnh không kề nhau (F)",
+      "Chỉ áp dụng cho đồ thị có hướng (F)"
+    ],
+    "explanation": "Clique là tập đỉnh mà MỌI cặp đều kề nhau (complete), áp dụng cho undirected graphs."
+  },
+  {
+    "id": "vis_chap14_32",
+    "question": "Đồ Thị Liên Thông (Connected Graph) có đặc điểm gì? ",
+    "answers": [
+      "Mọi cặp đỉnh đều được kết nối với nhau (T)",
+      "Tồn tại đường đi giữa bất kỳ hai đỉnh nào (T)",
+      "Tất cả các đỉnh đều có cùng bậc (F)",
+      "Không có chu trình (F)"
+    ],
+    "explanation": "Connected graph có path giữa mọi cặp đỉnh, không yêu cầu cùng degree hay không có cycle."
+  },
+  {
+    "id": "vis_chap14_33",
+    "question": "Cây (Tree) trong lý thuyết đồ thị có đặc điểm gì? ",
+    "answers": [
+      "Hai đỉnh bất kỳ được kết nối bởi đúng một đường đi (T)",
+      "Là đồ thị liên thông không có chu trình (T)",
+      "Có thể có nhiều đường đi giữa hai đỉnh (F)",
+      "Luôn là đồ thị có hướng (F)"
+    ],
+    "explanation": "Tree = connected + acyclic, có duy nhất 1 path giữa mọi cặp đỉnh, thường là undirected."
+  },
+  {
+    "id": "vis_chap14_34",
+    "question": "Điểm Khớp (Articulation Point) là gì?",
+    "answers": [
+      "Đỉnh mà khi bỏ đi, đồ thị trở nên không liên thông (T)",
+      "Còn gọi là Cut Vertex (T)",
+      "Đỉnh có bậc cao nhất trong đồ thị (F)",
+      "Đỉnh nằm trong mọi Clique (F)"
+    ],
+    "explanation": "Articulation point/cut vertex là đỉnh quan trọng mà loại bỏ nó làm đồ thị mất tính liên thông."
+  },
+  {
+    "id": "vis_chap14_35",
+    "question": "Đồ Thị Nối Đôi (Biconnected Graph) có đặc tính gì?",
+    "answers": [
+      "Bỏ đi bất kỳ một đỉnh nào, đồ thị vẫn liên thông (T)",
+      "Không có điểm khớp (T)",
+      "Có đúng hai thành phần liên thông (F)",
+      "Chỉ có hai đỉnh (F)"
+    ],
+    "explanation": "Biconnected = connected + không có articulation point, tức vẫn connected khi bỏ bất kỳ đỉnh nào."
+  },
+  {
+    "id": "vis_chap14_36",
+    "question": "Đồ Thị Hai Phần (Bipartite Graph) được định nghĩa như thế nào?",
+    "answers":  [
+      "Các đỉnh được chia thành hai tập rời nhau U và V (T)",
+      "Mọi cạnh đều nối một đỉnh trong U với một đỉnh trong V (T)",
+      "Có đúng hai cạnh (F)",
+      "Mỗi tập U và V có cùng số đỉnh (F)"
+    ],
+    "explanation": "Bipartite graph có 2 tập đỉnh độc lập, mọi edge nối U với V, không yêu cầu |U|=|V|."
+  },
+  {
+    "id":  "vis_chap14_37",
+    "question": "Bậc của đỉnh (deg(n)) và đường kính đồ thị (diam(G)) có ý nghĩa gì?",
+    "answers": [
+      "deg(n) là số lượng cạnh liên thuộc với đỉnh đó (T)",
+      "diam(G) là khoảng cách lớn nhất giữa bất kỳ cặp đỉnh nào (T)",
+      "deg(n) luôn bằng diam(G) (F)",
+      "diam(G) là tổng số cạnh trong đồ thị (F)"
+    ],
+    "explanation":  "Degree là số cạnh kề một đỉnh, diameter là longest shortest path, không liên quan trực tiếp."
+  },
+  {
+    "id": "vis_chap14_38",
+    "question": "Tiêu chí nào quan trọng cho biểu diễn nút-cạnh (Node-Link)?",
+    "answers": [
+      "Giảm thiểu giao nhau giữa các cạnh (T)",
+      "Các cạnh có độ dài tương tự nhau (T)",
+      "Tối đa hóa diện tích vẽ (F)",
+      "Sử dụng càng nhiều màu sắc càng tốt (F)"
+    ],
+    "explanation": "Tiêu chí tốt:  minimize edge crossings, similar edge lengths, minimize area, maximize angles."
+  },
+  {
+    "id": "vis_chap14_39",
+    "question": "Đồ Thị Lực Hướng (Force-Directed Graph) hoạt động như thế nào?",
+    "answers": [
+      "Các lực được áp dụng lên các nút để kéo hoặc đẩy chúng (T)",
+      "Quá trình lặp lại cho đến khi đạt trạng thái cân bằng cơ học (T)",
+      "Vị trí các nút được cố định từ đầu (F)",
+      "Chỉ áp dụng cho cây (Tree) (F)"
+    ],
+    "explanation":  "Force-directed dùng simulation vật lý (spring forces) để tự động bố trí nodes, áp dụng cho mọi loại graph."
+  },
+  {
+    "id": "vis_chap14_40",
+    "question": "Kỹ Thuật Đa Cấp (Multi-level Technique) xử lý đồ thị lớn bằng cách nào?",
+    "answers":  [
+      "Giảm quy mô đồ thị bằng cách gộp các đỉnh lại (T)",
+      "Tính toán phân vùng trên đồ thị đã giảm, sau đó chiếu lên đồ thị gốc (T)",
+      "Loại bỏ hoàn toàn các đỉnh không quan trọng (F)",
+      "Chỉ hiển thị một phần ngẫu nhiên của đồ thị (F)"
+    ],
+    "explanation":  "Multi-level coarsening → partition → project back, không loại bỏ vĩnh viễn hay random sampling."
+  },
+  {
+    "id": "vis_chap14_41",
+    "question": "Tại sao cần Lấy Mẫu (Sampling) cho đồ thị lớn?",
+    "answers": [
+      "Đồ thị lớn có thể làm quá tải công cụ trực quan hóa (T)",
+      "Cho phép khám phá tập con dễ quản lý của dữ liệu (T)",
+      "Để tăng số lượng nodes hiển thị (F)",
+      "Sampling luôn bảo toàn mọi thuộc tính của đồ thị gốc (F)"
+    ],
+    "explanation": "Sampling giảm overload và tạo manageable subset, nhưng không bảo toàn hoàn toàn cấu trúc gốc."
+  },
+  {
+    "id": "vis_chap14_42",
+    "question": "Các kỹ thuật lấy mẫu đồ thị chính bao gồm gì?",
+    "answers":  [
+      "Lấy mẫu ngẫu nhiên (Random Sampling) (T)",
+      "Lấy mẫu dựa trên bậc (Degree-Based Sampling) (T)",
+      "Lấy mẫu theo màu sắc (Color-Based Sampling) (F)",
+      "Lấy mẫu theo thời gian tạo node (F)"
+    ],
+    "explanation": "Các kỹ thuật chính: Random, Degree-Based, Ego-Network, Community sampling."
+  },
+  {
+    "id": "vis_chap14_43",
+    "question": "Thu Gọn/Mở Rộng (Collapse/Expand) có ưu điểm gì?",
+    "answers": [
+      "Giảm sự lộn xộn trực quan (T)",
+      "Cho phép ẩn các phần của đồ thị để xử lý hiệu quả tập dữ liệu lớn (T)",
+      "Tự động tìm ra cấu trúc tối ưu (F)",
+      "Chỉ áp dụng cho đồ thị hai phần (F)"
+    ],
+    "explanation": "Collapse/expand tốt cho clarity và scalability, đặc biệt với hierarchical graphs, không giới hạn bipartite."
+  },
+  {
+    "id": "vis_chap14_44",
+    "question": "Bố Cục Circos có ưu điểm gì?",
+    "answers": [
+      "Trực quan hóa compact, sử dụng không gian hiệu quả (T)",
+      "Tạo điều kiện thuận lợi cho việc nhận dạng mẫu và cụm (T)",
+      "Luôn dễ đọc với mọi kích thước đồ thị (F)",
+      "Giảm thiểu hoàn toàn giao nhau của cạnh (F)"
+    ],
+    "explanation": "Circos compact và aesthetically appealing, tốt cho pattern recognition, nhưng vẫn có edge crossings."
+  },
+  {
+    "id": "vis_chap14_45",
+    "question": "Nhóm Cạnh (Edge Bundling) có tác dụng gì?",
+    "answers": [
+      "Giảm sự lộn xộn bằng cách nhóm các cạnh lại (T)",
+      "Dễ dàng nhìn thấy các luồng chính trong đồ thị (T)",
+      "Tăng số lượng cạnh hiển thị (F)",
+      "Loại bỏ hoàn toàn các cạnh ít quan trọng (F)"
+    ],
+    "explanation": "Edge bundling nhóm edges để reduce clutter và highlight major flows, không loại bỏ hay tăng edges."
+  },
+  {
+    "id": "vis_chap14_46",
+    "question": "Bố Cục Cây (Tree Layout) có đặc điểm gì? ",
+    "answers": [
+      "Biểu diễn cấu trúc phân cấp rõ ràng (T)",
+      "Các nút cha-con được sắp xếp theo cấp độ (T)",
+      "Chỉ có dạng top-down (F)",
+      "Không thể biểu diễn cây có nhiều hơn 100 nodes (F)"
+    ],
+    "explanation": "Tree layout rõ ràng cho hierarchies, có nhiều dạng (top-down, radial, dendrogram), scalable."
+  },
+  {
+    "id": "vis_chap14_47",
+    "question": "Ma Trận Kề (Adjacency Matrix) có ưu và nhược điểm gì? ",
+    "answers": [
+      "Ưu điểm: Không cần quan tâm đến bố cục (T)",
+      "Nhược điểm: Khó phát hiện đường đi và chu trình (T)",
+      "Ưu điểm: Dễ thấy các đường đi dài (F)",
+      "Nhược điểm: Không biểu diễn được đồ thị có trọng số (F)"
+    ],
+    "explanation": "Ma trận tốt cho edge-focused tasks, không cần layout, nhưng kém cho path/cycle detection."
+  },
+  {
+    "id": "vis_chap14_48",
+    "question": "Bố Cục Lai (Hybrid Layout) có đặc điểm gì?",
+    "answers": [
+      "Kết hợp nhiều kỹ thuật trực quan hóa khác nhau (T)",
+      "Tận dụng ưu điểm của từng phương pháp (T)",
+      "Luôn phức tạp hơn bố cục đơn lẻ (F)",
+      "Chỉ kết hợp node-link và force-directed (F)"
+    ],
+    "explanation": "Hybrid kết hợp nhiều kỹ thuật (vd: node-link + matrix) để tận dụng strengths, không giới hạn 2 loại cụ thể."
+  },
+  {
+    "id": "vis_chap14_49",
+    "question": "Biểu Đồ Treemap có đặc điểm gì? ",
+    "answers": [
+      "Hiển thị dữ liệu phân cấp bằng các hình chữ nhật lồng nhau (T)",
+      "Kích thước hình chữ nhật được định theo biến định lượng (T)",
+      "Sử dụng vòng tròn đồng tâm (F)",
+      "Chỉ áp dụng cho cây nhị phân (F)"
+    ],
+    "explanation": "Treemap dùng nested rectangles sized by quantitative variable, không dùng circles hay giới hạn binary trees."
+  },
+  {
+    "id": "vis_chap14_50",
+    "question": "Biểu Đồ Sunburst khác Treemap như thế nào? ",
+    "answers": [
+      "Sunburst sử dụng các vòng tròn đồng tâm (T)",
+      "Treemap sử dụng hình chữ nhật lồng nhau (T)",
+      "Sunburst chỉ hiển thị hai cấp độ (F)",
+      "Treemap không thể tương tác (F)"
+    ],
+    "explanation": "Sunburst = radial với concentric rings, Treemap = rectangular, cả hai đều multi-level và interactive."
+  },
+  {
+    "id": "vis_chap15_51",
+    "question": "Tại sao cần phép chiếu (Projection) trong trực quan hóa bản đồ?",
+    "answers": [
+      "Trái Đất có hình cầu (T)",
+      "Phương tiện trình bày (màn hình, giấy) là phẳng (T)",
+      "Để tăng kích thước bản đồ (F)",
+      "Để thay đổi màu sắc của bản đồ (F)"
+    ],
+    "explanation": "Projection cần thiết để chuyển từ spherical surface sang flat surface, không liên quan size hay color."
+  },
+  {
+    "id": "vis_chap15_52",
+    "question": "Phép Chiếu Mercator có ưu và nhược điểm gì? ",
+    "answers": [
+      "Ưu điểm: Tương đối chính xác cho vùng gần xích đạo (T)",
+      "Nhược điểm: Biến dạng cho các vùng xa xích đạo (T)",
+      "Ưu điểm: Không có biến dạng nào (F)",
+      "Nhược điểm: Không thể hiện được đường kinh tuyến (F)"
+    ],
+    "explanation": "Mercator chính xác ở equator, biến dạng ở polar regions (vd:  Greenland quá lớn)."
+  },
+  {
+    "id": "vis_chap15_53",
+    "question": "Phép Chiếu Interrupted Goode Homolosine có đặc điểm gì? ",
+    "answers": [
+      "Chia bản đồ thành nhiều múi (T)",
+      "Giảm biến dạng diện tích (T)",
+      "Tạo bản đồ liên tục không có khoảng trống (F)",
+      "Chỉ dùng cho bản đồ địa phương (F)"
+    ],
+    "explanation": "Goode Homolosine chia múi (interrupted) để giảm area distortion, dùng cho global distribution."
+  },
+  {
+    "id": "vis_chap15_54",
+    "question": "Phép Chiếu Phương Vị (Azimuthal) có đặc điểm gì? ",
+    "answers": [
+      "Giả định quả địa cầu đặt trên một mặt phẳng (T)",
+      "Bảo toàn hướng từ điểm trung tâm (T)",
+      "Luôn tạo bản đồ hình chữ nhật (F)",
+      "Không thể dùng cho bản đồ cực (F)"
+    ],
+    "explanation": "Azimuthal projects onto plane, preserves direction from center, thường dùng cho polar maps."
+  },
+  {
+    "id": "vis_chap15_55",
+    "question": "Phép Chiếu Winkel Tripel có đặc điểm gì?",
+    "answers": [
+      "Giảm thiểu ba loại biến dạng:  diện tích, hướng, khoảng cách (T)",
+      "Được National Geographic sử dụng làm chiếu chuẩn (T)",
+      "Hoàn toàn không có biến dạng (F)",
+      "Chỉ bảo toàn diện tích (F)"
+    ],
+    "explanation": "Winkel Tripel MINIMIZES (không eliminate) ba loại distortion: area, direction, distance."
+  },
+  {
+    "id":  "vis_chap15_56",
+    "question": "Phép Chiếu Hình Nón Lambert có đặc điểm gì?",
+    "answers":  [
+      "Đặt một hình nón lên quả cầu Trái Đất (T)",
+      "Bảo toàn góc và hình dạng cục bộ (conformal) (T)",
+      "Tạo biến dạng diện tích lớn (F)",
+      "Chỉ dùng cho bản đồ toàn cầu (F)"
+    ],
+    "explanation": "Lambert Conformal Conic bảo giác (preserves angles), thường dùng cho regional maps, không phải global."
+  },
+  {
+    "id": "vis_chap15_57",
+    "question": "Bản Đồ Vùng (Choropleth Maps) có đặc điểm gì?",
+    "answers": [
+      "Các khu vực được tô màu để thể hiện thông tin (T)",
+      "Phù hợp cho dữ liệu theo khu vực địa lý (T)",
+      "Sử dụng hình chữ nhật lồng nhau (F)",
+      "Biến dạng diện tích theo giá trị (F)"
+    ],
+    "explanation": "Choropleth dùng color/pattern cho regions, không dùng rectangles (đó là treemap) hay biến dạng area (đó là cartogram)."
+  },
+  {
+    "id": "vis_chap15_58",
+    "question": "Bản Đồ Biến Dạng (Cartogram) hoạt động như thế nào?",
+    "answers": [
+      "Diện tích của các vùng được biến đổi theo giá trị (T)",
+      "Khu vực có giá trị lớn có diện tích lớn hơn (T)",
+      "Giữ nguyên hình dạng địa lý thực (F)",
+      "Chỉ sử dụng màu sắc, không biến dạng (F)"
+    ],
+    "explanation": "Cartogram DISTORTS area theo value để emphasize importance, mất hình dạng thực."
+  },
+  {
+    "id": "vis_chap15_59",
+    "question": "Ưu và nhược điểm của Cartogram là gì?",
+    "answers": [
+      "Ưu điểm: Nhấn mạnh tầm quan trọng của dữ liệu (T)",
+      "Nhược điểm: Mất đi hình dạng địa lý thực (T)",
+      "Ưu điểm: Bảo toàn mọi thuộc tính địa lý (F)",
+      "Nhược điểm: Không thể hiện được dữ liệu định lượng (F)"
+    ],
+    "explanation": "Cartogram tốt cho emphasizing data importance nhưng sacrifices geographic accuracy."
+  },
+  {
+    "id": "vis_chap15_60",
+    "question": "Bản Đồ Đường Đẳng Mức (Contour Map) có đặc điểm gì?",
+    "answers": [
+      "Các điểm trên cùng một đường có cùng giá trị (T)",
+      "Khoảng cách giữa các đường thể hiện độ dốc của thay đổi (T)",
+      "Chỉ dùng cho dữ liệu phân loại (F)",
+      "Không thể hiện được độ cao địa hình (F)"
+    ],
+    "explanation": "Contour lines nối các điểm có cùng value, spacing shows gradient, dùng cho continuous data."
+  },
+  {
+    "id": "vis_chap15_61",
+    "question": "Ví dụ lịch sử nào về Contour Map được đề cập? ",
+    "answers": [
+      "Bản đồ Halley năm 1701 về độ lệch từ trường (T)",
+      "Bản đồ gió mậu dịch của Halley (1686) (T)",
+      "Bản đồ Napoleon của Minard (F)",
+      "Sơ đồ tàu điện ngầm London của Beck (F)"
+    ],
+    "explanation": "Halley's maps (1686, 1701) là ví dụ contour; Minard là flow map, Beck là schematic diagram."
+  },
+  {
+    "id": "vis_chap15_62",
+    "question": "Bản Đồ Luồng (Flow Map) có ứng dụng gì?",
+    "answers": [
+      "Hiển thị di cư (Migration) (T)",
+      "Hiển thị trao đổi hàng hóa (Trade) và giao thông vận tải (T)",
+      "Hiển thị độ cao địa hình (F)",
+      "Chỉ dùng cho dữ liệu thời tiết (F)"
+    ],
+    "explanation": "Flow maps cho migration, trade, transportation, data flow; không phải cho elevation hay chỉ weather."
+  },
+  {
+    "id": "vis_chap15_63",
+    "question": "Bản đồ Minard 1869 về cuộc hành quân của Napoleon thể hiện những thông tin gì?",
+    "answers": [
+      "Đường đi của quân đội và số lượng quân (qua độ dày đường) (T)",
+      "Nhiệt độ và thời gian (T)",
+      "Độ cao địa hình chi tiết (F)",
+      "Màu sắc quân phục (F)"
+    ],
+    "explanation": "Minard's map hiển thị:  path, troop size (line width), direction, temperature, time - một masterpiece."
+  },
+  {
+    "id": "vis_chap15_64",
+    "question": "Sơ Đồ Tàu Điện Ngầm London của Beck có nguyên lý thiết kế gì?",
+    "answers": [
+      "Làm thẳng các tuyến để nhấn mạnh thứ tự các trạm (T)",
+      "Tập trung vào mối quan hệ topology thay vì địa lý (T)",
+      "Giữ nguyên tỷ lệ địa lý chính xác (F)",
+      "Hiển thị đầy đủ địa hình bề mặt (F)"
+    ],
+    "explanation": "Beck's design SIMPLIFIES geography, focuses on topological connections, không giữ true scale."
+  },
+  {
+    "id": "vis_chap15_65",
+    "question": "Sơ đồ Beck khác bản đồ địa lý thực như thế nào?",
+    "answers": [
+      "Bản đồ địa lý hiển thị vị trí chính xác (T)",
+      "Sơ đồ Beck dễ đọc và dễ sử dụng cho hành khách (T)",
+      "Sơ đồ Beck chi tiết hơn về địa hình (F)",
+      "Bản đồ địa lý không thể hiện được các tuyến tàu (F)"
+    ],
+    "explanation": "Geographic map = accurate location; Beck's schematic = usability, cả hai đều có thể hiện tuyến."
+  },
+  {
+    "id": "vis_chap15_66",
+    "question": "Mục tiêu trực quan hóa bản đồ bao gồm những gì?",
+    "answers": [
+      "Tìm vị trí (Finding locations) (T)",
+      "Tìm đường đi (Finding paths) (T)",
+      "Tăng kích thước file bản đồ (F)",
+      "Thay đổi hệ tọa độ liên tục (F)"
+    ],
+    "explanation": "Mục tiêu:  finding locations, paths, attributes, comparison - không phải file size hay changing coords."
+  },
+  {
+    "id": "vis_chap15_67",
+    "question": "D3. js hỗ trợ gì cho trực quan hóa bản đồ?",
+    "answers": [
+      "Nhiều phép chiếu khác nhau (T)",
+      "Thư viện mạnh mẽ cho trực quan hóa bản đồ (T)",
+      "Chỉ hỗ trợ phép chiếu Mercator (F)",
+      "Không thể tương tác với bản đồ (F)"
+    ],
+    "explanation": "D3.js rất mạnh cho maps, hỗ trợ nhiều projections và interactivity (github.com/d3/d3-geo-projection/)."
+  },
+  {
+    "id": "vis_chap15_68",
+    "question": "Khi nào nên sử dụng Choropleth Map thay vì Cartogram?",
+    "answers":  [
+      "Khi cần giữ nguyên hình dạng địa lý (T)",
+      "Khi dữ liệu ít biến động giữa các vùng (T)",
+      "Khi cần nhấn mạnh sự chênh lệch lớn về giá trị (F)",
+      "Khi không có dữ liệu định lượng (F)"
+    ],
+    "explanation": "Choropleth preserves geography, tốt cho moderate variation; Cartogram cho extreme differences."
+  },
+  {
+    "id": "vis_chap15_69",
+    "question": "Contour Density Map ứng dụng trong trường hợp nào?",
+    "answers":  [
+      "Hiển thị mật độ dân số (T)",
+      "Bản đồ thời tiết (đường đẳng áp) (T)",
+      "Hiển thị biên giới hành chính (F)",
+      "Chỉ dùng cho dữ liệu lịch sử (F)"
+    ],
+    "explanation": "Contour maps tốt cho continuous variables:  elevation, temperature, pressure, density - không chỉ historical."
+  },
+  {
+    "id": "vis_chap15_70",
+    "question": "Ảnh hưởng của sơ đồ Beck đến thiết kế bản đồ giao thông là gì?",
+    "answers": [
+      "Trở thành chuẩn mực cho sơ đồ giao thông công cộng toàn thế giới (T)",
+      "Được áp dụng ở Tokyo, New York, Paris, v.v. (T)",
+      "Chỉ ảnh hưởng đến London (F)",
+      "Không ai sử dụng nguyên lý này nữa (F)"
+    ],
+    "explanation": "Beck's design revolutionized transit maps globally, vẫn được sử dụng rộng rãi đến nay."
+  }
+]
