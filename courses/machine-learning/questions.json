@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ml_q1",
+    "question": "Cho ba điểm dữ liệu gốm các điểm dữ liệu sau: A = (0;2), B = (0;1) và C = (1;0). Thuật toán K-means (với khoảng cách Euclid) với 2 cụm và tâm cụm được khởi tạo tại A và B. Khi hội tụ, tâm cụm sẽ là:",
+    "answers": [
+      "A và C (F)",
+      "A và trung điểm BC (T)",
+      "C và trung điểm AB (F)",
+      "A và B (F)"
+    ],
+    "explanation": "K-means với khởi tạo tâm tại A(0;2) và B(0;1): Bước 1 - Gán điểm C(1;0) vào cụm gần nhất (B vì d(C,B)=√2 < d(C,A)=√5). Bước 2 - Cập nhật tâm: cụm 1 giữ nguyên A, cụm 2 có B và C nên tâm mới = trung điểm BC = ((0+1)/2, (1+0)/2) = (0.5; 0.5). Thuật toán hội tụ với 2 tâm là A và trung điểm BC."
+  },
+  {
+    "id": "ml_q2",
+    "question": "Trong mạng nơ-ron, đâu là lợi ích của hàm kích hoạt ReLU so với hàm kích hoạt Sigmoid?",
+    "answers": [
+      "ReLUs chấp nhận tính toán lan truyền ngược gradient nhanh hơn (T)",
+      "ReLUs có thể sử dụng cho tầng đầu ra, trong khi hàm sigmoid thì không thể (F)",
+      "ReLUs chấp nhận mô hình học một đường quyết định phi tuyến (F)"
+    ],
+    "explanation": "ReLU tính toán gradient nhanh hơn Sigmoid trong backpropagation và tránh vanishing gradient problem."
+  }
+]
